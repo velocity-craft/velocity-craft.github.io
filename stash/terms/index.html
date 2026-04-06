@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stash Terms of Service</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  .subtitle { font-size: 14px; color: #888; margin-bottom: 32px; }
+  .lang-list { list-style: none; padding: 0; width: 100%; max-width: 320px; }
+  .lang-list li { margin: 0; }
+  .lang-list a { display: block; padding: 12px 16px; text-decoration: none; color: #222; border-bottom: 1px solid #eee; font-size: 15px; }
+  .lang-list a:hover { background: #f5f5f5; }
+  .lang-list a .native { font-weight: 500; }
+  .lang-list a .label { color: #888; font-size: 13px; margin-left: 8px; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    .lang-list a { color: #ddd; border-bottom-color: #333; }
+    .lang-list a:hover { background: #252525; }
+    .lang-list a .label { color: #888; }
+  }
+</style>
+<script>
+  (function() {
+    var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    var map = { 'ko': 'ko', 'ja': 'ja', 'zh': 'zh', 'es': 'es', 'fr': 'fr', 'de': 'de', 'pt': 'pt' };
+    var target = 'en';
+    for (var key in map) {
+      if (lang.indexOf(key) === 0) { target = map[key]; break; }
+    }
+    window.location.replace(target + '.html');
+  })();
+</script>
+</head>
+<body>
+<h1>Stash Terms of Service</h1>
+<p class="subtitle">Select your language</p>
+<ul class="lang-list">
+  <li><a href="en.html"><span class="native">English</span></a></li>
+  <li><a href="ko.html"><span class="native">한국어</span><span class="label">Korean</span></a></li>
+  <li><a href="ja.html"><span class="native">日本語</span><span class="label">Japanese</span></a></li>
+  <li><a href="zh.html"><span class="native">中文</span><span class="label">Chinese</span></a></li>
+  <li><a href="es.html"><span class="native">Español</span><span class="label">Spanish</span></a></li>
+  <li><a href="fr.html"><span class="native">Français</span><span class="label">French</span></a></li>
+  <li><a href="de.html"><span class="native">Deutsch</span><span class="label">German</span></a></li>
+  <li><a href="pt.html"><span class="native">Português</span><span class="label">Portuguese</span></a></li>
+</ul>
+</body>
+</html>
