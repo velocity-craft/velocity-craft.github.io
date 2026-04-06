@@ -4,37 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Velocity Craft</title>
+<meta name="description" content="Building Android apps that respect your time. Draftly, Jeter Player, and Stash.">
 <style>
-  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; text-align: center; }
-  h1 { font-size: 28px; margin-bottom: 4px; }
-  .tagline { font-size: 15px; color: #888; margin-bottom: 32px; }
-  .apps { list-style: none; padding: 0; width: 100%; max-width: 400px; }
-  .apps a { display: block; padding: 16px; margin: 8px 0; background: #f8f8f8; border-radius: 12px; text-decoration: none; color: #222; font-size: 16px; font-weight: 600; transition: background 0.2s; }
-  .apps a:hover { background: #eee; }
-  .apps .desc { font-size: 13px; font-weight: 400; color: #888; margin-top: 2px; }
-  .contact { font-size: 13px; color: #888; margin-top: 32px; }
-  .contact a { color: #555; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #1a1a1a; color: #ddd; }
-    .apps a { background: #2a2a2a; color: #ddd; }
-    .apps a:hover { background: #333; }
-    .apps .desc { color: #999; }
-    .contact a { color: #aaa; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f8f9fa;--bg3:#f0f1f3;
+  --fg:#1a1a2e;--fg2:#4a4a5a;--fg3:#8a8a9a;
+  --border:#e8e9ec;
+  --accent:#4f6df5;--accent2:#7b8ff7;--accent-soft:rgba(79,109,245,.06);
+  --card:#ffffff;--card-hover:#fafafc;
+  --card-shadow:0 1px 2px rgba(0,0,0,.04);
+  --card-shadow-hover:0 4px 20px rgba(0,0,0,.08);
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0c0c12;--bg2:#12121a;--bg3:#1a1a26;
+    --fg:#e4e4ec;--fg2:#a0a0b4;--fg3:#6a6a80;
+    --border:#242434;
+    --accent:#7b8ff7;--accent2:#9dacf9;--accent-soft:rgba(123,143,247,.08);
+    --card:#14141e;--card-hover:#1a1a28;
+    --card-shadow:0 1px 2px rgba(0,0,0,.2);
+    --card-shadow-hover:0 4px 20px rgba(0,0,0,.4);
   }
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  background:var(--bg);color:var(--fg);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;display:flex;flex-direction:column;
+}
+
+.page{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:64px 24px;max-width:800px;margin:0 auto;width:100%;
+}
+
+/* ── Brand ── */
+.brand{text-align:center;margin-bottom:56px}
+.logo{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:64px;height:64px;border-radius:16px;margin-bottom:20px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  font-size:28px;font-weight:800;color:#fff;letter-spacing:-.02em;
+}
+.brand h1{
+  font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:-.02em;
+  margin-bottom:8px;
+}
+.brand p{font-size:clamp(15px,2.5vw,18px);color:var(--fg2)}
+
+/* ── App Cards ── */
+.apps{
+  display:grid;grid-template-columns:1fr;gap:16px;
+  width:100%;margin-bottom:48px;
+}
+.app-card{
+  display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:20px;
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:24px 28px;text-decoration:none;color:var(--fg);
+  box-shadow:var(--card-shadow);
+  transition:all .25s ease;
+}
+.app-card:hover{
+  background:var(--card-hover);box-shadow:var(--card-shadow-hover);
+  transform:translateY(-2px);border-color:var(--accent);
+}
+.app-icon{
+  width:56px;height:56px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;flex-shrink:0;
+}
+.app-icon.draftly{background:linear-gradient(135deg,#4f6df5,#7b8ff7)}
+.app-icon.jeter{background:linear-gradient(135deg,#e8453c,#ff6b5a)}
+.app-icon.stash{background:linear-gradient(135deg,#f5a623,#ffc857)}
+.app-info h2{font-size:18px;font-weight:700;margin-bottom:4px}
+.app-info p{font-size:14px;color:var(--fg2);line-height:1.4}
+.app-arrow{
+  color:var(--fg3);font-size:20px;
+  transition:transform .2s ease;flex-shrink:0;
+}
+.app-card:hover .app-arrow{transform:translateX(4px);color:var(--accent)}
+
+@media(max-width:540px){
+  .app-card{grid-template-columns:48px 1fr auto;gap:14px;padding:18px 20px}
+  .app-icon{width:48px;height:48px;border-radius:12px;font-size:22px}
+  .app-info h2{font-size:16px}
+  .app-info p{font-size:13px}
+}
+
+/* ── Footer ── */
+footer{
+  text-align:center;padding:24px;font-size:13px;color:var(--fg3);
+  border-top:1px solid var(--border);
+}
+footer a{color:var(--fg2);text-decoration:none}
+footer a:hover{color:var(--accent)}
 </style>
 </head>
 <body>
 
-<h1>Velocity Craft</h1>
-<p class="tagline">Building tools that respect your time</p>
+<div class="page">
+  <div class="brand">
+    <div class="logo">V</div>
+    <h1>Velocity Craft</h1>
+    <p>Building tools that respect your time</p>
+  </div>
 
-<ul class="apps">
-  <li><a href="/draftly/">Draftly<div class="desc">Smart note-taking for your thoughts</div></a></li>
-  <li><a href="/jeter-player/">Jeter Player<div class="desc">Your media, your way</div></a></li>
-  <li><a href="/stash/">Stash<div class="desc">Save, organize, and revisit your links</div></a></li>
-</ul>
+  <div class="apps">
+    <a href="/draftly/" class="app-card">
+      <div class="app-icon draftly">&#x270F;</div>
+      <div class="app-info">
+        <h2>Draftly</h2>
+        <p>Lightning-fast markdown notes with real-time formatting, smart templates, and offline-first design.</p>
+      </div>
+      <span class="app-arrow">&rarr;</span>
+    </a>
+    <a href="/jeter-player/" class="app-card">
+      <div class="app-icon jeter">&#x25B6;</div>
+      <div class="app-info">
+        <h2>Jeter Player</h2>
+        <p>A powerful video player with gesture controls, SMB streaming, PiP, and background playback.</p>
+      </div>
+      <span class="app-arrow">&rarr;</span>
+    </a>
+    <a href="/stash/" class="app-card">
+      <div class="app-icon stash">&#x1F516;</div>
+      <div class="app-info">
+        <h2>Stash</h2>
+        <p>Save, organize, and revisit your links. Folders, tags, rich previews, and a full markdown memo editor.</p>
+      </div>
+      <span class="app-arrow">&rarr;</span>
+    </a>
+  </div>
+</div>
 
-<p class="contact">Contact: <a href="mailto:kate.sw.kelly@gmail.com">kate.sw.kelly@gmail.com</a></p>
+<footer>
+  Contact: <a href="mailto:kate.sw.kelly@gmail.com">kate.sw.kelly@gmail.com</a>
+</footer>
 
 </body>
 </html>
