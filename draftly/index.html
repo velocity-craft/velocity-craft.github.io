@@ -3,49 +3,386 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draftly - Smart Note-Taking</title>
+<title>Draftly - Markdown Note-Taking, Perfected</title>
+<meta name="description" content="A lightning-fast, offline-first markdown note-taking app. Real-time formatting, smart templates, image notes, and more.">
+<meta property="og:title" content="Draftly - Markdown Note-Taking, Perfected">
+<meta property="og:description" content="Lightning-fast markdown notes with real-time formatting, smart templates, and offline-first design.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://velocitycraft.app/draftly/">
 <style>
-  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; text-align: center; }
-  h1 { font-size: 28px; margin-bottom: 4px; }
-  .tagline { font-size: 15px; color: #888; margin-bottom: 32px; }
-  .features { list-style: none; padding: 0; width: 100%; max-width: 400px; text-align: left; margin-bottom: 32px; }
-  .features li { padding: 10px 0; font-size: 14px; border-bottom: 1px solid #eee; }
-  .features li strong { display: block; font-size: 15px; margin-bottom: 2px; }
-  .features li span { color: #666; }
-  .links { font-size: 13px; color: #888; }
-  .links a { color: #555; text-decoration: none; margin: 0 8px; }
-  .links a:hover { text-decoration: underline; }
-  .badge { display: inline-block; margin-top: 24px; }
-  .badge img { height: 48px; }
-  .contact { font-size: 13px; color: #888; margin-top: 24px; }
-  .contact a { color: #555; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #1a1a1a; color: #ddd; }
-    .features li { border-bottom-color: #333; }
-    .features li span { color: #999; }
-    .links a { color: #aaa; }
-    .contact a { color: #aaa; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f8f9fa;--bg3:#f0f1f3;
+  --fg:#1a1a2e;--fg2:#4a4a5a;--fg3:#8a8a9a;
+  --accent:#4f6df5;--accent2:#7b8ff7;--accent-soft:rgba(79,109,245,.08);
+  --border:#e8e9ec;--card:#ffffff;--card-shadow:0 1px 3px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.04);
+  --radius:16px;--max-w:960px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0f0f17;--bg2:#16161f;--bg3:#1e1e2a;
+    --fg:#e4e4ec;--fg2:#a0a0b4;--fg3:#6a6a80;
+    --accent:#7b8ff7;--accent2:#9dacf9;--accent-soft:rgba(123,143,247,.1);
+    --border:#2a2a3a;--card:#1a1a26;--card-shadow:0 1px 3px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.2);
   }
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  background:var(--bg);color:var(--fg);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── Layout ── */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+
+/* ── Hero ── */
+.hero{
+  padding:80px 0 64px;text-align:center;
+  background:linear-gradient(180deg,var(--accent-soft) 0%,var(--bg) 100%);
+}
+.hero-badge{
+  display:inline-block;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);
+  padding:6px 14px;border-radius:20px;margin-bottom:24px;
+}
+.hero h1{
+  font-size:clamp(36px,6vw,56px);font-weight:800;letter-spacing:-.02em;
+  line-height:1.1;margin-bottom:16px;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub{
+  font-size:clamp(16px,2.5vw,20px);color:var(--fg2);
+  max-width:560px;margin:0 auto 36px;line-height:1.5;
+}
+.hero-cta{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+.hero-cta a{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:600;text-decoration:none;
+  padding:14px 28px;border-radius:12px;transition:all .2s ease;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-secondary{background:var(--bg3);color:var(--fg)}
+.btn-secondary:hover{background:var(--border);transform:translateY(-1px)}
+.play-icon{width:20px;height:20px}
+
+/* ── Section ── */
+.section{padding:64px 0}
+.section-label{
+  font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:8px;
+}
+.section-title{
+  font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.01em;margin-bottom:12px;
+}
+.section-desc{color:var(--fg2);max-width:520px;font-size:16px;line-height:1.6}
+.section-header{margin-bottom:40px}
+.section-header.center{text-align:center}
+.section-header.center .section-desc{margin:0 auto}
+
+/* ── Feature Grid ── */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.feature-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:28px;transition:all .25s ease;
+}
+.feature-card:hover{box-shadow:var(--card-shadow);transform:translateY(-2px)}
+.feature-icon{
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:16px;
+  background:var(--accent-soft);
+}
+.feature-card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.feature-card p{font-size:14px;color:var(--fg2);line-height:1.5}
+
+/* ── Editor Showcase ── */
+.editor-section{background:var(--bg2)}
+.editor-showcase{
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+}
+@media(max-width:680px){.editor-showcase{grid-template-columns:1fr;gap:32px}}
+.editor-demo{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:24px;font-family:'SF Mono',Menlo,Monaco,'Courier New',monospace;
+  font-size:13px;line-height:1.8;overflow:hidden;
+}
+.editor-demo .line{display:flex;gap:8px;white-space:nowrap;overflow:hidden}
+.ed-marker{color:var(--fg3);opacity:.5}
+.ed-h1{font-size:18px;font-weight:700}
+.ed-bold{font-weight:700}
+.ed-italic{font-style:italic}
+.ed-strike{text-decoration:line-through;color:var(--fg3)}
+.ed-color{color:#E53935}
+.ed-check{color:var(--accent)}
+.ed-checked{text-decoration:line-through;color:var(--fg3)}
+.ed-link{color:var(--accent);text-decoration:underline}
+.ed-code{background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:12px}
+.ed-reminder{
+  display:inline-flex;align-items:center;gap:4px;
+  background:var(--accent-soft);padding:2px 8px;border-radius:8px;font-size:12px;
+  font-family:-apple-system,sans-serif;color:var(--accent);
+}
+.syntax-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.syntax-list li{
+  font-size:12px;padding:4px 10px;border-radius:6px;
+  background:var(--bg3);color:var(--fg2);font-weight:500;
+}
+
+/* ── Capture Ways ── */
+.capture-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.capture-item{
+  text-align:center;padding:24px 16px;border-radius:var(--radius);
+  background:var(--card);border:1px solid var(--border);transition:all .2s ease;
+}
+.capture-item:hover{border-color:var(--accent);background:var(--accent-soft)}
+.capture-item .icon{font-size:28px;margin-bottom:8px}
+.capture-item .label{font-size:13px;font-weight:600}
+.capture-item .desc{font-size:12px;color:var(--fg3);margin-top:4px}
+
+/* ── Stats Bar ── */
+.stats{
+  background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:24px;text-align:center;padding:40px 0;
+}
+.stat-num{font-size:clamp(28px,4vw,36px);font-weight:800;color:var(--accent)}
+.stat-label{font-size:13px;color:var(--fg3);margin-top:4px}
+
+/* ── CTA ── */
+.cta-section{text-align:center;padding:80px 0}
+.cta-section h2{
+  font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:12px;
+}
+.cta-section p{color:var(--fg2);margin-bottom:32px;font-size:16px}
+.cta-section .hero-cta{margin-bottom:24px}
+
+/* ── Footer ── */
+footer{
+  border-top:1px solid var(--border);padding:32px 0;text-align:center;
+  font-size:13px;color:var(--fg3);
+}
+footer a{color:var(--fg2);text-decoration:none;margin:0 12px}
+footer a:hover{color:var(--accent)}
+.footer-links{margin-bottom:12px}
 </style>
 </head>
 <body>
 
-<h1>Draftly</h1>
-<p class="tagline">Smart note-taking for your thoughts</p>
+<!-- Hero -->
+<section class="hero">
+<div class="container">
+  <div class="hero-badge">Offline-First &middot; 76 Languages</div>
+  <h1>Markdown Notes,<br><span>Perfected.</span></h1>
+  <p class="hero-sub">A lightning-fast note-taking app that renders markdown in real time. Write, organize, and keep your ideas &mdash; beautifully.</p>
+  <div class="hero-cta">
+    <a href="https://play.google.com/store/apps/details?id=com.draftly.app" class="btn-primary">
+      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
+      Google Play
+    </a>
+  </div>
+</div>
+</section>
 
-<ul class="features">
-  <li><strong>Quick Capture</strong><span>Jot down ideas instantly with templates and snippets</span></li>
-  <li><strong>Voice Input</strong><span>Convert speech to text for hands-free note-taking</span></li>
-  <li><strong>Markdown Support</strong><span>Format your notes with rich text and checklists</span></li>
-  <li><strong>Organize</strong><span>Folders, tags, and smart sorting to keep everything tidy</span></li>
-</ul>
+<!-- Editor Showcase -->
+<section class="section editor-section">
+<div class="container">
+  <div class="editor-showcase">
+    <div>
+      <p class="section-label">Core</p>
+      <h2 class="section-title">Real-Time Markdown Editor</h2>
+      <p class="section-desc">See formatting come to life as you type. No switching between edit and preview &mdash; headings, bold, italic, colors, checklists, links, and reminders are all rendered instantly.</p>
+      <ul class="syntax-list">
+        <li># Headings</li>
+        <li>**Bold**</li>
+        <li>*Italic*</li>
+        <li>__Underline__</li>
+        <li>~~Strike~~</li>
+        <li>`Code`</li>
+        <li>8 Colors</li>
+        <li>- [ ] Checklist</li>
+        <li>[Link](url)</li>
+        <li>@@Reminder</li>
+        <li>> Quote</li>
+        <li>1. Lists</li>
+      </ul>
+    </div>
+    <div class="editor-demo" aria-hidden="true">
+      <div class="line"><span class="ed-marker">#</span> <span class="ed-h1">Meeting Notes</span></div>
+      <div class="line">&nbsp;</div>
+      <div class="line"><span class="ed-marker">**</span><span class="ed-bold">Project kickoff</span><span class="ed-marker">**</span> with the design team</div>
+      <div class="line"><span class="ed-marker">*</span><span class="ed-italic">Focus on mobile-first approach</span><span class="ed-marker">*</span></div>
+      <div class="line">&nbsp;</div>
+      <div class="line"><span class="ed-marker">- [x]</span> <span class="ed-checked">Review wireframes</span></div>
+      <div class="line"><span class="ed-marker">- [ ]</span> <span class="ed-check">Update color tokens</span></div>
+      <div class="line"><span class="ed-marker">- [ ]</span> <span class="ed-check">Share prototype link</span></div>
+      <div class="line">&nbsp;</div>
+      <div class="line"><span class="ed-marker">{color:red}</span><span class="ed-color">Deadline: Friday</span><span class="ed-marker">{/}</span></div>
+      <div class="line"><span class="ed-reminder">@@2026-04-10 14:00</span></div>
+      <div class="line">&nbsp;</div>
+      <div class="line"><span class="ed-marker">`</span><span class="ed-code">MainScreen.kt</span><span class="ed-marker">`</span> needs refactoring</div>
+      <div class="line">Ref: <span class="ed-marker">[</span><span class="ed-link">Design Doc</span><span class="ed-marker">](url)</span></div>
+    </div>
+  </div>
+</div>
+</section>
 
-<p class="links">
-  <a href="/draftly/privacy/en.html">Privacy Policy</a> ·
-  <a href="/draftly/terms/en.html">Terms of Service</a>
-</p>
+<!-- Features Grid -->
+<section class="section">
+<div class="container">
+  <div class="section-header center">
+    <p class="section-label">Features</p>
+    <h2 class="section-title">Everything You Need, Nothing You Don't</h2>
+    <p class="section-desc">Powerful tools that stay out of your way until the moment you need them.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4CB;</div>
+      <h3>Smart Templates</h3>
+      <p>Reusable templates with auto-fill variables &mdash; date, time, location, clipboard, and interactive input fields. Adapted to your locale.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x26A1;</div>
+      <h3>Snippets</h3>
+      <p>Pin frequently used phrases to the editor toolbar for one-tap insertion. Addresses, signatures, boilerplate &mdash; always within reach.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F5BC;</div>
+      <h3>Image Notes</h3>
+      <p>Attach images with a full-screen viewer. Pinch to zoom, swipe to dismiss. Write rich markdown memos alongside your images.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x23F0;</div>
+      <h3>Inline Reminders</h3>
+      <p>Type @@ to set a reminder right inside your note. It appears as a visual chip &mdash; no app-switching required.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4C1;</div>
+      <h3>Folders &amp; Tags</h3>
+      <p>Organize with folders, subfolders, and tags. Star, pin, archive, or trash. Customize your sidebar to match your workflow.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x2744;</div>
+      <h3>Cold Storage</h3>
+      <p>Move old notes to a separate storage space to keep your active workspace fast and lightweight. Access anytime with biometric unlock.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x2601;</div>
+      <h3>Backup &amp; Sync</h3>
+      <p>Local compressed backups, Markdown file export, Dropbox cloud backup, and cross-device sync via Google Sign-In.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F50D;</div>
+      <h3>Focus &amp; Find</h3>
+      <p>Minimize distractions with Focus Mode. Locate and replace text across long documents with Find &amp; Replace.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4E4;</div>
+      <h3>Export Anywhere</h3>
+      <p>Share your work as Markdown, PDF, or plain text. Your notes, your format, your choice.</p>
+    </div>
+  </div>
+</div>
+</section>
 
-<p class="contact">Contact: <a href="mailto:kate.sw.kelly@gmail.com">kate.sw.kelly@gmail.com</a></p>
+<!-- Quick Capture -->
+<section class="section" style="background:var(--bg2)">
+<div class="container">
+  <div class="section-header center">
+    <p class="section-label">Capture</p>
+    <h2 class="section-title">Capture Ideas the Moment They Strike</h2>
+    <p class="section-desc">Six ways to get thoughts into Draftly without friction.</p>
+  </div>
+  <div class="capture-grid">
+    <div class="capture-item">
+      <div class="icon">&#x1F4F2;</div>
+      <div class="label">Share Menu</div>
+      <div class="desc">From any app</div>
+    </div>
+    <div class="capture-item">
+      <div class="icon">&#x1F3F7;</div>
+      <div class="label">Widget</div>
+      <div class="desc">Home screen</div>
+    </div>
+    <div class="capture-item">
+      <div class="icon">&#x2699;</div>
+      <div class="label">Quick Tile</div>
+      <div class="desc">Settings panel</div>
+    </div>
+    <div class="capture-item">
+      <div class="icon">&#x1F514;</div>
+      <div class="label">Notification</div>
+      <div class="desc">Persistent shortcut</div>
+    </div>
+    <div class="capture-item">
+      <div class="icon">&#x1F399;</div>
+      <div class="label">Voice</div>
+      <div class="desc">Speech to text</div>
+    </div>
+    <div class="capture-item">
+      <div class="icon">&#x1F4CB;</div>
+      <div class="label">Templates</div>
+      <div class="desc">One-tap start</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+<div class="container">
+  <div class="stats-grid">
+    <div>
+      <div class="stat-num">76</div>
+      <div class="stat-label">Languages</div>
+    </div>
+    <div>
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Markdown Syntaxes</div>
+    </div>
+    <div>
+      <div class="stat-num">9</div>
+      <div class="stat-label">Smart Variables</div>
+    </div>
+    <div>
+      <div class="stat-num">6</div>
+      <div class="stat-label">Capture Methods</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+  <h2>Start Writing. Stay Focused.</h2>
+  <p>Free to use. No account required. Your notes stay on your device until you decide otherwise.</p>
+  <div class="hero-cta">
+    <a href="https://play.google.com/store/apps/details?id=com.draftly.app" class="btn-primary">
+      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
+      Get Draftly on Google Play
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+  <div class="footer-links">
+    <a href="/draftly/privacy/en.html">Privacy Policy</a>
+    <a href="/draftly/terms/en.html">Terms of Service</a>
+  </div>
+  <p>Contact: <a href="mailto:kate.sw.kelly@gmail.com">kate.sw.kelly@gmail.com</a></p>
+</div>
+</footer>
 
 </body>
 </html>
