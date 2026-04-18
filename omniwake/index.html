@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OmniWake - Every Alarm, Every Schedule</title>
+<meta name="description" content="A powerful alarm app with flexible schedules, custom sounds, folders, and tags. One-time, weekday, cycle, nap timer, calendar, and more.">
+<meta property="og:title" content="OmniWake - Every Alarm, Every Schedule">
+<meta property="og:description" content="Powerful alarms with flexible scheduling, custom sounds, and cross-app Pro subscription.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://velocitycraft.app/omniwake/">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0E1A;--bg2:#0f1426;--bg3:#161d35;
+  --fg:#e8eaf2;--fg2:#9aa0bc;--fg3:#5a6080;
+  --accent:#F5A623;--accent2:#f7bc5a;--accent-soft:rgba(245,166,35,.10);
+  --border:#1e2440;--card:#111828;--card-shadow:0 1px 3px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  --radius:16px;--max-w:960px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  background:var(--bg);color:var(--fg);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── Layout ── */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+
+/* ── Hero ── */
+.hero{
+  padding:88px 0 72px;text-align:center;
+  background:radial-gradient(ellipse 80% 60% at 50% -10%, rgba(245,166,35,.12) 0%, transparent 70%);
+}
+.hero-badge{
+  display:inline-block;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);
+  padding:6px 14px;border-radius:20px;margin-bottom:24px;
+  border:1px solid rgba(245,166,35,.2);
+}
+.hero h1{
+  font-size:clamp(38px,6vw,60px);font-weight:800;letter-spacing:-.02em;
+  line-height:1.1;margin-bottom:16px;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub{
+  font-size:clamp(16px,2.5vw,20px);color:var(--fg2);
+  max-width:560px;margin:0 auto 40px;line-height:1.5;
+}
+.hero-cta{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+.hero-cta a{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:600;text-decoration:none;
+  padding:14px 28px;border-radius:12px;transition:all .2s ease;
+}
+.btn-primary{background:var(--accent);color:#0A0E1A}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 4px 20px rgba(245,166,35,.3)}
+.btn-secondary{background:var(--bg3);color:var(--fg);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.play-icon{width:20px;height:20px}
+
+/* ── Alarm Visual ── */
+.alarm-visual-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.alarm-showcase{
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+}
+@media(max-width:680px){.alarm-showcase{grid-template-columns:1fr;gap:32px}}
+.alarm-demo{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:20px;overflow:hidden;
+}
+.alarm-item{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 0;border-bottom:1px solid var(--border);
+}
+.alarm-item:last-child{border-bottom:none}
+.alarm-dot{
+  width:10px;height:10px;border-radius:50%;flex-shrink:0;
+}
+.dot-on{background:var(--accent);box-shadow:0 0 8px rgba(245,166,35,.5)}
+.dot-off{background:var(--fg3)}
+.alarm-time{font-size:22px;font-weight:700;letter-spacing:-.02em;min-width:72px}
+.alarm-time.off{color:var(--fg3)}
+.alarm-info{flex:1;min-width:0}
+.alarm-label{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.alarm-label.off{color:var(--fg3)}
+.alarm-schedule{font-size:11px;color:var(--fg3);margin-top:2px}
+.alarm-tag{
+  font-size:10px;font-weight:600;padding:2px 8px;border-radius:8px;
+  background:var(--accent-soft);color:var(--accent);white-space:nowrap;
+}
+
+/* ── Section ── */
+.section{padding:64px 0}
+.section-label{
+  font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:8px;
+}
+.section-title{
+  font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.01em;margin-bottom:12px;
+}
+.section-desc{color:var(--fg2);max-width:520px;font-size:16px;line-height:1.6}
+.section-header{margin-bottom:40px}
+.section-header.center{text-align:center}
+.section-header.center .section-desc{margin:0 auto}
+
+/* ── Feature Grid ── */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.feature-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:28px;transition:all .25s ease;
+}
+.feature-card:hover{box-shadow:var(--card-shadow);border-color:rgba(245,166,35,.2);transform:translateY(-2px)}
+.feature-icon{
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:16px;
+  background:var(--accent-soft);
+}
+.feature-card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.feature-card p{font-size:14px;color:var(--fg2);line-height:1.5}
+
+/* ── Schedule Types ── */
+.schedule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.schedule-item{
+  text-align:center;padding:24px 16px;border-radius:var(--radius);
+  background:var(--card);border:1px solid var(--border);transition:all .2s ease;
+}
+.schedule-item:hover{border-color:var(--accent);background:var(--accent-soft)}
+.schedule-item .icon{font-size:28px;margin-bottom:8px}
+.schedule-item .label{font-size:13px;font-weight:600}
+.schedule-item .desc{font-size:12px;color:var(--fg3);margin-top:4px}
+
+/* ── Pro / Cross-app ── */
+.pro-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pro-card{
+  background:linear-gradient(135deg,rgba(245,166,35,.08) 0%,rgba(245,166,35,.03) 100%);
+  border:1px solid rgba(245,166,35,.2);border-radius:var(--radius);
+  padding:40px;text-align:center;
+}
+.pro-badge{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);
+  padding:5px 12px;border-radius:16px;margin-bottom:16px;
+  border:1px solid rgba(245,166,35,.3);
+}
+.pro-card h2{font-size:clamp(22px,3.5vw,28px);font-weight:800;margin-bottom:10px}
+.pro-card p{color:var(--fg2);margin-bottom:28px;font-size:15px;max-width:480px;margin-left:auto;margin-right:auto}
+.pro-apps{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.pro-app-chip{
+  font-size:13px;font-weight:600;padding:8px 18px;border-radius:10px;
+  background:var(--bg3);border:1px solid var(--border);color:var(--fg2);
+}
+.pro-app-chip.active{background:var(--accent-soft);border-color:rgba(245,166,35,.3);color:var(--accent)}
+.pro-features{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px;
+}
+.pro-feature{font-size:13px;color:var(--fg2);display:flex;align-items:center;gap:6px}
+.pro-feature::before{content:'✓';color:var(--accent);font-weight:700}
+
+/* ── Stats Bar ── */
+.stats{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:24px;text-align:center;padding:40px 0;
+}
+.stat-num{font-size:clamp(28px,4vw,36px);font-weight:800;color:var(--accent)}
+.stat-label{font-size:13px;color:var(--fg3);margin-top:4px}
+
+/* ── CTA ── */
+.cta-section{text-align:center;padding:80px 0}
+.cta-section h2{
+  font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:12px;
+}
+.cta-section p{color:var(--fg2);margin-bottom:32px;font-size:16px}
+.cta-section .hero-cta{margin-bottom:24px}
+
+/* ── Footer ── */
+footer{
+  border-top:1px solid var(--border);padding:32px 0;text-align:center;
+  font-size:13px;color:var(--fg3);
+}
+footer a{color:var(--fg2);text-decoration:none;margin:0 12px}
+footer a:hover{color:var(--accent)}
+.footer-links{margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+<div class="container">
+  <div class="hero-badge">Alarm App &middot; Every Schedule Type</div>
+  <h1>Every Alarm,<br><span>Every Schedule.</span></h1>
+  <p class="hero-sub">A powerful alarm app built for every kind of wakeup. Flexible schedules, custom sounds, folders, and tags &mdash; exactly how you want them.</p>
+  <div class="hero-cta">
+    <a href="#" class="btn-primary">
+      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
+      Google Play
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- Alarm Visual -->
+<section class="section alarm-visual-section">
+<div class="container">
+  <div class="alarm-showcase">
+    <div>
+      <p class="section-label">Organized</p>
+      <h2 class="section-title">All Your Alarms, Under Control</h2>
+      <p class="section-desc">Folders and tags keep every alarm exactly where you expect it. Quickly toggle, snooze, or reschedule &mdash; no digging required.</p>
+    </div>
+    <div class="alarm-demo" aria-hidden="true">
+      <div class="alarm-item">
+        <div class="alarm-dot dot-on"></div>
+        <div class="alarm-time">06:30</div>
+        <div class="alarm-info">
+          <div class="alarm-label">Morning Workout</div>
+          <div class="alarm-schedule">Mon · Wed · Fri</div>
+        </div>
+        <div class="alarm-tag">Gym</div>
+      </div>
+      <div class="alarm-item">
+        <div class="alarm-dot dot-on"></div>
+        <div class="alarm-time">07:45</div>
+        <div class="alarm-info">
+          <div class="alarm-label">Office Days</div>
+          <div class="alarm-schedule">Weekdays</div>
+        </div>
+        <div class="alarm-tag">Work</div>
+      </div>
+      <div class="alarm-item">
+        <div class="alarm-dot dot-on"></div>
+        <div class="alarm-time">14:00</div>
+        <div class="alarm-info">
+          <div class="alarm-label">Power Nap</div>
+          <div class="alarm-schedule">20 min timer</div>
+        </div>
+        <div class="alarm-tag">Nap</div>
+      </div>
+      <div class="alarm-item">
+        <div class="alarm-dot dot-off"></div>
+        <div class="alarm-time off">09:00</div>
+        <div class="alarm-info">
+          <div class="alarm-label off">Weekend Sleep-in</div>
+          <div class="alarm-schedule">Sat · Sun · off</div>
+        </div>
+        <div class="alarm-tag">Home</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Schedule Types -->
+<section class="section">
+<div class="container">
+  <div class="section-header center">
+    <p class="section-label">Scheduling</p>
+    <h2 class="section-title">Seven Ways to Set an Alarm</h2>
+    <p class="section-desc">From a one-time wake-up to a complex yearly reminder &mdash; OmniWake handles every pattern.</p>
+  </div>
+  <div class="schedule-grid">
+    <div class="schedule-item">
+      <div class="icon">&#x1F552;</div>
+      <div class="label">One-Time</div>
+      <div class="desc">Single date &amp; time</div>
+    </div>
+    <div class="schedule-item">
+      <div class="icon">&#x1F5D3;</div>
+      <div class="label">Weekdays</div>
+      <div class="desc">Pick any days</div>
+    </div>
+    <div class="schedule-item">
+      <div class="icon">&#x1F504;</div>
+      <div class="label">Cycle</div>
+      <div class="desc">Every N days</div>
+    </div>
+    <div class="schedule-item">
+      <div class="icon">&#x1F634;</div>
+      <div class="label">Nap Timer</div>
+      <div class="desc">Countdown sleep</div>
+    </div>
+    <div class="schedule-item">
+      <div class="icon">&#x1F4C5;</div>
+      <div class="label">Calendar</div>
+      <div class="desc">Specific dates</div>
+    </div>
+    <div class="schedule-item">
+      <div class="icon">&#x23F3;</div>
+      <div class="label">Date Range</div>
+      <div class="desc">During a period</div>
+    </div>
+    <div class="schedule-item">
+      <div class="icon">&#x1F386;</div>
+      <div class="label">Yearly</div>
+      <div class="desc">Annual events</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Features Grid -->
+<section class="section" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<div class="container">
+  <div class="section-header center">
+    <p class="section-label">Features</p>
+    <h2 class="section-title">Built for Every Kind of Sleeper</h2>
+    <p class="section-desc">Powerful tools that adapt to your rhythm, not the other way around.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F3B5;</div>
+      <h3>Custom Alarm Sounds</h3>
+      <p>Record your own sounds, pick from a built-in library, or capture audio playing on your phone. Your alarm, your tone.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4C1;</div>
+      <h3>Folders &amp; Tags</h3>
+      <p>Organize alarms into folders and tag them by context &mdash; Work, Gym, Travel. Find any alarm instantly.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x23F0;</div>
+      <h3>Reliable Delivery</h3>
+      <p>OmniWake survives device reboots and battery savers. Alarms are automatically restored after restart.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F634;</div>
+      <h3>Nap Timer</h3>
+      <p>Set a countdown and drift off. OmniWake fires when the time is up &mdash; no schedule math needed.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4E6;</div>
+      <h3>Backup &amp; Restore</h3>
+      <p>Export all your alarms and restore them anytime. Switch phones without losing your setup.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F319;</div>
+      <h3>Dark &amp; Focused UI</h3>
+      <p>Designed for night-time glanceability. High contrast, large tap targets, minimal friction at 3 AM.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+<div class="container">
+  <div class="stats-grid">
+    <div>
+      <div class="stat-num">7</div>
+      <div class="stat-label">Schedule Types</div>
+    </div>
+    <div>
+      <div class="stat-num">&#x221E;</div>
+      <div class="stat-label">Custom Sounds (Pro)</div>
+    </div>
+    <div>
+      <div class="stat-num">&#x221E;</div>
+      <div class="stat-label">Alarms (Pro)</div>
+    </div>
+    <div>
+      <div class="stat-num">3</div>
+      <div class="stat-label">Apps, One Pro Sub</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Pro / Cross-app -->
+<section class="section pro-section">
+<div class="container">
+  <div class="pro-card">
+    <div class="pro-badge">VelocityCraft Pro</div>
+    <h2>One Subscription. Three Apps.</h2>
+    <p>Go Pro in OmniWake and unlock Pro features in Draftly and Jeter Player too &mdash; all from a single subscription.</p>
+    <div class="pro-apps">
+      <div class="pro-app-chip active">OmniWake</div>
+      <div class="pro-app-chip">Draftly</div>
+      <div class="pro-app-chip">Jeter Player</div>
+    </div>
+    <div class="pro-features">
+      <div class="pro-feature">Unlimited alarms</div>
+      <div class="pro-feature">Custom alarm sounds</div>
+      <div class="pro-feature">Advanced scheduling</div>
+      <div class="pro-feature">No ads</div>
+      <div class="pro-feature">Priority support</div>
+    </div>
+    <div class="hero-cta">
+      <a href="#" class="btn-primary">Get Pro on Google Play</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+  <h2>Wake Up on Your Terms.</h2>
+  <p>Free to download. Start with the basics and upgrade whenever you're ready.</p>
+  <div class="hero-cta">
+    <a href="#" class="btn-primary">
+      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
+      Get OmniWake on Google Play
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+  <div class="footer-links">
+    <a href="/omniwake/privacy/en.html">Privacy Policy</a>
+    <a href="/omniwake/terms/en.html">Terms of Service</a>
+  </div>
+  <p>Contact: <a href="mailto:kate.sw.kelly@gmail.com">kate.sw.kelly@gmail.com</a></p>
+</div>
+</footer>
+
+</body>
+</html>
