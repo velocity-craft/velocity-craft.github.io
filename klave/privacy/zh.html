@@ -45,6 +45,7 @@
 <p>Klave旨在将您的笔记保存在您的设备上。本应用可能收集以下有限信息:</p>
 <ul>
   <li><strong>崩溃诊断信息</strong>: 用于检测和修复错误的匿名崩溃报告和堆栈跟踪(Firebase Crashlytics)</li>
+  <li><strong>广告标识符(Android广告ID)</strong>: 显示广告时,Google移动广告SDK会访问您的Android广告ID和广告互动事件,用于广告投放、频次限制和限制欺诈活动。您可以随时通过Android设置 → 隐私 → 广告重置或删除此ID。</li>
   <li><strong>Dropbox账户信息</strong>: 当您选择连接Dropbox保险库时,您的Dropbox账户ID和OAuth访问令牌将存储在您的设备上,用于读写您授权文件夹中的文件。</li>
 </ul>
 <p>您的笔记、保险库内容和应用设置仅存储在您的设备上(或您连接的Dropbox账户中),绝不会传输到Klave运营的任何服务器。</p>
@@ -54,6 +55,7 @@
   <li><strong>崩溃诊断</strong>: 检测崩溃并改善应用稳定性</li>
   <li><strong>功能配置</strong>: Klave从Firebase Remote Config获取只读功能标记,以安全地推出实验性功能。不发送任何个人数据。</li>
   <li><strong>Dropbox集成</strong>: 用于读写您明确授权的Dropbox文件夹中的Markdown文件。</li>
+  <li><strong>广告</strong>: 通过Google的用户消息平台(UMP)收集和管理同意,并通过Google AdMob显示免费版的横幅、原生和激励广告。</li>
 </ul>
 
 <h2>3. 保留期限</h2>
@@ -61,12 +63,14 @@
   <li><strong>设备上数据</strong>: 卸载应用时所有笔记和设置都会被删除。</li>
   <li><strong>Dropbox令牌</strong>: 在您断开Dropbox连接或卸载应用之前一直存储在设备上。</li>
   <li><strong>崩溃数据</strong>: 遵循Google Firebase的数据保留政策。</li>
+  <li><strong>广告数据</strong>: 遵循Google的数据保留政策。用户可以随时重置或删除广告ID。</li>
 </ul>
 
 <h2>4. 与第三方共享</h2>
 <p>Klave不出售或共享您的个人信息。使用以下有限的第三方服务:</p>
 <ul>
   <li><strong>Google (Firebase Crashlytics、Firebase Remote Config)</strong>: 用于崩溃诊断和功能标记。遵循Google的隐私政策。</li>
+  <li><strong>Google (Google移动广告 / AdMob、用户消息平台)</strong>: 用于广告投放和同意管理。遵循Google的隐私政策。</li>
   <li><strong>Dropbox</strong>: 仅当您明确连接Dropbox保险库时使用。遵循Dropbox的隐私政策。</li>
 </ul>
 
@@ -75,8 +79,9 @@
 <ul>
   <li><strong>互联网 (INTERNET)</strong>: 与Dropbox和Firebase服务通信 [必需]</li>
   <li><strong>网络状态 (ACCESS_NETWORK_STATE)</strong>: 同步时检测连接状态 [必需]</li>
+  <li><strong>广告ID (com.google.android.gms.permission.AD_ID)</strong>: 在Android 13+中由Google移动广告SDK自动包含,用于广告投放和频次限制。[可通过Android设置 → 隐私 → 广告选择退出]</li>
 </ul>
-<p>Klave不请求访问您的麦克风、摄像头、位置、联系人或其他敏感权限。</p>
+<p>Klave不访问您的麦克风、摄像头、位置或联系人。</p>
 
 <h2>6. 安全措施</h2>
 <ul>

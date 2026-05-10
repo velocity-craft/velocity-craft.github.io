@@ -45,6 +45,7 @@
 <p>Klave is designed to keep your notes on your device. The App may collect the following limited information:</p>
 <ul>
   <li><strong>Crash diagnostics</strong>: Anonymous crash reports and stack traces (Firebase Crashlytics) to detect and fix bugs.</li>
+  <li><strong>Advertising identifier (Android Advertising ID)</strong>: When ads are shown, the Google Mobile Ads SDK accesses your Android Advertising ID and ad-interaction events for ad delivery, frequency capping, and limiting fraudulent activity. You can reset or delete this ID at any time via Android Settings → Privacy → Ads.</li>
   <li><strong>Dropbox account information</strong>: When you choose to connect a Dropbox vault, your Dropbox account ID and OAuth access token are stored on your device and used to read and write the files in the folder you authorize.</li>
 </ul>
 <p>Your notes, vault contents, and app settings are stored only on your device (or your own Dropbox account, if connected). They are never transmitted to any server operated by Klave.</p>
@@ -54,6 +55,7 @@
   <li><strong>Crash diagnostics</strong>: To detect crashes and improve app stability.</li>
   <li><strong>Feature configuration</strong>: Klave fetches read-only feature flags from Firebase Remote Config to roll out experimental features safely. No personal data is sent.</li>
   <li><strong>Dropbox integration</strong>: To read and write the markdown files in the Dropbox folder you explicitly authorize.</li>
+  <li><strong>Advertising</strong>: To display free-tier banner, native, and rewarded ads via Google AdMob, with consent collected and managed through Google's User Messaging Platform (UMP).</li>
 </ul>
 
 <h2>3. Retention Period</h2>
@@ -61,12 +63,14 @@
   <li><strong>On-device data</strong>: All notes and settings are deleted when the App is uninstalled.</li>
   <li><strong>Dropbox tokens</strong>: Stored on-device until you disconnect Dropbox or uninstall the App.</li>
   <li><strong>Crash data</strong>: Subject to Google's Firebase data retention policy.</li>
+  <li><strong>Advertising data</strong>: Subject to Google's data retention policy. The Advertising ID can be reset or deleted by the user at any time.</li>
 </ul>
 
 <h2>4. Sharing with Third Parties</h2>
 <p>Klave does not sell or share your personal information. The following limited third-party services are used:</p>
 <ul>
   <li><strong>Google (Firebase Crashlytics, Firebase Remote Config)</strong>: For crash diagnostics and feature flags. Subject to Google's privacy policy.</li>
+  <li><strong>Google (Google Mobile Ads / AdMob, User Messaging Platform)</strong>: For ad delivery and consent management. Subject to Google's privacy policy.</li>
   <li><strong>Dropbox</strong>: Only when you explicitly connect a Dropbox vault. Subject to Dropbox's privacy policy.</li>
 </ul>
 
@@ -75,8 +79,9 @@
 <ul>
   <li><strong>Internet (INTERNET)</strong>: To talk to Dropbox and Firebase services. [Required]</li>
   <li><strong>Network state (ACCESS_NETWORK_STATE)</strong>: To detect connectivity for sync. [Required]</li>
+  <li><strong>Advertising ID (com.google.android.gms.permission.AD_ID)</strong>: Automatically included by the Google Mobile Ads SDK on Android 13+ for ad delivery and frequency capping. [Can be opted out via Android Settings → Privacy → Ads]</li>
 </ul>
-<p>Klave does not request access to your microphone, camera, location, contacts, or other sensitive permissions.</p>
+<p>Klave does not request access to your microphone, camera, location, or contacts.</p>
 
 <h2>6. Security Measures</h2>
 <ul>

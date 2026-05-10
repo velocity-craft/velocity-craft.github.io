@@ -45,6 +45,7 @@
 <p>Klave est conçue pour conserver vos notes sur votre appareil. L'Application peut collecter les informations limitées suivantes :</p>
 <ul>
   <li><strong>Diagnostics de plantage</strong>: Rapports de plantage anonymes et traces de pile (Firebase Crashlytics) pour détecter et corriger les bogues.</li>
+  <li><strong>Identifiant publicitaire (ID publicitaire Android)</strong>: Lorsque des publicités sont affichées, le SDK Google Mobile Ads accède à votre ID publicitaire Android et aux événements d'interaction publicitaire pour la diffusion d'annonces, le plafonnement de la fréquence et la limitation des activités frauduleuses. Vous pouvez réinitialiser ou supprimer cet ID à tout moment via Paramètres Android → Confidentialité → Annonces.</li>
   <li><strong>Informations de compte Dropbox</strong>: Lorsque vous choisissez de connecter un coffre Dropbox, votre identifiant de compte Dropbox et votre jeton d'accès OAuth sont stockés sur votre appareil et utilisés pour lire et écrire les fichiers dans le dossier que vous autorisez.</li>
 </ul>
 <p>Vos notes, le contenu du coffre et les paramètres de l'application sont stockés uniquement sur votre appareil (ou sur votre propre compte Dropbox, si connecté). Ils ne sont jamais transmis à un serveur exploité par Klave.</p>
@@ -54,6 +55,7 @@
   <li><strong>Diagnostics de plantage</strong>: Pour détecter les plantages et améliorer la stabilité de l'application.</li>
   <li><strong>Configuration des fonctionnalités</strong>: Klave récupère des indicateurs de fonctionnalités en lecture seule depuis Firebase Remote Config pour déployer en toute sécurité des fonctionnalités expérimentales. Aucune donnée personnelle n'est envoyée.</li>
   <li><strong>Intégration Dropbox</strong>: Pour lire et écrire les fichiers Markdown dans le dossier Dropbox que vous autorisez explicitement.</li>
+  <li><strong>Publicité</strong>: Pour afficher des publicités bannière, natives et récompensées de la version gratuite via Google AdMob, avec le consentement recueilli et géré via la plateforme de messagerie utilisateur (UMP) de Google.</li>
 </ul>
 
 <h2>3. Durée de conservation</h2>
@@ -61,12 +63,14 @@
   <li><strong>Données sur l'appareil</strong>: Toutes les notes et paramètres sont supprimés lors de la désinstallation de l'Application.</li>
   <li><strong>Jetons Dropbox</strong>: Stockés sur l'appareil jusqu'à ce que vous déconnectiez Dropbox ou désinstalliez l'Application.</li>
   <li><strong>Données de plantage</strong>: Soumises à la politique de conservation des données Firebase de Google.</li>
+  <li><strong>Données publicitaires</strong>: Soumises à la politique de conservation des données de Google. L'utilisateur peut réinitialiser ou supprimer l'ID publicitaire à tout moment.</li>
 </ul>
 
 <h2>4. Partage avec des tiers</h2>
 <p>Klave ne vend ni ne partage vos informations personnelles. Les services tiers limités suivants sont utilisés :</p>
 <ul>
   <li><strong>Google (Firebase Crashlytics, Firebase Remote Config)</strong>: Pour les diagnostics de plantage et les indicateurs de fonctionnalités. Soumis à la politique de confidentialité de Google.</li>
+  <li><strong>Google (Google Mobile Ads / AdMob, plateforme de messagerie utilisateur)</strong>: Pour la diffusion d'annonces et la gestion du consentement. Soumis à la politique de confidentialité de Google.</li>
   <li><strong>Dropbox</strong>: Uniquement lorsque vous connectez explicitement un coffre Dropbox. Soumis à la politique de confidentialité de Dropbox.</li>
 </ul>
 
@@ -75,8 +79,9 @@
 <ul>
   <li><strong>Internet (INTERNET)</strong>: Pour communiquer avec les services Dropbox et Firebase. [Requis]</li>
   <li><strong>État du réseau (ACCESS_NETWORK_STATE)</strong>: Pour détecter la connectivité pour la synchronisation. [Requis]</li>
+  <li><strong>ID publicitaire (com.google.android.gms.permission.AD_ID)</strong>: Automatiquement inclus par le SDK Google Mobile Ads sur Android 13+ pour la diffusion d'annonces et le plafonnement de la fréquence. [Désactivable via Paramètres Android → Confidentialité → Annonces]</li>
 </ul>
-<p>Klave ne demande pas l'accès à votre microphone, votre caméra, votre localisation, vos contacts ou autres autorisations sensibles.</p>
+<p>Klave ne demande pas l'accès à votre microphone, votre caméra, votre localisation ou vos contacts.</p>
 
 <h2>6. Mesures de sécurité</h2>
 <ul>
