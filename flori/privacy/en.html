@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flori Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links">
+  <a href="en.html" class="active">English</a> ·
+  <a href="ko.html">한국어</a> ·
+  <a href="ja.html">日本語</a> ·
+  <a href="zh.html">中文</a> ·
+  <a href="es.html">Español</a> ·
+  <a href="fr.html">Français</a> ·
+  <a href="de.html">Deutsch</a> ·
+  <a href="pt.html">Português</a>
+</p>
+
+<h1>Flori Privacy Policy</h1>
+<p class="date">Effective date: 2026-05-10</p>
+
+<p>Flori (hereinafter "the App") values your personal information and has established the following privacy policy in accordance with applicable data protection laws.</p>
+
+<h2>1. Information Collected</h2>
+<p>Your library, quotes, photos, and notes are stored on your device by default. The App may collect the following information:</p>
+<ul>
+  <li><strong>Book metadata queries</strong>: ISBN, title, or author terms you search are sent to public book metadata providers (Google Books, Kakao Books) to fetch cover images and bibliographic information. These queries are not associated with your identity.</li>
+  <li><strong>Photos and images</strong>: Photos you capture or pick to attach to a quote are processed and stored locally on your device.</li>
+  <li><strong>Account information (optional)</strong>: If you sign in to enable cloud sync, your Google account ID is used to provision a sync identity through AWS Cognito. Your library, quotes, and book entries are then encrypted in transit and stored in our cloud database to mirror across your devices.</li>
+  <li><strong>Subscription status</strong>: For paid features, the App reads subscription state from Google Play Billing.</li>
+  <li><strong>Crash and usage diagnostics</strong>: Anonymized crash reports (Firebase Crashlytics) and product analytics events (Firebase Analytics) are collected to improve stability and inform feature decisions.</li>
+  <li><strong>Location (optional)</strong>: When you insert the location template variable into a quote or note, the App reads your last known location to fill in the value. Location data is not stored beyond the inserted text.</li>
+</ul>
+
+<h2>2. Purpose of Collection and Use</h2>
+<ul>
+  <li><strong>Book metadata</strong>: To pre-fill book information when adding a book to your library.</li>
+  <li><strong>Cloud sync</strong>: To synchronize your library across multiple devices for users with an active sync subscription.</li>
+  <li><strong>Subscriptions</strong>: To unlock paid features.</li>
+  <li><strong>Diagnostics</strong>: To detect crashes and improve service quality.</li>
+  <li><strong>Location template</strong>: To insert your current location only when you explicitly use the location template variable.</li>
+</ul>
+
+<h2>3. Retention Period</h2>
+<ul>
+  <li><strong>On-device data</strong>: Deleted when you uninstall the App.</li>
+  <li><strong>Cloud-synced data</strong>: Retained while your account is active. You may request deletion at any time via the contact email below.</li>
+  <li><strong>Diagnostics</strong>: Subject to Google's Firebase data retention policy.</li>
+</ul>
+
+<h2>4. Sharing with Third Parties</h2>
+<p>The App does not sell your personal information. Limited data is processed by the following third parties to provide the service:</p>
+<ul>
+  <li><strong>Google (Firebase Crashlytics, Analytics, Remote Config; Google Play Billing; Google Books API)</strong>: Subject to Google's privacy policy.</li>
+  <li><strong>Amazon Web Services (Cognito, DynamoDB, Lambda)</strong>: Used for cloud sync of your library, only if you opt in. Subject to AWS's privacy policy.</li>
+  <li><strong>Kakao Corp (Kakao Books API)</strong>: Used for Korean-language book metadata lookup. Subject to Kakao's privacy policy.</li>
+  <li><strong>Dropbox (optional)</strong>: When you connect a Dropbox folder for backup, your Dropbox account ID and OAuth token are stored on-device. Subject to Dropbox's privacy policy.</li>
+</ul>
+
+<h2>5. App Permissions</h2>
+<ul>
+  <li><strong>Internet (INTERNET)</strong>: Required for book metadata, cloud sync, billing, and diagnostics.</li>
+  <li><strong>Network state (ACCESS_NETWORK_STATE)</strong>: To detect connectivity for sync.</li>
+  <li><strong>Microphone (RECORD_AUDIO)</strong>: For voice-to-text quote entry. [Optional]</li>
+  <li><strong>Notifications (POST_NOTIFICATIONS)</strong>: For recall reminders and the daily quote. [Optional]</li>
+  <li><strong>Foreground service (FOREGROUND_SERVICE / FOREGROUND_SERVICE_DATA_SYNC)</strong>: For background sync. [Required when using cloud sync]</li>
+  <li><strong>Run at startup (RECEIVE_BOOT_COMPLETED)</strong>: To re-register reminder notifications.</li>
+  <li><strong>Exact alarm (SCHEDULE_EXACT_ALARM)</strong>: For precisely-timed recall reminders. [Optional]</li>
+  <li><strong>Wake lock (WAKE_LOCK)</strong>: To complete background sync without interruption.</li>
+  <li><strong>Coarse / Fine location (ACCESS_COARSE_LOCATION / ACCESS_FINE_LOCATION)</strong>: Only used when you insert the location template variable. [Optional]</li>
+</ul>
+<p>Optional permissions are requested only when the corresponding feature is used.</p>
+
+<h2>6. Security Measures</h2>
+<ul>
+  <li>All network communication uses encrypted (HTTPS) connections.</li>
+  <li>Authentication tokens are stored using Android's encrypted shared preferences.</li>
+  <li>Cloud data is transmitted with TLS and stored on managed AWS infrastructure.</li>
+</ul>
+
+<h2>7. Privacy Officer</h2>
+<ul>
+  <li>Contact: Flori Development Team</li>
+  <li>Email: kate.sw.kelly@gmail.com</li>
+</ul>
+
+<h2>8. Changes to This Policy</h2>
+<p>This privacy policy may be updated in accordance with changes in applicable laws or services. Any changes will be announced within the App.</p>
+
+</body>
+</html>

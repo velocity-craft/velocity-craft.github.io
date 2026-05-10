@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klave Datenschutzerklärung</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links">
+  <a href="en.html">English</a> ·
+  <a href="ko.html">한국어</a> ·
+  <a href="ja.html">日本語</a> ·
+  <a href="zh.html">中文</a> ·
+  <a href="es.html">Español</a> ·
+  <a href="fr.html">Français</a> ·
+  <a href="de.html" class="active">Deutsch</a> ·
+  <a href="pt.html">Português</a>
+</p>
+
+<h1>Klave Datenschutzerklärung</h1>
+<p class="date">Inkrafttreten: 2026-05-10</p>
+
+<p>Klave (nachfolgend „die App") schätzt Ihre Privatsphäre und hat die folgende Datenschutzerklärung in Übereinstimmung mit den geltenden Datenschutzgesetzen erstellt.</p>
+
+<h2>1. Erhobene Informationen</h2>
+<p>Klave ist darauf ausgelegt, Ihre Notizen auf Ihrem Gerät zu behalten. Die App kann die folgenden begrenzten Informationen erheben:</p>
+<ul>
+  <li><strong>Absturzdiagnose</strong>: Anonyme Absturzberichte und Stack-Traces (Firebase Crashlytics) zur Erkennung und Behebung von Fehlern.</li>
+  <li><strong>Dropbox-Kontoinformationen</strong>: Wenn Sie einen Dropbox-Tresor verbinden, werden Ihre Dropbox-Konto-ID und das OAuth-Zugriffstoken auf Ihrem Gerät gespeichert und verwendet, um die Dateien im autorisierten Ordner zu lesen und zu schreiben.</li>
+</ul>
+<p>Ihre Notizen, Tresorinhalte und App-Einstellungen werden nur auf Ihrem Gerät (oder Ihrem eigenen Dropbox-Konto, falls verbunden) gespeichert. Sie werden niemals an einen von Klave betriebenen Server übertragen.</p>
+
+<h2>2. Zweck der Erhebung und Nutzung</h2>
+<ul>
+  <li><strong>Absturzdiagnose</strong>: Zur Erkennung von Abstürzen und Verbesserung der App-Stabilität.</li>
+  <li><strong>Funktionskonfiguration</strong>: Klave ruft schreibgeschützte Funktions-Flags von Firebase Remote Config ab, um experimentelle Funktionen sicher einzuführen. Es werden keine personenbezogenen Daten gesendet.</li>
+  <li><strong>Dropbox-Integration</strong>: Zum Lesen und Schreiben der Markdown-Dateien im Dropbox-Ordner, den Sie ausdrücklich autorisieren.</li>
+</ul>
+
+<h2>3. Aufbewahrungsdauer</h2>
+<ul>
+  <li><strong>Daten auf dem Gerät</strong>: Alle Notizen und Einstellungen werden bei der Deinstallation der App gelöscht.</li>
+  <li><strong>Dropbox-Tokens</strong>: Werden auf dem Gerät gespeichert, bis Sie Dropbox trennen oder die App deinstallieren.</li>
+  <li><strong>Absturzdaten</strong>: Unterliegen Googles Firebase-Datenaufbewahrungsrichtlinie.</li>
+</ul>
+
+<h2>4. Weitergabe an Dritte</h2>
+<p>Klave verkauft oder teilt Ihre persönlichen Informationen nicht. Die folgenden begrenzten Drittanbieterdienste werden verwendet:</p>
+<ul>
+  <li><strong>Google (Firebase Crashlytics, Firebase Remote Config)</strong>: Für Absturzdiagnose und Funktions-Flags. Unterliegt der Datenschutzerklärung von Google.</li>
+  <li><strong>Dropbox</strong>: Nur wenn Sie ausdrücklich einen Dropbox-Tresor verbinden. Unterliegt der Datenschutzerklärung von Dropbox.</li>
+</ul>
+
+<h2>5. App-Berechtigungen</h2>
+<p>Klave verwendet die folgenden Berechtigungen:</p>
+<ul>
+  <li><strong>Internet (INTERNET)</strong>: Zur Kommunikation mit Dropbox- und Firebase-Diensten. [Erforderlich]</li>
+  <li><strong>Netzwerkstatus (ACCESS_NETWORK_STATE)</strong>: Zur Erkennung der Konnektivität für die Synchronisierung. [Erforderlich]</li>
+</ul>
+<p>Klave fordert keinen Zugriff auf Ihr Mikrofon, Ihre Kamera, Ihren Standort, Ihre Kontakte oder andere sensible Berechtigungen an.</p>
+
+<h2>6. Sicherheitsmaßnahmen</h2>
+<ul>
+  <li>Die gesamte Netzwerkkommunikation verwendet verschlüsselte Verbindungen (HTTPS).</li>
+  <li>Dropbox-OAuth-Tokens werden mit den verschlüsselten gemeinsamen Einstellungen von Android gespeichert.</li>
+</ul>
+
+<h2>7. Datenschutzbeauftragter</h2>
+<ul>
+  <li>Kontakt: Klave-Entwicklungsteam</li>
+  <li>E-Mail: kate.sw.kelly@gmail.com</li>
+</ul>
+<p>Bei Fragen zu personenbezogenen Daten kontaktieren Sie uns bitte unter der oben genannten E-Mail-Adresse.</p>
+
+<h2>8. Änderungen dieser Richtlinie</h2>
+<p>Diese Datenschutzerklärung kann gemäß Änderungen der geltenden Gesetze oder Dienste aktualisiert werden. Alle Änderungen werden in der App angekündigt.</p>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flori プライバシーポリシー</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links">
+  <a href="en.html">English</a> ·
+  <a href="ko.html">한국어</a> ·
+  <a href="ja.html" class="active">日本語</a> ·
+  <a href="zh.html">中文</a> ·
+  <a href="es.html">Español</a> ·
+  <a href="fr.html">Français</a> ·
+  <a href="de.html">Deutsch</a> ·
+  <a href="pt.html">Português</a>
+</p>
+
+<h1>Flori プライバシーポリシー</h1>
+<p class="date">施行日: 2026-05-10</p>
+
+<p>Flori(以下「本アプリ」)は、ユーザーの個人情報を大切にし、関連するデータ保護法令に従い、以下のプライバシーポリシーを定めて公開します。</p>
+
+<h2>1. 収集する情報</h2>
+<p>ライブラリ、引用、写真、メモはデフォルトで端末に保存されます。本アプリは以下の情報を収集する場合があります。</p>
+<ul>
+  <li><strong>書籍メタデータ検索</strong>: 検索するISBN、タイトル、著者名は、表紙画像と書誌情報を取得するために公開書籍メタデータプロバイダ(Google Books、カカオブックス)に送信されます。これらの検索はユーザーの身元と関連付けられません。</li>
+  <li><strong>写真と画像</strong>: 引用に添付するために撮影または選択した写真は端末で処理され、ローカルに保存されます。</li>
+  <li><strong>アカウント情報(任意)</strong>: クラウド同期を有効にするためにサインインすると、Googleアカウント IDを使用してAWS Cognitoを通じて同期IDが作成されます。ライブラリ、引用、書籍項目は転送中に暗号化され、クラウドデータベースに保存されて複数の端末間でミラーリングされます。</li>
+  <li><strong>サブスクリプション状態</strong>: 有料機能のため、Google Play Billingから購読状態を読み取ります。</li>
+  <li><strong>クラッシュおよび使用診断情報</strong>: 安定性の向上と機能の判断のため、匿名化されたクラッシュレポート(Firebase Crashlytics)と製品分析イベント(Firebase Analytics)を収集します。</li>
+  <li><strong>位置情報(任意)</strong>: 引用やメモに位置テンプレート変数を挿入する際、本アプリは最後に判明した位置を読み取って値を埋めます。位置データは挿入されたテキスト以外には保存されません。</li>
+</ul>
+
+<h2>2. 収集および利用目的</h2>
+<ul>
+  <li><strong>書籍メタデータ</strong>: ライブラリに書籍を追加する際に書籍情報を事前入力するため</li>
+  <li><strong>クラウド同期</strong>: 同期サブスクリプション加入者のライブラリを複数端末間で同期</li>
+  <li><strong>サブスクリプション</strong>: 有料機能のロック解除</li>
+  <li><strong>診断</strong>: クラッシュ検出およびサービス品質向上</li>
+  <li><strong>位置テンプレート</strong>: ユーザーが明示的に位置テンプレート変数を使用する場合のみ現在位置を挿入</li>
+</ul>
+
+<h2>3. 保有および利用期間</h2>
+<ul>
+  <li><strong>端末内データ</strong>: アプリ削除時に削除されます。</li>
+  <li><strong>クラウド同期データ</strong>: アカウントが有効な間保持されます。下記のお問い合わせメールを通じていつでも削除を要求できます。</li>
+  <li><strong>診断情報</strong>: GoogleのFirebaseデータ保持ポリシーに従います。</li>
+</ul>
+
+<h2>4. 第三者への提供</h2>
+<p>本アプリはユーザーの個人情報を販売しません。以下の第三者がサービス提供のために限られたデータを処理します。</p>
+<ul>
+  <li><strong>Google (Firebase Crashlytics、Analytics、Remote Config; Google Play Billing; Google Books API)</strong>: Googleのプライバシーポリシーに従います。</li>
+  <li><strong>Amazon Web Services (Cognito、DynamoDB、Lambda)</strong>: ユーザーが同意した場合のみライブラリのクラウド同期に使用されます。AWSのプライバシーポリシーに従います。</li>
+  <li><strong>カカオ (カカオブックスAPI)</strong>: 韓国語の書籍メタデータ検索に使用されます。カカオのプライバシーポリシーに従います。</li>
+  <li><strong>Dropbox(任意)</strong>: バックアップ用Dropboxフォルダを接続するとDropboxアカウント IDとOAuthトークンが端末に保存されます。Dropboxのプライバシーポリシーに従います。</li>
+</ul>
+
+<h2>5. アプリのアクセス権限</h2>
+<ul>
+  <li><strong>インターネット (INTERNET)</strong>: 書籍メタデータ、クラウド同期、課金、診断に必須</li>
+  <li><strong>ネットワーク状態 (ACCESS_NETWORK_STATE)</strong>: 同期のための接続状態確認</li>
+  <li><strong>マイク (RECORD_AUDIO)</strong>: 音声からテキストへの引用入力 [任意]</li>
+  <li><strong>通知 (POST_NOTIFICATIONS)</strong>: 想起リマインダーおよび毎日の引用 [任意]</li>
+  <li><strong>フォアグラウンドサービス (FOREGROUND_SERVICE / FOREGROUND_SERVICE_DATA_SYNC)</strong>: バックグラウンド同期 [クラウド同期使用時必須]</li>
+  <li><strong>起動時実行 (RECEIVE_BOOT_COMPLETED)</strong>: リマインダーの再登録</li>
+  <li><strong>正確なアラーム (SCHEDULE_EXACT_ALARM)</strong>: 正確な時刻の想起リマインダー [任意]</li>
+  <li><strong>ウェイクロック (WAKE_LOCK)</strong>: バックグラウンド同期の中断防止</li>
+  <li><strong>大まかな/正確な位置 (ACCESS_COARSE_LOCATION / ACCESS_FINE_LOCATION)</strong>: 位置テンプレート変数を使用する場合のみ使用 [任意]</li>
+</ul>
+<p>任意の権限は対応する機能の使用時にのみ要求されます。</p>
+
+<h2>6. 安全管理措置</h2>
+<ul>
+  <li>すべてのネットワーク通信は暗号化された接続(HTTPS)を使用します。</li>
+  <li>認証トークンはAndroidの暗号化されたSharedPreferencesに保存されます。</li>
+  <li>クラウドデータはTLSで送信され、管理されたAWSインフラに保存されます。</li>
+</ul>
+
+<h2>7. プライバシー責任者</h2>
+<ul>
+  <li>担当者: Flori開発チーム</li>
+  <li>メール: kate.sw.kelly@gmail.com</li>
+</ul>
+
+<h2>8. プライバシーポリシーの変更</h2>
+<p>本プライバシーポリシーは、関連法令やサービスの変更に応じて更新される場合があります。変更があった場合はアプリ内でお知らせします。</p>
+
+</body>
+</html>

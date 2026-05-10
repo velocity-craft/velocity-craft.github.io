@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klave Politique de Confidentialité</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links">
+  <a href="en.html">English</a> ·
+  <a href="ko.html">한국어</a> ·
+  <a href="ja.html">日本語</a> ·
+  <a href="zh.html">中文</a> ·
+  <a href="es.html">Español</a> ·
+  <a href="fr.html" class="active">Français</a> ·
+  <a href="de.html">Deutsch</a> ·
+  <a href="pt.html">Português</a>
+</p>
+
+<h1>Klave Politique de Confidentialité</h1>
+<p class="date">Date d'entrée en vigueur: 2026-05-10</p>
+
+<p>Klave (ci-après « l'Application ») accorde de l'importance à votre vie privée et a établi la politique de confidentialité suivante conformément aux lois applicables sur la protection des données.</p>
+
+<h2>1. Informations collectées</h2>
+<p>Klave est conçue pour conserver vos notes sur votre appareil. L'Application peut collecter les informations limitées suivantes :</p>
+<ul>
+  <li><strong>Diagnostics de plantage</strong>: Rapports de plantage anonymes et traces de pile (Firebase Crashlytics) pour détecter et corriger les bogues.</li>
+  <li><strong>Informations de compte Dropbox</strong>: Lorsque vous choisissez de connecter un coffre Dropbox, votre identifiant de compte Dropbox et votre jeton d'accès OAuth sont stockés sur votre appareil et utilisés pour lire et écrire les fichiers dans le dossier que vous autorisez.</li>
+</ul>
+<p>Vos notes, le contenu du coffre et les paramètres de l'application sont stockés uniquement sur votre appareil (ou sur votre propre compte Dropbox, si connecté). Ils ne sont jamais transmis à un serveur exploité par Klave.</p>
+
+<h2>2. Objet de la collecte et de l'utilisation</h2>
+<ul>
+  <li><strong>Diagnostics de plantage</strong>: Pour détecter les plantages et améliorer la stabilité de l'application.</li>
+  <li><strong>Configuration des fonctionnalités</strong>: Klave récupère des indicateurs de fonctionnalités en lecture seule depuis Firebase Remote Config pour déployer en toute sécurité des fonctionnalités expérimentales. Aucune donnée personnelle n'est envoyée.</li>
+  <li><strong>Intégration Dropbox</strong>: Pour lire et écrire les fichiers Markdown dans le dossier Dropbox que vous autorisez explicitement.</li>
+</ul>
+
+<h2>3. Durée de conservation</h2>
+<ul>
+  <li><strong>Données sur l'appareil</strong>: Toutes les notes et paramètres sont supprimés lors de la désinstallation de l'Application.</li>
+  <li><strong>Jetons Dropbox</strong>: Stockés sur l'appareil jusqu'à ce que vous déconnectiez Dropbox ou désinstalliez l'Application.</li>
+  <li><strong>Données de plantage</strong>: Soumises à la politique de conservation des données Firebase de Google.</li>
+</ul>
+
+<h2>4. Partage avec des tiers</h2>
+<p>Klave ne vend ni ne partage vos informations personnelles. Les services tiers limités suivants sont utilisés :</p>
+<ul>
+  <li><strong>Google (Firebase Crashlytics, Firebase Remote Config)</strong>: Pour les diagnostics de plantage et les indicateurs de fonctionnalités. Soumis à la politique de confidentialité de Google.</li>
+  <li><strong>Dropbox</strong>: Uniquement lorsque vous connectez explicitement un coffre Dropbox. Soumis à la politique de confidentialité de Dropbox.</li>
+</ul>
+
+<h2>5. Autorisations de l'Application</h2>
+<p>Klave utilise les autorisations suivantes :</p>
+<ul>
+  <li><strong>Internet (INTERNET)</strong>: Pour communiquer avec les services Dropbox et Firebase. [Requis]</li>
+  <li><strong>État du réseau (ACCESS_NETWORK_STATE)</strong>: Pour détecter la connectivité pour la synchronisation. [Requis]</li>
+</ul>
+<p>Klave ne demande pas l'accès à votre microphone, votre caméra, votre localisation, vos contacts ou autres autorisations sensibles.</p>
+
+<h2>6. Mesures de sécurité</h2>
+<ul>
+  <li>Toutes les communications réseau utilisent des connexions chiffrées (HTTPS).</li>
+  <li>Les jetons OAuth Dropbox sont stockés à l'aide des préférences partagées chiffrées d'Android.</li>
+</ul>
+
+<h2>7. Responsable de la confidentialité</h2>
+<ul>
+  <li>Contact : Équipe de développement Klave</li>
+  <li>Email : kate.sw.kelly@gmail.com</li>
+</ul>
+<p>Pour toute question concernant les informations personnelles, veuillez nous contacter à l'adresse e-mail ci-dessus.</p>
+
+<h2>8. Modifications de cette politique</h2>
+<p>Cette politique de confidentialité peut être mise à jour conformément aux modifications des lois ou services applicables. Toute modification sera annoncée dans l'Application.</p>
+
+</body>
+</html>
