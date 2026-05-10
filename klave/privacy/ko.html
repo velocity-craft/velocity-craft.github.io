@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klave 개인정보처리방침</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links">
+  <a href="en.html">English</a> ·
+  <a href="ko.html" class="active">한국어</a> ·
+  <a href="ja.html">日本語</a> ·
+  <a href="zh.html">中文</a> ·
+  <a href="es.html">Español</a> ·
+  <a href="fr.html">Français</a> ·
+  <a href="de.html">Deutsch</a> ·
+  <a href="pt.html">Português</a>
+</p>
+
+<h1>Klave 개인정보처리방침</h1>
+<p class="date">시행일: 2026-05-10</p>
+
+<p>Klave(이하 "앱")는 사용자의 개인정보를 소중히 여기며, 「개인정보 보호법」에 따라 아래와 같이 개인정보처리방침을 수립하여 공개합니다.</p>
+
+<h2>1. 수집하는 정보 항목</h2>
+<p>Klave는 사용자의 노트를 기기에 보관하도록 설계되었습니다. 앱은 다음의 제한된 정보를 수집할 수 있습니다.</p>
+<ul>
+  <li><strong>크래시 진단 정보</strong>: 버그 탐지·수정을 위한 익명 크래시 보고서 및 스택 트레이스 (Firebase Crashlytics)</li>
+  <li><strong>Dropbox 계정 정보</strong>: 사용자가 Dropbox 금고 연결을 선택한 경우, Dropbox 계정 ID와 OAuth 액세스 토큰이 기기에 저장되어 사용자가 승인한 폴더의 파일을 읽고 쓰는 데 사용됩니다.</li>
+</ul>
+<p>노트, 금고 콘텐츠, 앱 설정은 사용자의 기기(또는 연결한 Dropbox 계정)에만 저장되며, Klave가 운영하는 어떤 서버로도 전송되지 않습니다.</p>
+
+<h2>2. 정보의 수집 및 이용 목적</h2>
+<ul>
+  <li><strong>크래시 진단</strong>: 비정상 종료 분석 및 앱 안정성 향상</li>
+  <li><strong>기능 구성</strong>: Klave는 실험적 기능을 안전하게 배포하기 위해 Firebase Remote Config에서 읽기 전용 기능 플래그를 가져옵니다. 개인 정보는 전송되지 않습니다.</li>
+  <li><strong>Dropbox 연동</strong>: 사용자가 명시적으로 승인한 Dropbox 폴더의 마크다운 파일을 읽고 쓰는 데 사용됩니다.</li>
+</ul>
+
+<h2>3. 정보의 보유 및 이용 기간</h2>
+<ul>
+  <li><strong>기기 내 데이터</strong>: 앱 삭제 시 모든 노트와 설정이 함께 삭제됩니다.</li>
+  <li><strong>Dropbox 토큰</strong>: Dropbox 연결을 해제하거나 앱을 삭제할 때까지 기기에 저장됩니다.</li>
+  <li><strong>크래시 데이터</strong>: Google Firebase의 데이터 보존 정책을 따릅니다.</li>
+</ul>
+
+<h2>4. 제3자 제공</h2>
+<p>Klave는 사용자의 개인정보를 판매하거나 공유하지 않습니다. 다음의 제한된 제3자 서비스가 사용됩니다.</p>
+<ul>
+  <li><strong>Google (Firebase Crashlytics, Firebase Remote Config)</strong>: 크래시 진단 및 기능 플래그용. Google의 개인정보처리방침을 따릅니다.</li>
+  <li><strong>Dropbox</strong>: 사용자가 명시적으로 Dropbox 금고를 연결한 경우에만 사용됩니다. Dropbox의 개인정보처리방침을 따릅니다.</li>
+</ul>
+
+<h2>5. 앱 접근 권한</h2>
+<p>Klave는 다음의 접근 권한을 사용합니다.</p>
+<ul>
+  <li><strong>인터넷 (INTERNET)</strong>: Dropbox 및 Firebase 서비스 통신용 [필수]</li>
+  <li><strong>네트워크 상태 (ACCESS_NETWORK_STATE)</strong>: 동기화 시 연결 상태 확인 [필수]</li>
+</ul>
+<p>Klave는 마이크, 카메라, 위치, 연락처 또는 기타 민감한 권한에 접근하지 않습니다.</p>
+
+<h2>6. 안전성 확보 조치</h2>
+<ul>
+  <li>모든 네트워크 통신은 암호화된 연결(HTTPS)을 사용합니다.</li>
+  <li>Dropbox OAuth 토큰은 Android의 암호화된 SharedPreferences에 저장됩니다.</li>
+</ul>
+
+<h2>7. 개인정보 보호책임자</h2>
+<ul>
+  <li>담당자: Klave 개발팀</li>
+  <li>이메일: kate.sw.kelly@gmail.com</li>
+</ul>
+<p>개인정보 관련 문의사항은 위 이메일로 연락해 주시기 바랍니다.</p>
+
+<h2>8. 개인정보처리방침의 변경</h2>
+<p>본 개인정보처리방침은 관련 법률 및 서비스 변경에 따라 수정될 수 있으며, 변경 시 앱 내 공지를 통해 안내합니다.</p>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flori Politique de Confidentialité</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links">
+  <a href="en.html">English</a> ·
+  <a href="ko.html">한국어</a> ·
+  <a href="ja.html">日本語</a> ·
+  <a href="zh.html">中文</a> ·
+  <a href="es.html">Español</a> ·
+  <a href="fr.html" class="active">Français</a> ·
+  <a href="de.html">Deutsch</a> ·
+  <a href="pt.html">Português</a>
+</p>
+
+<h1>Flori Politique de Confidentialité</h1>
+<p class="date">Date d'entrée en vigueur: 2026-05-10</p>
+
+<p>Flori (ci-après « l'Application ») accorde de l'importance à vos informations personnelles et a établi la politique de confidentialité suivante conformément aux lois applicables sur la protection des données.</p>
+
+<h2>1. Informations collectées</h2>
+<p>Votre bibliothèque, vos citations, vos photos et vos notes sont stockées sur votre appareil par défaut. L'Application peut collecter les informations suivantes :</p>
+<ul>
+  <li><strong>Requêtes de métadonnées de livres</strong>: Les termes ISBN, titre ou auteur que vous recherchez sont envoyés à des fournisseurs publics de métadonnées de livres (Google Books, Kakao Books) pour récupérer les images de couverture et les informations bibliographiques. Ces requêtes ne sont pas associées à votre identité.</li>
+  <li><strong>Photos et images</strong>: Les photos que vous capturez ou sélectionnez pour les joindre à une citation sont traitées et stockées localement sur votre appareil.</li>
+  <li><strong>Informations de compte (facultatif)</strong>: Si vous vous connectez pour activer la synchronisation cloud, votre ID de compte Google est utilisé pour fournir une identité de synchronisation via AWS Cognito. Votre bibliothèque, vos citations et vos entrées de livres sont alors chiffrées en transit et stockées dans notre base de données cloud pour être reflétées sur vos appareils.</li>
+  <li><strong>État de l'abonnement</strong>: Pour les fonctionnalités payantes, l'Application lit l'état de l'abonnement depuis Google Play Billing.</li>
+  <li><strong>Diagnostics de plantage et d'utilisation</strong>: Des rapports de plantage anonymisés (Firebase Crashlytics) et des événements d'analyse de produit (Firebase Analytics) sont collectés pour améliorer la stabilité et orienter les décisions de fonctionnalités.</li>
+  <li><strong>Localisation (facultatif)</strong>: Lorsque vous insérez la variable de modèle de localisation dans une citation ou une note, l'Application lit votre dernière localisation connue pour remplir la valeur. Les données de localisation ne sont pas stockées au-delà du texte inséré.</li>
+</ul>
+
+<h2>2. Objet de la collecte et de l'utilisation</h2>
+<ul>
+  <li><strong>Métadonnées de livres</strong>: Pour préremplir les informations du livre lors de l'ajout d'un livre à votre bibliothèque.</li>
+  <li><strong>Synchronisation cloud</strong>: Pour synchroniser votre bibliothèque sur plusieurs appareils pour les utilisateurs avec un abonnement de synchronisation actif.</li>
+  <li><strong>Abonnements</strong>: Pour déverrouiller les fonctionnalités payantes.</li>
+  <li><strong>Diagnostics</strong>: Pour détecter les plantages et améliorer la qualité du service.</li>
+  <li><strong>Modèle de localisation</strong>: Pour insérer votre localisation actuelle uniquement lorsque vous utilisez explicitement la variable de modèle de localisation.</li>
+</ul>
+
+<h2>3. Durée de conservation</h2>
+<ul>
+  <li><strong>Données sur l'appareil</strong>: Supprimées lors de la désinstallation de l'Application.</li>
+  <li><strong>Données synchronisées dans le cloud</strong>: Conservées tant que votre compte est actif. Vous pouvez demander la suppression à tout moment via l'e-mail de contact ci-dessous.</li>
+  <li><strong>Diagnostics</strong>: Soumis à la politique de conservation des données Firebase de Google.</li>
+</ul>
+
+<h2>4. Partage avec des tiers</h2>
+<p>L'Application ne vend pas vos informations personnelles. Les tiers suivants traitent des données limitées pour fournir le service :</p>
+<ul>
+  <li><strong>Google (Firebase Crashlytics, Analytics, Remote Config ; Google Play Billing ; Google Books API)</strong>: Soumis à la politique de confidentialité de Google.</li>
+  <li><strong>Amazon Web Services (Cognito, DynamoDB, Lambda)</strong>: Utilisé pour la synchronisation cloud de votre bibliothèque, uniquement si vous y consentez. Soumis à la politique de confidentialité d'AWS.</li>
+  <li><strong>Kakao Corp (Kakao Books API)</strong>: Utilisé pour la recherche de métadonnées de livres en coréen. Soumis à la politique de confidentialité de Kakao.</li>
+  <li><strong>Dropbox (facultatif)</strong>: Lorsque vous connectez un dossier Dropbox pour la sauvegarde, votre ID de compte Dropbox et votre jeton OAuth sont stockés sur l'appareil. Soumis à la politique de confidentialité de Dropbox.</li>
+</ul>
+
+<h2>5. Autorisations de l'Application</h2>
+<ul>
+  <li><strong>Internet (INTERNET)</strong>: Requis pour les métadonnées de livres, la synchronisation cloud, la facturation et les diagnostics.</li>
+  <li><strong>État du réseau (ACCESS_NETWORK_STATE)</strong>: Pour détecter la connectivité pour la synchronisation.</li>
+  <li><strong>Microphone (RECORD_AUDIO)</strong>: Pour la saisie de citations par reconnaissance vocale. [Facultatif]</li>
+  <li><strong>Notifications (POST_NOTIFICATIONS)</strong>: Pour les rappels de mémoire et la citation quotidienne. [Facultatif]</li>
+  <li><strong>Service en premier plan (FOREGROUND_SERVICE / FOREGROUND_SERVICE_DATA_SYNC)</strong>: Pour la synchronisation en arrière-plan. [Requis lors de l'utilisation de la synchronisation cloud]</li>
+  <li><strong>Exécution au démarrage (RECEIVE_BOOT_COMPLETED)</strong>: Pour réenregistrer les notifications de rappel.</li>
+  <li><strong>Alarme exacte (SCHEDULE_EXACT_ALARM)</strong>: Pour les rappels de mémoire à heure précise. [Facultatif]</li>
+  <li><strong>Verrou de réveil (WAKE_LOCK)</strong>: Pour terminer la synchronisation en arrière-plan sans interruption.</li>
+  <li><strong>Localisation approximative / précise (ACCESS_COARSE_LOCATION / ACCESS_FINE_LOCATION)</strong>: Utilisée uniquement lorsque vous insérez la variable de modèle de localisation. [Facultatif]</li>
+</ul>
+<p>Les autorisations facultatives ne sont demandées que lorsque la fonction correspondante est utilisée.</p>
+
+<h2>6. Mesures de sécurité</h2>
+<ul>
+  <li>Toutes les communications réseau utilisent des connexions chiffrées (HTTPS).</li>
+  <li>Les jetons d'authentification sont stockés à l'aide des préférences partagées chiffrées d'Android.</li>
+  <li>Les données cloud sont transmises avec TLS et stockées sur une infrastructure AWS gérée.</li>
+</ul>
+
+<h2>7. Responsable de la confidentialité</h2>
+<ul>
+  <li>Contact : Équipe de développement Flori</li>
+  <li>Email : kate.sw.kelly@gmail.com</li>
+</ul>
+
+<h2>8. Modifications de cette politique</h2>
+<p>Cette politique de confidentialité peut être mise à jour conformément aux modifications des lois ou services applicables. Toute modification sera annoncée dans l'Application.</p>
+
+</body>
+</html>

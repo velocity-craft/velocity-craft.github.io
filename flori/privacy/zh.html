@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flori 隐私政策</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links">
+  <a href="en.html">English</a> ·
+  <a href="ko.html">한국어</a> ·
+  <a href="ja.html">日本語</a> ·
+  <a href="zh.html" class="active">中文</a> ·
+  <a href="es.html">Español</a> ·
+  <a href="fr.html">Français</a> ·
+  <a href="de.html">Deutsch</a> ·
+  <a href="pt.html">Português</a>
+</p>
+
+<h1>Flori 隐私政策</h1>
+<p class="date">生效日期: 2026-05-10</p>
+
+<p>Flori(以下简称"本应用")重视您的个人信息,并根据适用的数据保护法律制定以下隐私政策。</p>
+
+<h2>1. 收集的信息</h2>
+<p>您的图书馆、引文、照片和笔记默认存储在您的设备上。本应用可能收集以下信息:</p>
+<ul>
+  <li><strong>图书元数据查询</strong>: 您搜索的ISBN、标题或作者词条会发送到公共图书元数据提供商(Google图书、Kakao Books)以获取封面图像和书目信息。这些查询不与您的身份相关联。</li>
+  <li><strong>照片和图像</strong>: 您拍摄或选择以附加到引文的照片在您的设备上处理并本地存储。</li>
+  <li><strong>账户信息(可选)</strong>: 如果您登录以启用云同步,您的Google账户ID将通过AWS Cognito用于配置同步身份。然后您的图书馆、引文和图书条目将在传输过程中加密并存储在我们的云数据库中,以便在您的设备之间镜像。</li>
+  <li><strong>订阅状态</strong>: 对于付费功能,本应用从Google Play Billing读取订阅状态。</li>
+  <li><strong>崩溃和使用诊断</strong>: 收集匿名崩溃报告(Firebase Crashlytics)和产品分析事件(Firebase Analytics)以提高稳定性和指导功能决策。</li>
+  <li><strong>位置(可选)</strong>: 当您将位置模板变量插入引文或笔记时,本应用读取您最后已知的位置以填充值。位置数据不会在插入文本之外存储。</li>
+</ul>
+
+<h2>2. 收集和使用目的</h2>
+<ul>
+  <li><strong>图书元数据</strong>: 添加图书到图书馆时预填图书信息</li>
+  <li><strong>云同步</strong>: 为有活跃同步订阅的用户在多个设备间同步图书馆</li>
+  <li><strong>订阅</strong>: 解锁付费功能</li>
+  <li><strong>诊断</strong>: 检测崩溃并提高服务质量</li>
+  <li><strong>位置模板</strong>: 仅在您明确使用位置模板变量时插入您当前的位置</li>
+</ul>
+
+<h2>3. 保留期限</h2>
+<ul>
+  <li><strong>设备上数据</strong>: 卸载应用时删除。</li>
+  <li><strong>云同步数据</strong>: 您的账户活跃期间保留。您可以随时通过下面的联系邮箱请求删除。</li>
+  <li><strong>诊断</strong>: 遵循Google Firebase的数据保留政策。</li>
+</ul>
+
+<h2>4. 与第三方共享</h2>
+<p>本应用不出售您的个人信息。以下第三方处理有限的数据以提供服务:</p>
+<ul>
+  <li><strong>Google (Firebase Crashlytics、Analytics、Remote Config; Google Play Billing; Google图书API)</strong>: 遵循Google的隐私政策。</li>
+  <li><strong>Amazon Web Services (Cognito、DynamoDB、Lambda)</strong>: 仅在您选择启用时用于图书馆云同步。遵循AWS的隐私政策。</li>
+  <li><strong>Kakao公司 (Kakao Books API)</strong>: 用于韩语图书元数据查询。遵循Kakao的隐私政策。</li>
+  <li><strong>Dropbox(可选)</strong>: 当您连接Dropbox文件夹进行备份时,您的Dropbox账户ID和OAuth令牌存储在设备上。遵循Dropbox的隐私政策。</li>
+</ul>
+
+<h2>5. 应用权限</h2>
+<ul>
+  <li><strong>互联网 (INTERNET)</strong>: 图书元数据、云同步、计费和诊断所需</li>
+  <li><strong>网络状态 (ACCESS_NETWORK_STATE)</strong>: 同步时检测连接状态</li>
+  <li><strong>麦克风 (RECORD_AUDIO)</strong>: 语音转文字引文输入 [可选]</li>
+  <li><strong>通知 (POST_NOTIFICATIONS)</strong>: 回想提醒和每日引文 [可选]</li>
+  <li><strong>前台服务 (FOREGROUND_SERVICE / FOREGROUND_SERVICE_DATA_SYNC)</strong>: 后台同步 [使用云同步时必需]</li>
+  <li><strong>开机启动 (RECEIVE_BOOT_COMPLETED)</strong>: 重新注册提醒通知</li>
+  <li><strong>精确闹钟 (SCHEDULE_EXACT_ALARM)</strong>: 精确定时的回想提醒 [可选]</li>
+  <li><strong>唤醒锁 (WAKE_LOCK)</strong>: 不间断地完成后台同步</li>
+  <li><strong>粗略/精确位置 (ACCESS_COARSE_LOCATION / ACCESS_FINE_LOCATION)</strong>: 仅在插入位置模板变量时使用 [可选]</li>
+</ul>
+<p>可选权限仅在使用相应功能时请求。</p>
+
+<h2>6. 安全措施</h2>
+<ul>
+  <li>所有网络通信使用加密连接(HTTPS)。</li>
+  <li>身份验证令牌使用Android的加密SharedPreferences存储。</li>
+  <li>云数据通过TLS传输并存储在托管的AWS基础设施上。</li>
+</ul>
+
+<h2>7. 隐私负责人</h2>
+<ul>
+  <li>联系人: Flori开发团队</li>
+  <li>邮箱: kate.sw.kelly@gmail.com</li>
+</ul>
+
+<h2>8. 本政策的变更</h2>
+<p>本隐私政策可能会根据适用法律或服务的变化而更新。任何变更将在应用内公布。</p>
+
+</body>
+</html>
