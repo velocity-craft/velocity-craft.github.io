@@ -45,6 +45,7 @@
 <p>O Klave foi concebido para manter as suas notas no seu dispositivo. A Aplicação pode recolher as seguintes informações limitadas:</p>
 <ul>
   <li><strong>Diagnóstico de falhas</strong>: Relatórios anónimos de falhas e rastreios de pilha (Firebase Crashlytics) para detetar e corrigir erros.</li>
+  <li><strong>Identificador publicitário (ID de publicidade Android)</strong>: Quando são apresentados anúncios, o SDK de Anúncios do Google Mobile acede ao seu ID de publicidade Android e aos eventos de interação com anúncios para entrega de anúncios, limitação de frequência e prevenção de atividades fraudulentas. Pode redefinir ou eliminar este ID a qualquer momento através de Definições do Android → Privacidade → Anúncios.</li>
   <li><strong>Informação da conta Dropbox</strong>: Quando opta por ligar um cofre Dropbox, o seu ID de conta Dropbox e o token de acesso OAuth são armazenados no seu dispositivo e utilizados para ler e escrever os ficheiros na pasta que autoriza.</li>
 </ul>
 <p>As suas notas, conteúdos do cofre e definições da aplicação são armazenados apenas no seu dispositivo (ou na sua própria conta Dropbox, se ligada). Nunca são transmitidos para qualquer servidor operado pelo Klave.</p>
@@ -54,6 +55,7 @@
   <li><strong>Diagnóstico de falhas</strong>: Para detetar falhas e melhorar a estabilidade da aplicação.</li>
   <li><strong>Configuração de funcionalidades</strong>: O Klave obtém indicadores de funcionalidades só de leitura do Firebase Remote Config para lançar funcionalidades experimentais em segurança. Não são enviados dados pessoais.</li>
   <li><strong>Integração com Dropbox</strong>: Para ler e escrever os ficheiros Markdown na pasta Dropbox que autoriza explicitamente.</li>
+  <li><strong>Publicidade</strong>: Para apresentar anúncios de banner, nativos e recompensados da versão gratuita através do Google AdMob, com consentimento recolhido e gerido através da Plataforma de Mensagens ao Utilizador (UMP) da Google.</li>
 </ul>
 
 <h2>3. Período de Retenção</h2>
@@ -61,12 +63,14 @@
   <li><strong>Dados no dispositivo</strong>: Todas as notas e definições são eliminadas quando a Aplicação é desinstalada.</li>
   <li><strong>Tokens Dropbox</strong>: Armazenados no dispositivo até desligar o Dropbox ou desinstalar a Aplicação.</li>
   <li><strong>Dados de falhas</strong>: Sujeitos à política de retenção de dados do Firebase da Google.</li>
+  <li><strong>Dados publicitários</strong>: Sujeitos à política de retenção de dados da Google. O ID de publicidade pode ser redefinido ou eliminado pelo utilizador a qualquer momento.</li>
 </ul>
 
 <h2>4. Partilha com Terceiros</h2>
 <p>O Klave não vende nem partilha as suas informações pessoais. São utilizados os seguintes serviços limitados de terceiros:</p>
 <ul>
   <li><strong>Google (Firebase Crashlytics, Firebase Remote Config)</strong>: Para diagnóstico de falhas e indicadores de funcionalidades. Sujeito à política de privacidade da Google.</li>
+  <li><strong>Google (Google Mobile Ads / AdMob, Plataforma de Mensagens ao Utilizador)</strong>: Para entrega de anúncios e gestão de consentimento. Sujeito à política de privacidade da Google.</li>
   <li><strong>Dropbox</strong>: Apenas quando liga explicitamente um cofre Dropbox. Sujeito à política de privacidade do Dropbox.</li>
 </ul>
 
@@ -75,8 +79,9 @@
 <ul>
   <li><strong>Internet (INTERNET)</strong>: Para comunicar com os serviços Dropbox e Firebase. [Obrigatório]</li>
   <li><strong>Estado da rede (ACCESS_NETWORK_STATE)</strong>: Para detetar conectividade para sincronização. [Obrigatório]</li>
+  <li><strong>ID de publicidade (com.google.android.gms.permission.AD_ID)</strong>: Incluído automaticamente pelo SDK do Google Mobile Ads no Android 13+ para entrega de anúncios e limitação de frequência. [Pode ser desativado através de Definições do Android → Privacidade → Anúncios]</li>
 </ul>
-<p>O Klave não solicita acesso ao seu microfone, câmara, localização, contactos ou outras permissões sensíveis.</p>
+<p>O Klave não solicita acesso ao seu microfone, câmara, localização ou contactos.</p>
 
 <h2>6. Medidas de Segurança</h2>
 <ul>

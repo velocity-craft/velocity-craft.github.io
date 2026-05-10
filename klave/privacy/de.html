@@ -45,6 +45,7 @@
 <p>Klave ist darauf ausgelegt, Ihre Notizen auf Ihrem Gerät zu behalten. Die App kann die folgenden begrenzten Informationen erheben:</p>
 <ul>
   <li><strong>Absturzdiagnose</strong>: Anonyme Absturzberichte und Stack-Traces (Firebase Crashlytics) zur Erkennung und Behebung von Fehlern.</li>
+  <li><strong>Werbe-Identifikator (Android-Werbe-ID)</strong>: Wenn Anzeigen geschaltet werden, greift das Google Mobile Ads SDK auf Ihre Android-Werbe-ID und Anzeigen-Interaktionsereignisse zu, um Anzeigen auszuliefern, die Häufigkeit zu begrenzen und betrügerische Aktivitäten einzuschränken. Sie können diese ID jederzeit über Android-Einstellungen → Datenschutz → Werbung zurücksetzen oder löschen.</li>
   <li><strong>Dropbox-Kontoinformationen</strong>: Wenn Sie einen Dropbox-Tresor verbinden, werden Ihre Dropbox-Konto-ID und das OAuth-Zugriffstoken auf Ihrem Gerät gespeichert und verwendet, um die Dateien im autorisierten Ordner zu lesen und zu schreiben.</li>
 </ul>
 <p>Ihre Notizen, Tresorinhalte und App-Einstellungen werden nur auf Ihrem Gerät (oder Ihrem eigenen Dropbox-Konto, falls verbunden) gespeichert. Sie werden niemals an einen von Klave betriebenen Server übertragen.</p>
@@ -54,6 +55,7 @@
   <li><strong>Absturzdiagnose</strong>: Zur Erkennung von Abstürzen und Verbesserung der App-Stabilität.</li>
   <li><strong>Funktionskonfiguration</strong>: Klave ruft schreibgeschützte Funktions-Flags von Firebase Remote Config ab, um experimentelle Funktionen sicher einzuführen. Es werden keine personenbezogenen Daten gesendet.</li>
   <li><strong>Dropbox-Integration</strong>: Zum Lesen und Schreiben der Markdown-Dateien im Dropbox-Ordner, den Sie ausdrücklich autorisieren.</li>
+  <li><strong>Werbung</strong>: Zur Anzeige von kostenlosen Banner-, Native- und Rewarded-Anzeigen über Google AdMob, wobei die Einwilligung über Googles User Messaging Platform (UMP) eingeholt und verwaltet wird.</li>
 </ul>
 
 <h2>3. Aufbewahrungsdauer</h2>
@@ -61,12 +63,14 @@
   <li><strong>Daten auf dem Gerät</strong>: Alle Notizen und Einstellungen werden bei der Deinstallation der App gelöscht.</li>
   <li><strong>Dropbox-Tokens</strong>: Werden auf dem Gerät gespeichert, bis Sie Dropbox trennen oder die App deinstallieren.</li>
   <li><strong>Absturzdaten</strong>: Unterliegen Googles Firebase-Datenaufbewahrungsrichtlinie.</li>
+  <li><strong>Werbedaten</strong>: Unterliegen Googles Datenaufbewahrungsrichtlinie. Die Werbe-ID kann vom Benutzer jederzeit zurückgesetzt oder gelöscht werden.</li>
 </ul>
 
 <h2>4. Weitergabe an Dritte</h2>
 <p>Klave verkauft oder teilt Ihre persönlichen Informationen nicht. Die folgenden begrenzten Drittanbieterdienste werden verwendet:</p>
 <ul>
   <li><strong>Google (Firebase Crashlytics, Firebase Remote Config)</strong>: Für Absturzdiagnose und Funktions-Flags. Unterliegt der Datenschutzerklärung von Google.</li>
+  <li><strong>Google (Google Mobile Ads / AdMob, User Messaging Platform)</strong>: Für die Anzeigenauslieferung und Einwilligungsverwaltung. Unterliegt der Datenschutzerklärung von Google.</li>
   <li><strong>Dropbox</strong>: Nur wenn Sie ausdrücklich einen Dropbox-Tresor verbinden. Unterliegt der Datenschutzerklärung von Dropbox.</li>
 </ul>
 
@@ -75,8 +79,9 @@
 <ul>
   <li><strong>Internet (INTERNET)</strong>: Zur Kommunikation mit Dropbox- und Firebase-Diensten. [Erforderlich]</li>
   <li><strong>Netzwerkstatus (ACCESS_NETWORK_STATE)</strong>: Zur Erkennung der Konnektivität für die Synchronisierung. [Erforderlich]</li>
+  <li><strong>Werbe-ID (com.google.android.gms.permission.AD_ID)</strong>: Automatisch vom Google Mobile Ads SDK auf Android 13+ für die Anzeigenauslieferung und Häufigkeitsbegrenzung enthalten. [Kann über Android-Einstellungen → Datenschutz → Werbung deaktiviert werden]</li>
 </ul>
-<p>Klave fordert keinen Zugriff auf Ihr Mikrofon, Ihre Kamera, Ihren Standort, Ihre Kontakte oder andere sensible Berechtigungen an.</p>
+<p>Klave fordert keinen Zugriff auf Ihr Mikrofon, Ihre Kamera, Ihren Standort oder Ihre Kontakte an.</p>
 
 <h2>6. Sicherheitsmaßnahmen</h2>
 <ul>

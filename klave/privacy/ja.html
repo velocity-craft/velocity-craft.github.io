@@ -45,6 +45,7 @@
 <p>Klaveはユーザーのノートを端末内に保管するよう設計されています。本アプリは以下の限られた情報を収集する場合があります。</p>
 <ul>
   <li><strong>クラッシュ診断情報</strong>: バグの検出と修正のための匿名クラッシュレポートおよびスタックトレース(Firebase Crashlytics)</li>
+  <li><strong>広告識別子(Android広告ID)</strong>: 広告が表示される際、Googleモバイル広告SDKが広告配信、フリークエンシーキャップ、不正行為の制限のため、Android広告IDと広告操作イベントにアクセスします。Android設定 → プライバシー → 広告から、いつでもこのIDをリセットまたは削除できます。</li>
   <li><strong>Dropboxアカウント情報</strong>: ユーザーがDropboxボールトの接続を選択した場合、DropboxアカウントIDとOAuthアクセストークンが端末に保存され、ユーザーが許可したフォルダのファイルの読み書きに使用されます。</li>
 </ul>
 <p>ノート、ボールトの内容、アプリ設定はユーザーの端末(または接続したDropboxアカウント)にのみ保存され、Klaveが運営するサーバーへは一切送信されません。</p>
@@ -54,6 +55,7 @@
   <li><strong>クラッシュ診断</strong>: クラッシュの検出とアプリの安定性向上</li>
   <li><strong>機能設定</strong>: 実験的機能を安全に展開するため、Firebase Remote Configから読み取り専用の機能フラグを取得します。個人情報は送信されません。</li>
   <li><strong>Dropbox連携</strong>: ユーザーが明示的に許可したDropboxフォルダ内のマークダウンファイルの読み書きに使用されます。</li>
+  <li><strong>広告</strong>: Googleのユーザーメッセージングプラットフォーム(UMP)を通じて同意を収集・管理しながら、Google AdMobを通じて無料版のバナー、ネイティブ、リワード広告を表示します。</li>
 </ul>
 
 <h2>3. 保有および利用期間</h2>
@@ -61,12 +63,14 @@
   <li><strong>端末内データ</strong>: アプリ削除時にすべてのノートと設定が削除されます。</li>
   <li><strong>Dropboxトークン</strong>: Dropbox接続を解除するかアプリを削除するまで端末に保存されます。</li>
   <li><strong>クラッシュデータ</strong>: GoogleのFirebaseデータ保持ポリシーに従います。</li>
+  <li><strong>広告データ</strong>: Googleのデータ保持ポリシーに従います。広告IDはユーザーがいつでもリセットまたは削除できます。</li>
 </ul>
 
 <h2>4. 第三者への提供</h2>
 <p>Klaveはユーザーの個人情報を販売または共有しません。以下の限られた第三者サービスを使用します。</p>
 <ul>
   <li><strong>Google (Firebase Crashlytics、Firebase Remote Config)</strong>: クラッシュ診断および機能フラグ用。Googleのプライバシーポリシーに従います。</li>
+  <li><strong>Google (Googleモバイル広告 / AdMob、ユーザーメッセージングプラットフォーム)</strong>: 広告配信および同意管理用。Googleのプライバシーポリシーに従います。</li>
   <li><strong>Dropbox</strong>: ユーザーが明示的にDropboxボールトを接続した場合のみ使用されます。Dropboxのプライバシーポリシーに従います。</li>
 </ul>
 
@@ -75,8 +79,9 @@
 <ul>
   <li><strong>インターネット (INTERNET)</strong>: DropboxおよびFirebaseサービスとの通信 [必須]</li>
   <li><strong>ネットワーク状態 (ACCESS_NETWORK_STATE)</strong>: 同期のための接続状態確認 [必須]</li>
+  <li><strong>広告ID (com.google.android.gms.permission.AD_ID)</strong>: Android 13以降でGoogleモバイル広告SDKが広告配信およびフリークエンシーキャップのために自動的に含めます。[Android設定 → プライバシー → 広告でオプトアウト可能]</li>
 </ul>
-<p>Klaveはマイク、カメラ、位置情報、連絡先などの機密性の高い権限にアクセスしません。</p>
+<p>Klaveはマイク、カメラ、位置情報、連絡先にアクセスしません。</p>
 
 <h2>6. 安全管理措置</h2>
 <ul>
