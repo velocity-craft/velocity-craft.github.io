@@ -47,7 +47,7 @@
   <li><strong>Book metadata queries</strong>: ISBN, title, or author terms you search are sent to public book metadata providers (Google Books, Kakao Books) to fetch cover images and bibliographic information. These queries are not associated with your identity.</li>
   <li><strong>Photos and images</strong>: Photos you capture or pick to attach to a quote are processed and stored locally on your device.</li>
   <li><strong>Account information (optional)</strong>: If you sign in to enable cloud sync, your Google account ID is used to provision a sync identity through AWS Cognito. Your library, quotes, and book entries are then encrypted in transit and stored in our cloud database to mirror across your devices.</li>
-  <li><strong>Subscription status</strong>: For paid features, the App reads subscription state from Google Play Billing.</li>
+  <li><strong>Premium purchase status</strong>: For premium features, the App reads premium (Lifetime) status from Google Play Billing.</li>
   <li><strong>Crash and usage diagnostics</strong>: Anonymized crash reports (Firebase Crashlytics) and product analytics events (Firebase Analytics) are collected to improve stability and inform feature decisions.</li>
   <li><strong>Location (optional)</strong>: When you insert the location template variable into a quote or note, the App reads your last known location to fill in the value. Location data is not stored beyond the inserted text.</li>
 </ul>
@@ -55,8 +55,8 @@
 <h2>2. Purpose of Collection and Use</h2>
 <ul>
   <li><strong>Book metadata</strong>: To pre-fill book information when adding a book to your library.</li>
-  <li><strong>Cloud sync</strong>: To synchronize your library across multiple devices for users with an active sync subscription.</li>
-  <li><strong>Subscriptions</strong>: To unlock paid features.</li>
+  <li><strong>Cloud sync</strong>: To synchronize your library across multiple devices for users with a premium purchase.</li>
+  <li><strong>Premium purchase</strong>: To unlock premium features.</li>
   <li><strong>Diagnostics</strong>: To detect crashes and improve service quality.</li>
   <li><strong>Location template</strong>: To insert your current location only when you explicitly use the location template variable.</li>
 </ul>
@@ -79,7 +79,7 @@
 
 <h2>5. App Permissions</h2>
 <ul>
-  <li><strong>Internet (INTERNET)</strong>: Required for book metadata, cloud sync, billing, and diagnostics.</li>
+  <li><strong>Internet (INTERNET)</strong>: Required for book metadata, cloud sync, purchase verification, and diagnostics.</li>
   <li><strong>Network state (ACCESS_NETWORK_STATE)</strong>: To detect connectivity for sync.</li>
   <li><strong>Microphone (RECORD_AUDIO)</strong>: For voice-to-text quote entry. [Optional]</li>
   <li><strong>Notifications (POST_NOTIFICATIONS)</strong>: For recall reminders and the daily quote. [Optional]</li>

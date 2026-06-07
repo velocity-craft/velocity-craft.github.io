@@ -45,7 +45,7 @@
 <p>L'Application peut collecter les informations suivantes pour fournir ses services.</p>
 <ul>
   <li><strong>Paramètres d'alarme</strong> : Toutes les données d'alarme (horaires, étiquettes, sons et paramètres) sont stockées uniquement sur votre appareil et ne sont pas transmises à un serveur externe.</li>
-  <li><strong>Adresse e-mail du compte Google</strong> : Collectée facultativement lors de la connexion avec Google pour synchroniser les abonnements entre appareils.</li>
+  <li><strong>Adresse e-mail du compte Google</strong> : Collectée facultativement lors de la connexion avec Google pour vérifier et restaurer votre achat premium (Lifetime) entre vos appareils.</li>
   <li><strong>Identifiant publicitaire</strong> : Utilisé par Google AdMob pour afficher des publicités personnalisées (version gratuite uniquement).</li>
   <li><strong>Enregistrements audio</strong> : L'audio capturé lors de l'utilisation de la fonction d'enregistrement de sons d'alarme est stocké uniquement sur votre appareil.</li>
   <li><strong>Informations sur l'appareil</strong> : Le modèle de l'appareil et la version du système d'exploitation peuvent être collectés pour les rapports d'erreurs et l'amélioration du service.</li>
@@ -54,7 +54,7 @@
 <h2>2. Finalité de la Collecte et de l'Utilisation</h2>
 <ul>
   <li><strong>Fonction d'alarme</strong> : Les données d'alarme sont utilisées uniquement pour planifier et déclencher des alarmes sur votre appareil.</li>
-  <li><strong>Synchronisation des abonnements</strong> : Votre adresse e-mail Google est utilisée pour vérifier et synchroniser votre statut d'abonnement Pro entre appareils.</li>
+  <li><strong>Vérification de l'achat</strong> : Votre adresse e-mail Google est utilisée pour vérifier et restaurer votre achat premium (Lifetime) entre vos appareils.</li>
   <li><strong>Publicité</strong> : Des publicités personnalisées sont affichées via Google AdMob pour les utilisateurs de la version gratuite.</li>
   <li><strong>Amélioration de l'application</strong> : Des données d'erreurs anonymisées et des statistiques d'utilisation peuvent être collectées pour améliorer la stabilité du service.</li>
 </ul>
@@ -63,7 +63,7 @@
 <ul>
   <li><strong>Données d'alarme</strong> : Stockées uniquement sur l'appareil. Supprimées lorsque vous supprimez des alarmes ou désinstallez l'Application.</li>
   <li><strong>Enregistrements audio</strong> : Stockés uniquement sur l'appareil. Supprimés lorsque vous supprimez le son d'alarme associé ou désinstallez l'Application.</li>
-  <li><strong>Données d'abonnement</strong> : Conservées aussi longtemps que nécessaire pour vérifier le statut de l'abonnement.</li>
+  <li><strong>Données d'achat</strong> : Conservées aussi longtemps que nécessaire pour vérifier votre statut premium (Lifetime).</li>
   <li><strong>Données publicitaires</strong> : Soumises à la politique de confidentialité de Google.</li>
 </ul>
 
@@ -73,7 +73,7 @@
   <li>Lorsque vous avez donné votre consentement préalable.</li>
   <li>Lorsque la loi l'exige.</li>
   <li>Des informations limitées (identifiant publicitaire, informations sur l'appareil) peuvent être partagées avec Google AdMob pour les services publicitaires.</li>
-  <li>Votre adresse e-mail Google peut être partagée avec notre service de vérification d'abonnement (AWS) pour confirmer le statut Pro.</li>
+  <li>Votre adresse e-mail Google peut être partagée avec notre service de vérification d'achat (AWS) pour confirmer votre statut premium (Lifetime).</li>
 </ul>
 
 <h2>5. Autorisations de l'Application</h2>
@@ -81,7 +81,7 @@
 <ul>
   <li><strong>Programmer une alarme exacte (SCHEDULE_EXACT_ALARM)</strong> : Pour déclencher des alarmes à l'heure précise que vous définissez [Requis]</li>
   <li><strong>Définir une alarme (SET_ALARM)</strong> : Pour créer et gérer des alarmes sur votre appareil [Requis]</li>
-  <li><strong>Internet (INTERNET)</strong> : Pour afficher des publicités et vérifier les abonnements [Requis]</li>
+  <li><strong>Internet (INTERNET)</strong> : Pour afficher des publicités et vérifier les achats [Requis]</li>
   <li><strong>Démarrer au démarrage (RECEIVE_BOOT_COMPLETED)</strong> : Pour restaurer automatiquement vos alarmes après le redémarrage de l'appareil [Requis]</li>
   <li><strong>Notifications (POST_NOTIFICATIONS)</strong> : Pour les notifications d'alarme et les rappels [Facultatif]</li>
   <li><strong>Microphone (RECORD_AUDIO)</strong> : Pour enregistrer des sons d'alarme personnalisés [Facultatif]</li>

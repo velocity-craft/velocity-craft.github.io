@@ -37,7 +37,7 @@
 </p>
 
 <h1>Flori Política de Privacidad</h1>
-<p class="date">Fecha de entrada en vigor: 2026-05-10</p>
+<p class="date">Fecha de entrada en vigor: 10 de mayo de 2026</p>
 
 <p>Flori (en adelante "la Aplicación") valora su información personal y ha establecido la siguiente política de privacidad de acuerdo con las leyes de protección de datos aplicables.</p>
 
@@ -47,7 +47,7 @@
   <li><strong>Consultas de metadatos de libros</strong>: Los términos ISBN, título o autor que busca se envían a proveedores públicos de metadatos de libros (Google Books, Kakao Books) para obtener imágenes de portada e información bibliográfica. Estas consultas no se asocian con su identidad.</li>
   <li><strong>Fotos e imágenes</strong>: Las fotos que captura o selecciona para adjuntar a una cita se procesan y almacenan localmente en su dispositivo.</li>
   <li><strong>Información de cuenta (opcional)</strong>: Si inicia sesión para habilitar la sincronización en la nube, su ID de cuenta de Google se utiliza para aprovisionar una identidad de sincronización a través de AWS Cognito. Su biblioteca, citas y entradas de libros se cifran en tránsito y se almacenan en nuestra base de datos en la nube para reflejarse en sus dispositivos.</li>
-  <li><strong>Estado de la suscripción</strong>: Para funciones pagas, la Aplicación lee el estado de la suscripción desde Google Play Billing.</li>
+  <li><strong>Estado de la compra premium</strong>: Para las funciones premium, la Aplicación lee el estado premium (Lifetime) desde Google Play Billing.</li>
   <li><strong>Diagnósticos de fallos y uso</strong>: Se recopilan informes anónimos de fallos (Firebase Crashlytics) y eventos de análisis de productos (Firebase Analytics) para mejorar la estabilidad e informar las decisiones sobre funciones.</li>
   <li><strong>Ubicación (opcional)</strong>: Cuando inserta la variable de plantilla de ubicación en una cita o nota, la Aplicación lee su última ubicación conocida para completar el valor. Los datos de ubicación no se almacenan más allá del texto insertado.</li>
 </ul>
@@ -55,8 +55,8 @@
 <h2>2. Propósito de la recopilación y el uso</h2>
 <ul>
   <li><strong>Metadatos de libros</strong>: Para precompletar la información del libro al añadirlo a su biblioteca.</li>
-  <li><strong>Sincronización en la nube</strong>: Para sincronizar su biblioteca entre múltiples dispositivos para usuarios con una suscripción de sincronización activa.</li>
-  <li><strong>Suscripciones</strong>: Para desbloquear funciones pagas.</li>
+  <li><strong>Sincronización en la nube</strong>: Para sincronizar su biblioteca entre múltiples dispositivos para los usuarios con una compra premium.</li>
+  <li><strong>Compra premium</strong>: Para desbloquear las funciones premium.</li>
   <li><strong>Diagnósticos</strong>: Para detectar fallos y mejorar la calidad del servicio.</li>
   <li><strong>Plantilla de ubicación</strong>: Para insertar su ubicación actual solo cuando utiliza explícitamente la variable de plantilla de ubicación.</li>
 </ul>
@@ -79,7 +79,7 @@
 
 <h2>5. Permisos de la Aplicación</h2>
 <ul>
-  <li><strong>Internet (INTERNET)</strong>: Requerido para metadatos de libros, sincronización en la nube, facturación y diagnósticos.</li>
+  <li><strong>Internet (INTERNET)</strong>: Requerido para metadatos de libros, sincronización en la nube, verificación de compra y diagnósticos.</li>
   <li><strong>Estado de red (ACCESS_NETWORK_STATE)</strong>: Para detectar conectividad para la sincronización.</li>
   <li><strong>Micrófono (RECORD_AUDIO)</strong>: Para entrada de citas por voz a texto. [Opcional]</li>
   <li><strong>Notificaciones (POST_NOTIFICATIONS)</strong>: Para recordatorios de evocación y la cita diaria. [Opcional]</li>

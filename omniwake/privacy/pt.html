@@ -45,7 +45,7 @@
 <p>O Aplicativo pode coletar as seguintes informações para fornecer seus serviços.</p>
 <ul>
   <li><strong>Configurações de alarme</strong>: Todos os dados de alarme (horários, etiquetas, sons e configurações) são armazenados apenas no seu dispositivo e não são transmitidos para nenhum servidor externo.</li>
-  <li><strong>E-mail da conta Google</strong>: Coletado opcionalmente ao fazer login com Google para sincronizar assinaturas entre dispositivos.</li>
+  <li><strong>E-mail da conta Google</strong>: Coletado opcionalmente ao fazer login com Google para verificar e restaurar sua compra premium (Lifetime) entre dispositivos.</li>
   <li><strong>ID de publicidade</strong>: Usado pelo Google AdMob para exibir anúncios personalizados (apenas na versão gratuita).</li>
   <li><strong>Gravações de áudio</strong>: O áudio capturado ao usar o recurso de gravação de sons de alarme é armazenado apenas localmente no seu dispositivo.</li>
   <li><strong>Informações do dispositivo</strong>: O modelo do dispositivo e a versão do sistema operacional podem ser coletados para relatórios de erros e melhoria do serviço.</li>
@@ -54,7 +54,7 @@
 <h2>2. Finalidade da Coleta e Uso</h2>
 <ul>
   <li><strong>Função de alarme</strong>: Os dados de alarme são usados exclusivamente para agendar e acionar alarmes no seu dispositivo.</li>
-  <li><strong>Sincronização de assinatura</strong>: Seu e-mail do Google é usado para verificar e sincronizar o status da assinatura Pro entre dispositivos.</li>
+  <li><strong>Verificação de compra</strong>: Seu e-mail do Google é usado para verificar e restaurar sua compra premium (Lifetime) entre dispositivos.</li>
   <li><strong>Publicidade</strong>: Anúncios personalizados são exibidos via Google AdMob para usuários da versão gratuita.</li>
   <li><strong>Melhoria do aplicativo</strong>: Dados de erro anonimizados e estatísticas de uso podem ser coletados para melhorar a estabilidade do serviço.</li>
 </ul>
@@ -63,7 +63,7 @@
 <ul>
   <li><strong>Dados de alarme</strong>: Armazenados apenas no dispositivo. Excluídos quando você remove alarmes ou desinstala o Aplicativo.</li>
   <li><strong>Gravações de áudio</strong>: Armazenadas apenas no dispositivo. Excluídas quando você remove o som de alarme associado ou desinstala o Aplicativo.</li>
-  <li><strong>Dados de assinatura</strong>: Retidos pelo tempo necessário para verificar o status da assinatura.</li>
+  <li><strong>Dados de compra</strong>: Retidos pelo tempo necessário para verificar seu status premium (Lifetime).</li>
   <li><strong>Dados publicitários</strong>: Sujeitos à política de privacidade do Google.</li>
 </ul>
 
@@ -73,7 +73,7 @@
   <li>Quando você deu consentimento prévio.</li>
   <li>Quando exigido por lei.</li>
   <li>Informações limitadas (ID de publicidade, informações do dispositivo) podem ser compartilhadas com o Google AdMob para serviços publicitários.</li>
-  <li>Seu e-mail do Google pode ser compartilhado com nosso serviço de verificação de assinatura (AWS) para confirmar o status Pro.</li>
+  <li>Seu e-mail do Google pode ser compartilhado com nosso serviço de verificação de compra (AWS) para confirmar o status premium (Lifetime).</li>
 </ul>
 
 <h2>5. Permissões do Aplicativo</h2>
@@ -81,7 +81,7 @@
 <ul>
   <li><strong>Agendar alarme exato (SCHEDULE_EXACT_ALARM)</strong>: Para disparar alarmes no horário exato que você definir [Obrigatório]</li>
   <li><strong>Definir alarme (SET_ALARM)</strong>: Para criar e gerenciar alarmes no seu dispositivo [Obrigatório]</li>
-  <li><strong>Internet (INTERNET)</strong>: Para exibir anúncios e verificar assinatura [Obrigatório]</li>
+  <li><strong>Internet (INTERNET)</strong>: Para exibir anúncios e verificar compras [Obrigatório]</li>
   <li><strong>Executar na inicialização (RECEIVE_BOOT_COMPLETED)</strong>: Para restaurar automaticamente seus alarmes após a reinicialização do dispositivo [Obrigatório]</li>
   <li><strong>Notificações (POST_NOTIFICATIONS)</strong>: Para notificações de alarme e lembretes [Opcional]</li>
   <li><strong>Microfone (RECORD_AUDIO)</strong>: Para gravar sons de alarme personalizados [Opcional]</li>

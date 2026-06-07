@@ -37,7 +37,7 @@
 </p>
 
 <h1>Flori Politique de Confidentialité</h1>
-<p class="date">Date d'entrée en vigueur: 2026-05-10</p>
+<p class="date">Date d'entrée en vigueur : 10/05/2026</p>
 
 <p>Flori (ci-après « l'Application ») accorde de l'importance à vos informations personnelles et a établi la politique de confidentialité suivante conformément aux lois applicables sur la protection des données.</p>
 
@@ -47,7 +47,7 @@
   <li><strong>Requêtes de métadonnées de livres</strong>: Les termes ISBN, titre ou auteur que vous recherchez sont envoyés à des fournisseurs publics de métadonnées de livres (Google Books, Kakao Books) pour récupérer les images de couverture et les informations bibliographiques. Ces requêtes ne sont pas associées à votre identité.</li>
   <li><strong>Photos et images</strong>: Les photos que vous capturez ou sélectionnez pour les joindre à une citation sont traitées et stockées localement sur votre appareil.</li>
   <li><strong>Informations de compte (facultatif)</strong>: Si vous vous connectez pour activer la synchronisation cloud, votre ID de compte Google est utilisé pour fournir une identité de synchronisation via AWS Cognito. Votre bibliothèque, vos citations et vos entrées de livres sont alors chiffrées en transit et stockées dans notre base de données cloud pour être reflétées sur vos appareils.</li>
-  <li><strong>État de l'abonnement</strong>: Pour les fonctionnalités payantes, l'Application lit l'état de l'abonnement depuis Google Play Billing.</li>
+  <li><strong>Statut d'achat premium</strong>: Pour les fonctionnalités premium, l'Application lit le statut premium (Lifetime) depuis Google Play Billing.</li>
   <li><strong>Diagnostics de plantage et d'utilisation</strong>: Des rapports de plantage anonymisés (Firebase Crashlytics) et des événements d'analyse de produit (Firebase Analytics) sont collectés pour améliorer la stabilité et orienter les décisions de fonctionnalités.</li>
   <li><strong>Localisation (facultatif)</strong>: Lorsque vous insérez la variable de modèle de localisation dans une citation ou une note, l'Application lit votre dernière localisation connue pour remplir la valeur. Les données de localisation ne sont pas stockées au-delà du texte inséré.</li>
 </ul>
@@ -55,8 +55,8 @@
 <h2>2. Objet de la collecte et de l'utilisation</h2>
 <ul>
   <li><strong>Métadonnées de livres</strong>: Pour préremplir les informations du livre lors de l'ajout d'un livre à votre bibliothèque.</li>
-  <li><strong>Synchronisation cloud</strong>: Pour synchroniser votre bibliothèque sur plusieurs appareils pour les utilisateurs avec un abonnement de synchronisation actif.</li>
-  <li><strong>Abonnements</strong>: Pour déverrouiller les fonctionnalités payantes.</li>
+  <li><strong>Synchronisation cloud</strong>: Pour synchroniser votre bibliothèque sur plusieurs appareils pour les utilisateurs disposant d'un achat premium.</li>
+  <li><strong>Achat premium</strong>: Pour déverrouiller les fonctionnalités premium.</li>
   <li><strong>Diagnostics</strong>: Pour détecter les plantages et améliorer la qualité du service.</li>
   <li><strong>Modèle de localisation</strong>: Pour insérer votre localisation actuelle uniquement lorsque vous utilisez explicitement la variable de modèle de localisation.</li>
 </ul>
@@ -79,7 +79,7 @@
 
 <h2>5. Autorisations de l'Application</h2>
 <ul>
-  <li><strong>Internet (INTERNET)</strong>: Requis pour les métadonnées de livres, la synchronisation cloud, la facturation et les diagnostics.</li>
+  <li><strong>Internet (INTERNET)</strong>: Requis pour les métadonnées de livres, la synchronisation cloud, la vérification des achats et les diagnostics.</li>
   <li><strong>État du réseau (ACCESS_NETWORK_STATE)</strong>: Pour détecter la connectivité pour la synchronisation.</li>
   <li><strong>Microphone (RECORD_AUDIO)</strong>: Pour la saisie de citations par reconnaissance vocale. [Facultatif]</li>
   <li><strong>Notifications (POST_NOTIFICATIONS)</strong>: Pour les rappels de mémoire et la citation quotidienne. [Facultatif]</li>
