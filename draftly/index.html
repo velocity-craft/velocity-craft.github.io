@@ -17,6 +17,13 @@
   --accent:#4f6df5;--accent2:#7b8ff7;--accent-soft:rgba(79,109,245,.08);
   --border:#e8e9ec;--card:#ffffff;--card-shadow:0 1px 3px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.04);
   --radius:16px;--max-w:960px;
+  /* Sale accent — matches the in-app SALE badge (SalePromoRed) so the promo reads
+     as one system across the store page and the app itself.
+     --sale-on = text/icon color placed ON a --sale filled surface. It flips to dark
+     in dark mode because the lightened coral only reaches 2.5:1 against white
+     (WCAG AA needs 4.5:1 for this text size); dark-on-coral reaches 6.5:1. */
+  --sale:#d32f2f;--sale-soft:rgba(211,47,47,.08);--sale-border:rgba(211,47,47,.22);
+  --sale-on:#ffffff;
 }
 @media(prefers-color-scheme:dark){
   :root{
@@ -24,6 +31,8 @@
     --fg:#e4e4ec;--fg2:#a0a0b4;--fg3:#6a6a80;
     --accent:#7b8ff7;--accent2:#9dacf9;--accent-soft:rgba(123,143,247,.1);
     --border:#2a2a3a;--card:#1a1a26;--card-shadow:0 1px 3px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.2);
+    --sale:#ff7b72;--sale-soft:rgba(255,123,114,.1);--sale-border:rgba(255,123,114,.24);
+    --sale-on:#16161f;
   }
 }
 html{scroll-behavior:smooth}
@@ -60,8 +69,11 @@ body{
   max-width:560px;margin:0 auto 36px;line-height:1.5;
 }
 .hero-cta{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
-.hero-cta a{
-  display:inline-flex;align-items:center;gap:8px;
+/* 버튼 박스 스타일의 단일 출처 — .btn-primary/.btn-secondary 는 색만 담당하므로,
+   새 버튼 맥락(.sale-action 등)을 추가할 때 이 셀렉터에 함께 등록해야 한다. */
+.hero-cta a,
+.sale-action a{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
   font-size:15px;font-weight:600;text-decoration:none;
   padding:14px 28px;border-radius:12px;transition:all .2s ease;
 }
@@ -172,6 +184,44 @@ footer{
 footer a{color:var(--fg2);text-decoration:none;margin:0 12px}
 footer a:hover{color:var(--accent)}
 .footer-links{margin-bottom:12px}
+
+/* ── Lifetime sale (time-boxed promo) ── */
+.sale-section{padding:0 0 8px}
+.sale-card{
+  position:relative;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;
+  padding:28px 32px;border:1px solid var(--sale-border);border-radius:var(--radius);
+  background:linear-gradient(135deg,var(--sale-soft),transparent 70%),var(--card);
+  box-shadow:var(--card-shadow);
+}
+.sale-badge{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--sale-on);background:var(--sale);padding:4px 10px;border-radius:6px;margin-bottom:12px;
+}
+.sale-card h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.sale-price{
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:10px 0 6px;
+  font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.02em;color:var(--sale);
+}
+.sale-price .sale-half{font-size:14px;font-weight:600;color:var(--fg2);letter-spacing:0}
+.sale-meta{font-size:13px;color:var(--fg3);line-height:1.6}
+.sale-points{list-style:none;margin:14px 0 0;font-size:14px;color:var(--fg2)}
+.sale-points li{position:relative;padding-left:20px;margin-bottom:6px}
+.sale-points li::before{
+  content:"";position:absolute;left:4px;top:8px;width:6px;height:6px;
+  border-radius:50%;background:var(--sale);
+}
+.sale-action{display:flex;flex-direction:column;align-items:stretch;gap:10px;text-align:center}
+.sale-deadline{
+  font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:var(--sale);
+}
+/* 박스 스타일은 .hero-cta a 와 공유하고, 세일 맥락에서만 색을 sale 로 전환 */
+.sale-action .btn-primary{background:var(--sale);color:var(--sale-on)}
+.sale-action .btn-primary:hover{background:var(--sale);filter:brightness(1.08);transform:translateY(-1px)}
+.sale-action .btn-primary:focus-visible{outline:2px solid var(--sale);outline-offset:3px}
+@media(max-width:680px){
+  .sale-card{grid-template-columns:1fr;gap:20px;padding:24px}
+  .sale-action{align-items:stretch}
+}
 </style>
 </head>
 <body>
@@ -187,6 +237,32 @@ footer a:hover{color:var(--accent)}
       <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
       Google Play
     </a>
+  </div>
+</div>
+</section>
+
+<!-- Lifetime sale — remove this whole section when the promo ends (Aug 7, 2026) -->
+<section class="section sale-section" aria-labelledby="sale-heading">
+<div class="container">
+  <div class="sale-card">
+    <div>
+      <span class="sale-badge">Limited time</span>
+      <h2 id="sale-heading">Draftly Lifetime, half price</h2>
+      <p class="sale-price">$4.99 <span class="sale-half">one&#8209;time &middot; normally $9.99</span></p>
+      <p class="sale-meta">Local pricing applies on Google Play &mdash; you&rsquo;ll see the price in your own currency.</p>
+      <ul class="sale-points">
+        <li>No subscription. You pay once, and that&rsquo;s it.</li>
+        <li>Every ad removed, permanently.</li>
+        <li>All premium tools unlocked &mdash; including future ones.</li>
+      </ul>
+    </div>
+    <div class="sale-action">
+      <span class="sale-deadline">Ends Aug 7</span>
+      <a href="https://play.google.com/store/apps/details?id=com.draftly.app" class="btn-primary">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
+        Get Draftly
+      </a>
+    </div>
   </div>
 </div>
 </section>
