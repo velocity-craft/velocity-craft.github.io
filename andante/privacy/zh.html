@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andante 隐私政策</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links">
+  <a href="en.html">English</a> &middot;
+  <a href="ko.html">한국어</a> &middot;
+  <a href="ja.html">日本語</a> &middot;
+  <a href="zh.html" class="active">中文</a> &middot;
+  <a href="es.html">Español</a> &middot;
+  <a href="fr.html">Français</a> &middot;
+  <a href="de.html">Deutsch</a> &middot;
+  <a href="pt.html">Português</a>
+</p>
+
+<h1>Andante 隐私政策</h1>
+<p class="date">生效日期：2026年9月18日</p>
+
+<h2>简短版本</h2>
+<p>Andante 没有账号，没有服务器，也没有广告。已发布的应用根本不持有 Android 的互联网权限——它无法发出网络请求，因此也无法上传任何内容。下面的全部内容都是这句话的展开，其中也包括数据仍有可能不经过我们而离开您手机的那些途径。</p>
+
+<h2>我们不会声称的事</h2>
+<ul>
+  <li><strong>您在本设备上的任务并未由我们加密。</strong>它们存放在应用的专属存储空间中，Android 会把这个空间与其他应用隔离开。如果设备已被 root，或者他人能够解锁该设备，这层隔离可能被突破。</li>
+  <li><strong>我们无法为您恢复任何内容。</strong>我们不保存任何副本。如果您丢失了手机而又没有备份文件，数据就没有了。</li>
+  <li>我们避免使用绝对化的安全措辞。那样的说法描述不出任何您能够验证的东西，所以我们改为写明条件。</li>
+</ul>
+
+<h2>Andante 存储什么，存在哪里</h2>
+<p>以下内容全部存放在您设备上应用的专属存储空间中，没有任何一项会发送给我们：</p>
+<ul>
+  <li>任务——标题、备注、备注中的图片、日期、提醒、优先级、子任务、完成记录</li>
+  <li>项目、领域、情境、标签和文件夹</li>
+  <li>清单及其条目，以及您添加的封面图片</li>
+  <li>例行事务及其完成记录；习惯、习惯分类和习惯记录</li>
+  <li>每周回顾和时间胶囊，包括您放入胶囊的任何图片</li>
+  <li>设置——主题、每周起始日、标签页布局、字体选择、提醒默认值</li>
+</ul>
+<p>设备日历中的日程<strong>不在</strong>这个列表中。日历标签页每次绘制时都直接从 Android 的日历提供程序读取日程，并且不保留任何副本，因此它们既不在应用的数据库中，也不在应用写出的任何备份中。</p>
+
+<h2>什么可能离开您的手机</h2>
+<p>应用本身不发送任何内容。但以下这些途径依然存在——其中三个是 Android 的功能，一个是您自己创建的文件。</p>
+<table>
+  <tr><th>途径</th><th>会发生什么</th></tr>
+  <tr>
+    <td>Android 备份（自动备份与设备间转移）</td>
+    <td>Android 可能会把这个应用的数据——包括任务数据库——复制到您的 Google 账号备份中，或者复制到新手机上。这是操作系统的功能，而不是向我们传输数据——我们从来看不到它，也无法读取它。您可以在 Android 设置 &rarr; Google &rarr; 备份中关闭它。有一个文件被特意排除在备份之外：开发者模式的解锁状态，这样恢复后的手机绝不会一到手就已经处于解锁状态。</td>
+  </tr>
+  <tr>
+    <td>您导出的备份文件或 CSV 文件</td>
+    <td>Andante 会把它写到您在 Android 文件选择器中指定的位置——可以是本机存储，也可以是您选择的云端硬盘。从那一刻起，保护这个文件就是您自己的事了。它是一个未经加密的普通文件，而这是有意为之：它存在的目的就是被恢复、被在别处打开。</td>
+  </tr>
+  <tr>
+    <td>拖动日历日程来改变它的时间</td>
+    <td>Andante 会在 Android 的日历提供程序中修改该日程的开始和结束时间。如果该日历属于 Google、Exchange 或其他同步账号，该账号就会像同步在手机上所做的任何其他修改一样，同步这项更改。这是 Andante 唯一能执行的日历写入操作——它无法创建或删除日程。</td>
+  </tr>
+  <tr>
+    <td>选择可下载的字体</td>
+    <td>可选字体列表来自 Google Fonts。当您选择其中一种时，Google Play 服务会从 Google 获取该字体文件。该请求标识的是字体，而不是您，其中不涉及任何任务数据。保持默认字体则完全不会发出任何请求。</td>
+  </tr>
+</table>
+
+<h2>不收集的内容</h2>
+<p>没有广告，没有分析统计，没有崩溃报告，也没有广告 ID。没有登录界面，因此我们不收集任何账号或电子邮件地址。没有任何东西可买——没有订阅，也没有付费版本——因此应用中不包含任何支付库。Andante 不请求位置、通讯录、麦克风或照片库权限。</p>
+<p>有一个例外值得说明，因为它是可以被触及的：反复点按版本号所在的那一行并输入电子邮件地址，可以解锁一个隐藏的开发者模式。被存储的只有该地址的 SHA-256 哈希值，地址本身绝不会被存储；该哈希值留在设备上，被排除在 Android 备份之外，而且——由于应用没有网络权限——无法被发送到任何地方。</p>
+
+<h2>权限</h2>
+<ul>
+  <li><strong>通知</strong>——提醒、闹钟和每日摘要。没有它应用仍然可以使用，只是无法向您告知任何事情。[可选，但提醒正是这个应用的意义所在]</li>
+  <li><strong>闹钟和提醒（精确闹钟）</strong>——在您选定的那一分钟触发提醒，而不是等到 Android 觉得方便的时候。缺少这项权限时，Andante 会告诉您，而不是假装提醒已经设置好。[闹钟必需]</li>
+  <li><strong>开机启动</strong>——在重新启动、时钟或时区变更、应用更新之后，重新设置您的闹钟。[闹钟必需]</li>
+  <li><strong>全屏通知、唤醒锁、振动、前台服务</strong>——让闹钟能够出现在锁定屏幕上，并持续响铃直到您处理它。[闹钟必需]</li>
+  <li><strong>日历（读取）</strong>——在您的任务旁边显示已有的日程。只在您第一次打开日历标签页时询问，绝不会在启动应用时询问。即使拒绝，应用的其他所有部分也都不受影响。[可选]</li>
+  <li><strong>日历（写入）</strong>——只在您第一次把日程拖到新的时间时询问，在此之前不会询问。请注意，Android 把日历的读取和写入视为同一个权限组，因此一旦您允许了读取，系统可能会不再显示第二个对话框就授予写入权限。[可选]</li>
+  <li><strong>照片</strong>——不请求任何权限。封面图片和备注图片使用 Android 的照片选择器，选择器只把您选中的那张图片交给应用，您图库中的其他内容一概不会交出。</li>
+  <li><strong>文件</strong>——不请求任何权限。备份、导出和导入使用 Android 的文件选择器，它只让应用访问您选中的那一个文件。</li>
+</ul>
+
+<h2>通知会显示您的任务标题</h2>
+<p>提醒或闹钟通知会显示任务的标题，这意味着它可能出现在您的锁定屏幕上。这是有意的设计——只写着“Andante”的提醒算不上提醒。在您写下不希望被旁人一眼看到的标题之前，这一点值得先知道。没有标题的任务会改为显示应用名称。</p>
+
+<h2>从其他应用导入</h2>
+<p>从 TickTick、Todoist、Google Tasks 和 Apple Reminders 导入，读取的是您从这些服务导出并交给 Andante 的文件。Andante 不会连接这些服务，绝不会询问密码，也不持有其中任何一个的访问令牌。</p>
+
+<h2>儿童</h2>
+<p>Andante 并非面向 13 岁以下的儿童。我们不会在知情的情况下收集他们的数据——说到底，也不收集任何人的数据。</p>
+
+<h2>您的权利</h2>
+<p>访问、更正和删除都由您直接完成，因为我们手上没有任何可供您向我们查询的东西。您可以在应用中修改或删除任意条目，通过备份或 CSV 导出把全部内容带走，并通过卸载应用来清除其余部分。如果 Android 已经把这个应用备份到了您的 Google 账号，那份副本要在 Google 的备份设置中删除，而不是在 Andante 中删除。</p>
+
+<h2>变更</h2>
+<p>如果将来的版本加入了任何会把数据发送到您设备之外的功能，我们会在该版本发布之前先更新本政策，并在应用中告知这项变更。</p>
+
+<h2>联系方式</h2>
+<p>velocitycraft.app+support+andante@gmail.com</p>
+
+</body>
+</html>

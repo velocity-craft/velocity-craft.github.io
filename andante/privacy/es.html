@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de privacidad de Andante</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links">
+  <a href="en.html">English</a> &middot;
+  <a href="ko.html">한국어</a> &middot;
+  <a href="ja.html">日本語</a> &middot;
+  <a href="zh.html">中文</a> &middot;
+  <a href="es.html" class="active">Español</a> &middot;
+  <a href="fr.html">Français</a> &middot;
+  <a href="de.html">Deutsch</a> &middot;
+  <a href="pt.html">Português</a>
+</p>
+
+<h1>Política de privacidad de Andante</h1>
+<p class="date">Fecha de entrada en vigor: 18 de septiembre de 2026</p>
+
+<h2>La versión corta</h2>
+<p>Andante no tiene cuenta, ni servidor, ni anuncios. La aplicación publicada no posee en absoluto el permiso de internet de Android — no puede hacer una solicitud de red, así que no puede subir nada. Todo lo que sigue es la versión larga de esa frase, incluidas las vías por las que los datos aún pueden salir de su teléfono sin que nosotros intervengamos.</p>
+
+<h2>Lo que no vamos a afirmar</h2>
+<ul>
+  <li><strong>Nosotros no ciframos sus tareas en este dispositivo.</strong> Están en el almacenamiento privado de la aplicación, que Android aísla de las demás aplicaciones. En un dispositivo con acceso root, o en uno que otra persona pueda desbloquear, ese aislamiento se puede vencer.</li>
+  <li><strong>No podemos recuperar nada por usted.</strong> No guardamos ninguna copia. Si pierde el teléfono y no tiene un archivo de copia de seguridad, los datos se han perdido.</li>
+  <li>Evitamos las fórmulas de seguridad absoluta. No describen nada que usted pueda verificar, así que en su lugar enunciamos condiciones.</li>
+</ul>
+
+<h2>Qué almacena Andante, y dónde</h2>
+<p>Todo ello reside en el almacenamiento privado de la aplicación, en su dispositivo, y nada de ello se nos envía:</p>
+<ul>
+  <li>Tareas — títulos, notas, imágenes de las notas, fechas, recordatorios, prioridades, subtareas, historial de finalización</li>
+  <li>Proyectos, áreas, contextos, etiquetas y carpetas</li>
+  <li>Listas de comprobación, sus elementos y las imágenes de portada que usted adjunte</li>
+  <li>Rutinas y sus finalizaciones; hábitos, categorías de hábitos y registros</li>
+  <li>Revisiones semanales y cápsulas del tiempo, incluida cualquier imagen que adjunte a una cápsula</li>
+  <li>Ajustes — tema, inicio de semana, disposición de las pestañas, elección de fuente, valores predeterminados de los recordatorios</li>
+</ul>
+<p>Los eventos del calendario del dispositivo <strong>no</strong> están en esa lista. La pestaña de calendario lee los eventos del proveedor de calendario de Android cada vez que los dibuja y no conserva ninguna copia, de modo que no están en la base de datos de la aplicación ni en ninguna copia de seguridad que esta escriba.</p>
+
+<h2>Qué puede salir de su teléfono</h2>
+<p>La aplicación por sí misma no envía nada. Aun así existen estas vías — tres son funciones de Android y una es un archivo que usted crea.</p>
+<table>
+  <tr><th>Vía</th><th>Qué ocurre</th></tr>
+  <tr>
+    <td>Copia de seguridad de Android (copia automática y transferencia entre dispositivos)</td>
+    <td>Android puede copiar los datos de esta aplicación, incluida la base de datos de tareas, en la copia de seguridad de su cuenta de Google o en un teléfono nuevo. Es una función del sistema operativo, no una transferencia hacia nosotros — nunca la vemos y no podemos leerla. Puede desactivarla en Ajustes de Android &rarr; Google &rarr; Copia de seguridad. Un archivo queda excluido de ella a propósito: el estado de desbloqueo del modo desarrollador, para que un teléfono restaurado nunca llegue ya desbloqueado.</td>
+  </tr>
+  <tr>
+    <td>Un archivo de copia de seguridad o CSV que usted exporte</td>
+    <td>Andante lo escribe allí donde usted dirija el selector de archivos de Android — el almacenamiento local, o una unidad en la nube si elige una. A partir de ese momento, protegerlo es cosa suya. Es un archivo normal y corriente, sin cifrar, y es así de forma deliberada: existe para ser restaurado y abierto en otro sitio.</td>
+  </tr>
+  <tr>
+    <td>Cambiar la hora de un evento del calendario arrastrándolo</td>
+    <td>Andante cambia la hora de inicio y de fin de ese evento en el proveedor de calendario de Android. Si el calendario pertenece a una cuenta de Google, de Exchange o a otra cuenta sincronizada, esa cuenta sincroniza el cambio igual que haría con cualquier edición hecha en el teléfono. Esta es la única escritura en el calendario que Andante puede realizar — no puede crear ni borrar eventos.</td>
+  </tr>
+  <tr>
+    <td>Elegir una fuente descargable</td>
+    <td>La lista de fuentes opcionales es Google Fonts. Cuando elige una, Google Play Services descarga ese archivo de fuente desde Google. La solicitud identifica la fuente, no a usted, y no interviene ningún dato de sus tareas. Si mantiene la fuente predeterminada, no se hace ninguna solicitud.</td>
+  </tr>
+</table>
+
+<h2>Lo que no se recopila</h2>
+<p>No hay publicidad, ni analíticas, ni informes de fallos, ni identificador de publicidad. No hay pantalla de inicio de sesión, así que no recopilamos ninguna cuenta ni dirección de correo electrónico. No hay nada que comprar — ni suscripción ni nivel de pago — así que no se incluye ninguna biblioteca de facturación. Andante no solicita permiso de ubicación, contactos, micrófono ni fototeca.</p>
+<p>Merece la pena mencionar una excepción, porque se puede alcanzar: hay un modo desarrollador oculto que se desbloquea tocando repetidamente la fila de la versión y escribiendo una dirección de correo electrónico. Solo se guarda un hash SHA-256 de esa dirección, nunca la dirección en sí; el hash permanece en el dispositivo, queda excluido de la copia de seguridad de Android y — al no tener la aplicación permiso de red — no puede enviarse a ningún sitio.</p>
+
+<h2>Permisos</h2>
+<ul>
+  <li><strong>Notificaciones</strong> — recordatorios, alarmas y el resumen diario. Sin él la aplicación sigue funcionando; simplemente no puede avisarle de nada. [Opcional, aunque los recordatorios son el sentido de la aplicación]</li>
+  <li><strong>Alarmas &amp; recordatorios (alarma exacta)</strong> — hace sonar un recordatorio en el minuto que usted eligió, y no cuando a Android le resulte conveniente. Andante le avisa cuando falta este permiso en lugar de fingir que un recordatorio está armado. [Necesario para las alarmas]</li>
+  <li><strong>Ejecutar al inicio</strong> — vuelve a armar sus alarmas tras un reinicio, un cambio de hora o de zona horaria, o una actualización de la aplicación. [Necesario para las alarmas]</li>
+  <li><strong>Notificación a pantalla completa, bloqueo de suspensión, vibración, servicio en primer plano</strong> — permiten que una alarma aparezca en la pantalla de bloqueo y siga sonando hasta que usted la atienda. [Necesario para las alarmas]</li>
+  <li><strong>Calendario (lectura)</strong> — muestra sus eventos existentes junto a sus tareas. Se pide la primera vez que abre la pestaña de calendario, nunca al arrancar. Si lo rechaza, ninguna otra parte de la aplicación se ve afectada. [Opcional]</li>
+  <li><strong>Calendario (escritura)</strong> — se pide la primera vez que arrastra un evento a otra hora, no antes. Tenga en cuenta que Android trata la lectura y la escritura del calendario como un mismo grupo de permisos, de modo que, una vez concedida la lectura, el sistema puede conceder la escritura sin mostrar un segundo diálogo. [Opcional]</li>
+  <li><strong>Fotos</strong> — no se solicita ningún permiso. Las imágenes de portada y las imágenes de las notas usan el selector de fotos de Android, que entrega a la aplicación solo la imagen que usted seleccionó y nada más de su fototeca.</li>
+  <li><strong>Archivos</strong> — no se solicita ningún permiso. La copia de seguridad, la exportación y la importación usan el selector de archivos de Android, que da a la aplicación acceso únicamente al archivo que usted eligió.</li>
+</ul>
+
+<h2>Las notificaciones muestran el título de su tarea</h2>
+<p>Una notificación de recordatorio o de alarma muestra el título de la tarea, lo que significa que puede aparecer en su pantalla de bloqueo. Es algo deliberado — un recordatorio que solo dice "Andante" no es un recordatorio. Conviene saberlo antes de escribir un título que no le gustaría que alguien leyera por encima de su hombro. Una tarea sin título muestra en su lugar el nombre de la aplicación.</p>
+
+<h2>Importar desde otras aplicaciones</h2>
+<p>La importación desde TickTick, Todoist, Google Tasks y Recordatorios de Apple lee un archivo que usted exporta de esos servicios y entrega a Andante. Andante no se conecta a ellos, nunca pide una contraseña y no guarda ningún token de acceso de ninguno de ellos.</p>
+
+<h2>Menores</h2>
+<p>Andante no está dirigida a menores de 13 años. No recopilamos datos de ellos a sabiendas — ni, de hecho, de nadie.</p>
+
+<h2>Sus derechos</h2>
+<p>El acceso, la rectificación y la supresión son cosas que usted lleva a cabo directamente, porque no guardamos nada por lo que pueda preguntarnos. Edite o borre cualquier elemento en la aplicación, llévese todo mediante la copia de seguridad o la exportación a CSV, y desinstale la aplicación para eliminar el resto. Si Android ha hecho una copia de seguridad de la aplicación en su cuenta de Google, esa copia se borra desde los ajustes de copia de seguridad de Google, no desde Andante.</p>
+
+<h2>Cambios</h2>
+<p>Si una versión futura añade algo que envíe datos fuera de su dispositivo, esta política se actualiza antes de que esa versión se publique y el cambio se anuncia en la aplicación.</p>
+
+<h2>Contacto</h2>
+<p>velocitycraft.app+support+andante@gmail.com</p>
+
+</body>
+</html>

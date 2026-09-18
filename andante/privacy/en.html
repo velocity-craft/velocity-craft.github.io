@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andante Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links">
+  <a href="en.html" class="active">English</a> &middot;
+  <a href="ko.html">한국어</a> &middot;
+  <a href="ja.html">日本語</a> &middot;
+  <a href="zh.html">中文</a> &middot;
+  <a href="es.html">Español</a> &middot;
+  <a href="fr.html">Français</a> &middot;
+  <a href="de.html">Deutsch</a> &middot;
+  <a href="pt.html">Português</a>
+</p>
+
+<h1>Andante Privacy Policy</h1>
+<p class="date">Effective date: September 18, 2026</p>
+
+<h2>The short version</h2>
+<p>Andante has no account, no server, and no ads. The released app does not hold Android's internet permission at all — it cannot make a network request, so it cannot upload anything. Everything below is the long form of that sentence, including the places where data can still leave your phone without us.</p>
+
+<h2>What we will not claim</h2>
+<ul>
+  <li><strong>Your tasks on this device are not encrypted by us.</strong> They sit in the app's private storage, which Android isolates from other apps. On a rooted device, or a device someone else can unlock, that isolation can be defeated.</li>
+  <li><strong>We cannot recover anything for you.</strong> We hold no copy. If you lose the phone and have no backup file, the data is gone.</li>
+  <li>We avoid absolute security wording. It describes nothing you can verify, so we state conditions instead.</li>
+</ul>
+
+<h2>What Andante stores, and where</h2>
+<p>All of it lives in the app's private storage on your device, and none of it is sent to us:</p>
+<ul>
+  <li>Tasks — titles, notes, notes' images, dates, reminders, priorities, subtasks, completion history</li>
+  <li>Projects, areas, contexts, tags, and folders</li>
+  <li>Checklists, their items, and cover images you attach</li>
+  <li>Routines and their completions; habits, habit categories, and logs</li>
+  <li>Weekly reviews and time capsules, including any image you attach to a capsule</li>
+  <li>Settings — theme, week start, tab layout, font choice, reminder defaults</li>
+</ul>
+<p>Device calendar events are <strong>not</strong> in that list. The calendar tab reads events from Android's calendar provider each time it draws them and keeps no copy, so they are not in the app's database and not in any backup it writes.</p>
+
+<h2>What can leave your phone</h2>
+<p>The app sends nothing itself. These paths exist anyway — three are Android features, one is a file you create.</p>
+<table>
+  <tr><th>Path</th><th>What happens</th></tr>
+  <tr>
+    <td>Android backup (Auto Backup and device transfer)</td>
+    <td>Android may copy this app's data, including the task database, into your Google account backup or onto a new phone. This is an operating-system feature, not a transfer to us — we never see it, and cannot read it. You can switch it off in Android Settings &rarr; Google &rarr; Backup. One file is deliberately excluded from it: the developer-mode unlock state, so that a restored phone never arrives already unlocked.</td>
+  </tr>
+  <tr>
+    <td>A backup or CSV file you export</td>
+    <td>Andante writes it wherever you point Android's file picker — local storage, or a cloud drive if you pick one. From that moment the file is yours to protect. It is a plain file, not encrypted, by design: it exists to be restored and opened elsewhere.</td>
+  </tr>
+  <tr>
+    <td>Retiming a calendar event by dragging it</td>
+    <td>Andante changes that event's start and end time in Android's calendar provider. If the calendar belongs to a Google, Exchange, or other synced account, that account syncs the change as it would any edit made on the phone. This is the only calendar write Andante can perform — it cannot create or delete events.</td>
+  </tr>
+  <tr>
+    <td>Choosing a downloadable font</td>
+    <td>The optional font list is Google Fonts. When you choose one, Google Play Services fetches that font file from Google. The request identifies the font, not you, and no task data is involved. Keeping the default font makes no request at all.</td>
+  </tr>
+</table>
+
+<h2>What is not collected</h2>
+<p>There is no advertising, no analytics, no crash reporting, and no advertising ID. There is no sign-in screen, so we collect no account or email address. There is nothing to buy — no subscription and no paid tier — so no billing library is present. Andante requests no location, contacts, microphone, or photo-library permission.</p>
+<p>One exception is worth naming because it is reachable: a hidden developer mode can be unlocked by tapping the version row repeatedly and typing an email address. Only a SHA-256 hash of that address is stored, never the address itself; the hash stays on the device, is excluded from Android backup, and — the app having no network permission — cannot be sent anywhere.</p>
+
+<h2>Permissions</h2>
+<ul>
+  <li><strong>Notifications</strong> — reminders, alarms, and the daily digest. Without it the app still works; it just cannot tell you anything. [Optional, but reminders are the point of the app]</li>
+  <li><strong>Alarms &amp; reminders (exact alarm)</strong> — fires a reminder at the minute you chose rather than whenever Android finds convenient. Andante tells you when it is missing instead of pretending a reminder is armed. [Required for alarms]</li>
+  <li><strong>Run at startup</strong> — re-arms your alarms after a reboot, a clock or time-zone change, or an app update. [Required for alarms]</li>
+  <li><strong>Full-screen notification, wake lock, vibration, foreground service</strong> — let an alarm appear on the lock screen and keep ringing until you answer it. [Required for alarms]</li>
+  <li><strong>Calendar (read)</strong> — shows your existing events beside your tasks. Asked the first time you open the calendar tab, never at launch. Decline and every other part of the app is unaffected. [Optional]</li>
+  <li><strong>Calendar (write)</strong> — asked the first time you drag an event to a new time, not before. Note that Android treats calendar read and write as one permission group, so once you have granted read, the system may grant write without showing a second dialog. [Optional]</li>
+  <li><strong>Photos</strong> — no permission is requested. Cover images and note images use Android's photo picker, which hands the app only the image you selected and nothing else in your library.</li>
+  <li><strong>Files</strong> — no permission is requested. Backup, export, and import use Android's file picker, which gives the app access to the one file you chose.</li>
+</ul>
+
+<h2>Notifications show your task title</h2>
+<p>A reminder or alarm notification shows the task's title, which means it can appear on your lock screen. That is deliberate — a reminder that says only "Andante" is not a reminder. It is worth knowing before you write a title you would not want read over someone's shoulder. A task with no title falls back to the app's name.</p>
+
+<h2>Importing from other apps</h2>
+<p>Import from TickTick, Todoist, Google Tasks, and Apple Reminders reads a file that you export from those services and hand to Andante. Andante does not connect to them, never asks for a password, and holds no access token for any of them.</p>
+
+<h2>Children</h2>
+<p>Andante is not directed to children under 13. We do not knowingly collect data from them — or, for that matter, from anyone.</p>
+
+<h2>Your rights</h2>
+<p>Access, correction, and deletion are things you carry out directly, because we hold nothing for you to ask us about. Edit or delete any item in the app, take everything with you through backup or CSV export, and uninstall to remove the rest. If Android has backed the app up to your Google account, that copy is deleted from Google's backup settings, not from Andante.</p>
+
+<h2>Changes</h2>
+<p>If a future version adds anything that sends data off your device, this policy is updated before that version ships and the change is announced in the app.</p>
+
+<h2>Contact</h2>
+<p>velocitycraft.app+support+andante@gmail.com</p>
+
+</body>
+</html>
