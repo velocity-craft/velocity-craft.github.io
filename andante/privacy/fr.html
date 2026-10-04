@@ -29,6 +29,10 @@
     th, td { border-color: #444; }
     th { background: #262626; }
   }
+  a { color: #1a5fb4; }
+  @media (prefers-color-scheme: dark) {
+    a { color: #8ab4f8; }
+  }
 </style>
 </head>
 <body>
@@ -45,41 +49,68 @@
 </p>
 
 <h1>Politique de confidentialité d'Andante</h1>
-<p class="date">Date d'entrée en vigueur : 18 septembre 2026</p>
+<p class="date">Date d'entrée en vigueur : 5 octobre 2026</p>
+
+<p>Cette politique s'applique à l'application Andante pour Android, éditée par Velocity Craft (« nous »). Elle décrit ce qu'Andante conserve, ce qu'elle envoie, à qui, et pendant combien de temps.</p>
 
 <h2>La version courte</h2>
-<p>Andante n'a ni compte, ni serveur, ni publicité. L'application publiée ne détient pas du tout l'autorisation Internet d'Android — elle ne peut effectuer aucune requête réseau, elle ne peut donc rien envoyer. Tout ce qui suit est la version longue de cette phrase, y compris les cas où des données peuvent malgré tout quitter votre téléphone sans passer par nous.</p>
+<p>Andante fonctionne sans compte, et vos tâches restent sur votre téléphone. L'application utilise néanmoins Internet pour cinq choses : les rapports de plantage, des statistiques d'utilisation, une publicité occasionnelle, un interrupteur à distance qui active ou désactive ces publicités, et Andante Cloud — un service de synchronisation facultatif qui nécessite une connexion avec Google ou Apple et qui n'est actuellement proposé qu'à un groupe restreint d'utilisateurs. Les quatre premiers ne reçoivent jamais ce que vous écrivez dans Andante. Vos tâches ne nous parviennent que si vous vous connectez à Andante Cloud et activez la synchronisation. Elles peuvent aussi quitter votre téléphone par des fonctionnalités que vous contrôlez et qui sont gérées par Android ou par d'autres applications, et non par nous — la sauvegarde d'Android elle-même, la saisie vocale et les fichiers que vous exportez —, comme le décrit le tableau ci-dessous. Tout ce qui suit est la version longue de ce paragraphe.</p>
 
 <h2>Ce que nous n'affirmerons pas</h2>
 <ul>
   <li><strong>Vos tâches sur cet appareil ne sont pas chiffrées par nous.</strong> Elles se trouvent dans l'espace de stockage privé de l'application, qu'Android isole des autres applications. Sur un appareil rooté, ou sur un appareil que quelqu'un d'autre peut déverrouiller, cette isolation peut être contournée.</li>
-  <li><strong>Nous ne pouvons rien récupérer à votre place.</strong> Nous n'en détenons aucune copie. Si vous perdez votre téléphone et que vous n'avez aucun fichier de sauvegarde, les données sont perdues.</li>
+  <li><strong>Andante Cloud n'est pas chiffré de bout en bout.</strong> Les données synchronisées sont chiffrées pendant leur transfert vers le serveur, puis chiffrées au repos par Amazon Web Services avec des clés gérées par AWS. Cela signifie qu'en tant qu'exploitant de ce stockage, nous pourrions techniquement les lire. Nous n'y accédons que pour faire fonctionner le service — par exemple pour vous aider à récupérer des données à votre demande — ou lorsque la loi l'exige.</li>
+  <li><strong>Nous ne pouvons pas récupérer ce qui n'existait que sur votre téléphone.</strong> Si vous n'utilisez pas Andante Cloud, nous ne détenons aucune copie de vos tâches, et même Andante Cloud ne conserve pas tout (voir ci-dessous). Si vous perdez votre téléphone et que vous n'avez aucun fichier de sauvegarde, ces données sont perdues.</li>
   <li>Nous évitons les formules de sécurité absolue. Elles ne décrivent rien que vous puissiez vérifier ; nous énonçons donc des conditions à la place.</li>
 </ul>
 
-<h2>Ce qu'Andante conserve, et où</h2>
-<p>Tout cela réside dans l'espace de stockage privé de l'application sur votre appareil, et rien de tout cela ne nous est transmis :</p>
+<h2>Ce qu'Andante conserve sur votre appareil</h2>
+<p>Tout cela réside dans l'espace de stockage privé de l'application sur votre appareil :</p>
 <ul>
   <li>Tâches — titres, notes, images des notes, dates, rappels, priorités, sous-tâches, historique d'achèvement</li>
-  <li>Projets, domaines, contextes, étiquettes et dossiers</li>
-  <li>Listes de contrôle, leurs éléments et les images de couverture que vous y joignez</li>
+  <li>Listes, dossiers, étiquettes et contextes</li>
+  <li>Listes de contrôle, leurs dossiers et leurs éléments, et les images de couverture que vous y joignez</li>
   <li>Routines et leurs accomplissements ; habitudes, catégories d'habitudes et journaux</li>
   <li>Revues hebdomadaires et capsules temporelles, y compris toute image que vous joignez à une capsule</li>
   <li>Paramètres — thème, premier jour de la semaine, disposition des onglets, choix de police, valeurs par défaut des rappels</li>
+  <li>Si vous vous connectez à Andante Cloud : votre enregistrement de connexion (l'adresse e-mail et les identifiants décrits ci-dessous, ainsi qu'un jeton de connexion), chiffré avec une clé conservée dans le Keystore Android de ce téléphone</li>
 </ul>
-<p>Les événements du calendrier de l'appareil ne figurent <strong>pas</strong> dans cette liste. L'onglet calendrier lit les événements depuis le fournisseur de calendrier d'Android chaque fois qu'il les affiche et n'en conserve aucune copie ; ils ne se trouvent donc ni dans la base de données de l'application, ni dans aucune sauvegarde qu'elle écrit.</p>
+<p>Les événements du calendrier de l'appareil ne figurent <strong>pas</strong> dans cette liste. L'onglet calendrier lit les événements depuis le fournisseur de calendrier d'Android chaque fois qu'il les affiche et n'en conserve aucune copie ; ils ne se trouvent donc ni dans la base de données de l'application, ni dans aucune sauvegarde qu'elle écrit, et Andante ne les envoie jamais nulle part.</p>
 
-<h2>Ce qui peut quitter votre téléphone</h2>
-<p>L'application n'envoie rien d'elle-même. Ces chemins existent malgré tout — trois sont des fonctionnalités d'Android, l'autre est un fichier que vous créez.</p>
+<h2>Ce qui quitte votre téléphone</h2>
 <table>
   <tr><th>Chemin</th><th>Ce qui se passe</th></tr>
   <tr>
+    <td>Rapports de plantage<br>(Firebase Crashlytics, Google)</td>
+    <td>Lorsque l'application plante, ou enregistre une erreur dont elle s'est remise, Crashlytics reçoit les détails techniques de l'erreur, le modèle de l'appareil, les versions d'Android et de l'application, quelques informations techniques sur l'état de l'application (par exemple, si Android restreint les alarmes de l'application en arrière-plan) et un identifiant d'installation aléatoire. Vos tâches n'en font pas partie. Firebase conserve les rapports de plantage pendant 90 jours.</td>
+  </tr>
+  <tr>
+    <td>Statistiques d'utilisation<br>(Google Analytics for Firebase)</td>
+    <td>Quels écrans sont ouverts — par type d'écran, jamais quelle tâche ou quelle liste —, le nombre d'actions comme la création ou l'achèvement d'une tâche, quelles fonctionnalités facultatives sont activées et si le mode développeur est activé. Google Analytics utilise aussi un identifiant aléatoire d'instance de l'application, collecte l'identifiant publicitaire de l'appareil (voir « Publicité et consentement ») et déduit une région approximative à partir de votre adresse IP. Aucun titre de tâche, nom de liste, note, adresse e-mail ni identifiant utilisateur n'est envoyé. Il enregistre aussi automatiquement le modèle de l'appareil, la version d'Android, la langue configurée et des données de session et d'engagement, comme le moment de la première ouverture de l'application, le début d'une session et la durée d'utilisation. Les données au niveau des événements sont conservées 14 mois au maximum.</td>
+  </tr>
+  <tr>
+    <td>Interrupteur des publicités<br>(Firebase Remote Config, Google)</td>
+    <td>Andante demande à Firebase si les annonces à l'ouverture de l'application sont actuellement activées. La requête contient un identifiant d'installation Firebase, les versions de l'application et d'Android, vos réglages de pays, de langue et de fuseau horaire, ainsi que les réglages de fonctionnalités enregistrés pour les statistiques d'utilisation.</td>
+  </tr>
+  <tr>
+    <td>Publicités<br>(Google AdMob)</td>
+    <td>Voir « Publicité et consentement » ci-dessous.</td>
+  </tr>
+  <tr>
+    <td>Andante Cloud — uniquement si vous vous connectez</td>
+    <td>Voir « Andante Cloud » ci-dessous.</td>
+  </tr>
+  <tr>
     <td>Sauvegarde Android (Sauvegarde automatique et transfert vers un nouvel appareil)</td>
-    <td>Android peut copier les données de cette application, y compris la base de données des tâches, dans la sauvegarde de votre compte Google ou sur un nouveau téléphone. C'est une fonctionnalité du système d'exploitation, pas un transfert vers nous — nous ne la voyons jamais et ne pouvons pas la lire. Vous pouvez la désactiver dans Paramètres Android &rarr; Google &rarr; Sauvegarde. Un fichier en est délibérément exclu : l'état de déverrouillage du mode développeur, afin qu'un téléphone restauré n'arrive jamais déjà déverrouillé.</td>
+    <td>Android peut copier les données de cette application, y compris la base de données des tâches, dans la sauvegarde de votre compte Google ou sur un nouveau téléphone. C'est une fonctionnalité du système d'exploitation, pas un transfert vers nous — nous ne la voyons jamais et ne pouvons pas la lire. Vous pouvez la désactiver dans Paramètres Android &rarr; Google &rarr; Sauvegarde. Certains fichiers en sont délibérément exclus : l'état de déverrouillage du mode développeur (afin qu'un téléphone restauré n'arrive jamais déjà déverrouillé), votre enregistrement de connexion Andante Cloud (afin que votre connexion ne quitte jamais ce téléphone) et les enregistrements qui n'ont de sens que sur ce téléphone, comme les alarmes programmées et la fréquence des publicités.</td>
   </tr>
   <tr>
     <td>Un fichier de sauvegarde ou CSV que vous exportez</td>
     <td>Andante l'écrit là où vous l'indiquez dans le sélecteur de fichiers d'Android — stockage local, ou un espace de stockage cloud si vous en choisissez un. À partir de cet instant, c'est à vous de protéger ce fichier. C'est un fichier ordinaire, non chiffré, et c'est délibéré : il existe pour être restauré et ouvert ailleurs.</td>
+  </tr>
+  <tr>
+    <td>Dicter une tâche avec le bouton du micro</td>
+    <td>Le bouton du micro, là où vous ajoutez une tâche, confie la dictée au service de reconnaissance vocale de votre téléphone — généralement celui de Google —, qui transforme ce que vous dites en texte et peut pour cela envoyer l'audio à ses serveurs, selon la politique de confidentialité de ce fournisseur. Andante ne reçoit que le texte obtenu, jamais l'audio, et n'a besoin d'aucune autorisation de microphone, car c'est le service de reconnaissance vocale, et non Andante, qui utilise le micro. Rien n'est dicté si vous n'appuyez pas sur le bouton.</td>
   </tr>
   <tr>
     <td>Déplacer un événement de calendrier en le faisant glisser</td>
@@ -91,12 +122,45 @@
   </tr>
 </table>
 
+<h2>Publicité et consentement</h2>
+<p>Andante est gratuite et peut afficher de temps en temps une annonce Google AdMob en plein écran (annonce « à l'ouverture de l'application ») lorsque vous revenez dans l'application. Aucune annonce ne s'affiche lorsque vous lancez l'application à froid, pendant qu'une alarme sonne ni peu avant ou après, lorsque vous arrivez depuis une notification, un widget ou un partage, ni pendant que vous saisissez du texte. Nous pouvons désactiver ces annonces à distance ; c'est le rôle de l'interrupteur des publicités mentionné ci-dessus.</p>
+<p>Pour afficher et mesurer les annonces, le SDK Google Mobile Ads collecte l'identifiant publicitaire de l'appareil, son adresse IP (à partir de laquelle une localisation approximative peut être estimée), vos interactions avec les annonces et des informations sur les performances de l'application, à des fins de publicité, d'analyse et de prévention de la fraude. Dans l'Espace économique européen, au Royaume-Uni et dans les autres régions où c'est requis, Andante affiche le formulaire de consentement de Google et ne demande des annonces qu'une fois votre choix effectué ; Google diffuse ensuite les annonces conformément à ce choix. Vous pouvez le consulter ou le modifier à tout moment dans Paramètres &rarr; Options de confidentialité des annonces (affiché là où c'est requis), et vous pouvez réinitialiser ou supprimer votre identifiant publicitaire dans les paramètres d'Android. Votre choix dans ce formulaire s'applique aux publicités. Le formulaire n'apparaît que lorsque les publicités sont activées : Google Analytics peut donc collecter l'identifiant publicitaire sans que vous l'ayez vu ; réinitialiser ou supprimer l'identifiant dans les paramètres d'Android s'applique aussi à Analytics.</p>
+<p>Google utilise ces données conformément à ses propres règles de confidentialité : <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>. Comment Google utilise les données des applications qui affichent ses annonces : <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.</p>
+
+<h2>Andante Cloud (synchronisation facultative)</h2>
+<p>Andante Cloud synchronise vos tâches entre vos appareils. Elle est facultative, désactivée tant que vous ne l'activez pas, et n'est actuellement proposée qu'à un groupe restreint d'utilisateurs. Si vous ne vous y êtes jamais connecté, rien dans cette section ne vous concerne.</p>
+<p><strong>Connexion.</strong> Vous vous connectez avec Google ou Apple. La page de connexion s'ouvre dans le navigateur de votre téléphone et est gérée par Amazon Cognito, un service d'Amazon Web Services (AWS) que nous utilisons, conjointement avec Google ou Apple. Andante ne voit jamais votre mot de passe Google ou Apple. Nous ne demandons à Google ou à Apple que votre adresse e-mail — ni votre nom ni votre photo de profil. Si vous utilisez « Masquer mon adresse e-mail » d'Apple, nous recevons l'adresse relais créée par Apple au lieu de votre adresse réelle.</p>
+<p><strong>Ce que nous conservons sur votre compte :</strong> votre adresse e-mail ; l'identifiant que Google ou Apple utilise pour votre compte, et lequel des deux vous avez utilisé pour vous connecter ; les identifiants de compte et de stockage attribués par Amazon Cognito ; et les dates de création et de dernière modification du compte. AWS conserve également, pour la sécurité et l'exploitation, un journal des requêtes adressées au service de connexion, y compris l'adresse IP d'origine, pendant 90 jours au maximum.</p>
+<p><strong>Ce qui est envoyé lorsque la synchronisation est activée :</strong> une copie de vos tâches (titre, notes, description, dates et heures, réglages de rappel, priorité, statut, récurrence, sous-tâches et personne dont vous attendez une réponse), des notes de tâches, des listes, dossiers, étiquettes, contextes et de leurs liens avec les tâches, des listes de contrôle, de leurs dossiers et éléments, et des routines — accompagnée d'un identifiant aléatoire d'appareil créé par l'application (la sauvegarde ou le transfert d'appareil d'Android peuvent le transférer sur un nouveau téléphone). Andante synchronise à l'ouverture de l'application, quelques minutes après vos modifications et périodiquement en arrière-plan.</p>
+<p><strong>Ce qui n'est pas envoyé :</strong> les images (images de couverture, images des notes et photos des capsules temporelles — une note ne conserve qu'une référence à son image), les habitudes et leurs journaux, les pointages de routines, l'historique d'achèvement des tâches, les revues hebdomadaires, les capsules temporelles et les paramètres.</p>
+<p><strong>Où les données sont stockées, et comment elles sont protégées.</strong> Dans la région Asie-Pacifique (Mumbai) d'AWS, en Inde. Chaque compte dispose de son propre dossier, accessible uniquement avec la connexion de ce compte ; l'accès public au stockage est bloqué ; les connexions doivent utiliser HTTPS ; les données sont chiffrées au repos. Seuls les comptes que nous avons activés peuvent stocker des données : si vous vous connectez avec un compte qui n'a pas été activé, aucune donnée de tâche n'est envoyée ; seuls existent l'enregistrement de connexion et un identifiant de stockage aléatoire sans information personnelle.</p>
+<p><strong>Durée de conservation :</strong></p>
+<ul>
+  <li><strong>Pendant que vous l'utilisez :</strong> la copie actuelle est conservée jusqu'à ce que vous la supprimiez, dans l'application ou par e-mail. Chaque synchronisation la remplace, et la copie remplacée est conservée comme version antérieure, afin que des données perdues par erreur puissent encore être récupérées, puis supprimée automatiquement au bout d'environ 30 jours (la suppression automatique peut prendre quelques jours de plus).</li>
+  <li><strong>Se déconnecter</strong> arrête la synchronisation sur cet appareil et en retire votre enregistrement de connexion. Les données dans le cloud sont conservées.</li>
+  <li><strong>Supprimer votre compte dans l'application</strong> (Paramètres &rarr; Synchronisation cloud &rarr; Supprimer les données cloud et le compte) arrête la synchronisation sur tous vos appareils et supprime l'enregistrement de votre compte, y compris votre adresse e-mail. Dès cet instant, plus aucun appareil ne peut accéder à vos données synchronisées ; la copie supprimée et les versions antérieures ne subsistent dans le stockage qu'en tant que versions antérieures et sont définitivement supprimées automatiquement dans un délai d'environ 30 jours (la suppression automatique peut prendre quelques jours de plus). Les données présentes sur vos appareils sont conservées. Deux enregistrements sans information personnelle sont conservés, sans date de suppression fixée : un marqueur qui ne contient que l'heure de la suppression et qui signale à vos autres appareils que le compte n'existe plus, et un identifiant de stockage aléatoire qui ne permet plus de se connecter.</li>
+  <li><strong>Sans l'application,</strong> vous pouvez nous demander par e-mail de supprimer votre compte et vos données : <a href="../delete-account/fr.html">velocitycraft.app/andante/delete-account</a>. Nous terminons la suppression dans les 30 jours suivant la vérification de la demande. Vous pouvez aussi nous demander de supprimer uniquement vos données synchronisées et de conserver le compte.</li>
+  <li><strong>Comptes non activés :</strong> nous pouvons supprimer l'enregistrement de connexion d'un compte qui n'est pas activé pour Andante Cloud lorsqu'il date de plus de 30 jours ; l'identifiant de stockage aléatoire créé lors de sa connexion, qui ne contient aucune information personnelle, est conservé sans date de suppression fixée. Si ce compte conserve encore des données synchronisées datant de la période où il était activé, nous supprimons d'abord ces données.</li>
+  <li><strong>Si votre compte n'est plus activé</strong>, l'application ne peut plus atteindre ses données synchronisées : la suppression dans l'application ne retire donc que l'enregistrement du compte. Dans ce cas, écrivez-nous — si possible avant de supprimer le compte dans l'application — et nous supprimerons à la fois les données et le compte.</li>
+</ul>
+
+<h2>Qui traite vos données</h2>
+<p>Nous ne vendons pas vos informations personnelles. Nous ne les partageons qu'avec les prestataires qui font fonctionner certaines parties d'Andante pour notre compte, avec Google à des fins publicitaires comme décrit ci-dessous, et lorsque la loi l'exige :</p>
+<ul>
+  <li><strong>Google</strong> — Firebase Crashlytics, Google Analytics for Firebase, Firebase Remote Config, Google AdMob, la connexion avec Google et Google Fonts. Google utilise également les données publicitaires selon ses propres règles, mentionnées ci-dessus.</li>
+  <li><strong>Amazon Web Services</strong> — la connexion (Amazon Cognito) et le stockage (Amazon S3) d'Andante Cloud, dans la région Asie-Pacifique (Mumbai).</li>
+  <li><strong>Apple</strong> — Se connecter avec Apple, si vous le choisissez.</li>
+</ul>
+<p>Les données d'Andante Cloud sont stockées en Inde. Google traite les rapports de plantage, les statistiques d'utilisation et les données publicitaires sur des serveurs situés dans plusieurs pays. Où que vous viviez, vos données peuvent donc être traitées en dehors de votre pays.</p>
+
 <h2>Ce qui n'est pas collecté</h2>
-<p>Il n'y a ni publicité, ni analytique, ni rapport de plantage, ni identifiant publicitaire. Il n'y a pas d'écran de connexion, nous ne collectons donc ni compte ni adresse e-mail. Il n'y a rien à acheter — ni abonnement, ni offre payante — aucune bibliothèque de facturation n'est donc présente. Andante ne demande aucune autorisation de localisation, de contacts, de microphone ou de photothèque.</p>
-<p>Une exception mérite d'être mentionnée parce qu'elle est accessible : un mode développeur caché peut être déverrouillé en appuyant plusieurs fois sur la ligne de version et en saisissant une adresse e-mail. Seul un hachage SHA-256 de cette adresse est conservé, jamais l'adresse elle-même ; ce hachage reste sur l'appareil, est exclu de la sauvegarde Android et — l'application ne disposant d'aucune autorisation réseau — ne peut être envoyé nulle part.</p>
+<p>Andante ne vous demande pas votre nom et ne demande aucune autorisation de localisation, de contacts, de microphone ou de photothèque (la saisie vocale passe par le service de reconnaissance vocale de votre téléphone, comme décrit plus haut). Il n'y a rien à acheter — ni abonnement, ni offre payante — aucune bibliothèque de facturation n'est donc présente et aucune information de paiement n'existe. Le contenu de vos tâches n'est jamais envoyé à Crashlytics, Analytics, Remote Config ou AdMob, et aucun identifiant utilisateur n'est défini dans l'analytique.</p>
+<p>Un mode développeur caché peut être déverrouillé en appuyant plusieurs fois sur la ligne de version et en saisissant une adresse e-mail. Seul un hachage SHA-256 de cette adresse est conservé, jamais l'adresse elle-même. Ce hachage reste sur l'appareil, est exclu de la sauvegarde Android et n'est jamais envoyé nulle part ; les statistiques d'utilisation n'enregistrent que le fait que le mode développeur soit activé ou non.</p>
 
 <h2>Autorisations</h2>
 <ul>
+  <li><strong>Internet et état du réseau</strong> — rapports de plantage, statistiques d'utilisation, publicités, interrupteur des publicités et Andante Cloud. Android les accorde à l'installation ; Andante n'envoie lui-même aucune donnée de tâche si vous n'utilisez pas Andante Cloud.</li>
+  <li><strong>Identifiant publicitaire</strong> — permet à Google AdMob et à Google Analytics de lire l'identifiant publicitaire de l'appareil. Vous pouvez le réinitialiser ou le supprimer dans les paramètres d'Android.</li>
   <li><strong>Notifications</strong> — rappels, alarmes et résumé quotidien. Sans elles l'application fonctionne toujours ; elle ne peut simplement rien vous signaler. [Facultatif, mais les rappels sont la raison d'être de l'application]</li>
   <li><strong>Alarmes &amp; rappels (alarme exacte)</strong> — déclenche un rappel à la minute que vous avez choisie plutôt qu'au moment qui arrange Android. Andante vous prévient quand cette autorisation manque au lieu de faire comme si un rappel était armé. [Requis pour les alarmes]</li>
   <li><strong>Exécution au démarrage</strong> — réarme vos alarmes après un redémarrage, un changement d'heure ou de fuseau horaire, ou une mise à jour de l'application. [Requis pour les alarmes]</li>
@@ -114,16 +178,21 @@
 <p>L'importation depuis TickTick, Todoist, Google Tasks et Rappels d'Apple lit un fichier que vous exportez depuis ces services et que vous confiez à Andante. Andante ne s'y connecte pas, ne demande jamais de mot de passe et ne conserve aucun jeton d'accès pour aucun d'entre eux.</p>
 
 <h2>Enfants</h2>
-<p>Andante ne s'adresse pas aux enfants de moins de 13 ans. Nous ne collectons sciemment aucune donnée à leur sujet — ni, du reste, au sujet de qui que ce soit.</p>
+<p>Andante ne s'adresse pas aux enfants de moins de 13 ans, et nous ne collectons pas sciemment d'informations personnelles les concernant. Si vous pensez qu'un enfant s'est connecté à Andante Cloud, contactez-nous et nous supprimerons le compte.</p>
 
 <h2>Vos droits</h2>
-<p>L'accès, la rectification et la suppression sont des démarches que vous effectuez directement, car nous ne détenons rien qui puisse faire l'objet d'une demande de votre part. Modifiez ou supprimez n'importe quel élément dans l'application, emportez tout avec vous grâce à la sauvegarde ou à l'exportation CSV, et désinstallez l'application pour supprimer le reste. Si Android a sauvegardé l'application dans votre compte Google, cette copie se supprime depuis les paramètres de sauvegarde de Google, pas depuis Andante.</p>
+<ul>
+  <li><strong>Sur votre appareil</strong>, vous effectuez vous-même l'accès, la rectification et la suppression : modifiez ou supprimez n'importe quel élément dans l'application, emportez tout avec vous grâce à la sauvegarde ou à l'exportation CSV, et désinstallez l'application pour supprimer le reste. Si Android a sauvegardé l'application dans votre compte Google, cette copie se supprime depuis les paramètres de sauvegarde de Google, pas depuis Andante.</li>
+  <li><strong>Andante Cloud :</strong> les données synchronisées que nous conservons sont celles que vous voyez dans l'application, et vous pouvez les supprimer à tout moment, dans l'application ou par e-mail. Vous pouvez aussi nous demander une copie des informations personnelles que nous détenons sur vous, nous demander de les rectifier ou de les supprimer, ou vous opposer à leur utilisation, en écrivant à l'adresse ci-dessous.</li>
+  <li><strong>Publicité et analytique :</strong> modifiez vos choix en matière de publicité dans Paramètres &rarr; Options de confidentialité des annonces (si affiché), et réinitialisez ou supprimez votre identifiant publicitaire dans les paramètres d'Android. Les rapports de plantage et les statistiques d'utilisation ne sont liés ni à votre nom, ni à votre adresse e-mail, ni à votre compte Andante Cloud ; nous ne pouvons donc généralement pas isoler les enregistrements d'une personne donnée.</li>
+  <li>Selon votre lieu de résidence, vous pouvez aussi avoir le droit d'introduire une réclamation auprès d'une autorité de protection des données.</li>
+</ul>
 
 <h2>Modifications</h2>
-<p>Si une version future ajoute quoi que ce soit qui envoie des données hors de votre appareil, cette politique est mise à jour avant la sortie de cette version et la modification est annoncée dans l'application.</p>
+<p>Lorsqu'une version d'Andante modifie ce qu'elle collecte ou l'endroit où elle l'envoie, nous mettons à jour cette politique avant la sortie de cette version et modifions la date d'entrée en vigueur indiquée en haut.</p>
 
 <h2>Contact</h2>
-<p>velocitycraft.app+support+andante@gmail.com</p>
+<p>Velocity Craft<br>velocitycraft.app+support+andante@gmail.com</p>
 
 </body>
 </html>

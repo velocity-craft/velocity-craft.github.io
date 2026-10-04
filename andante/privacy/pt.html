@@ -29,6 +29,10 @@
     th, td { border-color: #444; }
     th { background: #262626; }
   }
+  a { color: #1a5fb4; }
+  @media (prefers-color-scheme: dark) {
+    a { color: #8ab4f8; }
+  }
 </style>
 </head>
 <body>
@@ -45,41 +49,68 @@
 </p>
 
 <h1>Política de Privacidade do Andante</h1>
-<p class="date">Data de entrada em vigor: 18 de setembro de 2026</p>
+<p class="date">Data de entrada em vigor: 5 de outubro de 2026</p>
+
+<p>Esta política aplica-se à aplicação Andante para Android, publicada pela Velocity Craft ("nós"). Descreve o que o Andante guarda, o que envia, a quem e durante quanto tempo é conservado.</p>
 
 <h2>A versão curta</h2>
-<p>O Andante não tem conta, não tem servidor e não tem publicidade. A aplicação publicada não tem sequer a permissão de Internet do Android — não consegue fazer um pedido de rede, pelo que não consegue enviar nada. Tudo o que se segue é a forma longa dessa frase, incluindo os pontos por onde os dados ainda podem sair do seu telemóvel sem passarem por nós.</p>
+<p>O Andante funciona sem conta, e as suas tarefas ficam no seu telemóvel. Ainda assim, a aplicação usa a Internet para cinco coisas: relatórios de falhas, estatísticas de utilização, um anúncio ocasional, um interruptor remoto que liga ou desliga esses anúncios, e o Andante Cloud — um serviço de sincronização opcional que exige início de sessão com a Google ou a Apple e que, de momento, só está disponível para um grupo limitado de utilizadores. Os quatro primeiros nunca recebem o que escreve no Andante. As suas tarefas só nos chegam se iniciar sessão no Andante Cloud e ativar a sincronização. Também podem sair do telemóvel através de funcionalidades que controla e que são geridas pelo Android ou por outras aplicações, e não por nós — a cópia de segurança do próprio Android, a entrada de voz e os ficheiros que exportar —, como descreve a tabela abaixo. Tudo o que se segue é a forma longa deste parágrafo.</p>
 
 <h2>O que não vamos afirmar</h2>
 <ul>
   <li><strong>As suas tarefas neste dispositivo não são encriptadas por nós.</strong> Ficam no armazenamento privado da aplicação, que o Android isola das outras aplicações. Num dispositivo com root, ou num dispositivo que outra pessoa consiga desbloquear, esse isolamento pode ser contornado.</li>
-  <li><strong>Não podemos recuperar nada por si.</strong> Não guardamos qualquer cópia. Se perder o telemóvel e não tiver um ficheiro de cópia de segurança, os dados desaparecem.</li>
+  <li><strong>O Andante Cloud não tem encriptação ponto a ponto.</strong> Os dados sincronizados são encriptados durante o envio para o servidor e, uma vez guardados, são encriptados pela Amazon Web Services com chaves geridas pela AWS. Isto significa que nós, enquanto operadores desse armazenamento, poderíamos tecnicamente lê-los. Só lhes acedemos para fazer funcionar o serviço — por exemplo, para o ajudar a recuperar dados quando nos pedir — ou quando a lei o exige.</li>
+  <li><strong>Não podemos recuperar o que só existia no seu telemóvel.</strong> Se não usar o Andante Cloud, não guardamos qualquer cópia das suas tarefas, e nem o Andante Cloud guarda tudo (ver abaixo). Se perder o telemóvel e não tiver um ficheiro de cópia de segurança, esses dados desaparecem.</li>
   <li>Evitamos formulações de segurança absolutas. Não descrevem nada que possa verificar, por isso indicamos antes as condições.</li>
 </ul>
 
-<h2>O que o Andante guarda, e onde</h2>
-<p>Tudo isto fica no armazenamento privado da aplicação, no seu dispositivo, e nada disto nos é enviado:</p>
+<h2>O que o Andante guarda no seu dispositivo</h2>
+<p>Tudo isto fica no armazenamento privado da aplicação, no seu dispositivo:</p>
 <ul>
   <li>Tarefas — títulos, notas, imagens das notas, datas, lembretes, prioridades, subtarefas, histórico de conclusão</li>
-  <li>Projetos, áreas, contextos, etiquetas e pastas</li>
-  <li>Listas de verificação, os seus itens e as imagens de capa que lhes associar</li>
+  <li>Listas, pastas, etiquetas e contextos</li>
+  <li>Listas de verificação, as suas pastas e itens, e as imagens de capa que lhes associar</li>
   <li>Rotinas e as suas conclusões; hábitos, categorias de hábitos e registos</li>
   <li>Revisões semanais e cápsulas do tempo, incluindo qualquer imagem que associe a uma cápsula</li>
   <li>Definições — tema, início da semana, disposição dos separadores, escolha do tipo de letra, valores predefinidos dos lembretes</li>
+  <li>Se iniciar sessão no Andante Cloud: o seu registo de início de sessão (o endereço de e-mail e os identificadores descritos abaixo, e um token de sessão), encriptado com uma chave guardada no Keystore do Android deste telemóvel</li>
 </ul>
-<p>Os eventos do calendário do dispositivo <strong>não</strong> estão nessa lista. O separador de calendário lê os eventos do fornecedor de calendário do Android sempre que os desenha e não guarda qualquer cópia, pelo que não estão na base de dados da aplicação nem em nenhuma cópia de segurança que ela escreva.</p>
+<p>Os eventos do calendário do dispositivo <strong>não</strong> estão nessa lista. O separador de calendário lê os eventos do fornecedor de calendário do Android sempre que os desenha e não guarda qualquer cópia, pelo que não estão na base de dados da aplicação nem em nenhuma cópia de segurança que ela escreva, e o Andante nunca os envia para lado nenhum.</p>
 
-<h2>O que pode sair do seu telemóvel</h2>
-<p>A aplicação não envia nada por iniciativa própria. Ainda assim, estes caminhos existem — três são funcionalidades do Android, um é um ficheiro criado por si.</p>
+<h2>O que sai do seu telemóvel</h2>
 <table>
   <tr><th>Caminho</th><th>O que acontece</th></tr>
   <tr>
+    <td>Relatórios de falhas<br>(Firebase Crashlytics, Google)</td>
+    <td>Quando a aplicação falha, ou regista um erro do qual recuperou, o Crashlytics recebe os detalhes técnicos do erro, o modelo do dispositivo, as versões do Android e da aplicação, alguns dados técnicos sobre o estado da aplicação (por exemplo, se o Android restringe os alarmes da aplicação em segundo plano) e um identificador de instalação aleatório. As suas tarefas não estão incluídas. O Firebase conserva os relatórios de falhas durante 90 dias.</td>
+  </tr>
+  <tr>
+    <td>Estatísticas de utilização<br>(Google Analytics for Firebase)</td>
+    <td>Que ecrãs são abertos — por tipo de ecrã, nunca que tarefa ou lista —, contagens de ações como criar ou concluir uma tarefa, que funcionalidades opcionais estão ativadas e se o modo de programador está ativado. O Google Analytics usa também um identificador aleatório de instância da aplicação, recolhe o ID de publicidade do dispositivo (ver "Anúncios e consentimento") e deduz uma região aproximada a partir do seu endereço IP. Não são enviados títulos de tarefas, nomes de listas, notas, endereços de e-mail nem qualquer ID de utilizador. Regista também automaticamente o modelo do dispositivo, a versão do Android, o idioma definido e dados de sessão e de interação, como quando a aplicação é aberta pela primeira vez, quando começa uma sessão e durante quanto tempo a aplicação é usada. Os dados ao nível do evento são conservados durante 14 meses, no máximo.</td>
+  </tr>
+  <tr>
+    <td>Interruptor de anúncios<br>(Firebase Remote Config, Google)</td>
+    <td>O Andante pergunta ao Firebase se os anúncios de abertura da aplicação estão ligados nesse momento. O pedido inclui um identificador de instalação do Firebase, as versões da aplicação e do Android, as suas definições de país, idioma e fuso horário, e as definições de funcionalidades registadas para as estatísticas de utilização.</td>
+  </tr>
+  <tr>
+    <td>Anúncios<br>(Google AdMob)</td>
+    <td>Ver "Anúncios e consentimento" abaixo.</td>
+  </tr>
+  <tr>
+    <td>Andante Cloud — só se iniciar sessão</td>
+    <td>Ver "Andante Cloud" abaixo.</td>
+  </tr>
+  <tr>
     <td>Cópia de segurança do Android (Cópia de segurança automática e transferência entre dispositivos)</td>
-    <td>O Android pode copiar os dados desta aplicação, incluindo a base de dados de tarefas, para a cópia de segurança da sua conta Google ou para um telemóvel novo. Isto é uma funcionalidade do sistema operativo, não uma transferência para nós — nunca a vemos e não a conseguimos ler. Pode desativá-la em Definições do Android &rarr; Google &rarr; Cópia de segurança. Um ficheiro está deliberadamente excluído dela: o estado de desbloqueio do modo de programador, para que um telemóvel restaurado nunca chegue já desbloqueado.</td>
+    <td>O Android pode copiar os dados desta aplicação, incluindo a base de dados de tarefas, para a cópia de segurança da sua conta Google ou para um telemóvel novo. Isto é uma funcionalidade do sistema operativo, não uma transferência para nós — nunca a vemos e não a conseguimos ler. Pode desativá-la em Definições do Android &rarr; Google &rarr; Cópia de segurança. Alguns ficheiros estão deliberadamente excluídos dela: o estado de desbloqueio do modo de programador (para que um telemóvel restaurado nunca chegue já desbloqueado), o seu registo de início de sessão do Andante Cloud (para que a sua sessão nunca saia deste telemóvel) e registos que só fazem sentido neste telemóvel, como os alarmes agendados e a frequência dos anúncios.</td>
   </tr>
   <tr>
     <td>Um ficheiro de cópia de segurança ou CSV que exporte</td>
     <td>O Andante escreve-o onde indicar no seletor de ficheiros do Android — no armazenamento local, ou numa unidade na nuvem, se escolher uma. A partir desse momento, proteger o ficheiro passa a ser consigo. É um ficheiro simples, não encriptado, por opção deliberada: existe para ser restaurado e aberto noutro lado.</td>
+  </tr>
+  <tr>
+    <td>Ditar uma tarefa com o botão do microfone</td>
+    <td>O botão do microfone, onde adiciona uma tarefa, entrega o ditado ao serviço de reconhecimento de voz do seu telemóvel — normalmente o da Google —, que converte o que diz em texto e, para isso, pode enviar o áudio para os seus servidores, de acordo com a política de privacidade desse fornecedor. O Andante recebe apenas o texto resultante, nunca o áudio, e não precisa de permissão de microfone, porque é o serviço de reconhecimento de voz, e não o Andante, que usa o microfone. Nada é ditado a menos que toque no botão.</td>
   </tr>
   <tr>
     <td>Mudar a hora de um evento do calendário arrastando-o</td>
@@ -91,12 +122,45 @@
   </tr>
 </table>
 
+<h2>Anúncios e consentimento</h2>
+<p>O Andante é gratuito e pode, de vez em quando, mostrar um anúncio do Google AdMob em ecrã inteiro (anúncio de "abertura da aplicação") quando regressa à aplicação. Nunca são mostrados anúncios quando inicia a aplicação de raiz, enquanto um alarme toca ou pouco antes ou depois de um, quando chega a partir de uma notificação, de um widget ou de uma partilha, nem enquanto está a escrever. Podemos desligar estes anúncios remotamente; é para isso que serve o interruptor de anúncios referido acima.</p>
+<p>Para mostrar e medir os anúncios, o SDK de anúncios para dispositivos móveis da Google recolhe o ID de publicidade do dispositivo, o seu endereço IP (a partir do qual pode ser estimada uma localização aproximada), as suas interações com os anúncios e informações sobre o desempenho da aplicação, para fins de publicidade, análise e prevenção de fraude. No Espaço Económico Europeu, no Reino Unido e noutras regiões onde é exigido, o Andante mostra o formulário de consentimento da Google e só pede anúncios depois de ter feito a sua escolha; em seguida, a Google apresenta os anúncios de acordo com essa escolha. Pode revê-la ou alterá-la a qualquer momento em Definições &rarr; Opções de privacidade de anúncios (apresentado onde é exigido), e pode repor ou eliminar o seu ID de publicidade nas definições do Android. A sua escolha nesse formulário aplica-se aos anúncios. O formulário só aparece enquanto os anúncios estão ativados, pelo que o Google Analytics pode recolher o ID de publicidade sem que o tenha visto; repor ou eliminar o ID nas definições do Android também se aplica ao Analytics.</p>
+<p>A Google utiliza estes dados de acordo com a sua própria política de privacidade: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>. Como a Google utiliza os dados das aplicações que mostram os seus anúncios: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.</p>
+
+<h2>Andante Cloud (sincronização opcional)</h2>
+<p>O Andante Cloud mantém as suas tarefas sincronizadas entre os seus dispositivos. É opcional, fica desligado até o ativar e, de momento, só está disponível para um grupo limitado de utilizadores. Se nunca iniciou sessão nele, nada nesta secção se aplica a si.</p>
+<p><strong>Início de sessão.</strong> Inicia sessão com a Google ou a Apple. A página de início de sessão abre no navegador do seu telemóvel e é gerida pelo Amazon Cognito, um serviço da Amazon Web Services (AWS) que utilizamos, em conjunto com a Google ou a Apple. O Andante nunca vê a sua palavra-passe da Google ou da Apple. À Google ou à Apple pedimos apenas o seu endereço de e-mail — não o seu nome nem a sua fotografia de perfil. Se usar "Ocultar o meu e-mail" da Apple, recebemos o endereço de reencaminhamento criado pela Apple em vez do seu endereço real.</p>
+<p><strong>O que guardamos sobre a sua conta:</strong> o seu endereço de e-mail; o identificador que a Google ou a Apple usa para a sua conta e qual das duas usou para iniciar sessão; os identificadores de conta e de armazenamento atribuídos pelo Amazon Cognito; e quando a conta foi criada e alterada pela última vez. A AWS guarda também, por motivos de segurança e de operação, registos dos pedidos feitos ao serviço de início de sessão, incluindo o endereço IP de origem, durante um máximo de 90 dias.</p>
+<p><strong>O que é enviado enquanto a sincronização está ativada:</strong> uma cópia das suas tarefas (título, notas, descrição, datas e horas, definições de lembrete, prioridade, estado, repetição, subtarefas e por quem está à espera), das notas das tarefas, das listas, pastas, etiquetas, contextos e das suas ligações às tarefas, das listas de verificação, das suas pastas e itens, e das rotinas — juntamente com um identificador aleatório de dispositivo criado pela aplicação (a cópia de segurança ou a transferência de dispositivo do Android podem levá-lo para um telemóvel novo). O Andante sincroniza quando abre a aplicação, alguns minutos depois de fazer alterações e periodicamente em segundo plano.</p>
+<p><strong>O que não é enviado:</strong> imagens (imagens de capa, imagens das notas e fotografias das cápsulas do tempo — uma nota guarda apenas uma referência à sua imagem), hábitos e registos de hábitos, registos de rotinas, o histórico de conclusão de tarefas, revisões semanais, cápsulas do tempo e definições.</p>
+<p><strong>Onde é guardado e como é protegido.</strong> Na região Ásia-Pacífico (Mumbai) da AWS, na Índia. Cada conta tem a sua própria pasta, a que só o início de sessão dessa conta consegue aceder; o acesso público ao armazenamento está bloqueado; as ligações têm de usar HTTPS; os dados são encriptados em repouso. Só as contas que ativámos podem guardar dados: se iniciar sessão com uma conta que não foi ativada, não é enviado nenhum dado de tarefas e existem apenas o registo de início de sessão e um identificador de armazenamento aleatório sem informação pessoal.</p>
+<p><strong>Durante quanto tempo é conservado:</strong></p>
+<ul>
+  <li><strong>Enquanto o utiliza:</strong> a cópia atual é conservada até que a elimine, na aplicação ou por e-mail. Cada sincronização substitui-a, e a cópia substituída é conservada como versão anterior, para que dados perdidos por engano ainda possam ser recuperados, sendo eliminada automaticamente ao fim de cerca de 30 dias (a eliminação automática pode demorar mais alguns dias).</li>
+  <li><strong>Terminar sessão</strong> para a sincronização nesse dispositivo e remove dele o seu registo de início de sessão. Os dados na nuvem mantêm-se.</li>
+  <li><strong>Eliminar a sua conta na aplicação</strong> (Definições &rarr; Sincronização na nuvem &rarr; Eliminar dados e conta na nuvem) interrompe a sincronização em todos os seus dispositivos e elimina o registo da sua conta, incluindo o seu endereço de e-mail. A partir desse momento, nenhum dispositivo consegue aceder aos seus dados sincronizados; a cópia eliminada e as versões anteriores ficam no armazenamento apenas como versões anteriores e são eliminadas definitivamente de forma automática no prazo de cerca de 30 dias (a eliminação automática pode demorar mais alguns dias). Os dados nos seus dispositivos mantêm-se. Ficam guardados, sem data de eliminação definida, dois registos sem informação pessoal: uma marca que contém apenas a hora da eliminação e que avisa os seus outros dispositivos de que a conta deixou de existir, e um identificador de armazenamento aleatório com o qual já não é possível iniciar sessão.</li>
+  <li><strong>Sem a aplicação,</strong> pode pedir-nos por e-mail que eliminemos a sua conta e os seus dados: <a href="../delete-account/pt.html">velocitycraft.app/andante/delete-account</a>. Concluímos a eliminação no prazo de 30 dias após verificarmos o pedido. Também pode pedir-nos que eliminemos apenas os seus dados sincronizados e mantenhamos a conta.</li>
+  <li><strong>Contas não ativadas:</strong> podemos eliminar o registo de início de sessão de uma conta que não esteja ativada para o Andante Cloud quando tiver mais de 30 dias; o identificador de armazenamento aleatório criado quando iniciou sessão, que não contém informação pessoal, fica guardado sem data de eliminação definida. Se essa conta ainda tiver dados sincronizados do período em que estava ativada, eliminamos primeiro esses dados.</li>
+  <li><strong>Se a sua conta já não estiver ativada</strong>, a aplicação já não consegue aceder aos dados sincronizados, pelo que eliminá-la na aplicação remove apenas o registo da conta. Nesse caso, envie-nos um e-mail — se possível, antes de a eliminar na aplicação — e eliminaremos os dados e a conta.</li>
+</ul>
+
+<h2>Quem trata os seus dados</h2>
+<p>Não vendemos as suas informações pessoais. Só as partilhamos com os prestadores de serviços que fazem funcionar partes do Andante por nós, com a Google para fins publicitários, como descrito abaixo, e quando a lei o exige:</p>
+<ul>
+  <li><strong>Google</strong> — Firebase Crashlytics, Google Analytics for Firebase, Firebase Remote Config, Google AdMob, o início de sessão com a Google e o Google Fonts. A Google também utiliza os dados de publicidade de acordo com as suas próprias políticas, indicadas acima.</li>
+  <li><strong>Amazon Web Services</strong> — início de sessão (Amazon Cognito) e armazenamento (Amazon S3) do Andante Cloud, na região Ásia-Pacífico (Mumbai).</li>
+  <li><strong>Apple</strong> — Iniciar sessão com a Apple, se o escolher.</li>
+</ul>
+<p>Os dados do Andante Cloud são guardados na Índia. A Google trata os relatórios de falhas, as estatísticas de utilização e os dados de publicidade em servidores de vários países. Por isso, onde quer que viva, os seus dados podem ser tratados fora do seu país.</p>
+
 <h2>O que não é recolhido</h2>
-<p>Não há publicidade, não há analítica, não há relatórios de falhas e não há ID de publicidade. Não há ecrã de início de sessão, pelo que não recolhemos qualquer conta ou endereço de e-mail. Não há nada para comprar — não há subscrição nem nível pago — pelo que não está presente nenhuma biblioteca de pagamentos. O Andante não pede permissão de localização, contactos, microfone ou biblioteca de fotografias.</p>
-<p>Vale a pena nomear uma exceção, porque é alcançável: é possível desbloquear um modo de programador oculto tocando repetidamente na linha da versão e escrevendo um endereço de e-mail. É guardado apenas um hash SHA-256 desse endereço, nunca o endereço em si; o hash fica no dispositivo, é excluído da cópia de segurança do Android e — não tendo a aplicação permissão de rede — não pode ser enviado para lado nenhum.</p>
+<p>O Andante não lhe pede o nome e não pede permissão de localização, contactos, microfone ou biblioteca de fotografias (a entrada de voz passa pelo serviço de reconhecimento de voz do seu telemóvel, como descrito acima). Não há nada para comprar — não há subscrição nem nível pago — pelo que não está presente nenhuma biblioteca de pagamentos e não existem dados de pagamento. O conteúdo das suas tarefas nunca é enviado ao Crashlytics, ao Analytics, ao Remote Config nem ao AdMob, e não é definido nenhum ID de utilizador na análise.</p>
+<p>É possível desbloquear um modo de programador oculto tocando repetidamente na linha da versão e escrevendo um endereço de e-mail. É guardado apenas um hash SHA-256 desse endereço, nunca o endereço em si. O hash fica no dispositivo, é excluído da cópia de segurança do Android e nunca é enviado para lado nenhum; as estatísticas de utilização registam apenas se o modo de programador está ativado.</p>
 
 <h2>Permissões</h2>
 <ul>
+  <li><strong>Internet e estado da rede</strong> — relatórios de falhas, estatísticas de utilização, anúncios, o interruptor de anúncios e o Andante Cloud. O Android concede-as na instalação; o próprio Andante não envia dados de tarefas a menos que use o Andante Cloud.</li>
+  <li><strong>ID de publicidade</strong> — permite que o Google AdMob e o Google Analytics leiam o ID de publicidade do dispositivo. Pode repor ou eliminar o ID nas definições do Android.</li>
   <li><strong>Notificações</strong> — lembretes, alarmes e o resumo diário. Sem ela a aplicação continua a funcionar; apenas não lhe consegue dizer nada. [Opcional, mas os lembretes são o objetivo da aplicação]</li>
   <li><strong>Alarmes &amp; lembretes (alarme exato)</strong> — dispara um lembrete ao minuto que escolheu, em vez de quando for conveniente para o Android. O Andante avisa-o quando ela falta, em vez de fingir que um lembrete está armado. [Obrigatória para alarmes]</li>
   <li><strong>Executar no arranque</strong> — volta a armar os seus alarmes depois de um reinício, de uma mudança de relógio ou de fuso horário, ou de uma atualização da aplicação. [Obrigatória para alarmes]</li>
@@ -114,16 +178,21 @@
 <p>A importação do TickTick, do Todoist, do Google Tasks e dos Lembretes da Apple lê um ficheiro que exporta desses serviços e entrega ao Andante. O Andante não se liga a esses serviços, nunca pede uma palavra-passe e não guarda qualquer token de acesso de nenhum deles.</p>
 
 <h2>Crianças</h2>
-<p>O Andante não se dirige a crianças com menos de 13 anos. Não recolhemos conscientemente dados delas — nem, já agora, de ninguém.</p>
+<p>O Andante não se dirige a crianças com menos de 13 anos, e não recolhemos conscientemente informações pessoais delas. Se achar que uma criança iniciou sessão no Andante Cloud, contacte-nos e eliminaremos a conta.</p>
 
 <h2>Os seus direitos</h2>
-<p>O acesso, a correção e a eliminação são coisas que executa diretamente, porque não guardamos nada sobre o qual nos possa perguntar. Edite ou elimine qualquer item na aplicação, leve tudo consigo através da cópia de segurança ou da exportação CSV, e desinstale para remover o resto. Se o Android tiver feito uma cópia de segurança da aplicação para a sua conta Google, essa cópia elimina-se nas definições de cópia de segurança do Google, não no Andante.</p>
+<ul>
+  <li><strong>No seu dispositivo</strong>, o acesso, a correção e a eliminação são feitos por si: edite ou elimine qualquer item na aplicação, leve tudo consigo através da cópia de segurança ou da exportação CSV, e desinstale para remover o resto. Se o Android tiver feito uma cópia de segurança da aplicação para a sua conta Google, essa cópia elimina-se nas definições de cópia de segurança do Google, não no Andante.</li>
+  <li><strong>Andante Cloud:</strong> os dados sincronizados que guardamos são os que vê na aplicação, e pode eliminá-los a qualquer momento, na aplicação ou por e-mail. Pode também pedir-nos uma cópia das informações pessoais que temos sobre si, pedir que as corrijamos ou eliminemos, ou opor-se à sua utilização, escrevendo para o endereço abaixo.</li>
+  <li><strong>Anúncios e análise:</strong> altere as suas escolhas de anúncios em Definições &rarr; Opções de privacidade de anúncios (se apresentado), e reponha ou elimine o seu ID de publicidade nas definições do Android. Os relatórios de falhas e as estatísticas de utilização não estão ligados ao seu nome, ao seu endereço de e-mail nem à sua conta do Andante Cloud, pelo que normalmente não conseguimos identificar os registos de uma pessoa em particular.</li>
+  <li>Consoante o local onde vive, pode também ter o direito de apresentar reclamação a uma autoridade de proteção de dados.</li>
+</ul>
 
 <h2>Alterações</h2>
-<p>Se uma versão futura acrescentar algo que envie dados para fora do seu dispositivo, esta política é atualizada antes de essa versão ser publicada e a alteração é anunciada na aplicação.</p>
+<p>Quando uma versão do Andante altera o que recolhe ou para onde o envia, atualizamos esta política antes de essa versão ser publicada e alteramos a data de entrada em vigor indicada no topo.</p>
 
 <h2>Contacto</h2>
-<p>velocitycraft.app+support+andante@gmail.com</p>
+<p>Velocity Craft<br>velocitycraft.app+support+andante@gmail.com</p>
 
 </body>
 </html>
