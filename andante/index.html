@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andante - Tasks &amp; Routines</title>
-<meta name="description" content="A to-do app whose reminders can actually wake you. Due times to the minute, real alarms, lists, folders, tags, and a calendar beside your events. No account needed.">
-<meta property="og:title" content="Andante - Tasks &amp; Routines">
-<meta property="og:description" content="A to-do app whose reminders can actually wake you. No account needed.">
+<title>Andante &mdash; The All-in-One To-Do App</title>
+<meta name="description" content="The all-in-one to-do app that runs your whole day: lists, folders, tags and subtasks, your calendar, notes, checklist goals, repeating tasks and reminders. Free, no account needed.">
+<meta property="og:title" content="Andante &mdash; The All-in-One To-Do App">
+<meta property="og:description" content="The all-in-one to-do app that runs your whole day. Free, no account needed.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://velocitycraft.app/andante/">
 <!-- Content is drawn only from the Play listing (apps/andante-android/fastlane/metadata/android/en-US/full_description.txt).
@@ -17,7 +17,6 @@
   --bg:#ffffff;--bg2:#f2f3f7;--bg3:#eef0f4;
   --fg:#1f2329;--fg2:#5a6270;--fg3:#8a909c;
   --accent:#4772fa;--accent2:#6f8ffb;--accent-soft:rgba(71,114,250,.08);
-  --alarm:#d84a3a;--alarm-soft:rgba(216,74,58,.1);
   --border:#e4e6eb;--card:#ffffff;--card-shadow:0 1px 3px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.04);
   --radius:16px;--max-w:960px;
 }
@@ -26,7 +25,6 @@
     --bg:#111318;--bg2:#171a21;--bg3:#1f232c;
     --fg:#e6e8ee;--fg2:#a3a9b6;--fg3:#6c7280;
     --accent:#5b82fb;--accent2:#8aa4fc;--accent-soft:rgba(91,130,251,.12);
-    --alarm:#ff8a7a;--alarm-soft:rgba(255,138,122,.12);
     --border:#2a2f3a;--card:#1a1e26;--card-shadow:0 1px 3px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.2);
   }
 }
@@ -88,7 +86,7 @@ body{
 .section-header.center{text-align:center}
 .section-header.center .section-desc{margin:0 auto}
 
-/* ── Reminder Showcase ── */
+/* ── Day Overview ── */
 .showcase-section{background:var(--bg2)}
 .showcase{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 @media(max-width:680px){.showcase{grid-template-columns:1fr;gap:32px}}
@@ -116,7 +114,6 @@ body{
   font-variant-numeric:tabular-nums;
 }
 .chip-notify{background:var(--accent-soft);color:var(--accent)}
-.chip-alarm{background:var(--alarm-soft);color:var(--alarm)}
 
 /* ── Feature Grid ── */
 .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
@@ -163,9 +160,9 @@ footer a:hover{color:var(--accent)}
 <!-- Hero -->
 <section class="hero" aria-labelledby="hero-heading">
 <div class="container">
-  <div class="hero-badge">No Account &middot; 76 Languages</div>
-  <h1 id="hero-heading">Tasks That Keep<br><span>Their Time.</span></h1>
-  <p class="hero-sub">A to-do app whose reminders can actually wake you. Pick the minute, choose a quiet notification or a real alarm, and let the day go to plan.</p>
+  <div class="hero-badge">Free &middot; No Account &middot; 76 Languages</div>
+  <h1 id="hero-heading">Your Whole Day,<br><span>Perfectly Organized.</span></h1>
+  <p class="hero-sub">The all-in-one to-do app that runs your whole day. Tasks, lists, your calendar, notes and goals &mdash; in one place, organized the way you think.</p>
   <div class="hero-cta">
     <a href="https://play.google.com/store/apps/details?id=app.velocitycraft.andante" class="btn-primary">
       <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
@@ -175,43 +172,43 @@ footer a:hover{color:var(--accent)}
 </div>
 </section>
 
-<!-- Reminder Showcase -->
-<section class="section showcase-section" aria-labelledby="reminder-heading">
+<!-- Day Overview -->
+<section class="section showcase-section" aria-labelledby="overview-heading">
 <div class="container">
   <div class="showcase">
     <div>
-      <p class="section-label">Core</p>
-      <h2 class="section-title" id="reminder-heading">A Due Time, and a Reminder That Means It</h2>
-      <p class="section-desc">Most to-do apps let you pick a date and then whisper at you. In Andante you pick the minute, then choose per task: a notification, or a real alarm that rings until you turn it off and can be snoozed. Set a default style, sound, and volume once &mdash; override it on the tasks that deserve it. Alarms survive a reboot.</p>
-      <ul class="offset-list" aria-label="Remind me">
-        <li>At due time</li>
-        <li>5 min before</li>
-        <li>10 min before</li>
-        <li>30 min before</li>
-        <li>1 hour before</li>
-        <li>1 day before</li>
+      <p class="section-label">At a glance</p>
+      <h2 class="section-title" id="overview-heading">One Day, One View</h2>
+      <p class="section-desc">Today&rsquo;s tasks, your meetings, your lists and your progress, together.</p>
+      <ul class="offset-list" aria-label="Lists and views">
+        <li>Inbox</li>
+        <li>Today</li>
+        <li>Next 7 Days</li>
+        <li>Work</li>
+        <li>Home</li>
+        <li>#errands</li>
       </ul>
     </div>
     <div class="task-demo" aria-hidden="true">
       <div class="task-row">
         <span class="task-check"></span>
-        <span class="task-title">Call the clinic back</span>
-        <span class="task-chip chip-notify">14:00 &middot; Notify</span>
+        <span class="task-title">Team sync</span>
+        <span class="task-chip chip-notify">10:00 &middot; Calendar</span>
       </div>
       <div class="task-row">
         <span class="task-check"></span>
-        <span class="task-title">Wake up for the flight</span>
-        <span class="task-chip chip-alarm">05:30 &middot; Alarm</span>
+        <span class="task-title">Prepare the quarterly report</span>
+        <span class="task-chip chip-notify">3 subtasks &middot; Work</span>
       </div>
-      <div class="task-row done">
+      <div class="task-row">
+        <span class="task-check"></span>
+        <span class="task-title">Weekly groceries</span>
+        <span class="task-chip chip-notify">$38 left of $100</span>
+      </div>
+      <div class="task-row">
         <span class="task-check"></span>
         <span class="task-title">Renew passport photos</span>
-        <span class="task-chip chip-notify">Yesterday</span>
-      </div>
-      <div class="task-row">
-        <span class="task-check"></span>
-        <span class="task-title">Send the quarterly report</span>
-        <span class="task-chip chip-notify">Fri 17:00</span>
+        <span class="task-chip chip-notify">Fri 17:00 &middot; Reminder</span>
       </div>
     </div>
   </div>
@@ -223,19 +220,19 @@ footer a:hover{color:var(--accent)}
 <div class="container">
   <div class="section-header center">
     <p class="section-label">Features</p>
-    <h2 class="section-title" id="features-heading">Your Whole Day, in One Place</h2>
-    <p class="section-desc">Organize the list, see it next to your calendar, and take it with you when you go.</p>
+    <h2 class="section-title" id="features-heading">Everything You Need to Run the Day</h2>
+    <p class="section-desc">Organize the list, see it beside your calendar, keep notes and goals next to the work, and take it all with you.</p>
   </div>
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon" aria-hidden="true">&#x1F4E5;</div>
-      <h3>Lists, Folders &amp; Tags</h3>
-      <p>Tasks you haven&rsquo;t filed wait in the Inbox. Sort them into lists, group lists into folders, and add tags.</p>
+      <h3>Lists, Folders, Tags &amp; Subtasks</h3>
+      <p>Unfiled tasks wait in the Inbox. Sort them into lists, group lists into folders, add tags and priorities, and break big work into subtasks as deep as you need.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon" aria-hidden="true">&#x1F50D;</div>
-      <h3>Smart Lists &amp; Search</h3>
-      <p>See everything at once or just the next seven days, and find any task by its words.</p>
+      <div class="feature-icon" aria-hidden="true">&#x2600;&#xFE0F;</div>
+      <h3>Today, Next 7 Days &amp; Search</h3>
+      <p>Start from what&rsquo;s due today and the days ahead, see the next seven days or everything at once &mdash; and find any task by its words.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon" aria-hidden="true">&#x1F4C5;</div>
@@ -243,14 +240,34 @@ footer a:hover{color:var(--accent)}
       <p>Your tasks sit next to the events already on your phone&rsquo;s calendar. Drag an event to a new time and Andante moves it in your calendar.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon" aria-hidden="true">&#x1F4E6;</div>
-      <h3>Bring Your Tasks With You</h3>
-      <p>Import from TickTick, Todoist, Google Tasks, or Apple Reminders. Leaving should be as easy as arriving.</p>
+      <div class="feature-icon" aria-hidden="true">&#x1F4DD;</div>
+      <h3>Notes Next to the Work</h3>
+      <p>The Notebook keeps meeting notes, ideas and plans in the same app as your tasks.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon" aria-hidden="true">&#x1F4BE;</div>
-      <h3>Backup &amp; Export</h3>
-      <p>Back up and restore your whole database, or export your tasks as CSV.</p>
+      <div class="feature-icon" aria-hidden="true">&#x1F9EE;</div>
+      <h3>Checklists That Count</h3>
+      <p>Give checklist items an amount, set a budget or goal, and see the total and what&rsquo;s left.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" aria-hidden="true">&#x1F501;</div>
+      <h3>Repeating Tasks &amp; Projects</h3>
+      <p>Repeat any task daily, weekly, monthly, yearly or on your own schedule, and complete a whole project in one step when it&rsquo;s done.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" aria-hidden="true">&#x23F0;</div>
+      <h3>Due Times &amp; Reminders</h3>
+      <p>Set a due date and time, and get reminded at the due time or up to a day before &mdash; as a notification, or an alarm for the tasks that can&rsquo;t be missed.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" aria-hidden="true">&#x1F4CA;</div>
+      <h3>Stats &amp; Widget</h3>
+      <p>Track what you&rsquo;ve completed, and keep today&rsquo;s tasks on your home screen with quick add.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" aria-hidden="true">&#x1F4E6;</div>
+      <h3>Bring Your Tasks With You</h3>
+      <p>Import from TickTick, Todoist, Google Tasks, or Apple Reminders. Back up and restore everything, or export to CSV.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon" aria-hidden="true">&#x1F310;</div>
@@ -283,8 +300,8 @@ footer a:hover{color:var(--accent)}
       <p>Crash reports and usage counts, never with your name or email, and never your task titles, list names, or notes.</p>
     </div>
     <div class="honest-item">
-      <h3>Alarms that tell the truth</h3>
-      <p>Exact alarms need a permission Android grants separately. Andante asks in context, tells you when it&rsquo;s missing, and never pretends a reminder is armed when it isn&rsquo;t.</p>
+      <h3>Reminders that tell the truth</h3>
+      <p>Alarm-style reminders need a permission Android grants separately. Andante asks in context, tells you when it&rsquo;s missing, and never pretends a reminder is set when it isn&rsquo;t.</p>
     </div>
   </div>
 </div>
@@ -293,7 +310,7 @@ footer a:hover{color:var(--accent)}
 <!-- CTA -->
 <section class="cta-section" aria-labelledby="cta-heading">
 <div class="container">
-  <h2 id="cta-heading">Plan the Day. Keep the Time.</h2>
+  <h2 id="cta-heading">Your Whole Day, Organized.</h2>
   <p>Free to use. No sign-up screen between you and your list.</p>
   <div class="hero-cta">
     <a href="https://play.google.com/store/apps/details?id=app.velocitycraft.andante" class="btn-primary">
