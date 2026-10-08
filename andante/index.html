@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andante - Tasks &amp; Routines</title>
+<meta name="description" content="A to-do app whose reminders can actually wake you. Due times to the minute, real alarms, lists, folders, tags, and a calendar beside your events. No account needed.">
+<meta property="og:title" content="Andante - Tasks &amp; Routines">
+<meta property="og:description" content="A to-do app whose reminders can actually wake you. No account needed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://velocitycraft.app/andante/">
+<!-- Content is drawn only from the Play listing (apps/andante-android/fastlane/metadata/android/en-US/full_description.txt).
+     Do not add features that are not in the listing. Colors follow the app theme (TickBlue #4772FA / dark #5B82FB). -->
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f2f3f7;--bg3:#eef0f4;
+  --fg:#1f2329;--fg2:#5a6270;--fg3:#8a909c;
+  --accent:#4772fa;--accent2:#6f8ffb;--accent-soft:rgba(71,114,250,.08);
+  --alarm:#d84a3a;--alarm-soft:rgba(216,74,58,.1);
+  --border:#e4e6eb;--card:#ffffff;--card-shadow:0 1px 3px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.04);
+  --radius:16px;--max-w:960px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#111318;--bg2:#171a21;--bg3:#1f232c;
+    --fg:#e6e8ee;--fg2:#a3a9b6;--fg3:#6c7280;
+    --accent:#5b82fb;--accent2:#8aa4fc;--accent-soft:rgba(91,130,251,.12);
+    --alarm:#ff8a7a;--alarm-soft:rgba(255,138,122,.12);
+    --border:#2a2f3a;--card:#1a1e26;--card-shadow:0 1px 3px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.2);
+  }
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  background:var(--bg);color:var(--fg);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── Layout ── */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+
+/* ── Hero ── */
+.hero{
+  padding:80px 0 64px;text-align:center;
+  background:linear-gradient(180deg,var(--accent-soft) 0%,var(--bg) 100%);
+}
+.hero-badge{
+  display:inline-block;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-soft);
+  padding:6px 14px;border-radius:20px;margin-bottom:24px;
+}
+.hero h1{
+  font-size:clamp(36px,6vw,56px);font-weight:800;letter-spacing:-.02em;
+  line-height:1.1;margin-bottom:16px;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub{
+  font-size:clamp(16px,2.5vw,20px);color:var(--fg2);
+  max-width:560px;margin:0 auto 36px;line-height:1.5;
+}
+.hero-cta{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+.hero-cta a{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-size:15px;font-weight:600;text-decoration:none;
+  padding:14px 28px;border-radius:12px;transition:all .2s ease;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-primary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.play-icon{width:20px;height:20px}
+
+/* ── Section ── */
+.section{padding:64px 0}
+.section-label{
+  font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:8px;
+}
+.section-title{
+  font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.01em;margin-bottom:12px;
+}
+.section-desc{color:var(--fg2);max-width:520px;font-size:16px;line-height:1.6}
+.section-header{margin-bottom:40px}
+.section-header.center{text-align:center}
+.section-header.center .section-desc{margin:0 auto}
+
+/* ── Reminder Showcase ── */
+.showcase-section{background:var(--bg2)}
+.showcase{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:680px){.showcase{grid-template-columns:1fr;gap:32px}}
+.offset-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.offset-list li{
+  font-size:12px;padding:4px 10px;border-radius:6px;
+  background:var(--bg3);color:var(--fg2);font-weight:500;
+}
+.task-demo{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:12px;box-shadow:var(--card-shadow);
+}
+.task-row{
+  display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;
+}
+.task-row + .task-row{border-top:1px solid var(--border);border-radius:0}
+.task-check{
+  width:18px;height:18px;border-radius:5px;border:2px solid var(--fg3);flex-shrink:0;
+}
+.task-row.done .task-check{background:var(--accent);border-color:var(--accent)}
+.task-row.done .task-title{text-decoration:line-through;color:var(--fg3)}
+.task-title{flex:1;font-size:14px;font-weight:500}
+.task-chip{
+  font-size:12px;font-weight:600;padding:3px 9px;border-radius:8px;white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+.chip-notify{background:var(--accent-soft);color:var(--accent)}
+.chip-alarm{background:var(--alarm-soft);color:var(--alarm)}
+
+/* ── Feature Grid ── */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.feature-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:28px;transition:all .25s ease;
+}
+.feature-card:hover{box-shadow:var(--card-shadow);transform:translateY(-2px)}
+.feature-icon{
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:16px;
+  background:var(--accent-soft);
+}
+.feature-card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.feature-card p{font-size:14px;color:var(--fg2);line-height:1.5}
+
+/* ── Honesty ── */
+.honest-section{background:var(--bg2)}
+.honest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.honest-item{border-left:3px solid var(--accent);padding:4px 0 4px 18px}
+.honest-item h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.honest-item p{font-size:14px;color:var(--fg2);line-height:1.6}
+
+/* ── CTA ── */
+.cta-section{text-align:center;padding:80px 0}
+.cta-section h2{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:12px}
+.cta-section p{color:var(--fg2);margin-bottom:32px;font-size:16px}
+.cta-section .hero-cta{margin-bottom:24px}
+
+/* ── Footer ── */
+footer{
+  border-top:1px solid var(--border);padding:32px 0;text-align:center;
+  font-size:13px;color:var(--fg3);
+}
+footer a{color:var(--fg2);text-decoration:none;margin:0 12px}
+footer a:hover{color:var(--accent)}
+.footer-links{margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<main>
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-heading">
+<div class="container">
+  <div class="hero-badge">No Account &middot; 76 Languages</div>
+  <h1 id="hero-heading">Tasks That Keep<br><span>Their Time.</span></h1>
+  <p class="hero-sub">A to-do app whose reminders can actually wake you. Pick the minute, choose a quiet notification or a real alarm, and let the day go to plan.</p>
+  <div class="hero-cta">
+    <a href="https://play.google.com/store/apps/details?id=app.velocitycraft.andante" class="btn-primary">
+      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
+      Google Play
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- Reminder Showcase -->
+<section class="section showcase-section" aria-labelledby="reminder-heading">
+<div class="container">
+  <div class="showcase">
+    <div>
+      <p class="section-label">Core</p>
+      <h2 class="section-title" id="reminder-heading">A Due Time, and a Reminder That Means It</h2>
+      <p class="section-desc">Most to-do apps let you pick a date and then whisper at you. In Andante you pick the minute, then choose per task: a notification, or a real alarm that rings until you turn it off and can be snoozed. Set a default style, sound, and volume once &mdash; override it on the tasks that deserve it. Alarms survive a reboot.</p>
+      <ul class="offset-list" aria-label="Remind me">
+        <li>At due time</li>
+        <li>5 min before</li>
+        <li>10 min before</li>
+        <li>30 min before</li>
+        <li>1 hour before</li>
+        <li>1 day before</li>
+      </ul>
+    </div>
+    <div class="task-demo" aria-hidden="true">
+      <div class="task-row">
+        <span class="task-check"></span>
+        <span class="task-title">Call the clinic back</span>
+        <span class="task-chip chip-notify">14:00 &middot; Notify</span>
+      </div>
+      <div class="task-row">
+        <span class="task-check"></span>
+        <span class="task-title">Wake up for the flight</span>
+        <span class="task-chip chip-alarm">05:30 &middot; Alarm</span>
+      </div>
+      <div class="task-row done">
+        <span class="task-check"></span>
+        <span class="task-title">Renew passport photos</span>
+        <span class="task-chip chip-notify">Yesterday</span>
+      </div>
+      <div class="task-row">
+        <span class="task-check"></span>
+        <span class="task-title">Send the quarterly report</span>
+        <span class="task-chip chip-notify">Fri 17:00</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Features Grid -->
+<section class="section" aria-labelledby="features-heading">
+<div class="container">
+  <div class="section-header center">
+    <p class="section-label">Features</p>
+    <h2 class="section-title" id="features-heading">Your Whole Day, in One Place</h2>
+    <p class="section-desc">Organize the list, see it next to your calendar, and take it with you when you go.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon" aria-hidden="true">&#x1F4E5;</div>
+      <h3>Lists, Folders &amp; Tags</h3>
+      <p>Tasks you haven&rsquo;t filed wait in the Inbox. Sort them into lists, group lists into folders, and add tags.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" aria-hidden="true">&#x1F50D;</div>
+      <h3>Smart Lists &amp; Search</h3>
+      <p>See everything at once or just the next seven days, and find any task by its words.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" aria-hidden="true">&#x1F4C5;</div>
+      <h3>Calendar Beside Your Meetings</h3>
+      <p>Your tasks sit next to the events already on your phone&rsquo;s calendar. Drag an event to a new time and Andante moves it in your calendar.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" aria-hidden="true">&#x1F4E6;</div>
+      <h3>Bring Your Tasks With You</h3>
+      <p>Import from TickTick, Todoist, Google Tasks, or Apple Reminders. Leaving should be as easy as arriving.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" aria-hidden="true">&#x1F4BE;</div>
+      <h3>Backup &amp; Export</h3>
+      <p>Back up and restore your whole database, or export your tasks as CSV.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" aria-hidden="true">&#x1F310;</div>
+      <h3>76 Languages</h3>
+      <p>Translated into 76 languages, including the ones that usually get skipped.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Honesty -->
+<section class="section honest-section" aria-labelledby="honest-heading">
+<div class="container">
+  <div class="section-header">
+    <p class="section-label">Straight Answers</p>
+    <h2 class="section-title" id="honest-heading">No Account Needed. Nothing to Buy.</h2>
+    <p class="section-desc">We&rsquo;d rather tell you the actual conditions than sell you a word.</p>
+  </div>
+  <div class="honest-grid">
+    <div class="honest-item">
+      <h3>Free, with no paywall</h3>
+      <p>No subscription, no pro tier, no locked feature. Andante is supported by an occasional ad when you come back to the app.</p>
+    </div>
+    <div class="honest-item">
+      <h3>Your tasks stay on this device</h3>
+      <p>They live in the app&rsquo;s private storage, protected by Android&rsquo;s app sandbox &mdash; not encrypted, and we won&rsquo;t claim otherwise. They reach us only if you sign in to optional Andante Cloud sync.</p>
+    </div>
+    <div class="honest-item">
+      <h3>What the app sends</h3>
+      <p>Crash reports and usage counts, never with your name or email, and never your task titles, list names, or notes.</p>
+    </div>
+    <div class="honest-item">
+      <h3>Alarms that tell the truth</h3>
+      <p>Exact alarms need a permission Android grants separately. Andante asks in context, tells you when it&rsquo;s missing, and never pretends a reminder is armed when it isn&rsquo;t.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" aria-labelledby="cta-heading">
+<div class="container">
+  <h2 id="cta-heading">Plan the Day. Keep the Time.</h2>
+  <p>Free to use. No sign-up screen between you and your list.</p>
+  <div class="hero-cta">
+    <a href="https://play.google.com/store/apps/details?id=app.velocitycraft.andante" class="btn-primary">
+      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
+      Get Andante on Google Play
+    </a>
+  </div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+  <nav class="footer-links" aria-label="Legal">
+    <a href="/andante/privacy/">Privacy Policy</a>
+    <a href="/andante/terms/">Terms of Service</a>
+    <a href="/andante/delete-account/">Delete Account</a>
+  </nav>
+  <p>Contact: <a href="mailto:velocitycraft.app+support+andante@gmail.com">velocitycraft.app+support+andante@gmail.com</a></p>
+</div>
+</footer>
+
+</body>
+</html>
