@@ -1,0 +1,62 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.draftly.app",
+      "sha256_cert_fingerprints": [
+        "3E:74:8D:B3:F5:14:AE:35:09:37:EF:33:F2:0E:22:20:8B:00:83:7B:9E:93:4A:A6:B0:5B:AD:50:46:0E:E4:A9"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.velocitycraft.klave",
+      "sha256_cert_fingerprints": [
+        "C8:91:CD:BC:0F:70:3C:64:3C:3E:B7:3C:BE:58:65:4E:6D:7A:D5:BF:1D:3F:6D:18:19:66:D1:09:6C:56:8D:39"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.velocitycraft.omniwake",
+      "sha256_cert_fingerprints": [
+        "3E:74:8D:B3:F5:14:AE:35:09:37:EF:33:F2:0E:22:20:8B:00:83:7B:9E:93:4A:A6:B0:5B:AD:50:46:0E:E4:A9"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jeter.player",
+      "sha256_cert_fingerprints": [
+        "9A:DB:FB:C7:C3:EA:F4:F5:BD:C1:77:32:9F:7E:74:A8:7F:E0:81:6F:E6:E9:3B:B1:6C:58:A8:E9:7E:CE:5C:E4"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.velocitycraft.andante",
+      "sha256_cert_fingerprints": [
+        "BD:17:B2:54:E7:67:E3:57:48:9A:03:78:CA:6F:0D:54:C0:C6:57:32:E3:70:E8:A6:A0:78:63:B9:A5:51:C3:79"
+      ]
+    }
+  }
+]
