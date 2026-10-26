@@ -3,7 +3,7 @@
 <p>Inscape is a personal journal developed by VelocityCraft. This policy describes the Mac app. Other Inscape platforms may handle data differently.</p>
 <h2>Your journal on your Mac</h2>
 <p>You can write and read without an Inscape account or an internet connection. Journal entries, search indexes, and attachments are stored in an encrypted local library. The local encryption key is kept in this Mac’s Keychain. Display preferences such as theme and list style are stored locally as app settings.</p>
-<p>Inscape asks macOS to authenticate you with Touch ID or your Mac login password. It receives the authentication result, not your fingerprint or Mac password. The app locks when your Mac locks or sleeps, and after Inscape has been in the background for five minutes.</p>
+<p>Inscape asks macOS to authenticate you with Touch ID or your Mac login password. It receives the authentication result, not your fingerprint or Mac password. The app locks when your Mac sleeps or its user session becomes inactive, and after Inscape has been in the background for five minutes.</p>
 <p>Encryption and the app lock do not replace your Mac’s security or protect against every process authorized to access an unlocked session. Previously exported files and operating-system backups are outside the app’s encryption controls.</p>
 <h2>Optional Dropbox sync</h2>
 <p>Sync is optional. If you connect Dropbox, authorization happens with Dropbox. Inscape stores your Dropbox account identifier, display name, and access and refresh tokens in this Mac’s Keychain to show the connected account and keep the connection working.</p>
@@ -11,7 +11,7 @@
 <p>Dropbox stores the encrypted sync objects under your account and can observe service metadata, including object paths, sizes, revisions, request times, and your network address. Object names include hashes. This metadata is not covered by journal-content encryption. Dropbox’s account and service handling is governed by <a href="https://www.dropbox.com/privacy">Dropbox’s privacy policy</a>.</p>
 <p>Sync may run while Inscape is open, active, connected, and unlocked if automatic sync is enabled. It is limited to compatible Mac libraries in this version.</p>
 <h2>Backups and exports</h2>
-<p>New backups are encrypted by default. Backup encryption uses a separate passphrase. You may choose to remember it in this Mac’s Keychain. Entry and attachment contents in an encrypted backup are protected; archive filenames and summary counts remain visible.</p>
+<p>New backups are encrypted by default. Backup encryption uses a separate passphrase. You may choose to remember it in this Mac’s Keychain. Entry and attachment contents in an encrypted backup are protected; archive structure, file sizes, creation time, and encryption metadata remain visible.</p>
 <p>You can deliberately turn backup encryption off or export Markdown and decrypted attachment copies. Those files can be read by someone who has access to them. You choose their destination with macOS file dialogs. If you save a file in a folder synced by another service, that service’s handling applies.</p>
 <p>We cannot reset a forgotten sync or backup passphrase or recover an encryption key that is no longer available. Keep a recoverable backup and a safe copy of your passphrases.</p>
 <h2>Analytics, advertising, and permissions</h2>
