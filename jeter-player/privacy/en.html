@@ -45,7 +45,7 @@
 </p>
 
 <h1>Jeter Player Privacy Policy</h1>
-<p class="date">Effective date: November 8, 2026</p>
+<p class="date">Effective date: November 9, 2026</p>
 <p>This policy covers Jeter Player for Android, published by Velocity Craft (“we”).</p>
 
 <h2>Start with what we cannot do</h2>
@@ -58,16 +58,16 @@
 
 <h2>Your videos are never sent to us</h2>
 <p>Jeter Player requires no account, and Velocity Craft runs no server that stores your videos. Library videos are played directly from your device storage. The videos themselves, their file and folder names, what you watch and when, resume positions, bookmarks and their notes, playlists and Vault contents stay on your device unless <em>you</em> choose to move them (see “Where your videos can go” below), and none of them is passed to the advertising or analytics services described next. Crash reports describe a failure in technical terms; Jeter Player does not add video or folder names to them.</p>
-<p>There is no sign-in for users. The app contains a hidden developer panel with Google sign-in, used for internal testing. Only when one of our own designated test accounts signs in there is a one-way hash of its email address attached to analytics and crash reports from that device; for anyone else, signing in adds nothing to them. If a purchase is started while signed in there, the sign-in is also used to obtain the purchase identifier described under “Features that contact other services”.</p>
+<p>There is no sign-in for users. The app contains a hidden developer panel with Google sign-in, used for internal testing. Only when one of our own designated test accounts signs in there is a one-way hash of its email address attached to analytics and crash reports from that device; for anyone else, signing in adds nothing to them.</p>
 
 <h2>What is collected, and by whom</h2>
-<p>This is a separate matter from your videos, and we keep the two descriptions apart on purpose. None of the following contains your videos or their names. Jeter Player shows advertising through Google AdMob and uses Google Firebase for usage analytics (Firebase Analytics), crash reports (Firebase Crashlytics) and remote feature settings (Firebase Remote Config). When you start a purchase, it also contacts Amazon Web Services. Together they collect:</p>
+<p>This is a separate matter from your videos, and we keep the two descriptions apart on purpose. None of the following contains your videos or their names. Jeter Player shows advertising through Google AdMob and uses Google Firebase for usage analytics (Firebase Analytics), crash reports (Firebase Crashlytics) and remote feature settings (Firebase Remote Config). Together they collect:</p>
 <table id="data-collected">
   <tr><th>Category</th><th>Collected by</th><th>What and why</th></tr>
-  <tr><td>IP address</td><td>Google AdMob, Google Firebase, Amazon Web Services</td><td>Unavoidably included in every network request these services receive</td></tr>
+  <tr><td>IP address</td><td>Google AdMob, Google Firebase</td><td>Unavoidably included in every network request these services receive</td></tr>
   <tr><td>User product interactions</td><td>Google AdMob, Firebase Analytics</td><td>Ad impressions and clicks; which screen of the app was opened (fixed screen names such as “home”, “folders” or “player”, never video names); a one-time “first playback” event with the kind of source and the queue length; and an “unsupported format” report when a video's sound or picture cannot be decoded</td></tr>
   <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>Crash reports and non-fatal error reports: device model, OS version, app version, the error's stack trace, and app state such as your tier (Free or Lifetime), a device performance class, the purchase step that failed, and the version of the system WebView and processor type used for ads</td></tr>
-  <tr><td>Device and Account identifiers</td><td>Google AdMob, Google Firebase, Amazon Web Services</td><td>Advertising ID and app set ID; the Firebase installation ID; and a random purchase identifier issued by Amazon Web Services when you start a purchase</td></tr>
+  <tr><td>Device and Account identifiers</td><td>Google AdMob, Google Firebase</td><td>Advertising ID and app set ID; and the Firebase installation ID</td></tr>
   <tr><td>Purchase history</td><td>Firebase Analytics</td><td>When you buy Jeter Player Lifetime: the product ID, currency and price. Google Play handles the payment; we never see your payment details</td></tr>
 </table>
 <p>Analytics events also carry the app version, build type, your tier (Free or Lifetime) and a device performance class (low/mid/high), so that reports can be grouped. The “unsupported format” report contains only technical details — codec and container type, resolution, frame rate, bit depth, audio channels and sample rate, and the decoding setting — never file names, folder names, paths or track titles.</p>
@@ -87,7 +87,7 @@
   <tr><td>Local network: DLNA, SMB and Wi-Fi transfer</td><td><strong>Usually not.</strong> These features talk directly to devices on your own network, mostly over unencrypted connections. Wi-Fi transfer requires a 4-digit PIN shown in the app, shuts down after 5 wrong PINs, and stops after 10 minutes without activity.</td></tr>
   <tr><td>Android OS device backup (Auto Backup / device transfer)</td><td><strong>Not by Jeter Player.</strong> If Android backup is on, the library database and Vault files can be included in the backup or in a device-to-device transfer, subject to Android's size limits; Google manages that backup. Jeter Player excludes the Dropbox, Google sign-in and SMB credentials, purchase-state caches and test settings.</td></tr>
 </table>
-<p>Connections to Google, Amazon Web Services and Dropbox use encrypted HTTPS. A web link you share into the app is fetched the way the link itself specifies (http or https).</p>
+<p>Connections to Google and Dropbox use encrypted HTTPS. A web link you share into the app is fetched the way the link itself specifies (http or https).</p>
 
 <h2>Dropbox backup</h2>
 <p>Dropbox backup is optional and is available with a Plus Pass or Jeter Player Lifetime. If you connect Dropbox, authorization happens with Dropbox, and the connection tokens are kept on this device in storage encrypted with the Android Keystore (on the rare device whose Keystore is damaged, in the app's private storage instead). Jeter Player talks directly to Dropbox; Velocity Craft runs no server that receives your videos.</p>
@@ -97,7 +97,6 @@
 <h2>Features that contact other services</h2>
 <ul>
   <li><strong>Saving a video from a shared link.</strong> When you share a web link into Jeter Player, the app fetches that address to check whether it is a video (on a web page, it looks for a video link the publisher has made public) and, if you save it, downloads the video. The site receives the link and your network address, as it would if you opened the link in a browser. Jeter Player does not download videos from social networks such as YouTube, Instagram, Facebook, X and TikTok; such links are refused.</li>
-  <li><strong>Purchases.</strong> When you start a purchase, Jeter Player obtains a random identifier from Amazon Web Services (Amazon Cognito, Asia Pacific (Mumbai) region) and attaches it to the Google Play purchase so that the purchase can be matched later. The identifier contains no name or email address.</li>
   <li><strong>Fonts.</strong> Some of the app's built-in typefaces, and any app font you choose, are downloaded from Google Fonts by Google Play services on your device.</li>
   <li><strong>App updates and language packs</strong> are delivered through Google Play (in-app update and Play Feature Delivery).</li>
   <li><strong>Local network.</strong> DLNA servers, SMB shares and Wi-Fi transfer connect only to devices on your own network that you choose; nothing is sent to us. SMB passwords are kept on this device in Keystore-encrypted storage and are excluded from Android backup.</li>
@@ -108,7 +107,6 @@
   <li><strong>Google AdMob</strong> and the Google User Messaging Platform — advertising and consent. Governed by Google's privacy policy.</li>
   <li><strong>Google Firebase</strong> — Analytics usage events, Crashlytics crash reports, and Remote Config for feature settings. Your videos and their names are never passed to Firebase. Governed by Google's privacy policy.</li>
   <li><strong>Google Play</strong> — Billing for the Lifetime purchase (we never see your payment details), in-app updates and language packs; Google Play services for fonts and, in the hidden developer panel only, Google sign-in.</li>
-  <li><strong>Amazon Web Services</strong> (Amazon Cognito) — the random purchase identifier described above.</li>
   <li><strong>Dropbox</strong> — only if you connect an account for backup.</li>
   <li><strong>Websites whose links you share into Jeter Player</strong> — only when you share a link, to check and download the video.</li>
 </ul>
@@ -126,7 +124,7 @@
 
 <h2>European Economic Area and the United Kingdom</h2>
 <p>Where required, Jeter Player presents a Google-certified consent form before any advertising. You can change your choice at any time from Settings. Depending on your choice, ads are shown in non-personalized form or not loaded at all. This form governs advertising only. Firebase Analytics and Crashlytics are not controlled by it and run on every device; Analytics can read the advertising ID, which you can reset or delete in Android settings.</p>
-<p>You have the right to access, correct, and delete your data. Your videos and library data are held only on your device and in storage you control, so you exercise those rights directly: delete videos and Vault items in the app, uninstall to remove the Vault and everything else the app keeps in its private storage (screenshots and recordings saved to shared folders stay until you delete them), delete Jeter Player's folder in Dropbox if you used backup, and manage your Android device backup in Google's settings. Analytics, crash and advertising data are held by Google, and the purchase identifier by Amazon Web Services on our behalf; none of it is linked to your name or email (except our own designated test accounts, described above). For that data, use Google's tools or contact us and we will help where we can. See <a href="../delete-account/">how to delete your Jeter Player data</a>.</p>
+<p>You have the right to access, correct, and delete your data. Your videos and library data are held only on your device and in storage you control, so you exercise those rights directly: delete videos and Vault items in the app, uninstall to remove the Vault and everything else the app keeps in its private storage (screenshots and recordings saved to shared folders stay until you delete them), delete Jeter Player's folder in Dropbox if you used backup, and manage your Android device backup in Google's settings. Analytics, crash and advertising data are held by Google; none of it is linked to your name or email (except our own designated test accounts, described above). For that data, use Google's tools or contact us and we will help where we can. See <a href="../delete-account/">how to delete your Jeter Player data</a>.</p>
 
 <h2>Children</h2>
 <p>Jeter Player is not directed to children under 13, and we do not knowingly collect data from them.</p>

@@ -45,7 +45,7 @@
 </p>
 
 <h1>Jeter Player 隐私政策</h1>
-<p class="date">生效日期：2026年11月8日</p>
+<p class="date">生效日期：2026年11月9日</p>
 <p>本政策适用于由 Velocity Craft（以下称“我们”）发布的 Android 版 Jeter Player。</p>
 
 <h2>先说明我们做不到的事</h2>
@@ -58,16 +58,16 @@
 
 <h2>您的视频绝不会发送给我们</h2>
 <p>Jeter Player 无需账户，Velocity Craft 也不运营任何存储视频的服务器。媒体库中的视频直接从设备存储空间播放。视频本身、其文件名和文件夹名、您看了什么以及何时观看、播放进度、书签及其备注、播放列表和保险库内容都会留在您的设备上，除非<em>您</em>选择将其转移（见下文“视频可能去往的地方”），而且这些内容都不会传给下文所述的广告或分析服务。崩溃报告以技术术语记录故障，Jeter Player 不会在其中加入视频名或文件夹名。</p>
-<p>本应用不提供用户登录。应用中有一个供内部测试使用、带有 Google 登录的隐藏开发者面板。只有当我们指定的测试账户在那里登录时，该账户电子邮件地址的单向哈希值才会附加到该设备的分析数据和崩溃报告中；其他账户即使登录，也不会附加任何内容。如果在那里登录的状态下开始购买，该登录还会用于获取下文“会连接其他服务的功能”中所述的购买标识符。</p>
+<p>本应用不提供用户登录。应用中有一个供内部测试使用、带有 Google 登录的隐藏开发者面板。只有当我们指定的测试账户在那里登录时，该账户电子邮件地址的单向哈希值才会附加到该设备的分析数据和崩溃报告中；其他账户即使登录，也不会附加任何内容。</p>
 
 <h2>收集哪些信息，由谁收集</h2>
-<p>这与您的视频是两回事，我们有意将两者分开说明。以下各项都不包含您的视频或其名称。Jeter Player 通过 Google AdMob 展示广告，并使用 Google Firebase 进行使用情况分析（Firebase Analytics）、崩溃报告（Firebase Crashlytics）和远程功能设置（Firebase Remote Config）。当您开始购买时，还会连接 Amazon Web Services。这些服务共同收集：</p>
+<p>这与您的视频是两回事，我们有意将两者分开说明。以下各项都不包含您的视频或其名称。Jeter Player 通过 Google AdMob 展示广告，并使用 Google Firebase 进行使用情况分析（Firebase Analytics）、崩溃报告（Firebase Crashlytics）和远程功能设置（Firebase Remote Config）。这些服务共同收集：</p>
 <table id="data-collected">
   <tr><th>类别</th><th>收集方</th><th>内容与目的</th></tr>
-  <tr><td>IP address</td><td>Google AdMob, Google Firebase, Amazon Web Services</td><td>这些服务收到的每一次网络请求都不可避免地包含 IP 地址</td></tr>
+  <tr><td>IP address</td><td>Google AdMob, Google Firebase</td><td>这些服务收到的每一次网络请求都不可避免地包含 IP 地址</td></tr>
   <tr><td>User product interactions</td><td>Google AdMob, Firebase Analytics</td><td>广告展示和点击；打开了应用的哪个界面（“首页”“文件夹”“播放器”等固定的界面名称，绝非视频名称）；包含来源类型和播放队列长度的一次性“首次播放”事件；以及当视频的声音或画面无法解码时的“不支持的格式”报告</td></tr>
   <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>崩溃和非致命错误报告：设备型号、操作系统版本、应用版本、错误的堆栈跟踪，以及应用状态，例如您的版本（免费或终身访问）、设备性能等级、失败的购买步骤，以及用于广告的系统 WebView 版本和处理器类型</td></tr>
-  <tr><td>Device and Account identifiers</td><td>Google AdMob, Google Firebase, Amazon Web Services</td><td>广告 ID 和应用集 ID；Firebase 安装 ID；以及您开始购买时由 Amazon Web Services 签发的随机购买标识符</td></tr>
+  <tr><td>Device and Account identifiers</td><td>Google AdMob, Google Firebase</td><td>广告 ID 和应用集 ID；以及 Firebase 安装 ID</td></tr>
   <tr><td>Purchase history</td><td>Firebase Analytics</td><td>当您购买 Jeter Player 终身访问时：商品 ID、币种和价格。付款由 Google Play 处理，我们绝不会看到您的付款信息</td></tr>
 </table>
 <p>分析事件还会附带应用版本、构建类型、您的版本（免费或终身访问）和设备性能等级（低/中/高），以便对报告进行分组。“不支持的格式”报告只包含技术信息——编解码器和容器类型、分辨率、帧率、位深、音频声道数和采样率以及解码设置——绝不包含文件名、文件夹名、路径或音轨标题。</p>
@@ -87,7 +87,7 @@
   <tr><td>本地网络：DLNA、SMB 和 Wi-Fi 传输</td><td><strong>通常不加密。</strong>这些功能直接与您自己网络中的设备通信，大多使用未加密的连接。Wi-Fi 传输需要输入应用中显示的 4 位 PIN，PIN 输错 5 次即关闭，10 分钟无活动后停止。</td></tr>
   <tr><td>Android 系统设备备份（自动备份 / 设备间转移）</td><td><strong>Jeter Player 不会加密。</strong>如果开启了 Android 备份，在 Android 的容量限制范围内，媒体库数据库和保险库文件可能被包含在备份或设备间转移中，该备份由 Google 管理。Jeter Player 会排除 Dropbox、Google 登录和 SMB 的凭据、购买状态缓存以及测试设置。</td></tr>
 </table>
-<p>与 Google、Amazon Web Services 和 Dropbox 的连接使用加密的 HTTPS。您分享到应用中的网页链接会按链接本身指定的方式（http 或 https）获取。</p>
+<p>与 Google 和 Dropbox 的连接使用加密的 HTTPS。您分享到应用中的网页链接会按链接本身指定的方式（http 或 https）获取。</p>
 
 <h2>Dropbox 备份</h2>
 <p>Dropbox 备份是可选功能，可通过 Plus Pass 或 Jeter Player 终身访问使用。连接 Dropbox 时，授权在 Dropbox 完成，连接令牌仅保存在本设备上经 Android Keystore 加密的存储空间中（在 Keystore 损坏的少数设备上，则改为保存在应用的私有存储空间中）。Jeter Player 直接与 Dropbox 通信；Velocity Craft 不运营任何接收您视频的服务器。</p>
@@ -97,7 +97,6 @@
 <h2>会连接其他服务的功能</h2>
 <ul>
   <li><strong>从分享的链接保存视频。</strong>当您把网页链接分享到 Jeter Player 时，应用会获取该地址以确认它是否为视频（如果是网页，则查找发布者公开的视频链接）；如果您选择保存，就会下载该视频。与在浏览器中打开链接一样，该网站会收到链接和您的网络地址。Jeter Player 不会从 YouTube、Instagram、Facebook、X、TikTok 等社交网络下载视频，此类链接会被拒绝。</li>
-  <li><strong>购买。</strong>当您开始购买时，Jeter Player 会从 Amazon Web Services（Amazon Cognito，亚太（孟买）区域）获取一个随机标识符，并将其附加到 Google Play 购买中，以便日后核对该笔购买。该标识符不包含姓名或电子邮件地址。</li>
   <li><strong>字体。</strong>应用默认使用的部分字体，以及您选择的应用字体，会由设备上的 Google Play 服务从 Google Fonts 下载。</li>
   <li><strong>应用更新和语言包</strong>通过 Google Play（应用内更新和 Play Feature Delivery）提供。</li>
   <li><strong>本地网络。</strong>DLNA 服务器、SMB 共享和 Wi-Fi 传输只会连接您在自己网络中选择的设备，不会向我们发送任何内容。SMB 密码仅保存在本设备上经 Keystore 加密的存储空间中，并从 Android 备份中排除。</li>
@@ -108,7 +107,6 @@
   <li><strong>Google AdMob</strong> 和 Google User Messaging Platform——广告和同意管理。受 Google 隐私政策约束。</li>
   <li><strong>Google Firebase</strong>——Analytics 使用事件、Crashlytics 崩溃报告，以及用于功能设置的 Remote Config。您的视频及其名称绝不会传给 Firebase。受 Google 隐私政策约束。</li>
   <li><strong>Google Play</strong>——终身访问购买的结算（我们绝不会看到您的付款信息）、应用内更新和语言包；用于字体的 Google Play 服务，以及仅在隐藏开发者面板中使用的 Google 登录。</li>
-  <li><strong>Amazon Web Services</strong>（Amazon Cognito）——上文所述的随机购买标识符。</li>
   <li><strong>Dropbox</strong>——仅在您为备份连接账户时。</li>
   <li><strong>您分享到 Jeter Player 的链接所在的网站</strong>——仅在您分享链接时，用于确认和下载视频。</li>
 </ul>
@@ -126,7 +124,7 @@
 
 <h2>欧洲经济区和英国</h2>
 <p>在法律要求的地区，Jeter Player 会在展示任何广告之前显示经 Google 认证的同意表单。您可以随时在“设置”中更改选择。根据您的选择，广告会以非个性化形式展示，或完全不加载。此表单仅适用于广告。Firebase Analytics 和 Crashlytics 不受其控制，在所有设备上运行；Analytics 可能读取广告 ID，您可以在 Android 设置中重置或删除广告 ID。</p>
-<p>您有权访问、更正和删除您的数据。您的视频和媒体库数据只保存在您的设备和您自己控制的存储空间中，因此您可以直接行使这些权利：在应用中删除视频和保险库项目；卸载应用以删除保险库以及应用私有存储空间中的所有内容（保存到共享文件夹的截图和录制内容会保留，直到您将其删除）；如果使用过备份，删除 Dropbox 中的 Jeter Player 文件夹；并在 Google 设置中管理 Android 设备备份。分析、崩溃和广告数据由 Google 持有，购买标识符由 Amazon Web Services 代表我们持有；这些数据都不与您的姓名或电子邮件关联（上文所述我们指定的测试账户除外）。对于这些数据，请使用 Google 的工具，或联系我们，我们会尽力提供帮助。另请参阅<a href="../delete-account/">如何删除您的 Jeter Player 数据</a>。</p>
+<p>您有权访问、更正和删除您的数据。您的视频和媒体库数据只保存在您的设备和您自己控制的存储空间中，因此您可以直接行使这些权利：在应用中删除视频和保险库项目；卸载应用以删除保险库以及应用私有存储空间中的所有内容（保存到共享文件夹的截图和录制内容会保留，直到您将其删除）；如果使用过备份，删除 Dropbox 中的 Jeter Player 文件夹；并在 Google 设置中管理 Android 设备备份。分析、崩溃和广告数据由 Google 持有；这些数据都不与您的姓名或电子邮件关联（上文所述我们指定的测试账户除外）。对于这些数据，请使用 Google 的工具，或联系我们，我们会尽力提供帮助。另请参阅<a href="../delete-account/">如何删除您的 Jeter Player 数据</a>。</p>
 
 <h2>儿童</h2>
 <p>Jeter Player 并非面向 13 岁以下儿童，我们不会在知情的情况下收集儿童的数据。</p>
