@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscape Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links"><a href="en.html" class="active">English</a> · <a href="ko.html">한국어</a></p>
+
+<h1>Inscape Privacy Policy</h1>
+<p class="date">Effective date: November 8, 2026</p>
+<p>This policy covers Inscape for Android, published by Velocity Craft (“we”).</p>
+
+<h2>Start with what we cannot do</h2>
+<p>Inscape is a journal. Before describing what we protect, here is what we do <em>not</em> claim:</p>
+<ul>
+  <li><strong>Your journal on this device is not encrypted at rest by us.</strong> It is stored in the app's private storage, which the Android operating system isolates from other apps. On a rooted device, or a device someone else can unlock, that isolation can be defeated. The optional app lock (biometrics + PIN) adds a second barrier, but it is a lock on the app, not encryption of the file.</li>
+  <li><strong>We cannot recover your entries.</strong> We hold no copy. If you lose the device without a backup, the entries are gone.</li>
+  <li>We avoid absolute security claims. Wording of that kind describes nothing you can verify, so we state conditions instead.</li>
+</ul>
+
+<h2>Your journal content is never sent to us</h2>
+<p>Inscape requires no account and Velocity Craft runs no server that stores journal content. Entry text, titles, tags, moods, photos, audio notes, and which entries you revisit stay on your device unless <em>you</em> choose to move them (see "Where encryption applies" below), and none of them is passed to the advertising, analytics, or crash-reporting services described next.</p>
+<p>Retrospect features ("On This Day") are computed entirely on your device. No entry is uploaded to select or summarize anything.</p>
+<p>There is no sign-in for users. The app contains a hidden developer panel with Google sign-in, used for internal testing. If anyone signs in there, a one-way hash of that Google account's email address is attached to analytics and crash reports from that device.</p>
+
+<h2>What is collected, and by whom</h2>
+<p>This is a separate matter from your journal, and we keep the two descriptions apart on purpose. None of the following contains your entries. Inscape shows advertising through Google AdMob and uses Google Firebase for usage analytics (Firebase Analytics), crash reports (Firebase Crashlytics), notifications (Firebase Cloud Messaging) and remote feature settings (Firebase Remote Config). Together they collect:</p>
+<table id="data-collected">
+  <tr><th>Category</th><th>Collected by</th><th>What and why</th></tr>
+  <tr><td>IP address</td><td>Google AdMob, Google Firebase</td><td>Unavoidably included in every network request these services make</td></tr>
+  <tr><td>User product interactions</td><td>Google AdMob, Firebase Analytics</td><td>Ad impressions and clicks; which screen of the app was opened (screen names such as "settings" or "editor", never entry content); a one-time "first entry created" event; list-style changes; and counts from each sync round (how many items were sent and received)</td></tr>
+  <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>Crash reports and non-fatal error reports: device model, OS version, app version, the error's stack trace, and app state such as your tier (Free or Lifetime)</td></tr>
+  <tr><td>Device and Account identifiers</td><td>Google AdMob, Google Firebase</td><td>Advertising ID and app set ID; the Firebase installation ID; and the push-notification token</td></tr>
+  <tr><td>Purchase history</td><td>Firebase Analytics</td><td>When you buy Inscape Lifetime: the product ID, currency and price. Google Play handles the payment; we never see your payment details</td></tr>
+</table>
+<p>Analytics events also carry the app version, build type, your tier (Free or Lifetime) and a device performance class (low/mid/high), so that reports can be grouped.</p>
+<p>Google Analytics also records some information automatically: device model, Android version, language setting, and session and engagement data such as first open and time in app, together with a random app-instance identifier. Firebase keeps crash reports for 90 days; analytics event data is kept for no more than 14 months.</p>
+<p>The following are <strong>not</strong> collected and never leave your device through us: messages or entry text, photos and videos, health and fitness data (including mood), personal info, files and documents, precise location, audio, contacts, and calendar. Google may estimate an approximate, city-level region from the IP address for ad delivery and analytics reports. Inscape does not request location permission and never reads your device's location. If a photo you attach already contains location data, it stays with the entry on this device (and in your backups or encrypted sync); it is never sent to us or to the advertising and analytics services.</p>
+<p>If you buy Inscape Lifetime, or while a Plus Pass you unlocked by watching a rewarded ad is active, ads are not shown. The advertising SDK may still start on your device so that the consent setting and ad-free state can be checked. Analytics and crash reporting work the same on every tier.</p>
+
+<h2>Where encryption applies, and where it does not</h2>
+<p>Any statement about encryption is only true under specific conditions. Here are all the paths your journal can take off this device:</p>
+<table>
+  <tr><th>Path</th><th>Encrypted?</th></tr>
+  <tr><td>Journal database on this device</td><td><strong>No.</strong> Protected by Android app sandboxing, and by the app lock if you enable it.</td></tr>
+  <tr><td>Dropbox backup file</td><td><strong>Only if you turn on backup encryption.</strong> With it off, the backup is readable by anyone with access to that Dropbox account. Backup encryption is available on every tier, including free.</td></tr>
+  <tr><td>Dropbox sync</td><td><strong>Always.</strong> Entries, attachments and the sync index are encrypted on this device with AES-256-GCM before upload, using a key derived from a sync passphrase you choose (at least 12 characters). See "Dropbox sync" below for what Dropbox can still see.</td></tr>
+  <tr><td>Full backup file you save (ZIP)</td><td><strong>Only if you turn on backup encryption.</strong> Otherwise it is a plain file.</td></tr>
+  <tr><td>Share to another app</td><td><strong>No.</strong> The entry text or file goes, as is, to the app you choose, under that app's policy.</td></tr>
+  <tr><td>Export to Markdown, text, or PDF</td><td><strong>No.</strong> Exports are plain files, by design — they exist to be opened elsewhere.</td></tr>
+  <tr><td>Android OS device backup (Auto Backup / device transfer)</td><td><strong>Excluded.</strong> The journal database, photos, audio, video, documents, local backup files, photo location data, hidden retrospect dates and recent searches are all removed from OS-level backup, because that path lies outside our encryption contract. Display settings such as theme do move to a new device.</td></tr>
+</table>
+<p>If you lose a backup or sync passphrase, we cannot recover the data it protects. Keep it somewhere you will still have it after losing the phone.</p>
+
+<h2>Dropbox backup and sync</h2>
+<p>Both are optional and available to every user. If you connect Dropbox, authorization happens with Dropbox, and the connection tokens are kept on this device in Android Keystore-protected storage. Inscape talks directly to Dropbox; Velocity Craft runs no server that receives your journal or its keys.</p>
+<p>Your sync passphrase never leaves this device. It is stored in Android Keystore-protected storage so sync can run in the background, and it is excluded from OS backup. On a new device you enter it again.</p>
+<p>Dropbox stores the backup files and encrypted sync objects under your account and can observe service metadata that is not covered by content encryption: object paths (which contain hashes), sizes, revisions, request times, your network address, and, for each backup, a small unencrypted summary file with the app version, backup time, and the number of entries and photos. Dropbox's handling is governed by Dropbox's privacy policy.</p>
+<p>Uninstalling Inscape or disconnecting Dropbox does not delete files already in Dropbox. Sync does not delete earlier encrypted objects. To remove them, delete Inscape's folder in your Dropbox and, if you wish, revoke the app in your Dropbox account settings.</p>
+
+<h2>Features that contact other services</h2>
+<ul>
+  <li><strong>Speech-to-text</strong> uses your device's speech recognition service (on most phones, Google's). While you dictate, your voice is processed by that service, which may do so on its own servers under its own privacy policy. Inscape receives only the recognized text. Read-aloud uses your device's text-to-speech engine.</li>
+  <li><strong>Link previews.</strong> When you paste a single web link into an entry, Inscape fetches that page to show its title. For X/Twitter links it first asks X's public embed service (publish.twitter.com) and, if that fails, the independent preview service fxtwitter.com. The site or service receives the link and your network address, as it would if you opened the link in a browser. Nothing else from the entry is sent.</li>
+</ul>
+
+<h2>Third parties</h2>
+<ul>
+  <li><strong>Google AdMob</strong> and the Google User Messaging Platform — advertising and consent. Governed by Google's privacy policy.</li>
+  <li><strong>Google Firebase</strong> — Analytics usage events, Crashlytics crash reports, Cloud Messaging for notifications, and Remote Config for feature settings. Journal content is never passed to Firebase. Governed by Google's privacy policy.</li>
+  <li><strong>Google Play Billing</strong> — the Lifetime purchase. We never see your payment details.</li>
+  <li><strong>Dropbox</strong> — only if you connect an account for backup or sync.</li>
+  <li><strong>Your device's speech and text-to-speech services</strong> — only while you use them.</li>
+  <li><strong>Websites whose links you paste, X's embed service and fxtwitter.com</strong> — only when you paste a link, to fetch its title.</li>
+</ul>
+
+<h2>Permissions</h2>
+<ul>
+  <li><strong>Notifications</strong> — reminders you schedule, and announcements about the app. Reminder notifications never include entry text; they show a generic title only, so nothing from your journal appears on your lock screen. Promotional notifications (news about our other apps and offers) can be turned off at any time in Settings → Notifications. In the European Economic Area and the United Kingdom they are off until you turn them on; elsewhere they are on by default.</li>
+  <li><strong>Photos and videos</strong> — Inscape uses the Android photo picker and sees only the items you choose. It does not request access to your media library.</li>
+  <li><strong>Microphone</strong> — only while you record an audio note or use speech-to-text.</li>
+</ul>
+
+<h2>European Economic Area and the United Kingdom</h2>
+<p>Where required, Inscape presents a Google-certified consent form before any advertising. You can change your choice at any time from Settings. Depending on your choice, ads are shown in non-personalized form or not loaded at all. This form governs advertising only. Firebase Analytics and Crashlytics are not controlled by it and run on every device; Analytics can read the advertising ID, which you can reset or delete in Android settings.</p>
+<p>You have the right to access, correct, and delete your data. Journal content is held only on your device and in storage you control, so you exercise those rights directly: delete entries in the app, uninstall to remove everything on this device, and delete Inscape's folder in Dropbox if you used backup or sync. Analytics, crash and advertising data are held by Google and are not linked to your name or email (unless the hidden developer sign-in described above is used); for that data, use Google's tools or contact us and we will help where we can.</p>
+
+<h2>Children</h2>
+<p>Inscape is not directed to children under 13, and we do not knowingly collect data from them.</p>
+
+<h2>Changes</h2>
+<p>Material changes to this policy will be announced in the app or on this page before taking effect.</p>
+
+<h2>Contact</h2>
+<p>velocitycraft.app+inscape@gmail.com</p>
+<p>If you email us, including through Send feedback in the app (which pre-fills your app version, device model, Android version, screen size, memory and language, all of which you can edit), we receive your email address and message and use them only to reply.</p>
+
+</body>
+</html>

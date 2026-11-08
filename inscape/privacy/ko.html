@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscape 개인정보처리방침</title>
+<style>
+  body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: #333; }
+  p, li { font-size: 14px; }
+  ul { padding-left: 20px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .lang-links { font-size: 13px; color: #888; margin-bottom: 16px; }
+  .lang-links a { color: #555; text-decoration: none; margin: 0 4px; }
+  .lang-links a:hover { text-decoration: underline; }
+  .lang-links a.active { color: #000; font-weight: bold; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #ddd; }
+    h2 { color: #ccc; }
+    .lang-links a { color: #aaa; }
+    .lang-links a.active { color: #fff; }
+  }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
+</style>
+</head>
+<body>
+
+<p class="lang-links"><a href="en.html">English</a> · <a href="ko.html" class="active">한국어</a></p>
+
+<h1>Inscape 개인정보처리방침</h1>
+<p class="date">시행일: 2026년 11월 8일</p>
+<p>이 방침은 Velocity Craft(이하 ‘저희’)가 배포하는 Android용 Inscape에 적용됩니다.</p>
+
+<h2>할 수 없는 것부터 말씀드립니다</h2>
+<p>Inscape는 일기장입니다. 무엇을 보호하는지 설명하기 전에, 저희가 주장하지 <em>않는</em> 것을 먼저 적습니다.</p>
+<ul>
+  <li><strong>이 기기의 일기는 저희가 별도로 암호화해 저장하지 않습니다.</strong> 일기는 앱 전용 저장소에 저장되며, 안드로이드 운영체제가 다른 앱으로부터 격리합니다. 루팅된 기기나 다른 사람이 잠금을 풀 수 있는 기기에서는 그 격리가 무력화될 수 있습니다. 선택 사항인 앱 잠금(생체 인증 + PIN)은 두 번째 장벽이지만, 앱을 잠그는 것이지 파일을 암호화하는 것은 아닙니다.</li>
+  <li><strong>저희는 엔트리를 복구해 드릴 수 없습니다.</strong> 사본을 갖고 있지 않습니다. 백업 없이 기기를 잃어버리면 엔트리도 사라집니다.</li>
+  <li>저희는 보안에 관해 단정적인 표현을 쓰지 않습니다. 그런 표현은 확인할 수 있는 내용을 담고 있지 않으므로, 대신 조건을 적습니다.</li>
+</ul>
+
+<h2>일기 내용은 저희에게 전송되지 않습니다</h2>
+<p>Inscape는 계정이 필요 없고, Velocity Craft는 일기 내용을 저장하는 서버를 운영하지 않습니다. 엔트리 본문·제목·태그·감정·사진·음성 메모, 그리고 어떤 엔트리를 다시 열어 보셨는지는 <em>직접</em> 옮기기로 하지 않는 한 기기에 남으며(아래 '암호화가 적용되는 곳' 참고), 아래에 설명하는 광고·분석·크래시 리포트 서비스 어디에도 전달되지 않습니다.</p>
+<p>회고 기능('지난 오늘')은 전부 기기 안에서 계산됩니다. 무언가를 고르거나 요약하기 위해 엔트리를 업로드하지 않습니다.</p>
+<p>사용자용 로그인은 없습니다. 앱에는 내부 테스트용 Google 로그인이 있는 숨겨진 개발자 패널이 있습니다. 누군가 그곳에서 로그인하면 해당 Google 계정 이메일 주소의 단방향 해시가 그 기기의 분석·크래시 리포트에 함께 실립니다.</p>
+
+<h2>수집되는 것과 그 주체</h2>
+<p>이것은 일기와 별개의 사안이고, 저희는 두 설명을 일부러 분리해서 적습니다. 아래 어느 항목에도 일기 내용은 들어가지 않습니다. Inscape는 Google AdMob을 통해 광고를 표시하고, Google Firebase를 사용 분석(Firebase Analytics)·크래시 리포트(Firebase Crashlytics)·알림(Firebase Cloud Messaging)·원격 기능 설정(Firebase Remote Config)에 사용합니다. 수집 항목은 다음과 같습니다.</p>
+<table id="data-collected">
+  <tr><th>항목</th><th>수집 주체</th><th>내용과 이유</th></tr>
+  <tr><td>IP address</td><td>Google AdMob, Google Firebase</td><td>이 서비스들의 네트워크 요청에 필연적으로 포함됩니다</td></tr>
+  <tr><td>User product interactions</td><td>Google AdMob, Firebase Analytics</td><td>광고 노출·클릭, 앱의 어느 화면을 열었는지(‘설정’·‘편집기’ 같은 화면 이름이며 엔트리 내용은 아닙니다), 첫 엔트리 작성 1회 이벤트, 목록 스타일 변경, 동기화 회차별 건수(보내고 받은 항목 수)</td></tr>
+  <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>크래시·비치명 오류 리포트 — 기기 모델, OS 버전, 앱 버전, 오류 스택, 이용 등급(무료·평생 이용권) 같은 앱 상태</td></tr>
+  <tr><td>Device and Account identifiers</td><td>Google AdMob, Google Firebase</td><td>광고 ID·app set ID, Firebase 설치 ID, 푸시 알림 토큰</td></tr>
+  <tr><td>Purchase history</td><td>Firebase Analytics</td><td>Inscape 평생 이용권을 구매하실 때 상품 ID·통화·가격. 결제는 Google Play가 처리하며 저희는 결제 정보를 보지 않습니다</td></tr>
+</table>
+<p>분석 이벤트에는 보고서를 묶어 보기 위해 앱 버전, 빌드 종류, 이용 등급(무료·평생 이용권), 기기 성능 등급(저·중·고)이 함께 실립니다.</p>
+<p>Google Analytics는 기기 모델, 안드로이드 버전, 언어 설정, 최초 실행·사용 시간 같은 세션·참여 정보와 무작위 앱 인스턴스 식별자를 자동으로 기록합니다. Firebase는 크래시 리포트를 90일간 보관하며, 분석 이벤트 데이터는 최대 14개월간 보관됩니다.</p>
+<p>다음은 <strong>수집하지 않으며</strong> 저희를 통해 기기를 떠나지 않습니다 — 메시지·일기 본문, 사진·동영상, 건강 및 피트니스 정보(감정 기록 포함), 개인 정보, 파일·문서, 정밀 위치, 오디오, 연락처, 캘린더. Google은 광고 게재와 분석 보고서를 위해 IP 주소로 도시 수준의 대략적인 지역을 추정할 수 있습니다. Inscape는 위치 권한을 요청하지 않으며 기기의 위치를 읽지 않습니다. 첨부하신 사진에 위치 정보가 이미 들어 있으면 그 정보는 엔트리와 함께 이 기기(그리고 백업이나 암호화된 동기화)에 남으며, 저희나 광고·분석 서비스로 전송되지 않습니다.</p>
+<p>Inscape 평생 이용권을 구매하시거나, 리워드 광고로 받은 Plus Pass가 유효한 동안에는 광고가 표시되지 않습니다. 다만 동의 설정과 광고 제거 상태를 확인하기 위해 광고 SDK가 기기에서 시작될 수 있습니다. 분석과 크래시 리포트는 모든 등급에서 똑같이 동작합니다.</p>
+
+<h2>암호화가 적용되는 곳과 적용되지 않는 곳</h2>
+<p>암호화에 관한 문장은 특정 조건에서만 참입니다. 일기가 이 기기를 떠날 수 있는 경로 전부를 적습니다.</p>
+<table>
+  <tr><th>경로</th><th>암호화 여부</th></tr>
+  <tr><td>이 기기의 일기 데이터베이스</td><td><strong>아니요.</strong> 안드로이드 앱 샌드박스로 보호되며, 앱 잠금을 켜면 한 겹이 더해집니다.</td></tr>
+  <tr><td>Dropbox 백업 파일</td><td><strong>백업 암호화를 켠 경우에만.</strong> 꺼져 있으면 그 Dropbox 계정에 접근할 수 있는 사람이 백업을 읽을 수 있습니다. 백업 암호화는 무료를 포함한 모든 등급에서 쓸 수 있습니다.</td></tr>
+  <tr><td>Dropbox 동기화</td><td><strong>항상.</strong> 엔트리·첨부·동기화 색인은 업로드 전에 이 기기에서 AES-256-GCM으로 암호화됩니다. 키는 직접 정하신 동기화 비밀번호(12자 이상)에서 만들어집니다. Dropbox가 여전히 볼 수 있는 정보는 아래 'Dropbox 백업과 동기화'를 참고하세요.</td></tr>
+  <tr><td>직접 저장하는 전체 백업 파일(ZIP)</td><td><strong>백업 암호화를 켠 경우에만.</strong> 그렇지 않으면 평문 파일입니다.</td></tr>
+  <tr><td>다른 앱으로 공유</td><td><strong>아니요.</strong> 엔트리 텍스트나 파일이 고르신 앱으로 그대로 전달되며 그 앱의 방침을 따릅니다.</td></tr>
+  <tr><td>Markdown·텍스트·PDF 내보내기</td><td><strong>아니요.</strong> 내보내기는 설계상 평문입니다 — 다른 곳에서 열기 위해 존재하는 파일이기 때문입니다.</td></tr>
+  <tr><td>안드로이드 OS 기기 백업(자동 백업·기기 이전)</td><td><strong>제외했습니다.</strong> 일기 데이터베이스, 사진·음성·동영상·문서, 로컬 백업 파일, 사진 위치 정보, 회고에서 숨긴 날짜, 최근 검색어를 모두 OS 백업 대상에서 뺐습니다. 그 경로는 저희 암호화 계약 밖이기 때문입니다. 테마 같은 표시 설정은 새 기기로 옮겨집니다.</td></tr>
+</table>
+<p>백업 또는 동기화 비밀번호를 잃어버리면 그 비밀번호로 보호된 데이터를 저희가 복구해 드릴 수 없습니다. 휴대폰을 잃어버린 뒤에도 남아 있을 곳에 보관하시기 바랍니다.</p>
+
+<h2>Dropbox 백업과 동기화</h2>
+<p>둘 다 선택 기능이며 모든 사용자가 쓸 수 있습니다. Dropbox를 연결하면 인증은 Dropbox에서 이루어지고, 연결 토큰은 안드로이드 키스토어로 보호되는 저장소에 이 기기에만 보관됩니다. Inscape는 Dropbox와 직접 통신하며, Velocity Craft는 일기나 그 키를 받는 서버를 운영하지 않습니다.</p>
+<p>동기화 비밀번호는 이 기기를 떠나지 않습니다. 백그라운드 동기화를 위해 안드로이드 키스토어로 보호되는 저장소에 보관되며, OS 백업에서 제외됩니다. 새 기기에서는 다시 입력하셔야 합니다.</p>
+<p>Dropbox는 백업 파일과 암호화된 동기화 객체를 사용자 계정에 저장하며, 내용 암호화로 가려지지 않는 서비스 메타데이터 — 객체 경로(해시 포함), 크기, 리비전, 요청 시각, 네트워크 주소, 그리고 백업마다 앱 버전·백업 시각·엔트리 수·사진 수를 담은 암호화되지 않은 작은 요약 파일 — 를 볼 수 있습니다. Dropbox의 처리는 Dropbox 개인정보처리방침을 따릅니다.</p>
+<p>Inscape를 삭제하거나 Dropbox 연결을 끊어도 이미 Dropbox에 있는 파일은 지워지지 않습니다. 동기화는 이전의 암호화 객체를 삭제하지 않습니다. 지우시려면 Dropbox에서 Inscape 폴더를 삭제하고, 원하시면 Dropbox 계정 설정에서 앱 연결을 해제하세요.</p>
+
+<h2>다른 서비스에 연결되는 기능</h2>
+<ul>
+  <li><strong>음성 입력</strong>은 기기의 음성 인식 서비스(대부분의 휴대폰에서는 Google)를 사용합니다. 받아쓰는 동안 음성은 그 서비스가 처리하며, 서비스 자체 서버에서 처리될 수 있고 그 서비스의 개인정보처리방침이 적용됩니다. Inscape는 인식된 텍스트만 받습니다. 읽어 주기는 기기의 TTS 엔진을 사용합니다.</li>
+  <li><strong>링크 미리보기.</strong> 엔트리에 웹 링크 하나를 붙여 넣으면 제목을 보여 주기 위해 Inscape가 그 페이지를 불러옵니다. X/Twitter 링크는 먼저 X의 공개 임베드 서비스(publish.twitter.com)에 요청하고, 실패하면 독립 미리보기 서비스인 fxtwitter.com에 요청합니다. 브라우저로 열 때와 마찬가지로 해당 사이트나 서비스는 링크와 네트워크 주소를 받습니다. 엔트리의 다른 내용은 전송되지 않습니다.</li>
+</ul>
+
+<h2>제3자</h2>
+<ul>
+  <li><strong>Google AdMob</strong> 및 Google User Messaging Platform — 광고와 동의 관리. Google 개인정보처리방침의 적용을 받습니다.</li>
+  <li><strong>Google Firebase</strong> — Analytics 사용 이벤트, Crashlytics 크래시 리포트, 알림용 Cloud Messaging, 기능 설정용 Remote Config. 일기 내용은 Firebase로 전달되지 않습니다. Google 개인정보처리방침의 적용을 받습니다.</li>
+  <li><strong>Google Play 결제</strong> — 평생 이용권 구매. 저희는 결제 정보를 보지 않습니다.</li>
+  <li><strong>Dropbox</strong> — 백업이나 동기화를 위해 계정을 연결한 경우에만 해당합니다.</li>
+  <li><strong>기기의 음성 인식·TTS 서비스</strong> — 사용하는 동안에만.</li>
+  <li><strong>붙여 넣으신 링크의 웹사이트, X 임베드 서비스, fxtwitter.com</strong> — 링크를 붙여 넣을 때 제목을 가져오기 위해서만.</li>
+</ul>
+
+<h2>권한</h2>
+<ul>
+  <li><strong>알림</strong> — 직접 설정하신 리마인더와 앱 공지. 리마인더 알림에는 일기 내용이 들어가지 않고 일반 제목만 표시되므로, 잠금화면에 일기 내용이 뜨지 않습니다. 홍보성 알림(다른 앱 소식·혜택 안내)은 설정 → 알림에서 언제든 끌 수 있습니다. 유럽경제지역과 영국에서는 직접 켜시기 전까지 꺼져 있고, 그 밖의 지역에서는 기본으로 켜져 있습니다.</li>
+  <li><strong>사진·동영상</strong> — 안드로이드 사진 선택기를 사용하므로 직접 고르신 항목만 Inscape에 전달됩니다. 미디어 보관함 전체에 대한 접근 권한을 요청하지 않습니다.</li>
+  <li><strong>마이크</strong> — 음성 메모를 녹음하거나 음성 입력을 쓰는 동안에만 사용합니다.</li>
+</ul>
+
+<h2>유럽경제지역 및 영국</h2>
+<p>필요한 경우 Inscape는 광고에 앞서 Google 인증 동의 양식을 표시합니다. 선택은 설정에서 언제든 바꿀 수 있습니다. 선택에 따라 광고가 비맞춤 형태로 표시되거나 아예 불러오지 않습니다. 이 양식은 광고에만 적용됩니다. Firebase Analytics와 Crashlytics는 이 선택과 관계없이 모든 기기에서 동작하며, Analytics는 광고 ID를 읽을 수 있습니다. 광고 ID는 안드로이드 설정에서 재설정하거나 삭제할 수 있습니다.</p>
+<p>정보의 열람·정정·삭제를 요구할 권리가 있습니다. 일기 내용은 기기와 직접 관리하시는 저장소에만 있으므로 그 권리는 직접 행사하십니다 — 앱에서 엔트리를 삭제하고, 앱을 삭제하면 이 기기의 데이터가 전부 지워지며, 백업이나 동기화를 쓰셨다면 Dropbox의 Inscape 폴더를 삭제하세요. 분석·크래시·광고 데이터는 Google이 보유하며 이름이나 이메일과 연결되지 않습니다(위에 적은 숨겨진 개발자 로그인을 사용한 경우는 예외). 이 데이터는 Google의 도구를 이용하시거나 저희에게 문의해 주시면 가능한 범위에서 도와드립니다.</p>
+
+<h2>아동</h2>
+<p>Inscape는 만 13세 미만 아동을 대상으로 하지 않으며, 아동의 정보를 알면서 수집하지 않습니다.</p>
+
+<h2>변경</h2>
+<p>이 방침의 중요한 변경은 시행 전에 앱 또는 이 페이지에서 알려 드립니다.</p>
+
+<h2>문의</h2>
+<p>velocitycraft.app+inscape@gmail.com</p>
+<p>앱의 ‘의견 보내기’(앱 버전, 기기 모델, 안드로이드 버전, 화면 크기, 메모리, 언어가 미리 채워지며 수정하실 수 있습니다)를 포함해 이메일을 보내 주시면, 저희는 이메일 주소와 내용을 받아 답장에만 사용합니다.</p>
+
+</body>
+</html>
