@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeter Player Política de Privacidade</title>
+<title>Política de Privacidade do Jeter Player</title>
 <style>
   body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
   h1 { font-size: 22px; margin-bottom: 8px; }
@@ -21,6 +21,14 @@
     .lang-links a { color: #aaa; }
     .lang-links a.active { color: #fff; }
   }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
 </style>
 </head>
 <body>
@@ -36,72 +44,99 @@
   <a href="pt.html" class="active">Português</a>
 </p>
 
-<h1>Jeter Player Política de Privacidade</h1>
-<p class="date">Data de vigência: 20 de março de 2026</p>
+<h1>Política de Privacidade do Jeter Player</h1>
+<p class="date">Data de entrada em vigor: 8 de novembro de 2026</p>
+<p>Esta política aplica-se ao Jeter Player para Android, publicado pela Velocity Craft («nós»).</p>
 
-<p>O Jeter Player (doravante "o Aplicativo") valoriza suas informações pessoais e estabeleceu a seguinte política de privacidade de acordo com as leis de proteção de dados aplicáveis.</p>
-
-<h2>1. Informações pessoais coletadas</h2>
-<p>O Aplicativo pode coletar as seguintes informações para fornecer seus serviços.</p>
+<h2>Começamos pelo que não conseguimos fazer</h2>
+<p>O Jeter Player é um leitor de vídeo com um Cofre privado. Antes de descrever o que protegemos, eis o que <em>não</em> afirmamos:</p>
 <ul>
-  <li><strong>Informações do dispositivo</strong>: Identificador de publicidade, modelo do dispositivo e versão do sistema operacional (para serviços de publicidade)</li>
-  <li><strong>Metadados de arquivos de mídia</strong>: Metadados de vídeos e fotos lidos do armazenamento do dispositivo para exibição da biblioteca e reprodução (nome do arquivo, duração, resolução, caminho)</li>
-  <li><strong>Dados biométricos</strong>: Dados de autenticação por impressão digital ou reconhecimento facial usados para o recurso de bloqueio de pasta (processados inteiramente no dispositivo via Android Keystore e nunca transmitidos externamente)</li>
-</ul>
-<p>Arquivos de mídia como vídeos e fotos são acessados em modo somente leitura do armazenamento do dispositivo. O Aplicativo não carrega nem transmite seus arquivos de mídia para nenhum servidor externo.</p>
-
-<h2>2. Finalidade da coleta e uso</h2>
-<ul>
-  <li><strong>Reprodução de vídeos e fotos</strong>: Fornece funções de reprodução de mídia, incluindo listas de reprodução, continuar assistindo e modo Picture-in-Picture (PiP).</li>
-  <li><strong>Organização de mídia</strong>: Gerencia sua biblioteca de vídeos, galeria de fotos, álbuns de fotos e funções de limpeza de mídia.</li>
-  <li><strong>Bloqueio de pasta</strong>: Usa autenticação biométrica para proteger mídia privada em uma pasta bloqueada.</li>
-  <li><strong>Publicidade</strong>: Exibe anúncios personalizados através do Google AdMob.</li>
-  <li><strong>Melhoria do aplicativo</strong>: Pode coletar dados de uso anônimos para análise de falhas e melhoria da estabilidade do serviço.</li>
+  <li><strong>Não encriptamos os vídeos deste dispositivo — incluindo os do Cofre.</strong> Os ficheiros que move para o Cofre são transferidos, sem alterações, para o armazenamento privado da aplicação, que o sistema operativo Android isola das outras aplicações. Num dispositivo com root, ou num dispositivo que outra pessoa consiga desbloquear, esse isolamento pode ser contornado. Para abrir o Cofre é necessária a sua impressão digital, o seu rosto ou um PIN, mas isso é um bloqueio da aplicação, não uma encriptação dos ficheiros.</li>
+  <li><strong>Não conseguimos recuperar os seus vídeos.</strong> Não guardamos nenhuma cópia. Se perder o dispositivo, ou desinstalar a aplicação, sem uma cópia de segurança, os ficheiros do Cofre perdem-se.</li>
+  <li>Evitamos afirmações absolutas sobre segurança. Esse tipo de frase não descreve nada que possa verificar, por isso indicamos antes as condições.</li>
 </ul>
 
-<h2>3. Período de retenção</h2>
+<h2>Os seus vídeos nunca nos são enviados</h2>
+<p>O Jeter Player não requer conta, e a Velocity Craft não gere nenhum servidor que armazene os seus vídeos. Os vídeos da biblioteca são reproduzidos diretamente a partir do armazenamento do dispositivo. Os próprios vídeos, os nomes dos seus ficheiros e pastas, o que vê e quando, as posições de retoma, os marcadores e as respetivas notas, as listas de reprodução e o conteúdo do Cofre permanecem no seu dispositivo, a menos que seja <em>o utilizador</em> a decidir movê-los (consulte «Para onde podem ir os seus vídeos» abaixo), e nenhum deles é transmitido aos serviços de publicidade ou de análise descritos a seguir. Os relatórios de falhas descrevem uma falha em termos técnicos; o Jeter Player não lhes acrescenta nomes de vídeos nem de pastas.</p>
+<p>Não existe início de sessão para os utilizadores. A aplicação contém um painel de programador oculto com início de sessão Google, utilizado para testes internos. Só quando uma das nossas próprias contas de teste designadas inicia sessão aí é que um hash unidirecional do respetivo endereço de e-mail é anexado aos dados de análise e aos relatórios de falhas desse dispositivo; para qualquer outra conta, iniciar sessão não lhes acrescenta nada. Se for iniciada uma compra com sessão iniciada aí, esse início de sessão também é usado para obter o identificador de compra descrito em «Funcionalidades que contactam outros serviços».</p>
+
+<h2>O que é recolhido e por quem</h2>
+<p>Este é um assunto separado dos seus vídeos, e mantemos as duas descrições separadas de propósito. Nada do que se segue contém os seus vídeos nem os respetivos nomes. O Jeter Player mostra publicidade através do Google AdMob e utiliza o Google Firebase para análise de utilização (Firebase Analytics), relatórios de falhas (Firebase Crashlytics) e definições remotas de funcionalidades (Firebase Remote Config). Quando inicia uma compra, contacta também a Amazon Web Services. Em conjunto, recolhem:</p>
+<table id="data-collected">
+  <tr><th>Categoria</th><th>Recolhido por</th><th>O quê e porquê</th></tr>
+  <tr><td>IP address</td><td>Google AdMob, Google Firebase, Amazon Web Services</td><td>Incluído inevitavelmente em cada pedido de rede que estes serviços recebem</td></tr>
+  <tr><td>User product interactions</td><td>Google AdMob, Firebase Analytics</td><td>Impressões e cliques de anúncios; que ecrã da aplicação foi aberto (nomes de ecrã fixos como «início», «pastas» ou «leitor», nunca nomes de vídeos); um evento único de «primeira reprodução» com o tipo de origem e o comprimento da fila; e um relatório de «formato não suportado» quando o som ou a imagem de um vídeo não podem ser descodificados</td></tr>
+  <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>Relatórios de falhas e de erros não fatais: modelo do dispositivo, versão do sistema operativo, versão da aplicação, o rastreio de pilha do erro e o estado da aplicação, como o seu nível (gratuito ou Acesso Vitalício), uma classe de desempenho do dispositivo, o passo da compra que falhou e a versão do WebView do sistema e o tipo de processador usados para os anúncios</td></tr>
+  <tr><td>Device and Account identifiers</td><td>Google AdMob, Google Firebase, Amazon Web Services</td><td>ID de publicidade e ID do conjunto de aplicações; o ID de instalação do Firebase; e um identificador de compra aleatório emitido pela Amazon Web Services quando inicia uma compra</td></tr>
+  <tr><td>Purchase history</td><td>Firebase Analytics</td><td>Quando compra o Acesso Vitalício do Jeter Player: o ID do produto, a moeda e o preço. O pagamento é processado pelo Google Play; nunca vemos os seus dados de pagamento</td></tr>
+</table>
+<p>Os eventos de análise incluem também a versão da aplicação, o tipo de compilação, o seu nível (gratuito ou Acesso Vitalício) e uma classe de desempenho do dispositivo (baixa/média/alta), para que os relatórios possam ser agrupados. O relatório de «formato não suportado» contém apenas dados técnicos — tipo de codec e de contentor, resolução, taxa de fotogramas, profundidade de bits, canais e taxa de amostragem do áudio e a definição de descodificação —, nunca nomes de ficheiros ou pastas, caminhos nem títulos de faixas.</p>
+<p>O Google Analytics também regista algumas informações automaticamente: modelo do dispositivo, versão do Android, idioma definido e dados de sessão e de interação, como a primeira abertura e o tempo de utilização, juntamente com um identificador aleatório da instância da aplicação. O Firebase conserva os relatórios de falhas durante 90 dias; os dados de eventos de análise são conservados durante, no máximo, 14 meses.</p>
+<p>O seguinte <strong>não</strong> é recolhido e nunca sai do seu dispositivo através de nós: os seus vídeos e fotografias, os respetivos nomes e pastas, o que vê, ficheiros e documentos, áudio, contactos, calendário, mensagens, informações pessoais e localização exata. A Google pode estimar uma região aproximada, ao nível da cidade, a partir do endereço IP para a apresentação de anúncios e relatórios de análise; na secção Segurança dos dados do Google Play, isto é declarado como «Localização aproximada». O Jeter Player não pede a autorização de localização e nunca lê a localização do seu dispositivo.</p>
+<p>Se comprar o Acesso Vitalício do Jeter Player, ou enquanto estiver ativo um Plus Pass desbloqueado ao ver um anúncio com recompensa, não são mostrados anúncios. Ainda assim, o SDK de publicidade pode iniciar-se no seu dispositivo para verificar a definição de consentimento e o estado sem anúncios. A análise e os relatórios de falhas funcionam da mesma forma em todos os níveis.</p>
+
+<h2>Para onde podem ir os seus vídeos e se estão encriptados</h2>
+<p>Qualquer afirmação sobre encriptação só é verdadeira em condições específicas. Eis todos os locais onde os seus vídeos e os dados da sua biblioteca podem ser guardados ou enviados:</p>
+<table>
+  <tr><th>Caminho</th><th>Encriptado?</th></tr>
+  <tr><td>Vídeos da biblioteca no armazenamento do dispositivo</td><td><strong>Não pelo Jeter Player.</strong> Ficam onde estão; a aplicação apenas os lê para os reproduzir.</td></tr>
+  <tr><td>Ficheiros do Cofre e base de dados da biblioteca neste dispositivo</td><td><strong>Não.</strong> Protegidos pelo isolamento de aplicações do Android e, no caso do Cofre, pelo bloqueio por impressão digital, rosto ou PIN.</td></tr>
+  <tr><td>Cópia de segurança no Dropbox</td><td><strong>Não.</strong> Os ficheiros do Cofre são carregados tal como estão, juntamente com a base de dados da biblioteca e as suas definições. Qualquer pessoa com acesso a essa conta Dropbox pode abri-los. Os vídeos da biblioteca fora do Cofre não são carregados.</td></tr>
+  <tr><td>Capturas de ecrã e gravações de ecrã</td><td><strong>Não.</strong> Guardadas como ficheiros comuns nas pastas partilhadas Pictures e Movies deste dispositivo, onde outras aplicações com acesso a multimédia as podem ver. Não são carregadas.</td></tr>
+  <tr><td>Retirar ficheiros do Cofre e partilhar com outra aplicação</td><td><strong>Não.</strong> O ficheiro volta, tal como está, ao armazenamento partilhado ou segue para a aplicação que escolher, ficando sujeito à política dessa aplicação.</td></tr>
+  <tr><td>Rede local: DLNA, SMB e transferência por Wi-Fi</td><td><strong>Normalmente não.</strong> Estas funcionalidades comunicam diretamente com dispositivos da sua própria rede, na maioria das vezes através de ligações não encriptadas. A transferência por Wi-Fi exige um PIN de 4 dígitos mostrado na aplicação, termina após 5 PIN errados e para ao fim de 10 minutos sem atividade.</td></tr>
+  <tr><td>Cópia de segurança do sistema Android (cópia automática / transferência entre dispositivos)</td><td><strong>Não pelo Jeter Player.</strong> Se a cópia de segurança do Android estiver ativada, a base de dados da biblioteca e os ficheiros do Cofre podem ser incluídos na cópia ou numa transferência entre dispositivos, dentro dos limites de tamanho do Android; essa cópia é gerida pela Google. O Jeter Player exclui as credenciais do Dropbox, do início de sessão Google e do SMB, as caches do estado de compra e as definições de teste.</td></tr>
+</table>
+<p>As ligações à Google, à Amazon Web Services e ao Dropbox usam HTTPS encriptado. Uma ligação web que partilhe com a aplicação é obtida da forma indicada pela própria ligação (http ou https).</p>
+
+<h2>Cópia de segurança no Dropbox</h2>
+<p>A cópia de segurança no Dropbox é opcional e está disponível com um Plus Pass ou com o Acesso Vitalício do Jeter Player. Se ligar o Dropbox, a autorização é feita junto do Dropbox e os tokens de ligação são guardados neste dispositivo num armazenamento encriptado com o Android Keystore (no raro caso de um dispositivo com o Keystore danificado, no armazenamento privado da aplicação). O Jeter Player comunica diretamente com o Dropbox; a Velocity Craft não gere nenhum servidor que receba os seus vídeos.</p>
+<p>Cada cópia de segurança contém os ficheiros do Cofre (os vídeos e fotografias reais, guardados uma única vez e partilhados entre cópias); a base de dados da biblioteca — os nomes e caminhos de pasta dos vídeos da sua biblioteca, o histórico de reprodução e as posições de retoma, os marcadores e as respetivas notas, as listas de reprodução, as pastas do Cofre, as regras de Cofre automático e o seu saldo de Pulse; as suas definições; e um pequeno ficheiro de resumo não encriptado com o pacote da aplicação, a hora da cópia, a versão da base de dados e o número de ficheiros do Cofre. A aplicação não encripta nada disto. São mantidas até 20 cópias; as mais antigas são eliminadas, enquanto os ficheiros partilhados do Cofre se mantêm. O Dropbox armazena estes ficheiros na sua conta e pode observar metadados do serviço, como nomes de ficheiros, tamanhos, horas de carregamento e o seu endereço de rede. O tratamento pelo Dropbox rege-se pela política de privacidade do Dropbox.</p>
+<p>Desinstalar o Jeter Player ou desligar o Dropbox não elimina os ficheiros que já estão no Dropbox. Para os remover, elimine a pasta do Jeter Player no seu Dropbox e, se quiser, revogue o acesso da aplicação nas definições da sua conta Dropbox.</p>
+
+<h2>Funcionalidades que contactam outros serviços</h2>
 <ul>
-  <li><strong>Metadados de mídia</strong>: Armazenados em um banco de dados local no seu dispositivo e excluídos quando o Aplicativo é desinstalado.</li>
-  <li><strong>Dados biométricos</strong>: Gerenciados pelo sistema Android Keystore e nunca saem do seu dispositivo. Removidos quando o Aplicativo é desinstalado ou quando o recurso de bloqueio de pasta é desativado.</li>
-  <li><strong>Dados de publicidade</strong>: Sujeitos à política de privacidade do Google.</li>
+  <li><strong>Guardar um vídeo a partir de uma ligação partilhada.</strong> Quando partilha uma ligação web com o Jeter Player, a aplicação acede a esse endereço para verificar se é um vídeo (numa página web, procura uma ligação de vídeo que o editor tenha tornado pública) e, se optar por o guardar, transfere o vídeo. O site recebe a ligação e o seu endereço de rede, tal como se abrisse a ligação num navegador. O Jeter Player não transfere vídeos de redes sociais como o YouTube, o Instagram, o Facebook, o X ou o TikTok; essas ligações são recusadas.</li>
+  <li><strong>Compras.</strong> Quando inicia uma compra, o Jeter Player obtém um identificador aleatório da Amazon Web Services (Amazon Cognito, região Ásia-Pacífico (Mumbai)) e anexa-o à compra do Google Play para que a compra possa ser associada mais tarde. O identificador não contém nenhum nome nem endereço de e-mail.</li>
+  <li><strong>Tipos de letra.</strong> Alguns tipos de letra integrados na aplicação, e qualquer tipo de letra que escolha para ela, são transferidos do Google Fonts pelos serviços do Google Play do seu dispositivo.</li>
+  <li><strong>As atualizações da aplicação e os pacotes de idioma</strong> são fornecidos através do Google Play (atualização na aplicação e Play Feature Delivery).</li>
+  <li><strong>Rede local.</strong> Os servidores DLNA, as partilhas SMB e a transferência por Wi-Fi ligam-se apenas a dispositivos da sua própria rede que escolher; nada nos é enviado. As palavras-passe SMB são guardadas neste dispositivo num armazenamento encriptado com o Keystore e são excluídas da cópia de segurança do Android.</li>
 </ul>
 
-<h2>4. Compartilhamento com terceiros</h2>
-<p>O Aplicativo não compartilha suas informações pessoais com terceiros em princípio. No entanto, aplicam-se as seguintes exceções:</p>
+<h2>Terceiros</h2>
 <ul>
-  <li>Quando você deu seu consentimento prévio</li>
-  <li>Quando exigido por lei</li>
-  <li>Informações limitadas podem ser compartilhadas com o Google AdMob para serviços de publicidade.</li>
+  <li><strong>Google AdMob</strong> e a Google User Messaging Platform — publicidade e consentimento. Regem-se pela política de privacidade da Google.</li>
+  <li><strong>Google Firebase</strong> — eventos de utilização do Analytics, relatórios de falhas do Crashlytics e Remote Config para definições de funcionalidades. Os seus vídeos e os respetivos nomes nunca são transmitidos ao Firebase. Rege-se pela política de privacidade da Google.</li>
+  <li><strong>Google Play</strong> — faturação da compra do Acesso Vitalício (nunca vemos os seus dados de pagamento), atualizações na aplicação e pacotes de idioma; serviços do Google Play para os tipos de letra e, apenas no painel de programador oculto, o início de sessão Google.</li>
+  <li><strong>Amazon Web Services</strong> (Amazon Cognito) — o identificador de compra aleatório descrito acima.</li>
+  <li><strong>Dropbox</strong> — apenas se ligar uma conta para a cópia de segurança.</li>
+  <li><strong>Os sites cujas ligações partilhe com o Jeter Player</strong> — apenas quando partilha uma ligação, para verificar e transferir o vídeo.</li>
 </ul>
 
-<h2>5. Permissões do aplicativo</h2>
-<p>O Aplicativo utiliza as seguintes permissões:</p>
+<h2>Autorizações</h2>
 <ul>
-  <li><strong>Acesso à mídia (READ_MEDIA_VIDEO, READ_MEDIA_IMAGES, READ_MEDIA_AUDIO)</strong>: Para navegar e reproduzir vídeos, fotos e arquivos de áudio no seu dispositivo [Obrigatório]</li>
-  <li><strong>Internet (INTERNET)</strong>: Para exibição de anúncios e relatórios de falhas [Obrigatório]</li>
-  <li><strong>Notificações (POST_NOTIFICATIONS)</strong>: Para notificações de status de reprodução e atualizações do aplicativo [Opcional]</li>
-  <li><strong>Biometria (USE_BIOMETRIC)</strong>: Para autenticação de bloqueio de pasta por impressão digital ou reconhecimento facial [Opcional]</li>
-  <li><strong>Serviço em primeiro plano (FOREGROUND_SERVICE)</strong>: Para manter a reprodução de mídia e o modo PiP [Obrigatório]</li>
-</ul>
-<p>Permissões opcionais são solicitadas apenas quando o recurso correspondente é utilizado. Você pode usar as funções básicas do Aplicativo sem concedê-las.</p>
-
-<h2>6. Medidas de segurança</h2>
-<p>O Aplicativo implementa as seguintes medidas para garantir a segurança das informações pessoais:</p>
-<ul>
-  <li>Todos os dados locais são armazenados no armazenamento interno privado do app, e o cofre é protegido por autenticação biométrica ou PIN.</li>
-  <li>Conexões criptografadas (HTTPS) são usadas para comunicações de rede.</li>
-  <li>Os dados de autenticação biométrica são gerenciados com segurança através do sistema Android Keystore e nunca saem do seu dispositivo.</li>
+  <li><strong>Fotos e vídeos</strong> — para encontrar e reproduzir os vídeos do seu dispositivo e para executar as regras de Cofre automático que configurar. No Android 14 e versões posteriores, pode permitir o acesso apenas aos itens selecionados.</li>
+  <li><strong>Notificações</strong> — controlos de reprodução e o progresso das cópias de segurança e restauros, da compressão, das transferências a partir de ligações, SMB ou transferência por Wi-Fi, e das gravações de ecrã. O Jeter Player não envia notificações promocionais.</li>
+  <li><strong>Microfone</strong> — apenas para a gravação de ecrã. No Android 10 e versões posteriores, capta o som que a aplicação está a reproduzir; no Android 8 e 9, onde isso não é possível, grava a partir do microfone. As gravações são guardadas apenas neste dispositivo.</li>
+  <li><strong>Captura de ecrã</strong> — para a gravação de ecrã, que só começa depois de confirmar o pedido de captura de ecrã do Android.</li>
+  <li><strong>Internet, estado da rede e do Wi-Fi, e multicast</strong> — para anúncios, análise, relatórios de falhas, cópia de segurança no Dropbox, guardar vídeos a partir de ligações e encontrar dispositivos DLNA e SMB na sua rede local.</li>
+  <li><strong>Trabalho em segundo plano (serviços em primeiro plano para reprodução multimédia, sincronização de dados e dispositivos ligados)</strong> — para que a reprodução, o modo ecrã no ecrã, as cópias de segurança, as transferências e a transferência por Wi-Fi continuem enquanto a aplicação está em segundo plano.</li>
+  <li><strong>Biometria</strong> — para o Cofre. Os dados da impressão digital ou do rosto ficam no Android; o Jeter Player apenas sabe se a verificação foi bem-sucedida.</li>
 </ul>
 
-<h2>7. Responsável pela privacidade</h2>
-<ul>
-  <li>Contato: Equipe de Desenvolvimento do Jeter Player</li>
-  <li>E-mail: velocitycraft.app+support+jeter@gmail.com</li>
-</ul>
-<p>Para dúvidas sobre informações pessoais, entre em contato conosco pelo e-mail acima.</p>
+<h2>Espaço Económico Europeu e Reino Unido</h2>
+<p>Quando exigido, o Jeter Player apresenta um formulário de consentimento certificado pela Google antes de qualquer publicidade. Pode alterar a sua escolha a qualquer momento nas Definições. Consoante a sua escolha, os anúncios são mostrados de forma não personalizada ou não são carregados de todo. Este formulário rege apenas a publicidade. O Firebase Analytics e o Crashlytics não são controlados por ele e funcionam em todos os dispositivos; o Analytics pode ler o ID de publicidade, que pode repor ou eliminar nas definições do Android.</p>
+<p>Tem o direito de aceder, retificar e apagar os seus dados. Os seus vídeos e os dados da sua biblioteca encontram-se apenas no seu dispositivo e em armazenamento que controla, pelo que exerce esses direitos diretamente: elimine vídeos e itens do Cofre na aplicação; desinstale-a para remover o Cofre e tudo o resto que a aplicação guarda no seu armazenamento privado (as capturas e gravações guardadas em pastas partilhadas mantêm-se até as eliminar); elimine a pasta do Jeter Player no Dropbox se usou a cópia de segurança; e faça a gestão da cópia de segurança do dispositivo Android nas definições da Google. Os dados de análise, de falhas e de publicidade são guardados pela Google, e o identificador de compra pela Amazon Web Services em nosso nome; nenhum deles está associado ao seu nome ou e-mail (exceto as nossas próprias contas de teste designadas, descritas acima). Para esses dados, utilize as ferramentas da Google ou contacte-nos e ajudaremos no que for possível. Consulte <a href="../delete-account/">como eliminar os seus dados do Jeter Player</a>.</p>
 
-<h2>8. Alterações nesta política</h2>
-<p>Esta política de privacidade pode ser atualizada de acordo com alterações nas leis aplicáveis ou nos serviços. Quaisquer alterações serão anunciadas dentro do Aplicativo.</p>
+<h2>Crianças</h2>
+<p>O Jeter Player não se destina a crianças com menos de 13 anos, e não recolhemos intencionalmente dados de crianças.</p>
+
+<h2>Alterações</h2>
+<p>As alterações importantes a esta política serão anunciadas na aplicação ou nesta página antes de entrarem em vigor.</p>
+
+<h2>Contacto</h2>
+<p>O Jeter Player é publicado pela Velocity Craft. velocitycraft.app+support+jeter@gmail.com</p>
+<p>Se nos enviar um e-mail, incluindo através de «Ajuda &amp; Feedback» na aplicação (que preenche previamente a versão da aplicação, o modelo do dispositivo, a versão do Android, o tamanho e a densidade do ecrã, a memória e o idioma, podendo editar tudo isso), recebemos o seu endereço de e-mail e a sua mensagem e utilizamo-los apenas para lhe responder.</p>
 
 </body>
 </html>

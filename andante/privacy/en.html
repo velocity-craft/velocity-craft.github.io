@@ -54,12 +54,12 @@
 </p>
 
 <h1>Andante Privacy Policy</h1>
-<p class="date">Effective date: October 5, 2026</p>
+<p class="date">Effective date: November 8, 2026</p>
 
 <p>This policy covers the Andante app for Android, published by Velocity Craft ("we"). It describes what Andante stores, what it sends, to whom, and for how long.</p>
 
 <h2>The short version</h2>
-<p>Andante works without an account, and your tasks live on your phone. The app does use the internet, for five things: crash reports, usage statistics, an occasional ad, a remote switch that turns those ads on or off, and Andante Cloud — an optional sync service that needs a Google or Apple sign-in and is currently available to a limited group of users. The first four never receive what you write in Andante. Your tasks reach us only if you sign in to Andante Cloud and turn sync on. They can also leave your phone through features you control that are run by Android or other apps rather than by us — Android's own backup, voice input, and files you export — as the table below describes. Everything below is the long form of this paragraph.</p>
+<p>Andante works without an account, and your tasks live on your phone. The app does use the internet, for six things: crash reports, usage statistics, ads, remote settings that switch those ads and a few in-app notices on or off, purchases through Google Play, and Andante Cloud — an optional sync service that needs a Google or Apple sign-in and is currently available to a limited group of users. The first five never receive what you write in Andante. Your tasks, notes and books reach us only if you sign in to Andante Cloud and turn sync on. They can also leave your phone through features you control that are run by Android or other apps rather than by us — Android's own backup, voice input, and files you export — as the table below describes. Everything below is the long form of this paragraph.</p>
 
 <h2>What we will not claim</h2>
 <ul>
@@ -77,6 +77,8 @@
   <li>Checklists, checklist folders, their items, and cover images you attach</li>
   <li>Routines and their completions; habits, habit categories, and logs</li>
   <li>Weekly reviews and time capsules, including any image you attach to a capsule</li>
+  <li>Notebook notes and their folders</li>
+  <li>Books and your reading records — title, authors, publisher, page count, reading status, ownership, rating, review, genres, recommendations, each time you read a book, and daily reading logs</li>
   <li>Settings — theme, week start, tab layout, font choice, reminder defaults</li>
   <li>If you sign in to Andante Cloud: your sign-in record (the email address and identifiers described below, and a sign-in token), encrypted with a key held in Android's Keystore on this phone</li>
 </ul>
@@ -91,11 +93,11 @@
   </tr>
   <tr>
     <td>Usage statistics<br>(Google Analytics for Firebase)</td>
-    <td>Which screens are opened — by type of screen, never which task or list — and counts of actions such as creating or completing a task, which optional features are switched on, and whether developer mode is on. Google Analytics also uses a random app-instance identifier, collects the device's advertising ID (see "Ads and consent"), and derives an approximate region from your IP address. No task titles, list names, notes, email address, or user ID are sent. It also records some information automatically: the device model, the Android version, the language setting, and session and engagement data such as when the app is first opened, when a session starts, and how long the app is in use. Event-level data is kept for no more than 14 months.</td>
+    <td>Which screens are opened — by type of screen, never which task or list — and counts of actions such as creating or completing a task, which optional features are switched on, and whether developer mode is on. Google Analytics also uses a random app-instance identifier, collects the device's advertising ID when advertising signals are allowed (see "Ads and consent"), and derives an approximate region from your IP address. No task titles, list names, notes, email address, or user ID are sent. It also records some information automatically: the device model, the Android version, the language setting, and session and engagement data such as when the app is first opened, when a session starts, and how long the app is in use. Event-level data is kept for no more than 14 months.</td>
   </tr>
   <tr>
-    <td>Ad switch<br>(Firebase Remote Config, Google)</td>
-    <td>Andante asks Firebase whether App Open ads are currently switched on. The request carries a Firebase installation identifier, the app and Android versions, your country, language and time-zone settings, and the feature settings recorded for usage statistics.</td>
+    <td>Remote settings<br>(Firebase Remote Config, Google)</td>
+    <td>In one request, Andante asks Firebase whether App Open ads are currently switched on, whether a limited-time event notice is shown (during an event, Plus features can be open to everyone), and whether the "More apps from VelocityCraft" card is shown in Settings. The request carries a Firebase installation identifier, the app and Android versions, your country, language and time-zone settings, and the feature settings recorded for usage statistics.</td>
   </tr>
   <tr>
     <td>Ads<br>(Google AdMob)</td>
@@ -107,7 +109,7 @@
   </tr>
   <tr>
     <td>Android backup (Auto Backup and device transfer)</td>
-    <td>Android may copy this app's data, including the task database, into your Google account backup or onto a new phone. This is an operating-system feature, not a transfer to us — we never see it, and cannot read it. You can switch it off in Android Settings &rarr; Google &rarr; Backup. Some files are deliberately excluded from it: the developer-mode unlock state (so that a restored phone never arrives already unlocked), your Andante Cloud sign-in record (so that your sign-in never leaves this phone), and records that only make sense on this phone, such as scheduled alarms and ad frequency.</td>
+    <td>Android may copy this app's data, including the task database, into your Google account backup or onto a new phone. This is an operating-system feature, not a transfer to us — we never see it, and cannot read it. You can switch it off in Android Settings &rarr; Google &rarr; Backup. Some files are deliberately excluded from it: the developer-mode record, including the Google account email used to unlock it (so that a restored phone never arrives already unlocked), your Andante Cloud sign-in record (so that your sign-in never leaves this phone), your Lifetime purchase record and Plus Pass timer (a new phone checks your purchase with Google Play again), and records that only make sense on this phone, such as scheduled alarms and ad frequency.</td>
   </tr>
   <tr>
     <td>A backup or CSV file you export</td>
@@ -128,15 +130,15 @@
 </table>
 
 <h2>Ads and consent</h2>
-<p>Andante is free and may occasionally show a full-screen Google AdMob ad ("App Open" ad) when you return to the app. Ads are never shown when you start the app from scratch, while an alarm is ringing or shortly before or after one, when you arrive from a notification, a widget, or a share, or while you are typing. We can switch these ads off remotely, which is what the ad switch above is for.</p>
-<p>To show and measure ads, the Google Mobile Ads SDK collects the device's advertising ID, its IP address (from which an approximate location may be estimated), your interactions with ads, and app performance information, for advertising, analytics, and fraud prevention. In the European Economic Area, the United Kingdom, and other regions where it is required, Andante shows Google's consent form and requests ads only after you have made a choice; Google then serves ads according to that choice. You can review or change it at any time in Settings &rarr; Ad privacy options (shown where required), and you can reset or delete your advertising ID in Android settings. Your choice in that form governs ads. The form appears only while ads are switched on, so Google Analytics may collect the advertising ID without your having seen it; resetting or deleting the ID in Android settings applies there too.</p>
+<p>Andante is free and may occasionally show a full-screen Google AdMob ad ("App Open" ad) when you return to the app. App Open ads are never shown when you start the app from scratch, while an alarm is ringing or shortly before or after one, when you arrive from a notification, a widget, or a share, or while you are typing. They are also not shown while Plus is on — with Andante Plus Lifetime, an active Plus Pass, or during a special event. Andante also shows a rewarded video ad when you choose to watch one to turn on Plus Pass ("Watch an ad for 60 minutes of Plus"); that ad is loaded only when you tap the button. We can switch App Open ads off remotely, which is one of the things the remote settings above are for.</p>
+<p>To show and measure ads, the Google Mobile Ads SDK collects the device's advertising ID, its IP address (from which an approximate location may be estimated), your interactions with ads, and app performance information, for advertising, analytics, and fraud prevention. In the European Economic Area, the United Kingdom, and other regions where it is required, Andante shows Google's consent form and requests ads only after you have made a choice; Google then serves ads according to that choice. The form appears when App Open ads are switched on, or when you tap "Watch an ad for 60 minutes of Plus". You can review or change your choice at any time in Settings &rarr; Ad privacy options (shown where required), and you can reset or delete your advertising ID in Android settings. Your choice governs ads, and also whether Google Analytics may use the advertising ID and other advertising signals: until the consent check has run — and, where a choice is required, until you have made it — Andante tells Google Analytics that advertising storage, ad user data and ad personalization are denied. The form does not control crash reports or usage statistics as such; those run on every device. Resetting or deleting the advertising ID in Android settings applies to Google Analytics too.</p>
 <p>Google uses this data under its own privacy policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>. How Google uses data from apps that show its ads: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.</p>
 
 <h2>Andante Cloud (optional sync)</h2>
 <p>Andante Cloud keeps your tasks in sync between your devices. It is optional, off until you turn it on, and currently available only to a limited group of users. If you have never signed in to it, nothing in this section applies to you.</p>
 <p><strong>Signing in.</strong> You sign in with Google or Apple. The sign-in page opens in your phone's browser and is run by Amazon Cognito, an Amazon Web Services (AWS) service we use, together with Google or Apple. Andante never sees your Google or Apple password. We ask Google or Apple only for your email address — not your name or profile photo. If you use Apple's "Hide My Email", we receive the relay address Apple creates instead of your real one.</p>
 <p><strong>What we keep about your account:</strong> your email address; the identifier Google or Apple uses for your account and which of the two you signed in with; the account and storage identifiers Amazon Cognito assigns; and when the account was created and last changed. AWS also keeps records of requests made to the sign-in service, including the IP address they came from, for up to 90 days, for security and operations.</p>
-<p><strong>What is uploaded while sync is on:</strong> a copy of your tasks (title, notes, description, dates and times, reminder settings, priority, status, recurrence, subtasks, and who you are waiting for), task notes, lists, folders, tags, contexts and their links to tasks, checklists, checklist folders and items, and routines — together with a random device identifier the app creates (Android backup or device transfer can carry it to a new phone). Andante syncs when you open the app, a few minutes after you make changes, and periodically in the background.</p>
+<p><strong>What is uploaded while sync is on:</strong> a copy of your tasks and Notebook notes (title, notes, description, dates and times, reminder settings, priority, status, recurrence, subtasks, and who you are waiting for), task notes, lists, folders, tags, contexts and their links to tasks, checklists, checklist folders and items, routines, Notebook folders, and your books and reading records (title, authors, publisher, page count, reading status, ownership, rating, review, genres, recommendations, each time you read a book, and daily reading logs) — together with a random device identifier the app creates (Android backup or device transfer can carry it to a new phone). Andante syncs when you open the app, a few minutes after you make changes, and periodically in the background.</p>
 <p><strong>What is not uploaded:</strong> images (cover images, note images, and time-capsule photos — a note keeps only a reference to its image), habits and habit logs, routine check-ins, task completion history, weekly reviews, time capsules, and settings.</p>
 <p><strong>Where it is stored, and how it is protected.</strong> In AWS's Asia Pacific (Mumbai) region, in India. Each account has its own folder that only that account's sign-in can reach; public access to the storage is blocked; connections must use HTTPS; data is encrypted at rest. Only accounts we have enabled can store data: if you sign in with an account that has not been enabled, no task data is uploaded; only the sign-in record and a random storage identifier without personal information exist.</p>
 <p><strong>How long it is kept:</strong></p>
@@ -152,20 +154,22 @@
 <h2>Who processes your data</h2>
 <p>We do not sell your personal information. We share it only with the service providers that run parts of Andante for us, with Google for advertising as described below, and when the law requires it:</p>
 <ul>
-  <li><strong>Google</strong> — Firebase Crashlytics, Google Analytics for Firebase, Firebase Remote Config, Google AdMob, Google sign-in, and Google Fonts. Google also uses advertising data under its own policies, linked above.</li>
+  <li><strong>Google</strong> — Firebase Crashlytics, Google Analytics for Firebase, Firebase Remote Config, Google AdMob, Google Play Billing (the Lifetime purchase), Google sign-in, and Google Fonts. Google also uses advertising data under its own policies, linked above.</li>
   <li><strong>Amazon Web Services</strong> — Andante Cloud sign-in (Amazon Cognito) and storage (Amazon S3), in the Asia Pacific (Mumbai) region.</li>
   <li><strong>Apple</strong> — Sign in with Apple, if you choose it.</li>
 </ul>
 <p>Andante Cloud data is stored in India. Google processes crash reports, usage statistics, and advertising data on servers in several countries. Wherever you live, your data may therefore be processed outside your country.</p>
 
 <h2>What is not collected</h2>
-<p>Andante does not ask for your name and does not request location, contacts, microphone, or photo-library permission (voice input goes through your phone's speech service, as described above). There is nothing to buy — no subscription and no paid tier — so no billing library is present and no payment information exists. Your task content is never sent to Crashlytics, Analytics, Remote Config, or AdMob, and no user ID is set in analytics.</p>
-<p>A hidden developer mode can be unlocked by tapping the version row repeatedly and typing an email address. Only a SHA-256 hash of that address is stored, never the address itself. The hash stays on the device, is excluded from Android backup, and is never sent anywhere; usage statistics record only whether developer mode is on.</p>
+<p>Andante does not ask for your name and does not request location, contacts, microphone, or photo-library permission (voice input goes through your phone's speech service, as described above). Google may estimate an approximate region from your IP address for ads and usage statistics; in Google Play's Data safety section we declare this as "Approximate location". Andante never reads your device's precise location. What you write in Andante is never sent to Crashlytics, Analytics, Remote Config, or AdMob, and no user ID is set in usage statistics or crash reports.</p>
+<p>You can buy Andante Plus Lifetime, or turn on Plus for 60 minutes at a time by choosing to watch a rewarded ad (Plus Pass). Google Play handles the payment, so we never see your card or other payment details. Your Lifetime purchase record is kept on this phone, excluded from Android backup, and checked again with Google Play; the Plus Pass timer is kept only on this phone and is also excluded from Android backup.</p>
+<p>A hidden developer mode, meant for our own test accounts, can be unlocked by tapping the version row five times and signing in with a Google account through Android's account picker. Andante takes only the account's email address from that sign-in and does not keep the sign-in token. It stores that address on this phone — and, if the address is allowed to unlock developer mode, a SHA-256 hash of it — excludes both from Android backup, and never sends either anywhere. Signing out removes both. Usage statistics record only whether developer mode is on.</p>
 
 <h2>Permissions</h2>
 <ul>
-  <li><strong>Internet and network state</strong> — crash reports, usage statistics, ads, the ad switch, and Andante Cloud. Android grants these at install; Andante itself sends no task data unless you use Andante Cloud.</li>
-  <li><strong>Advertising ID</strong> — lets Google AdMob and Google Analytics read the device's advertising ID. You can reset or delete the ID in Android settings.</li>
+  <li><strong>Internet and network state</strong> — crash reports, usage statistics, ads, remote settings, and Andante Cloud. Android grants these at install; Andante itself sends no task data unless you use Andante Cloud.</li>
+  <li><strong>Advertising ID</strong> — lets Google AdMob, and Google Analytics when advertising signals are allowed, read the device's advertising ID. You can reset or delete the ID in Android settings.</li>
+  <li><strong>Google Play billing</strong> — lets you buy Andante Plus Lifetime through Google Play. Android grants it at install.</li>
   <li><strong>Notifications</strong> — reminders, alarms, and the daily digest. Without it the app still works; it just cannot tell you anything. [Optional, but reminders are the point of the app]</li>
   <li><strong>Alarms &amp; reminders (exact alarm)</strong> — fires a reminder at the minute you chose rather than whenever Android finds convenient. Andante tells you when it is missing instead of pretending a reminder is armed. [Required for alarms]</li>
   <li><strong>Run at startup</strong> — re-arms your alarms after a reboot, a clock or time-zone change, or an app update. [Required for alarms]</li>
@@ -197,6 +201,7 @@
 <p>When a version of Andante changes what it collects or where it sends it, we update this policy before that version is released and change the effective date at the top.</p>
 
 <h2>Contact</h2>
+<p>If you email us, including through Help &amp; feedback in the app (which pre-fills the app version and build, the Android version, the device model and your language setting, all of which you can edit before sending), we receive your email address and message and use them only to reply.</p>
 <p>Velocity Craft<br>velocitycraft.app+support+andante@gmail.com</p>
 
 </body>

@@ -21,6 +21,14 @@
     .lang-links a { color: #aaa; }
     .lang-links a.active { color: #fff; }
   }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
 </style>
 </head>
 <body>
@@ -37,78 +45,79 @@
 </p>
 
 <h1>OmniWake 隐私政策</h1>
-<p class="date">生效日期：2026年9月23日</p>
+<p class="date">生效日期：2026年11月8日</p>
+<p>本政策适用于由 Velocity Craft（以下简称“我们”）发布的 Android 版 OmniWake。</p>
 
-<p>OmniWake（以下简称"本应用"）重视您的个人信息，并依据适用的数据保护法律制定了以下隐私政策。</p>
+<h2>您的闹钟从不会发送给我们</h2>
+<p>OmniWake 无需账号，Velocity Craft 也不运营任何存储闹钟的服务器。您的闹钟（时间、名称、日程、文件夹和标签）、行程、个人事件、静音时间段、您录制或捕获的声音以及闹钟视频都保留在您的设备上（如果开启了 Android 设备备份，也会包含在该备份中，见下文“您的闹钟数据存放在哪里”），不会传给下文所述的任何广告、分析或崩溃报告服务。</p>
+<p>本应用没有面向用户的登录功能。应用中有一个隐藏的开发者面板，带有用于内部测试的 Google 登录。在那里登录不会向我们或 Google 的分析服务发送任何内容。只有当我们指定的测试账号登录时，该账号电子邮件地址的单向哈希才会附加到该设备的分析数据和崩溃报告中。</p>
 
-<h2>1. 收集的个人信息</h2>
-<p>本应用可能收集以下信息以提供服务。</p>
+<h2>收集哪些信息，由谁收集</h2>
+<p>这与您的闹钟是两回事，我们有意将两部分说明分开。以下各项均不包含闹钟名称、闹钟时间或您的录音和视频。OmniWake 通过 Google AdMob 展示广告，并使用 Google Firebase 进行使用情况分析（Firebase Analytics）、崩溃报告（Firebase Crashlytics）和远程功能配置（Firebase Remote Config）。它们共同收集以下信息：</p>
+<table id="data-collected">
+  <tr><th>类别</th><th>收集方</th><th>内容与原因</th></tr>
+  <tr><td>IP address</td><td>Google AdMob、Google Firebase</td><td>这些服务发出的每个网络请求中都必然包含</td></tr>
+  <tr><td>User product interactions</td><td>Google AdMob、Firebase Analytics</td><td>广告展示和点击；打开了应用的哪个界面（如“settings”之类的界面名称，绝不包含闹钟内容）；一次性的“创建第一个闹钟”事件及其闹钟类型和日程类型；关闭或贪睡闹钟时的闹钟类型、关闭方式以及是否为 FailSafe 闹钟；关闭任务的开始、完成或超时，以及任务类型和难度；评价请求；Google Play 结算检查的结果；应用自身的行程、个人事件和停响日同步检查失败的情况；以及闹钟因您的某个个人事件而被跳过的情况（不会发送事件名称和日期）</td></tr>
+  <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>崩溃报告和非致命错误报告：设备型号、操作系统版本、应用版本、错误的堆栈跟踪，以及应用状态，例如您的等级（免费或终身版）、设备性能等级，以及 Android 是否限制应用的后台活动</td></tr>
+  <tr><td>Device identifiers</td><td>Google AdMob、Google Firebase</td><td>广告 ID 和 app set ID；Firebase 安装 ID</td></tr>
+  <tr><td>Purchase history</td><td>Firebase Analytics</td><td>当您通过 Google Play 购买 OmniWake 终身版（Lifetime）时，Google Analytics 可能会记录商品 ID、币种和价格。付款由 Google Play 处理，我们从不会看到您的付款信息</td></tr>
+</table>
+<p>分析事件还会附带应用版本、构建类型、您的等级（免费或终身版）以及设备性能等级（低/中/高），以便对报告进行分组。</p>
+<p>Google Analytics 还会自动记录部分信息：设备型号、Android 版本、语言设置，以及首次打开、使用时长等会话和互动数据，并附带一个随机的应用实例标识符。Firebase 会将崩溃报告保留 90 天；分析事件数据最多保留 14 个月。</p>
+<p>以下信息<strong>不会</strong>被收集，也不会经由我们离开您的设备：闹钟名称和时间、音频（您的录音和捕获的声音）、照片和视频（包括闹钟视频和屏幕录制）、文件和文档、联系人、日历、个人信息以及精确位置。Google 可能会根据 IP 地址估算城市级别的大致区域，用于广告投放和分析报告；在 Google Play 的“数据安全”部分中，我们将其申报为“大致位置”。OmniWake 不请求位置权限，也从不读取您设备的位置。</p>
+<p>如果您购买了 OmniWake 终身版，或在您通过观看短广告解锁的 Plus Pass 有效期间，不会显示广告。不过，为了检查同意设置和免广告状态，广告 SDK 仍可能在您的设备上启动。分析和崩溃报告在所有等级下的工作方式相同。</p>
+
+<h2>您的闹钟数据存放在哪里</h2>
+<p>任何关于加密的说法都只在特定条件下成立。以下是 OmniWake 保存或发送您闹钟数据的所有位置：</p>
+<table>
+  <tr><th>位置</th><th>是否加密</th></tr>
+  <tr><td>本设备上的闹钟、设置、文件夹、标签、行程、个人事件和静音时间段</td><td><strong>OmniWake 不加密。</strong> 保存在应用的私有存储中，Android 会将其与其他应用隔离。卸载 OmniWake 会将其删除。可选的应用锁是对应用加的锁，并非加密。</td></tr>
+  <tr><td>您录制的声音、从手机捕获的音频、闹钟视频和屏幕录制</td><td><strong>OmniWake 不加密。</strong> 保存在应用的私有存储中；如果是您选择的视频，则从它在设备上的存储位置播放。您从音乐库中选择的歌曲从音乐库播放。OmniWake 从不上传其中任何内容。</td></tr>
+  <tr><td>您导出的备份文件（<code>omniwake_backup.gz</code>）</td><td><strong>否。</strong> 这是一个压缩文件，包含您的闹钟设置和名称、日程、文件夹、标签、静音时间段以及对声音的引用（不包含声音或视频文件本身）。它会保存在您选择的位置，任何能访问该位置的人都可以读取。</td></tr>
+  <tr><td>Android 系统设备备份（自动备份/设备迁移）</td><td><strong>OmniWake 不加密。</strong> 如果开启了 Android 备份，您的闹钟数据库、设置、录音和闹钟视频会包含在备份到您 Google 账号的数据中（由 Google 管理），以及迁移到新设备的数据中。OmniWake 只排除其购买状态数据。您可以在 Android 设置中关闭 Android 备份。</td></tr>
+</table>
+
+<h2>会连接其他服务的功能</h2>
 <ul>
-  <li><strong>闹钟设置信息</strong>：所有闹钟数据（日程、标签、铃声和设置）仅存储在您的设备上，不会传输到任何外部服务器。</li>
-  <li><strong>Google账户电子邮件</strong>：使用Google登录时，可选择性收集，用于跨设备验证和恢复您的高级版（Lifetime）购买。</li>
-  <li><strong>广告ID</strong>：用于Google AdMob显示个性化广告（仅限免费版）。</li>
-  <li><strong>音频录音</strong>：使用录制闹钟铃声功能时捕获的音频仅存储在本地设备上。</li>
-  <li><strong>设备信息</strong>：设备型号和操作系统版本可能被收集用于崩溃报告和服务改进。</li>
+  <li><strong>字体。</strong> OmniWake 界面使用的部分字体，以及您在设置中浏览或选择的字体，会通过您设备上的 Google Play 服务从 Google Fonts 下载。</li>
+  <li><strong>更多语言</strong>会在您选择设备上尚无文件的语言时，按需从 Google Play 下载。</li>
+  <li><strong>应用更新和评价</strong>通过 Google Play 的应用内更新和应用内评价提供。</li>
 </ul>
 
-<h2>2. 收集和使用目的</h2>
+<h2>第三方</h2>
 <ul>
-  <li><strong>闹钟功能</strong>：闹钟数据仅用于在您的设备上安排和触发闹钟。</li>
-  <li><strong>购买验证</strong>：您的Google账户电子邮件用于跨设备验证和恢复您的高级版（Lifetime）购买。</li>
-  <li><strong>广告</strong>：通过Google AdMob向免费版用户展示个性化广告。</li>
-  <li><strong>应用改进</strong>：可能收集匿名化的崩溃数据和使用统计信息以提高服务稳定性。</li>
+  <li><strong>Google AdMob</strong> 和 Google User Messaging Platform — 广告和同意管理。受 Google 隐私政策约束。</li>
+  <li><strong>Google Firebase</strong> — Analytics 使用事件、Crashlytics 崩溃报告，以及用于功能配置的 Remote Config。闹钟内容从不会传给 Firebase。受 Google 隐私政策约束。</li>
+  <li><strong>Google Play</strong> — 终身版购买的结算（我们从不会看到您的付款信息）、应用内更新、应用内评价和语言下载。</li>
+  <li><strong>Google Fonts</strong> — 可下载字体。</li>
+  <li><strong>Google 登录</strong> — 仅在上述隐藏的开发者面板中。</li>
 </ul>
 
-<h2>3. 保留期限</h2>
+<h2>权限</h2>
 <ul>
-  <li><strong>闹钟数据</strong>：仅存储在设备上。删除闹钟或卸载应用时将被删除。</li>
-  <li><strong>音频录音</strong>：仅存储在设备上。删除相关闹钟铃声或卸载应用时将被删除。</li>
-  <li><strong>购买数据</strong>：在验证您的高级版（Lifetime）状态所需的期限内保留。</li>
-  <li><strong>广告数据</strong>：遵循Google的隐私政策。</li>
+  <li><strong>闹钟</strong> — 精确闹钟（SCHEDULE_EXACT_ALARM、USE_EXACT_ALARM）、锁屏上的全屏响铃界面（USE_FULL_SCREEN_INTENT）、重启后恢复闹钟（RECEIVE_BOOT_COMPLETED）、闹钟响铃时保持设备唤醒并振动（WAKE_LOCK、VIBRATE），以及用于响铃和播放的前台服务（FOREGROUND_SERVICE、特殊用途“alarm”、媒体播放）。</li>
+  <li><strong>通知</strong>（POST_NOTIFICATIONS）— 闹钟通知和提醒。</li>
+  <li><strong>麦克风</strong>（RECORD_AUDIO）— 仅在您录制自己的闹钟声音或为视频闹钟录制屏幕时使用，且仅在您允许之后。录音保留在您的设备上。</li>
+  <li><strong>音乐和音频</strong>（READ_MEDIA_AUDIO；Android 12 及更早版本为 READ_EXTERNAL_STORAGE）— 让您可以从音乐库中选择歌曲作为闹钟声音。</li>
+  <li><strong>屏幕捕获</strong>（用于媒体投影和麦克风的前台服务）— 仅在您将手机上正在播放的音频捕获为闹钟声音，或为视频闹钟录制屏幕时使用。Android 每次都会请您确认，结果保留在您的设备上。</li>
+  <li><strong>Google Play 结算</strong>（BILLING）— 终身版购买。</li>
+  <li><strong>互联网、网络状态和广告 ID</strong> — 由 Google SDK 为广告、分析、崩溃报告和结算而添加。您可以在 Android 设置 → 隐私 → 广告 中重置或删除广告 ID。</li>
 </ul>
+<p>麦克风和屏幕捕获仅在您使用需要它们的功能时才会请求。为了让闹钟在电池管理较激进的设备上也能可靠响铃，OmniWake 可以打开 Android 的电池优化设置页面，方便您将 OmniWake 设为例外；这不需要任何权限。OmniWake 不请求访问您的位置、相机或联系人。</p>
 
-<h2>4. 与第三方共享</h2>
-<p>本应用原则上不与第三方共享您的个人信息。但以下情况除外：</p>
-<ul>
-  <li>您事先同意的情况。</li>
-  <li>法律要求的情况。</li>
-  <li>广告ID和设备信息可能与Google AdMob有限共享以提供广告服务。</li>
-  <li>您的Google账户电子邮件可能与我们的购买验证服务（AWS）共享以确认高级版（Lifetime）状态。</li>
-</ul>
+<h2>欧洲经济区和英国</h2>
+<p>在法律要求的地区，OmniWake 会在展示任何广告之前显示经 Google 认证的同意表单。根据您的选择，广告会以非个性化形式展示，或完全不加载。您可以随时在 设置 → 帮助与反馈 → 广告隐私选择 中更改您的选择。此表单仅适用于广告。Firebase Analytics 和 Crashlytics 不受其控制，会在所有设备上运行；Analytics 可以读取广告 ID，您可以在 Android 设置中重置或删除广告 ID。</p>
+<p>您有权访问、更正和删除您的数据。您的闹钟、录音和视频只保存在您的设备和您自己控制的存储中，因此您可以直接行使这些权利：在应用中编辑或删除您的闹钟，卸载 OmniWake 以删除它在本设备上保存的所有内容（包括录音和视频），删除您导出的备份文件，并在 Android 设置中管理您的 Android 设备备份。分析、崩溃和广告数据由 Google 持有，不会与您的姓名或电子邮件关联（上文所述我们指定的测试账号除外）；对于这些数据，请使用 Google 的工具，或联系我们，我们会尽力提供帮助。请参阅<a href="../delete-account/">如何删除您的 OmniWake 数据</a>。</p>
 
-<h2>5. 广告与同意</h2>
-<p>本应用的免费版通过Google AdMob展示广告。对于欧洲经济区、英国及其他适用地区的用户，我们会通过Google的用户消息平台（UMP）请求您对个性化广告的同意。您可以随时在应用设置中查看或更改您的广告选择。可通过购买高级版（Lifetime）移除广告。</p>
+<h2>儿童</h2>
+<p>OmniWake 不面向 13 岁以下的儿童，我们也不会在知情的情况下收集儿童的数据。</p>
 
-<h2>6. 应用权限</h2>
-<p>本应用使用以下权限：</p>
-<ul>
-  <li><strong>精确闹钟调度 (SCHEDULE_EXACT_ALARM)</strong>：在您设置的精确时间触发闹钟 [必需]</li>
-  <li><strong>设置闹钟 (SET_ALARM)</strong>：在设备上创建和管理闹钟 [必需]</li>
-  <li><strong>网络访问 (INTERNET)</strong>：用于显示广告和验证购买 [必需]</li>
-  <li><strong>开机启动 (RECEIVE_BOOT_COMPLETED)</strong>：设备重启后自动恢复闹钟 [必需]</li>
-  <li><strong>通知 (POST_NOTIFICATIONS)</strong>：用于闹钟通知和提醒 [可选]</li>
-  <li><strong>麦克风 (RECORD_AUDIO)</strong>：用于录制自定义闹钟铃声 [可选]</li>
-  <li><strong>忽略电池优化 (REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)</strong>：在电池管理较严格的设备上保证可靠的闹钟送达 [可选]</li>
-</ul>
-<p>可选权限仅在使用相应功能时才会请求。您可以在不授予可选权限的情况下使用本应用的基本功能。</p>
+<h2>变更</h2>
+<p>本政策的重大变更会在生效前在应用内或本页面上公布。</p>
 
-<h2>7. 数据存储与安全</h2>
-<p>本应用采取以下措施确保您信息的安全：</p>
-<ul>
-  <li>所有闹钟数据存储在设备的内部存储中，不会自动同步到任何云服务。</li>
-  <li>闹钟数据的备份和恢复由用户手动执行。</li>
-  <li>所有网络通信使用加密连接（HTTPS）。</li>
-</ul>
-
-<h2>8. 隐私保护负责人</h2>
-<ul>
-  <li>联系：OmniWake开发团队</li>
-  <li>电子邮件：velocitycraft.app+support+omniwake@gmail.com</li>
-</ul>
-<p>如有关于个人信息的疑问，请通过上述电子邮件联系我们。</p>
-
-<h2>9. 政策变更</h2>
-<p>本隐私政策可能因适用法律或服务变更而更新。任何变更将在应用内公告。</p>
+<h2>联系我们</h2>
+<p>velocitycraft.app+omniwake@gmail.com</p>
+<p>如果您通过电子邮件联系我们（包括通过应用中的“发送反馈”，它会预先填入您的应用版本、设备型号、Android 版本、屏幕尺寸、内存和语言，所有内容都可以编辑），我们会收到您的电子邮件地址和消息，并仅用于回复您。</p>
 
 </body>
 </html>

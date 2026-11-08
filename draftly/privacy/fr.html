@@ -21,6 +21,14 @@
     .lang-links a { color: #aaa; }
     .lang-links a.active { color: #fff; }
   }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
 </style>
 </head>
 <body>
@@ -37,68 +45,102 @@
 </p>
 
 <h1>Politique de Confidentialité de Draftly</h1>
-<p class="date">Date d'entrée en vigueur : 18 février 2025</p>
+<p class="date">Date d'entrée en vigueur : 8 novembre 2026</p>
+<p>Cette politique s'applique à Draftly pour Android, publiée par Velocity Craft (« nous »).</p>
 
-<p>Draftly (ci-après « l'Application ») accorde une grande importance à vos informations personnelles et a établi la politique de confidentialité suivante conformément aux lois applicables en matière de protection des données.</p>
-
-<h2>1. Informations personnelles collectées</h2>
-<p>L'Application peut collecter les informations suivantes pour fournir ses services.</p>
+<h2>Commençons par ce que nous ne pouvons pas faire</h2>
+<p>Avant de décrire ce que nous protégeons, voici ce que nous <em>n'affirmons pas</em> :</p>
 <ul>
-  <li><strong>Données vocales</strong> : Audio enregistré via le microphone lors de l'utilisation de la fonction de saisie vocale (autorisation RECORD_AUDIO)</li>
-  <li><strong>Informations sur l'appareil</strong> : Identifiant publicitaire, modèle de l'appareil et version de l'OS (à des fins de services publicitaires)</li>
-</ul>
-<p>Le contenu tel que les notes et les listes créé dans l'Application est stocké uniquement sur votre appareil et n'est transmis à aucun serveur externe.</p>
-
-<h2>2. Finalité de la collecte et de l'utilisation</h2>
-<ul>
-  <li><strong>Saisie vocale</strong> : Convertit votre voix en texte pour faciliter la prise de notes.</li>
-  <li><strong>Publicité</strong> : Affiche des publicités personnalisées via Google AdMob.</li>
-  <li><strong>Amélioration de l'Application</strong> : Peut collecter des données d'utilisation anonymisées pour analyser les plantages et améliorer la stabilité du service.</li>
+  <li><strong>Vos notes sur cet appareil ne sont pas chiffrées par nos soins — et cela vaut aussi pour le Coffre-fort.</strong> Les notes et le Coffre-fort sont enregistrés dans le stockage privé de l'application, que le système Android isole des autres applications. Sur un appareil rooté, ou sur un appareil que quelqu'un d'autre peut déverrouiller, cette isolation peut être contournée. Le verrouillage de l'app et celui du Coffre-fort (biométrie ou code PIN) ajoutent une seconde barrière, mais ils verrouillent l'application, ils ne chiffrent pas les fichiers.</li>
+  <li><strong>Nous ne pouvons pas récupérer vos notes.</strong> Nous n'en détenons aucune copie. Si vous perdez l'appareil sans sauvegarde, les notes sont perdues.</li>
+  <li>Nous évitons les affirmations de sécurité absolues. Ce genre de formule ne décrit rien que vous puissiez vérifier ; nous indiquons donc plutôt les conditions.</li>
 </ul>
 
-<h2>3. Durée de conservation</h2>
+<h2>Vos notes ne nous sont jamais envoyées</h2>
+<p>Draftly ne nécessite aucun compte, et Velocity Craft n'exploite aucun serveur qui stocke des notes. Le texte, les titres, les dossiers, les tags, les images, les PDF, les documents, les rappels et le contenu du Coffre-fort restent sur votre appareil, sauf si <em>vous</em> choisissez de les déplacer (voir « Où le chiffrement s'applique » ci-dessous), et rien de tout cela n'est transmis aux services de publicité, d'analyse ou de rapports de plantage décrits plus loin.</p>
+<p>La recherche de texte dans les pages de PDF numérisées utilise une reconnaissance de texte qui s'exécute sur votre appareil (Google ML Kit). Vos PDF ne sont pas envoyés pour cela.</p>
+<p>Il n'y a pas de connexion pour les utilisateurs. L'application contient un panneau développeur masqué avec une connexion Google, utilisé pour les tests internes. S'y connecter ne nous envoie rien, ni à l'analyse de Google. Ce n'est que lorsqu'un de nos comptes de test désignés se connecte qu'un hachage à sens unique de son adresse e-mail est joint aux données d'analyse et aux rapports de plantage de cet appareil.</p>
+
+<h2>Ce qui est collecté, et par qui</h2>
+<p>C'est une question distincte de vos notes, et nous séparons volontairement les deux descriptions. Aucun des éléments suivants ne contient vos notes. Draftly affiche de la publicité via Google AdMob et utilise Google Firebase pour l'analyse d'utilisation (Firebase Analytics), les rapports de plantage (Firebase Crashlytics), les notifications (Firebase Cloud Messaging) et la configuration à distance des fonctionnalités (Firebase Remote Config). Ensemble, ils collectent :</p>
+<table id="data-collected">
+  <tr><th>Catégorie</th><th>Collecté par</th><th>Quoi et pourquoi</th></tr>
+  <tr><td>IP address</td><td>Google AdMob, Google Firebase</td><td>Inévitablement incluse dans chaque requête réseau effectuée par ces services</td></tr>
+  <tr><td>User product interactions</td><td>Google AdMob, Firebase Analytics</td><td>Impressions et clics publicitaires ; l'écran de l'application qui a été ouvert (des noms d'écran comme « paramètres » ou « éditeur », jamais le contenu des notes) ; un événement unique « première note créée » ; et les changements de style de liste</td></tr>
+  <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>Rapports de plantage et d'erreurs non fatales : modèle de l'appareil, version du système, version de l'application, trace de pile de l'erreur et état de l'application, comme votre formule (Gratuite ou Lifetime) et une catégorie de performances de l'appareil</td></tr>
+  <tr><td>Device and Account identifiers</td><td>Google AdMob, Google Firebase</td><td>L'identifiant publicitaire et l'identifiant d'ensemble d'applications ; l'identifiant d'installation Firebase ; et le jeton de notifications push</td></tr>
+  <tr><td>Purchase history</td><td>Firebase Analytics</td><td>Lorsque vous achetez Draftly Lifetime : l'identifiant du produit, la devise et le prix. Google Play gère le paiement ; nous ne voyons jamais vos informations de paiement</td></tr>
+</table>
+<p>Les événements d'analyse comportent aussi la version de l'application, le type de build, votre formule (Gratuite ou Lifetime) et une catégorie de performances de l'appareil (faible/moyenne/élevée), afin de pouvoir regrouper les rapports.</p>
+<p>Google Analytics enregistre aussi automatiquement certaines informations : modèle de l'appareil, version d'Android, langue, ainsi que des données de session et d'engagement comme la première ouverture et le temps passé dans l'application, avec un identifiant aléatoire d'instance de l'application. Firebase conserve les rapports de plantage pendant 90 jours ; les données d'événements d'analyse sont conservées 14 mois au maximum.</p>
+<p>Les éléments suivants ne sont <strong>pas</strong> collectés et ne quittent jamais votre appareil par notre intermédiaire : messages ou texte des notes, photos et vidéos, fichiers et documents (y compris les PDF), audio, contacts, agenda, données de santé et de remise en forme, informations personnelles et position précise. Google peut estimer une région approximative, à l'échelle de la ville, à partir de l'adresse IP pour la diffusion des annonces et les rapports d'analyse ; dans la section Sécurité des données de Google Play, cela est déclaré comme « Position approximative ».</p>
+<p>Draftly ne demande pas l'autorisation de localisation. Les modèles peuvent contenir un espace réservé facultatif {{LOCATION}} : uniquement si vous avez vous-même accordé à Draftly l'accès à la position dans les paramètres Android, Draftly lit la dernière position connue de l'appareil et utilise le service de géocodage d'Android (sur la plupart des téléphones, celui de Google) pour la convertir en nom de région et de ville, qui est inscrit dans la note. Sans cette autorisation, l'espace réservé reste vide. Si une photo que vous ajoutez contient déjà des données de localisation, Draftly enregistre ces coordonnées avec la note image sur cet appareil ; elles ne voyagent qu'à l'intérieur de vos propres sauvegardes (voir ci-dessous) et ne sont jamais envoyées à nous ni aux services de publicité et d'analyse.</p>
+<p>Si vous achetez Draftly Lifetime, ou tant qu'un Plus Pass débloqué en regardant une annonce avec récompense est actif, aucune annonce n'est affichée. Le SDK publicitaire peut néanmoins démarrer sur votre appareil afin de vérifier le paramètre de consentement et l'état sans publicité. L'analyse et les rapports de plantage fonctionnent de la même manière quelle que soit la formule.</p>
+
+<h2>Où le chiffrement s'applique, et où il ne s'applique pas</h2>
+<p>Toute affirmation sur le chiffrement n'est vraie que dans des conditions précises. Voici tous les endroits où vos notes peuvent être conservées ou envoyées :</p>
+<table>
+  <tr><th>Chemin</th><th>Chiffré ?</th></tr>
+  <tr><td>Base de données des notes sur cet appareil, Coffre-fort compris</td><td><strong>Non.</strong> Protégée par l'isolation des applications d'Android, et par le verrouillage de l'app et celui du Coffre-fort si vous les utilisez.</td></tr>
+  <tr><td>Fichiers de « Sauvegarde de l'appareil » (Sauvegarde et restauration)</td><td><strong>Non.</strong> Ces fichiers sont conservés dans le dossier propre à Draftly sur cet appareil et contiennent le texte de vos notes, y compris celles du Coffre-fort.</td></tr>
+  <tr><td>Sauvegarde Dropbox et fichier d'« Exportation de la sauvegarde complète » (ZIP)</td><td><strong>Seulement la partie Coffre-fort, et seulement si vous définissez une phrase secrète de sauvegarde du Coffre-fort</strong> (Sauvegarde et restauration → Chiffrement des sauvegardes du Coffre-fort). Les notes du Coffre-fort sont alors chiffrées sur cet appareil en AES-256-GCM, avec une clé dérivée de votre phrase secrète. Tout le reste — notes, images, PDF et documents — est un fichier en clair que toute personne ayant accès au fichier ou à ce compte Dropbox peut lire. Sans phrase secrète, le Coffre-fort est lui aussi inclus sous forme de fichiers en clair.</td></tr>
+  <tr><td>Partage vers une autre application</td><td><strong>Non.</strong> Le texte de la note ou le fichier est transmis tel quel à l'application que vous choisissez, selon la politique de celle-ci.</td></tr>
+  <tr><td>Export en Markdown, texte ou PDF, et impression</td><td><strong>Non.</strong> Les exports sont des fichiers en clair, par conception : ils existent pour être ouverts ailleurs.</td></tr>
+  <tr><td>Sauvegarde de l'appareil par Android (sauvegarde automatique / transfert d'appareil)</td><td><strong>Pas par Draftly.</strong> Si la sauvegarde Android est activée, votre base de données de notes (Coffre-fort compris), les images, les PDF, les documents et les fichiers de « Sauvegarde de l'appareil » sont inclus dans la sauvegarde sur votre compte Google, gérée par Google. Draftly exclut les jetons de connexion, les paramètres de verrouillage de l'app, les caches de l'état d'achat, l'historique des notifications et l'historique de modification des documents.</td></tr>
+</table>
+<p>Si vous perdez la phrase secrète de sauvegarde du Coffre-fort, nous ne pouvons pas récupérer les notes du Coffre-fort qu'elle protège. Conservez-la à un endroit que vous aurez toujours, même après avoir perdu votre téléphone.</p>
+
+<h2>Sauvegarde Dropbox</h2>
+<p>La sauvegarde Dropbox est facultative et fait partie des outils Plus (disponible avec un Plus Pass ou Draftly Lifetime). Si vous connectez Dropbox, l'autorisation se fait auprès de Dropbox, et les jetons de connexion sont conservés uniquement sur cet appareil, dans un stockage chiffré protégé par l'Android Keystore. Draftly communique directement avec Dropbox ; Velocity Craft n'exploite aucun serveur qui reçoit vos notes.</p>
+<p>Chaque sauvegarde se compose d'un fichier ZIP et d'un petit fichier récapitulatif non chiffré indiquant la version de l'application, la version de la base de données, l'heure de la sauvegarde, le nombre de notes et d'images, et la taille du fichier. Draftly conserve les deux sauvegardes les plus récentes et supprime les plus anciennes. Dropbox stocke ces fichiers dans votre compte et peut observer des métadonnées du service comme les chemins des fichiers, leur taille, les heures d'envoi et votre adresse réseau. Le traitement par Dropbox est régi par la politique de confidentialité de Dropbox.</p>
+<p>Désinstaller Draftly ou déconnecter Dropbox ne supprime pas les fichiers déjà présents dans Dropbox. Pour les supprimer, effacez le dossier de Draftly dans votre Dropbox et, si vous le souhaitez, révoquez l'application dans les paramètres de votre compte Dropbox.</p>
+
+<h2>Fonctionnalités qui contactent d'autres services</h2>
 <ul>
-  <li><strong>Données vocales</strong> : Supprimées immédiatement après la conversion en texte et non stockées séparément.</li>
-  <li><strong>Données sur l'appareil</strong> : Toutes les données sont supprimées lors de la désinstallation de l'Application.</li>
-  <li><strong>Données publicitaires</strong> : Soumises à la politique de confidentialité de Google.</li>
+  <li><strong>La reconnaissance vocale</strong> (dictée et mémos vocaux) utilise le service de reconnaissance vocale de votre appareil (sur la plupart des téléphones, celui de Google). Pendant que vous parlez, votre voix est traitée par ce service, qui peut le faire sur ses propres serveurs et selon sa propre politique de confidentialité. Draftly n'enregistre ni ne conserve d'audio ; il ne reçoit que le texte reconnu. La lecture à voix haute utilise le moteur de synthèse vocale de votre appareil.</li>
+  <li><strong>Aperçus de liens.</strong> Lorsque vous collez ou partagez un lien web dans une note, Draftly récupère cette page pour afficher son titre. Pour les liens vers des publications X/Twitter, il interroge d'abord le service d'intégration public de X (publish.twitter.com) puis, en cas d'échec, le service d'aperçu indépendant fxtwitter.com, afin d'afficher le texte de la publication. Le site ou le service reçoit le lien et votre adresse réseau, comme si vous ouvriez le lien dans un navigateur. Rien d'autre de la note n'est envoyé.</li>
+  <li><strong>Polices.</strong> Lorsque vous parcourez ou choisissez des polices dans les Paramètres, Draftly demande aux services Google Play de votre appareil de les télécharger depuis Google Fonts.</li>
+  <li><strong>La reconnaissance de texte</strong> s'exécute sur votre appareil avec Google ML Kit. Comme l'indiquent les conditions de ML Kit de Google, la bibliothèque peut envoyer à Google des mesures techniques d'utilisation et de performances ; elle n'envoie ni vos PDF ni leur texte.</li>
+  <li><strong>Les mises à jour de l'application et les packs de langue</strong> sont fournis via Google Play (mise à jour intégrée et Play Feature Delivery).</li>
 </ul>
 
-<h2>4. Partage avec des tiers</h2>
-<p>L'Application ne partage pas vos informations personnelles avec des tiers en principe. Cependant, les exceptions suivantes s'appliquent :</p>
+<h2>Tiers</h2>
 <ul>
-  <li>Lorsque vous avez donné votre consentement préalable</li>
-  <li>Lorsque la loi l'exige</li>
-  <li>Des informations limitées peuvent être partagées avec Google AdMob pour les services publicitaires.</li>
+  <li><strong>Google AdMob</strong> et Google User Messaging Platform — publicité et consentement. Régis par la politique de confidentialité de Google.</li>
+  <li><strong>Google Firebase</strong> — événements d'utilisation Analytics, rapports de plantage Crashlytics, Cloud Messaging pour les notifications et Remote Config pour les paramètres des fonctionnalités. Le contenu des notes n'est jamais transmis à Firebase. Régi par la politique de confidentialité de Google.</li>
+  <li><strong>Google Play</strong> — facturation de l'achat Lifetime (nous ne voyons jamais vos informations de paiement), mises à jour intégrées et packs de langue.</li>
+  <li><strong>Google ML Kit et Google Fonts</strong> — reconnaissance de texte sur l'appareil, et polices que vous choisissez.</li>
+  <li><strong>Dropbox</strong> — uniquement si vous connectez un compte pour la sauvegarde.</li>
+  <li><strong>Les services de reconnaissance vocale, de synthèse vocale et de géocodage de votre appareil</strong> — uniquement pendant que vous les utilisez.</li>
+  <li><strong>Les sites web dont vous collez les liens, le service d'intégration de X et fxtwitter.com</strong> — uniquement lorsque vous collez ou partagez un lien, pour récupérer son titre ou le texte de la publication.</li>
 </ul>
 
-<h2>5. Autorisations de l'Application</h2>
-<p>L'Application utilise les autorisations suivantes :</p>
+<h2>Autorisations</h2>
 <ul>
-  <li><strong>Microphone (RECORD_AUDIO)</strong> : Pour la création de notes par saisie vocale [Facultatif]</li>
-  <li><strong>Internet (INTERNET)</strong> : Pour l'affichage des publicités et l'API de reconnaissance vocale [Requis]</li>
-  <li><strong>Notifications (POST_NOTIFICATIONS)</strong> : Pour l'envoi de notifications de rappel [Facultatif]</li>
-  <li><strong>Affichage par-dessus d'autres apps (SYSTEM_ALERT_WINDOW)</strong> : Pour le bouton flottant de note rapide [Facultatif]</li>
-  <li><strong>Service de premier plan (FOREGROUND_SERVICE)</strong> : Pour maintenir le bouton flottant actif [Requis]</li>
-  <li><strong>Exécution au démarrage (RECEIVE_BOOT_COMPLETED)</strong> : Pour réenregistrer les notifications de rappel [Requis]</li>
-</ul>
-<p>Les autorisations facultatives ne sont demandées que lors de l'utilisation de la fonction correspondante. Vous pouvez utiliser les fonctions de base de l'Application sans les accorder.</p>
-
-<h2>6. Mesures de sécurité</h2>
-<p>L'Application met en œuvre les mesures suivantes pour assurer la sécurité des informations personnelles :</p>
-<ul>
-  <li>Toutes les données utilisateur sont stockées dans le stockage interne de l'appareil.</li>
-  <li>Des connexions chiffrées (HTTPS) sont utilisées pour les communications réseau.</li>
+  <li><strong>Notifications</strong> — les rappels que vous programmez et les annonces concernant l'application. Les notifications de rappel affichent le texte du rappel et une ligne de la note ; elles peuvent donc apparaître sur votre écran de verrouillage selon vos paramètres de notification Android. Les notifications promotionnelles (actualités sur nos autres applications et offres) peuvent être désactivées à tout moment dans Paramètres → Notifications. Dans l'Espace économique européen, au Royaume-Uni et en Corée du Sud, elles sont désactivées jusqu'à ce que vous les activiez ; ailleurs, elles sont activées par défaut.</li>
+  <li><strong>Alarmes et rappels, et lancement au démarrage</strong> — pour délivrer les rappels à l'heure et les reprogrammer après un redémarrage du téléphone.</li>
+  <li><strong>Micro</strong> — uniquement pendant que vous dictez ou enregistrez un mémo vocal.</li>
+  <li><strong>Position (approximative et précise)</strong> — déclarée par l'application mais jamais demandée. Elle n'est utilisée que pour l'espace réservé de modèle {{LOCATION}}, et seulement si vous l'accordez vous-même dans les paramètres Android (voir ci-dessus).</li>
+  <li><strong>Internet et état du réseau</strong> — pour la publicité, l'analyse, les aperçus de liens, la sauvegarde Dropbox et la reconnaissance vocale.</li>
+  <li><strong>Travail en arrière-plan (service de premier plan pour la synchronisation des données, et wakelock)</strong> — pour que les sauvegardes et restaurations puissent se terminer lorsque l'application est en arrière-plan.</li>
+  <li><strong>Biométrie</strong> — pour le verrouillage de l'app et le Coffre-fort. Les données d'empreinte ou de visage restent dans Android ; Draftly sait seulement si la vérification a réussi.</li>
+  <li><strong>Photos et appareil photo</strong> — Draftly utilise le sélecteur Android et votre application d'appareil photo, et ne voit que les éléments que vous choisissez. Il ne demande pas l'accès à votre médiathèque.</li>
+  <li><strong>Badge de l'icône de l'application (Samsung)</strong> — pour afficher ou effacer le badge de l'icône de l'application sur les téléphones Samsung.</li>
 </ul>
 
-<h2>7. Responsable de la confidentialité</h2>
-<ul>
-  <li>Contact : Équipe de développement Draftly</li>
-  <li>Email : velocitycraft.app+support+draftly@gmail.com</li>
-</ul>
-<p>Pour toute question concernant les informations personnelles, veuillez nous contacter à l'adresse email ci-dessus.</p>
+<h2>Espace économique européen et Royaume-Uni</h2>
+<p>Lorsque c'est requis, Draftly présente un formulaire de consentement certifié par Google avant toute publicité. Vous pouvez modifier votre choix à tout moment depuis les Paramètres. Selon votre choix, les annonces sont affichées sous forme non personnalisée ou ne sont pas chargées du tout. Ce formulaire ne concerne que la publicité. Firebase Analytics et Crashlytics n'en dépendent pas et fonctionnent sur tous les appareils ; Analytics peut lire l'identifiant publicitaire, que vous pouvez réinitialiser ou supprimer dans les paramètres Android.</p>
+<p>Vous avez le droit d'accéder à vos données, de les rectifier et de les effacer. Vos notes ne sont conservées que sur votre appareil et dans des espaces de stockage que vous contrôlez ; vous exercez donc ces droits directement : supprimez des notes dans l'application, désinstallez-la pour effacer tout ce qui se trouve sur cet appareil, supprimez le dossier de Draftly dans Dropbox si vous avez utilisé la sauvegarde, et gérez la sauvegarde de l'appareil Android dans les paramètres de Google. Les données d'analyse, de plantage et de publicité sont détenues par Google et ne sont pas liées à votre nom ni à votre adresse e-mail (à l'exception de nos propres comptes de test désignés, décrits plus haut) ; pour ces données, utilisez les outils de Google ou contactez-nous et nous vous aiderons dans la mesure du possible. Consultez <a href="../delete-account/">comment supprimer vos données Draftly</a>.</p>
 
-<h2>8. Modifications de cette politique</h2>
-<p>Cette politique de confidentialité peut être mise à jour conformément aux modifications des lois applicables ou des services. Tout changement sera annoncé au sein de l'Application.</p>
+<h2>Enfants</h2>
+<p>Draftly ne s'adresse pas aux enfants de moins de 13 ans, et nous ne collectons pas sciemment de données les concernant.</p>
+
+<h2>Modifications</h2>
+<p>Les modifications importantes de cette politique seront annoncées dans l'application ou sur cette page avant leur entrée en vigueur.</p>
+
+<h2>Contact</h2>
+<p>velocitycraft.app+draftly@gmail.com</p>
+<p>Si vous nous écrivez par e-mail, y compris via Aide &amp; Retours dans l'application (qui pré-remplit la version de l'application, le modèle de l'appareil, la version d'Android, la taille et la densité de l'écran, la mémoire et la langue, que vous pouvez tous modifier), nous recevons votre adresse e-mail et votre message et ne les utilisons que pour vous répondre.</p>
 
 </body>
 </html>

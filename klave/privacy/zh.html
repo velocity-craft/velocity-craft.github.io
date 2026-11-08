@@ -21,6 +21,14 @@
     .lang-links a { color: #aaa; }
     .lang-links a.active { color: #fff; }
   }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
 </style>
 </head>
 <body>
@@ -37,67 +45,97 @@
 </p>
 
 <h1>Klave 隐私政策</h1>
-<p class="date">生效日期: 2026-05-10</p>
+<p class="date">生效日期：2026年11月8日</p>
+<p>本政策适用于由 Velocity Craft（以下简称“我们”）发布的 Android 版 Klave。</p>
 
-<p>Klave(以下简称"本应用")重视您的隐私,并根据适用的数据保护法律制定以下隐私政策。</p>
-
-<h2>1. 收集的信息</h2>
-<p>Klave旨在将您的笔记保存在您的设备上。本应用可能收集以下有限信息:</p>
+<h2>先说我们做不到的事</h2>
+<p>Klave 是一款直接处理您已有文件的 Markdown 编辑器。在介绍我们保护什么之前，先说明我们<em>不</em>声称的内容：</p>
 <ul>
-  <li><strong>崩溃诊断信息</strong>: 用于检测和修复错误的匿名崩溃报告和堆栈跟踪(Firebase Crashlytics)</li>
-  <li><strong>广告标识符(Android广告ID)</strong>: 显示广告时,Google移动广告SDK会访问您的Android广告ID和广告互动事件,用于广告投放、频次限制和限制欺诈活动。您可以随时通过Android设置 → 隐私 → 广告重置或删除此ID。</li>
-  <li><strong>Dropbox账户信息</strong>: 当您选择连接Dropbox保险库时,您的Dropbox账户ID和OAuth访问令牌将存储在您的设备上,用于读写您授权文件夹中的文件。</li>
-</ul>
-<p>您的笔记、保险库内容和应用设置仅存储在您的设备上(或您连接的Dropbox账户中),绝不会传输到Klave运营的任何服务器。</p>
-
-<h2>2. 收集和使用目的</h2>
-<ul>
-  <li><strong>崩溃诊断</strong>: 检测崩溃并改善应用稳定性</li>
-  <li><strong>功能配置</strong>: Klave从Firebase Remote Config获取只读功能标记,以安全地推出实验性功能。不发送任何个人数据。</li>
-  <li><strong>Dropbox集成</strong>: 用于读写您明确授权的Dropbox文件夹中的Markdown文件。</li>
-  <li><strong>广告</strong>: 通过Google的用户消息平台(UMP)收集和管理同意,并通过Google AdMob显示免费版的横幅、原生和激励广告。</li>
+  <li><strong>Klave 不会加密您的笔记。</strong>笔记是您所选文件夹或您自己的 Dropbox 中的普通文件，Klave 直接在原处编辑它们。任何能够访问该文件夹或该 Dropbox 账户的其他应用或人员都能读取它们；谁有访问权限由 Android 和 Dropbox 决定，而不是 Klave。</li>
+  <li><strong>我们无法为您恢复笔记。</strong>我们不持有任何副本。如果您文件夹或 Dropbox 中的文件丢失，Klave 也无法找回。</li>
+  <li>我们不使用绝对化的安全表述。这类说法没有可供核实的内容，因此我们改为说明具体条件。</li>
 </ul>
 
-<h2>3. 保留期限</h2>
+<h2>您的笔记内容绝不会发送给我们</h2>
+<p>Klave 无需账户，Velocity Craft 也不运营任何存储笔记的服务器。笔记正文、文件和文件夹名称、图片、PDF 和文档都会留在您所选的文件夹或您自己的 Dropbox 中，而且这些内容都不会传给下文所述的广告、分析或崩溃报告服务。</p>
+<p>搜索扫描版 PDF 页面中的文字时，使用的是在设备上运行的文字识别（Google ML Kit），不会为此上传您的 PDF。</p>
+<p>本应用不提供用户登录。应用中有一个隐藏的开发者面板，内含 Google 登录，仅用于内部测试。在那里登录不会向我们或 Google 分析发送任何内容。只有当我们指定的测试账户登录时，该账户电子邮件地址的单向哈希值才会附加到该设备的分析数据和崩溃报告中。</p>
+
+<h2>收集哪些信息，由谁收集</h2>
+<p>这与您的笔记是两回事，我们有意将两者分开说明。以下各项均不包含您的笔记内容。Klave 通过 Google AdMob 展示广告，并使用 Google Firebase 进行使用情况分析（Firebase Analytics）、崩溃报告（Firebase Crashlytics）和远程功能设置（Firebase Remote Config）。这些服务共同收集：</p>
+<table id="data-collected">
+  <tr><th>类别</th><th>收集方</th><th>内容与原因</th></tr>
+  <tr><td>IP address</td><td>Google AdMob、Google Firebase</td><td>这些服务发出的每个网络请求中都不可避免地包含</td></tr>
+  <tr><td>User product interactions</td><td>Google AdMob、Firebase Analytics</td><td>广告展示和点击；由 Google Analytics 自动记录的应用打开、界面浏览和使用时长。Klave 不会另行发送关于您打开、阅读或撰写了什么的事件</td></tr>
+  <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>崩溃和非致命错误报告：设备型号、操作系统版本、应用版本、错误堆栈，以及您的方案（免费或 Lifetime）和设备性能等级等应用状态。Klave 不会在这些报告中加入笔记正文、文件名或搜索词</td></tr>
+  <tr><td>Device identifiers</td><td>Google AdMob、Google Firebase</td><td>广告 ID 和 app set ID；Firebase 安装 ID</td></tr>
+  <tr><td>Purchase history</td><td>Firebase Analytics</td><td>当您在应用内通过 Google Play 购买 Klave Lifetime 等商品时，Google Analytics 可能会记录商品和方案 ID、币种和价格。付款由 Google Play 处理，我们看不到您的付款信息</td></tr>
+</table>
+<p>为便于对报告进行分组，分析报告还会附带您的方案（免费或 Lifetime）以及设备性能等级（低/中/高）。</p>
+<p>Google Analytics 还会自动记录部分信息：设备型号、Android 版本、语言设置，以及首次打开、使用时长等会话和互动数据，并附带一个随机的应用实例标识符。Firebase 将崩溃报告保留 90 天；分析事件数据的保留时间不超过 14 个月。</p>
+<p>以下信息<strong>不会</strong>被收集，也不会经由我们离开您的设备：笔记正文、文件和文件夹名称、照片和视频、文件和文档（包括 PDF）、音频、联系人、日历、健康与健身数据、个人信息以及精确位置。Google 可能会根据 IP 地址估算城市级别的大致区域，用于广告投放和分析报告；在 Google Play 的“数据安全”部分，我们将其申报为“大致位置”。Klave 不会请求位置权限，也从不读取您设备的位置。</p>
+<p>购买 Klave Lifetime 后，或在通过观看激励广告开启的 Plus Pass 有效期间，不会展示广告。但为了检查同意设置和免广告状态，广告 SDK 仍可能在您的设备上启动。分析和崩溃报告在所有方案中的运作方式相同。</p>
+
+<h2>笔记保存在哪里，是否加密</h2>
+<p>任何关于加密的说法都只在特定条件下成立。以下列出 Klave 读取、保存或发送您笔记的所有位置：</p>
+<table>
+  <tr><th>位置</th><th>是否加密</th></tr>
+  <tr><td>您所选文件夹中的笔记</td><td><strong>Klave 不加密。</strong>无论该文件夹位于何处，笔记都是普通文件。Klave 在原处读写它们；任何能够访问该文件夹的其他应用或人员也能读取。</td></tr>
+  <tr><td>Dropbox 中的笔记</td><td><strong>Klave 不加密。</strong>Klave 通过加密连接（HTTPS）按原样读写您 Dropbox 中的文件，由 Dropbox 存储在您的账户中。为了更快打开，Klave 会在本设备的缓存中保留您打开过的 Dropbox 文件的临时副本。</td></tr>
+  <tr><td>本设备上 Klave 自身的数据：设置、保险库列表、最近和加星标的文件、PDF 备注、高亮和书签、全文搜索索引（其中包含笔记正文），以及您编辑过的文档的原始版本和早期版本</td><td><strong>否。</strong>保存在 Android 与其他应用隔离的应用私有存储空间中；卸载 Klave 时会一并删除。</td></tr>
+  <tr><td>Dropbox 访问令牌</td><td><strong>在设备支持时加密。</strong>保存在受 Android Keystore 保护的加密存储中；在无法建立该存储的设备上，则在没有这层额外加密的情况下保存在应用私有存储空间中。</td></tr>
+  <tr><td>分享、下载或用其他应用打开</td><td><strong>否。</strong>笔记或文件会原样发送到您选择的应用或位置，并受该应用的政策约束。</td></tr>
+  <tr><td>Android 系统设备备份（自动备份 / 设备迁移）</td><td><strong>Klave 不加密。</strong>如果开启了 Android 备份，Klave 的设置、保险库列表、最近和加星标的文件，以及 PDF 备注、高亮和书签都会包含在您 Google 账户的备份中，该备份由 Google 管理。Klave 会排除 Dropbox 令牌和登录信息、搜索索引、文档编辑历史和购买状态数据。笔记文件本身不属于 Klave 的备份，它们仍保留在您的文件夹或 Dropbox 中。</td></tr>
+</table>
+
+<h2>Dropbox</h2>
+<p>连接 Dropbox 是可选的，在所有方案中均免费。授权在 Dropbox 完成，Klave 直接与 Dropbox 通信；Velocity Craft 不运营任何接收您笔记的服务器。Klave 会列出您的 Dropbox 文件夹供您选择，然后读写您添加为保险库的文件夹中的文件。</p>
+<p>Dropbox 将您的文件存储在您的账户中，并能看到文件路径、大小、修订版本、请求时间和您的网络地址等服务元数据。Dropbox 对数据的处理受 Dropbox 隐私政策约束。</p>
+<p>在 Klave 的设置中断开 Dropbox 连接，会从本设备删除令牌。无论是断开连接还是卸载 Klave，都不会删除您 Dropbox 中的文件。如需完全终止 Klave 的访问，请同时在 Dropbox 账户设置的“已关联的应用”中撤销 Klave。</p>
+
+<h2>会联系其他服务的功能</h2>
 <ul>
-  <li><strong>设备上数据</strong>: 卸载应用时所有笔记和设置都会被删除。</li>
-  <li><strong>Dropbox令牌</strong>: 在您断开Dropbox连接或卸载应用之前一直存储在设备上。</li>
-  <li><strong>崩溃数据</strong>: 遵循Google Firebase的数据保留政策。</li>
-  <li><strong>广告数据</strong>: 遵循Google的数据保留政策。用户可以随时重置或删除广告ID。</li>
+  <li><strong>语音输入</strong>使用设备的语音识别服务（在大多数手机上由 Google 提供）。您说话时，语音由该服务处理，可能在其自己的服务器上、依据其自身的隐私政策进行处理。Klave 不会录制或保存音频，只接收识别出的文字。朗读功能使用设备的文字转语音引擎。</li>
+  <li><strong>笔记中的网络图片。</strong>如果您在预览中打开的笔记或 HTML 文件引用了某个网址上的图片或其他资源，预览会从该服务器加载。与在浏览器中打开一样，该服务器会收到该地址和您的网络地址。笔记中的其他内容不会被发送。点按网页链接会在浏览器中打开。</li>
+  <li><strong>字体。</strong>Klave 界面使用的部分字体，以及您在设置中浏览或选择的字体，会通过设备上的 Google Play 服务从 Google Fonts 下载。</li>
+  <li><strong>文字识别</strong>针对扫描版 PDF 页面，由 Google ML Kit 在设备上运行。根据 Google 的 ML Kit 条款，该库可能会向 Google 发送技术性的使用和性能指标，但不会发送您的 PDF 或其中的文字。</li>
+  <li><strong>应用更新</strong>通过 Google Play 的应用内更新提示。</li>
 </ul>
 
-<h2>4. 与第三方共享</h2>
-<p>Klave不出售或共享您的个人信息。使用以下有限的第三方服务:</p>
+<h2>第三方</h2>
 <ul>
-  <li><strong>Google (Firebase Crashlytics、Firebase Remote Config)</strong>: 用于崩溃诊断和功能标记。遵循Google的隐私政策。</li>
-  <li><strong>Google (Google移动广告 / AdMob、用户消息平台)</strong>: 用于广告投放和同意管理。遵循Google的隐私政策。</li>
-  <li><strong>Dropbox</strong>: 仅当您明确连接Dropbox保险库时使用。遵循Dropbox的隐私政策。</li>
+  <li><strong>Google AdMob</strong> 和 Google User Messaging Platform——广告和同意管理。受 Google 隐私政策约束。</li>
+  <li><strong>Google Firebase</strong>——Analytics 使用事件、Crashlytics 崩溃报告以及用于功能设置的 Remote Config。笔记内容绝不会传给 Firebase。受 Google 隐私政策约束。</li>
+  <li><strong>Google Play</strong>——Lifetime 购买的结算（我们看不到您的付款信息）和应用内更新。</li>
+  <li><strong>Google ML Kit 和 Google Fonts</strong>——设备上的文字识别，以及可下载的字体。</li>
+  <li><strong>Dropbox</strong>——仅在您连接账户时。</li>
+  <li><strong>设备的语音识别和文字转语音服务</strong>——仅在您使用期间。</li>
+  <li><strong>托管您笔记中所引用图片的网络服务器</strong>——仅在您于预览中打开此类笔记时。</li>
 </ul>
 
-<h2>5. 应用权限</h2>
-<p>Klave使用以下权限:</p>
+<h2>权限</h2>
 <ul>
-  <li><strong>互联网 (INTERNET)</strong>: 与Dropbox和Firebase服务通信 [必需]</li>
-  <li><strong>网络状态 (ACCESS_NETWORK_STATE)</strong>: 同步时检测连接状态 [必需]</li>
-  <li><strong>广告ID (com.google.android.gms.permission.AD_ID)</strong>: 在Android 13+中由Google移动广告SDK自动包含,用于广告投放和频次限制。[可通过Android设置 → 隐私 → 广告选择退出]</li>
+  <li><strong>互联网和网络状态</strong>——用于广告、分析、Dropbox 和语音识别。</li>
+  <li><strong>麦克风</strong>——仅在您使用语音输入期间、并在您允许之后使用。Klave 不会把音频录制成文件。</li>
+  <li><strong>广告 ID</strong>——由 Google Mobile Ads SDK 添加，用于广告投放和频次限制。您可以在 Android“设置 → 隐私 → 广告”中重置或删除。</li>
+  <li><strong>您选择的文件夹</strong>——Klave 使用 Android 文件夹选择器，只能打开您选择的文件夹。它不会请求访问所有文件或您的媒体库。</li>
 </ul>
-<p>Klave不访问您的麦克风、摄像头、位置或联系人。</p>
+<p>Klave 不会请求访问您的相机、位置或联系人，也不会发送通知。</p>
 
-<h2>6. 安全措施</h2>
-<ul>
-  <li>所有网络通信使用加密连接(HTTPS)。</li>
-  <li>Dropbox OAuth令牌使用Android的加密SharedPreferences存储。</li>
-</ul>
+<h2>欧洲经济区和英国</h2>
+<p>在需要时，Klave 会在展示任何广告之前显示经 Google 认证的同意表单。根据您的选择，广告会以非个性化形式展示，或完全不加载。该表单只管理广告。Firebase Analytics 和 Crashlytics 不受其控制，并在所有设备上运行；Analytics 可以读取广告 ID，您可以在 Android 设置中重置或删除广告 ID。</p>
+<p>在无法请求广告期间（例如同意表单未能完成时），设置中会显示一张可再次打开该表单的 Plus Pass 卡片。Klave 目前没有用于更改已做选择的单独设置项。在提供该设置项之前，您可以在 Android 设置中清除 Klave 的存储空间来重置选择，下次启动 Klave 时表单会再次显示。清除存储空间还会删除 Klave 在本设备上保存的所有内容（设置、保险库列表、Dropbox 连接，以及 PDF 备注、高亮和书签），但不会删除您的笔记文件。</p>
+<p>您有权访问、更正和删除您的数据。您的笔记只保存在您自己管理的存储中，因此您可以直接行使这些权利：编辑或删除文件；卸载 Klave 以删除其保存在本设备上的数据；并在各自的设置中管理 Dropbox 和 Android 设备备份。分析、崩溃和广告数据由 Google 持有，不与您的姓名或电子邮件关联（上文所述我们指定的测试账户除外）；对于这些数据，请使用 Google 的工具，或联系我们，我们会尽力协助。另请参阅<a href="../delete-account/">如何删除您的 Klave 数据</a>。</p>
 
-<h2>7. 隐私负责人</h2>
-<ul>
-  <li>联系人: Klave开发团队</li>
-  <li>邮箱: velocitycraft.app+support+klave@gmail.com</li>
-</ul>
-<p>有关个人信息的查询,请通过上述邮箱联系我们。</p>
+<h2>儿童</h2>
+<p>Klave 并非面向 13 岁以下的儿童，我们也不会在知情的情况下收集儿童的数据。</p>
 
-<h2>8. 本政策的变更</h2>
-<p>本隐私政策可能会根据适用法律或服务的变化而更新。任何变更将在应用内公布。</p>
+<h2>变更</h2>
+<p>本政策的重大变更将在生效前通过应用或本页面公布。</p>
+
+<h2>联系我们</h2>
+<p>velocitycraft.app+support+klave@gmail.com</p>
+<p>如果您给我们发送电子邮件，我们会收到您的电子邮件地址和留言，并仅用于回复您。</p>
 
 </body>
 </html>
