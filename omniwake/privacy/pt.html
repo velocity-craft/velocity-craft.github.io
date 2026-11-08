@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OmniWake Política de Privacidade</title>
+<title>Política de Privacidade do OmniWake</title>
 <style>
   body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
   h1 { font-size: 22px; margin-bottom: 8px; }
@@ -21,6 +21,14 @@
     .lang-links a { color: #aaa; }
     .lang-links a.active { color: #fff; }
   }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
 </style>
 </head>
 <body>
@@ -36,79 +44,80 @@
   <a href="pt.html" class="active">Português</a>
 </p>
 
-<h1>OmniWake Política de Privacidade</h1>
-<p class="date">Data de vigência: 23 de setembro de 2026</p>
+<h1>Política de Privacidade do OmniWake</h1>
+<p class="date">Data de entrada em vigor: 8 de novembro de 2026</p>
+<p>Esta política aplica-se ao OmniWake para Android, publicado pela Velocity Craft («nós»).</p>
 
-<p>OmniWake (doravante "o Aplicativo") valoriza suas informações pessoais e estabeleceu a seguinte política de privacidade em conformidade com as leis de proteção de dados aplicáveis.</p>
+<h2>Os seus alarmes nunca nos são enviados</h2>
+<p>O OmniWake não requer conta, e a Velocity Craft não opera nenhum servidor que guarde alarmes. Os seus alarmes (horas, nomes, horários, pastas e etiquetas), viagens, eventos pessoais e períodos de pausa, os sons que grava ou captura e os seus vídeos de alarme permanecem no seu dispositivo (e na cópia de segurança do seu dispositivo Android, se estiver ativada; consulte «Onde são guardados os dados dos seus alarmes» abaixo), e nenhum deles é transmitido aos serviços de publicidade, análise ou relatórios de falhas descritos a seguir.</p>
+<p>Não existe início de sessão para os utilizadores. A aplicação contém um painel de programador oculto com início de sessão Google, utilizado para testes internos. Iniciar sessão aí não nos envia nada, nem às análises da Google. Só quando uma das nossas contas de teste designadas inicia sessão é que um hash unidirecional do respetivo endereço de e-mail é anexado às análises e aos relatórios de falhas desse dispositivo.</p>
 
-<h2>1. Informações Pessoais Coletadas</h2>
-<p>O Aplicativo pode coletar as seguintes informações para fornecer seus serviços.</p>
+<h2>O que é recolhido, e por quem</h2>
+<p>Este é um assunto separado dos seus alarmes, e mantemos as duas descrições separadas de propósito. Nada do que se segue contém nomes de alarmes, horas de alarmes nem as suas gravações e vídeos. O OmniWake apresenta publicidade através do Google AdMob e utiliza o Google Firebase para análise de utilização (Firebase Analytics), relatórios de falhas (Firebase Crashlytics) e configuração remota de funcionalidades (Firebase Remote Config). Em conjunto, recolhem:</p>
+<table id="data-collected">
+  <tr><th>Categoria</th><th>Recolhido por</th><th>O quê e porquê</th></tr>
+  <tr><td>IP address</td><td>Google AdMob, Google Firebase</td><td>Incluído inevitavelmente em cada pedido de rede que estes serviços fazem</td></tr>
+  <tr><td>User product interactions</td><td>Google AdMob, Firebase Analytics</td><td>Impressões e cliques em anúncios; que ecrã da aplicação foi aberto (nomes de ecrã como «settings», nunca o conteúdo dos alarmes); um evento único de «primeiro alarme criado» com o tipo de alarme e de horário; quando um alarme é parado ou adiado (soneca), o tipo de alarme, como foi parado e se era um alarme FailSafe; o início, a conclusão ou o tempo esgotado da missão para parar, com o tipo e a dificuldade; os pedidos de avaliação; o resultado das verificações de faturação do Google Play; as falhas das verificações da própria aplicação sobre viagens, eventos pessoais e sincronização de dias sem alarme; e quando um alarme é ignorado por causa de um dos seus eventos pessoais (o nome e a data do evento não são enviados)</td></tr>
+  <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>Relatórios de falhas e de erros não fatais: modelo do dispositivo, versão do sistema operativo, versão da aplicação, o rastreio de pilha do erro e o estado da aplicação, como o seu nível (Gratuito ou Lifetime), uma classe de desempenho do dispositivo e se o Android restringe a atividade em segundo plano da aplicação</td></tr>
+  <tr><td>Device identifiers</td><td>Google AdMob, Google Firebase</td><td>ID de publicidade e ID do conjunto de aplicações (app set ID); o ID de instalação do Firebase</td></tr>
+  <tr><td>Purchase history</td><td>Firebase Analytics</td><td>Quando compra o OmniWake Lifetime através do Google Play, o Google Analytics pode registar o ID do produto, a moeda e o preço. O Google Play processa o pagamento; nunca vemos os seus dados de pagamento</td></tr>
+</table>
+<p>Os eventos de análise incluem também a versão da aplicação, o tipo de compilação, o seu nível (Gratuito ou Lifetime) e uma classe de desempenho do dispositivo (baixa/média/alta), para que os relatórios possam ser agrupados.</p>
+<p>O Google Analytics também regista algumas informações automaticamente: modelo do dispositivo, versão do Android, definição de idioma e dados de sessão e de interação, como a primeira abertura e o tempo na aplicação, juntamente com um identificador aleatório da instância da aplicação. O Firebase conserva os relatórios de falhas durante 90 dias; os dados de eventos de análise são conservados durante, no máximo, 14 meses.</p>
+<p>O seguinte <strong>não</strong> é recolhido e nunca sai do seu dispositivo através de nós: nomes e horas de alarmes, áudio (as suas gravações e sons capturados), fotografias e vídeos (incluindo vídeos de alarme e gravações de ecrã), ficheiros e documentos, contactos, calendário, informações pessoais e localização precisa. A Google pode estimar uma região aproximada, ao nível da cidade, a partir do endereço IP para a apresentação de anúncios e os relatórios de análise; na secção Segurança dos dados do Google Play, isto é declarado como «Localização aproximada». O OmniWake não pede a autorização de localização e nunca lê a localização do seu dispositivo.</p>
+<p>Se comprar o OmniWake Lifetime, ou enquanto estiver ativo um Plus Pass que desbloqueou ao ver um anúncio curto, não são apresentados anúncios. Ainda assim, o SDK de publicidade pode iniciar no seu dispositivo para verificar a definição de consentimento e o estado sem anúncios. A análise e os relatórios de falhas funcionam da mesma forma em todos os níveis.</p>
+
+<h2>Onde são guardados os dados dos seus alarmes</h2>
+<p>Qualquer afirmação sobre encriptação só é verdadeira em condições concretas. Estes são todos os locais onde o OmniWake guarda ou envia os dados dos seus alarmes:</p>
+<table>
+  <tr><th>Local</th><th>Encriptado?</th></tr>
+  <tr><td>Alarmes, definições, pastas, etiquetas, viagens, eventos pessoais e períodos de pausa neste dispositivo</td><td><strong>Não pelo OmniWake.</strong> Guardados no armazenamento privado da aplicação, que o Android isola das outras aplicações. Desinstalar o OmniWake remove-os. O bloqueio de app opcional é um bloqueio da aplicação, não uma encriptação.</td></tr>
+  <tr><td>Sons que grava, áudio que captura do seu telemóvel, vídeos de alarme e gravações de ecrã</td><td><strong>Não pelo OmniWake.</strong> Guardados no armazenamento privado da aplicação ou, no caso de um vídeo que escolha, reproduzidos a partir do local onde está guardado no seu dispositivo. Uma música que escolha na sua biblioteca de música é reproduzida a partir da biblioteca. O OmniWake nunca carrega nenhum deles.</td></tr>
+  <tr><td>Ficheiro de cópia de segurança que exporta (<code>omniwake_backup.gz</code>)</td><td><strong>Não.</strong> É um ficheiro comprimido que contém as definições e os nomes dos seus alarmes, horários, pastas, etiquetas e períodos de pausa, e referências aos sons (não os ficheiros de som ou vídeo em si). Vai para onde o guardar, e qualquer pessoa com acesso a esse local pode lê-lo.</td></tr>
+  <tr><td>Cópia de segurança do sistema Android (cópia automática / transferência de dispositivo)</td><td><strong>Não pelo OmniWake.</strong> Se a cópia de segurança do Android estiver ativada, a sua base de dados de alarmes, definições, gravações e vídeos de alarme são incluídos na cópia de segurança da sua conta Google, gerida pela Google, e nas transferências para um novo dispositivo. O OmniWake exclui apenas os seus dados de estado de compra. Pode desativar a cópia de segurança do Android nas definições do Android.</td></tr>
+</table>
+
+<h2>Funcionalidades que contactam outros serviços</h2>
 <ul>
-  <li><strong>Configurações de alarme</strong>: Todos os dados de alarme (horários, etiquetas, sons e configurações) são armazenados apenas no seu dispositivo e não são transmitidos para nenhum servidor externo.</li>
-  <li><strong>E-mail da conta Google</strong>: Coletado opcionalmente ao fazer login com Google para verificar e restaurar sua compra premium (Lifetime) entre dispositivos.</li>
-  <li><strong>ID de publicidade</strong>: Usado pelo Google AdMob para exibir anúncios personalizados (apenas na versão gratuita).</li>
-  <li><strong>Gravações de áudio</strong>: O áudio capturado ao usar o recurso de gravação de sons de alarme é armazenado apenas localmente no seu dispositivo.</li>
-  <li><strong>Informações do dispositivo</strong>: O modelo do dispositivo e a versão do sistema operacional podem ser coletados para relatórios de erros e melhoria do serviço.</li>
+  <li><strong>Tipos de letra.</strong> Alguns tipos de letra da interface do OmniWake, e os tipos de letra que explore ou escolha nas Definições, são transferidos do Google Fonts através dos serviços Google Play do seu dispositivo.</li>
+  <li><strong>Idiomas adicionais</strong> são transferidos a pedido a partir do Google Play quando escolhe um idioma cujos ficheiros ainda não estão no seu dispositivo.</li>
+  <li><strong>As atualizações e avaliações da aplicação</strong> são disponibilizadas através da atualização integrada e da avaliação integrada do Google Play.</li>
 </ul>
 
-<h2>2. Finalidade da Coleta e Uso</h2>
+<h2>Terceiros</h2>
 <ul>
-  <li><strong>Função de alarme</strong>: Os dados de alarme são usados exclusivamente para agendar e acionar alarmes no seu dispositivo.</li>
-  <li><strong>Verificação de compra</strong>: Seu e-mail do Google é usado para verificar e restaurar sua compra premium (Lifetime) entre dispositivos.</li>
-  <li><strong>Publicidade</strong>: Anúncios personalizados são exibidos via Google AdMob para usuários da versão gratuita.</li>
-  <li><strong>Melhoria do aplicativo</strong>: Dados de erro anonimizados e estatísticas de uso podem ser coletados para melhorar a estabilidade do serviço.</li>
+  <li><strong>Google AdMob</strong> e Google User Messaging Platform — publicidade e consentimento. Regidos pela política de privacidade da Google.</li>
+  <li><strong>Google Firebase</strong> — eventos de utilização do Analytics, relatórios de falhas do Crashlytics e Remote Config para as definições de funcionalidades. O conteúdo dos alarmes nunca é transmitido ao Firebase. Regido pela política de privacidade da Google.</li>
+  <li><strong>Google Play</strong> — faturação da compra Lifetime (nunca vemos os seus dados de pagamento), atualizações integradas, avaliações integradas e transferências de idiomas.</li>
+  <li><strong>Google Fonts</strong> — tipos de letra transferíveis.</li>
+  <li><strong>Início de sessão Google</strong> — apenas no painel de programador oculto descrito acima.</li>
 </ul>
 
-<h2>3. Período de Retenção</h2>
+<h2>Autorizações</h2>
 <ul>
-  <li><strong>Dados de alarme</strong>: Armazenados apenas no dispositivo. Excluídos quando você remove alarmes ou desinstala o Aplicativo.</li>
-  <li><strong>Gravações de áudio</strong>: Armazenadas apenas no dispositivo. Excluídas quando você remove o som de alarme associado ou desinstala o Aplicativo.</li>
-  <li><strong>Dados de compra</strong>: Retidos pelo tempo necessário para verificar seu status premium (Lifetime).</li>
-  <li><strong>Dados publicitários</strong>: Sujeitos à política de privacidade do Google.</li>
+  <li><strong>Alarmes</strong> — alarmes exatos (SCHEDULE_EXACT_ALARM, USE_EXACT_ALARM), o ecrã de toque em ecrã inteiro no ecrã de bloqueio (USE_FULL_SCREEN_INTENT), o restauro dos seus alarmes após um reinício (RECEIVE_BOOT_COMPLETED), manter o dispositivo ativo e vibrar enquanto um alarme toca (WAKE_LOCK, VIBRATE) e um serviço em primeiro plano para o toque e a reprodução (FOREGROUND_SERVICE, utilização especial «alarm», reprodução multimédia).</li>
+  <li><strong>Notificações</strong> (POST_NOTIFICATIONS) — notificações de alarmes e lembretes.</li>
+  <li><strong>Microfone</strong> (RECORD_AUDIO) — apenas enquanto grava o seu próprio som de alarme ou uma gravação de ecrã para um alarme de vídeo, e apenas depois de o permitir. A gravação permanece no seu dispositivo.</li>
+  <li><strong>Música e áudio</strong> (READ_MEDIA_AUDIO; READ_EXTERNAL_STORAGE no Android 12 e versões anteriores) — para que possa escolher uma música da sua biblioteca como som de alarme.</li>
+  <li><strong>Captura de ecrã</strong> (serviço em primeiro plano para projeção multimédia e microfone) — apenas quando captura como som de alarme o áudio que está a ser reproduzido no seu telemóvel, ou grava o seu ecrã para um alarme de vídeo. O Android pede-lhe confirmação de cada vez, e o resultado permanece no seu dispositivo.</li>
+  <li><strong>Faturação do Google Play</strong> (BILLING) — a compra Lifetime.</li>
+  <li><strong>Internet, estado da rede e ID de publicidade</strong> — adicionados pelos SDK da Google para anúncios, análise, relatórios de falhas e faturação. Pode repor ou eliminar o ID de publicidade em Definições do Android → Privacidade → Anúncios.</li>
 </ul>
+<p>O microfone e a captura de ecrã só são pedidos quando utiliza a funcionalidade que deles precisa. Para que os alarmes sejam fiáveis em dispositivos com uma gestão agressiva da bateria, o OmniWake pode abrir as definições de otimização da bateria do Android para que o possa excluir; isto não requer qualquer autorização. O OmniWake não pede acesso à sua localização, câmara nem contactos.</p>
 
-<h2>4. Compartilhamento com Terceiros</h2>
-<p>O Aplicativo não compartilha suas informações pessoais com terceiros em princípio. No entanto, as seguintes exceções se aplicam:</p>
-<ul>
-  <li>Quando você deu consentimento prévio.</li>
-  <li>Quando exigido por lei.</li>
-  <li>Informações limitadas (ID de publicidade, informações do dispositivo) podem ser compartilhadas com o Google AdMob para serviços publicitários.</li>
-  <li>Seu e-mail do Google pode ser compartilhado com nosso serviço de verificação de compra (AWS) para confirmar o status premium (Lifetime).</li>
-</ul>
+<h2>Espaço Económico Europeu e Reino Unido</h2>
+<p>Quando exigido, o OmniWake apresenta um formulário de consentimento certificado pela Google antes de apresentar qualquer anúncio. Consoante a sua escolha, os anúncios são apresentados de forma não personalizada ou não são carregados de todo. Pode alterar a sua escolha a qualquer momento em Definições → Ajuda &amp; feedback → Opções de privacidade de anúncios. Este formulário rege apenas a publicidade. O Firebase Analytics e o Crashlytics não são controlados por ele e funcionam em todos os dispositivos; o Analytics pode ler o ID de publicidade, que pode repor ou eliminar nas definições do Android.</p>
+<p>Tem o direito de aceder aos seus dados, de os retificar e de os eliminar. Os seus alarmes, gravações e vídeos estão guardados apenas no seu dispositivo e em armazenamento que controla, pelo que exerce esses direitos diretamente: edite ou elimine os seus alarmes na aplicação, desinstale o OmniWake para remover tudo o que este guarda neste dispositivo (incluindo gravações e vídeos), elimine qualquer ficheiro de cópia de segurança que tenha exportado e faça a gestão da cópia de segurança do seu dispositivo Android nas definições do Android. Os dados de análise, falhas e publicidade são detidos pela Google e não estão associados ao seu nome nem ao seu e-mail (exceto as nossas próprias contas de teste designadas, descritas acima); para esses dados, utilize as ferramentas da Google ou contacte-nos e ajudaremos no que pudermos. Consulte <a href="../delete-account/">como eliminar os seus dados do OmniWake</a>.</p>
 
-<h2>5. Publicidade e Consentimento</h2>
-<p>A versão gratuita do Aplicativo exibe anúncios via Google AdMob. Para usuários no Espaço Econômico Europeu, no Reino Unido e em outras regiões aplicáveis, solicitamos consentimento para publicidade personalizada por meio da User Messaging Platform (UMP) do Google. Você pode revisar ou alterar suas opções de publicidade a qualquer momento nas configurações do Aplicativo. A remoção de anúncios está disponível por meio de uma compra premium (Lifetime).</p>
+<h2>Crianças</h2>
+<p>O OmniWake não se destina a crianças com menos de 13 anos, e não recolhemos conscientemente dados de crianças.</p>
 
-<h2>6. Permissões do Aplicativo</h2>
-<p>O Aplicativo usa as seguintes permissões:</p>
-<ul>
-  <li><strong>Agendar alarme exato (SCHEDULE_EXACT_ALARM)</strong>: Para disparar alarmes no horário exato que você definir [Obrigatório]</li>
-  <li><strong>Definir alarme (SET_ALARM)</strong>: Para criar e gerenciar alarmes no seu dispositivo [Obrigatório]</li>
-  <li><strong>Internet (INTERNET)</strong>: Para exibir anúncios e verificar compras [Obrigatório]</li>
-  <li><strong>Executar na inicialização (RECEIVE_BOOT_COMPLETED)</strong>: Para restaurar automaticamente seus alarmes após a reinicialização do dispositivo [Obrigatório]</li>
-  <li><strong>Notificações (POST_NOTIFICATIONS)</strong>: Para notificações de alarme e lembretes [Opcional]</li>
-  <li><strong>Microfone (RECORD_AUDIO)</strong>: Para gravar sons de alarme personalizados [Opcional]</li>
-  <li><strong>Isenção de otimização de bateria (REQUEST_IGNORE_BATTERY_OPTIMIZATIONS)</strong>: Para entrega confiável de alarmes em dispositivos com gerenciamento agressivo de bateria [Opcional]</li>
-</ul>
-<p>As permissões opcionais são solicitadas apenas quando o recurso correspondente é usado. Você pode usar os recursos básicos do Aplicativo sem concedê-las.</p>
+<h2>Alterações</h2>
+<p>As alterações importantes a esta política serão anunciadas na aplicação ou nesta página antes de entrarem em vigor.</p>
 
-<h2>7. Armazenamento e Segurança de Dados</h2>
-<p>O Aplicativo implementa as seguintes medidas para garantir a segurança de suas informações:</p>
-<ul>
-  <li>Todos os dados de alarme são armazenados no armazenamento interno do dispositivo e não são sincronizados automaticamente com nenhum serviço em nuvem.</li>
-  <li>O backup e restauração dos dados de alarme são iniciados pelo usuário.</li>
-  <li>Conexões criptografadas (HTTPS) são usadas para todas as comunicações de rede.</li>
-</ul>
-
-<h2>8. Responsável pela Privacidade</h2>
-<ul>
-  <li>Contato: Equipe de Desenvolvimento OmniWake</li>
-  <li>E-mail: velocitycraft.app+support+omniwake@gmail.com</li>
-</ul>
-<p>Para dúvidas sobre informações pessoais, entre em contato pelo e-mail acima.</p>
-
-<h2>9. Alterações nesta Política</h2>
-<p>Esta política de privacidade pode ser atualizada de acordo com mudanças nas leis aplicáveis ou nos serviços. Quaisquer alterações serão anunciadas dentro do Aplicativo.</p>
+<h2>Contacto</h2>
+<p>velocitycraft.app+omniwake@gmail.com</p>
+<p>Se nos enviar um e-mail, incluindo através de Enviar feedback na aplicação (que preenche previamente a versão da aplicação, o modelo do dispositivo, a versão do Android, o tamanho do ecrã, a memória e o idioma, que pode editar), recebemos o seu endereço de e-mail e a sua mensagem e utilizamo-los apenas para lhe responder.</p>
 
 </body>
 </html>

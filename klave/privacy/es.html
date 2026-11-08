@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Klave Política de Privacidad</title>
+<title>Política de Privacidad de Klave</title>
 <style>
   body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
   h1 { font-size: 22px; margin-bottom: 8px; }
@@ -21,6 +21,14 @@
     .lang-links a { color: #aaa; }
     .lang-links a.active { color: #fff; }
   }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
 </style>
 </head>
 <body>
@@ -36,68 +44,98 @@
   <a href="pt.html">Português</a>
 </p>
 
-<h1>Klave Política de Privacidad</h1>
-<p class="date">Fecha de entrada en vigor: 2026-05-10</p>
+<h1>Política de Privacidad de Klave</h1>
+<p class="date">Fecha de entrada en vigor: 8 de noviembre de 2026</p>
+<p>Esta política se aplica a Klave para Android, publicada por Velocity Craft («nosotros»).</p>
 
-<p>Klave (en adelante "la Aplicación") valora su privacidad y ha establecido la siguiente política de privacidad de acuerdo con las leyes de protección de datos aplicables.</p>
-
-<h2>1. Información recopilada</h2>
-<p>Klave está diseñada para mantener sus notas en su dispositivo. La Aplicación puede recopilar la siguiente información limitada:</p>
+<h2>Empecemos por lo que no podemos hacer</h2>
+<p>Klave es un editor de markdown que trabaja sobre archivos que ya son tuyos. Antes de describir lo que protegemos, esto es lo que <em>no</em> afirmamos:</p>
 <ul>
-  <li><strong>Diagnóstico de fallos</strong>: Informes anónimos de fallos y trazas de pila (Firebase Crashlytics) para detectar y corregir errores.</li>
-  <li><strong>Identificador de publicidad (ID de publicidad de Android)</strong>: Cuando se muestran anuncios, el SDK de Anuncios de Google Mobile accede a su ID de publicidad de Android y a los eventos de interacción con anuncios para la entrega de anuncios, el límite de frecuencia y la limitación de actividades fraudulentas. Puede restablecer o eliminar este ID en cualquier momento desde Configuración de Android → Privacidad → Anuncios.</li>
-  <li><strong>Información de cuenta de Dropbox</strong>: Cuando elige conectar una bóveda de Dropbox, su ID de cuenta de Dropbox y el token de acceso OAuth se almacenan en su dispositivo y se utilizan para leer y escribir los archivos en la carpeta que autoriza.</li>
-</ul>
-<p>Sus notas, contenido de la bóveda y configuración de la aplicación se almacenan únicamente en su dispositivo (o en su propia cuenta de Dropbox, si está conectada). Nunca se transmiten a ningún servidor operado por Klave.</p>
-
-<h2>2. Propósito de recopilación y uso</h2>
-<ul>
-  <li><strong>Diagnóstico de fallos</strong>: Para detectar fallos y mejorar la estabilidad de la aplicación.</li>
-  <li><strong>Configuración de funciones</strong>: Klave obtiene indicadores de funciones de solo lectura de Firebase Remote Config para implementar funciones experimentales de forma segura. No se envían datos personales.</li>
-  <li><strong>Integración con Dropbox</strong>: Para leer y escribir los archivos Markdown en la carpeta de Dropbox que autoriza explícitamente.</li>
-  <li><strong>Publicidad</strong>: Para mostrar anuncios de banner, nativos y recompensados de la versión gratuita a través de Google AdMob, con el consentimiento recopilado y gestionado a través de la Plataforma de Mensajería para el Usuario (UMP) de Google.</li>
+  <li><strong>Klave no cifra tus notas.</strong> Son archivos normales en la carpeta que elegiste o en tu propio Dropbox, y Klave los edita en su sitio. Cualquier otra app o persona con acceso a esa carpeta o a esa cuenta de Dropbox puede leerlos; quién tiene ese acceso lo deciden Android y Dropbox, no Klave.</li>
+  <li><strong>No podemos recuperar tus notas.</strong> No guardamos ninguna copia. Si se pierden los archivos de tu carpeta o de tu Dropbox, Klave no puede recuperarlos.</li>
+  <li>Evitamos las afirmaciones de seguridad absolutas. Ese tipo de frases no describe nada que puedas comprobar, así que en su lugar indicamos las condiciones.</li>
 </ul>
 
-<h2>3. Período de retención</h2>
+<h2>Tus notas nunca se nos envían</h2>
+<p>Klave no requiere cuenta, y Velocity Craft no opera ningún servidor que almacene notas. El texto de las notas, los nombres de archivos y carpetas, las imágenes, los PDF y los documentos permanecen en la carpeta que elegiste o en tu propio Dropbox, y nada de ello se transmite a los servicios de publicidad, análisis o informes de fallos que se describen a continuación.</p>
+<p>La búsqueda de texto en páginas de PDF escaneadas usa reconocimiento de texto que se ejecuta en tu dispositivo (Google ML Kit). Para ello no se suben tus PDF.</p>
+<p>No hay inicio de sesión para los usuarios. La app contiene un panel de desarrollador oculto con inicio de sesión de Google, que se usa para pruebas internas. Iniciar sesión ahí no nos envía nada ni a nosotros ni a la analítica de Google. Solo cuando inicia sesión una de nuestras cuentas de prueba designadas se adjunta un hash unidireccional de su dirección de correo a los datos de análisis y a los informes de fallos de ese dispositivo.</p>
+
+<h2>Qué se recopila y quién lo recopila</h2>
+<p>Esto es un asunto distinto de tus notas, y mantenemos separadas ambas descripciones a propósito. Nada de lo siguiente contiene tus notas. Klave muestra publicidad a través de Google AdMob y utiliza Google Firebase para el análisis de uso (Firebase Analytics), los informes de fallos (Firebase Crashlytics) y la configuración remota de funciones (Firebase Remote Config). En conjunto, recopilan:</p>
+<table id="data-collected">
+  <tr><th>Categoría</th><th>Recopilado por</th><th>Qué y por qué</th></tr>
+  <tr><td>IP address</td><td>Google AdMob, Google Firebase</td><td>Se incluye inevitablemente en cada solicitud de red que realizan estos servicios</td></tr>
+  <tr><td>User product interactions</td><td>Google AdMob, Firebase Analytics</td><td>Impresiones y clics en anuncios; aperturas de la app, pantallas vistas y tiempo en la app, que Google Analytics registra automáticamente. Klave no añade eventos sobre lo que abres, lees o escribes</td></tr>
+  <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>Informes de fallos y de errores no fatales: modelo del dispositivo, versión del sistema operativo, versión de la app, la traza de pila del error y el estado de la app, como tu plan (Gratis o Lifetime) y una categoría de rendimiento del dispositivo. Klave no añade a estos informes texto de notas, nombres de archivo ni términos de búsqueda</td></tr>
+  <tr><td>Device identifiers</td><td>Google AdMob, Google Firebase</td><td>El ID de publicidad y el ID de conjunto de apps; el ID de instalación de Firebase</td></tr>
+  <tr><td>Purchase history</td><td>Firebase Analytics</td><td>Cuando compras algo en la app a través de Google Play, como Klave Lifetime, Google Analytics puede registrar los ID del producto y del plan, la moneda y el precio. Google Play gestiona el pago; nunca vemos tus datos de pago</td></tr>
+</table>
+<p>Los informes de análisis también incluyen tu plan (Gratis o Lifetime) y una categoría de rendimiento del dispositivo (baja/media/alta), para poder agruparlos.</p>
+<p>Google Analytics también registra cierta información automáticamente: modelo del dispositivo, versión de Android, idioma configurado y datos de sesión y uso, como la primera apertura y el tiempo en la app, junto con un identificador aleatorio de instancia de la app. Firebase conserva los informes de fallos durante 90 días; los datos de eventos de análisis se conservan durante un máximo de 14 meses.</p>
+<p>Lo siguiente <strong>no</strong> se recopila y nunca sale de tu dispositivo a través de nosotros: texto de las notas, nombres de archivos y carpetas, fotos y vídeos, archivos y documentos (incluidos los PDF), audio, contactos, calendario, datos de salud y actividad física, información personal y ubicación precisa. Google puede estimar una región aproximada, a nivel de ciudad, a partir de la dirección IP para la entrega de anuncios y los informes de análisis; en la sección Seguridad de los datos de Google Play esto se declara como «Ubicación aproximada». Klave no solicita el permiso de ubicación y nunca lee la ubicación de tu dispositivo.</p>
+<p>Si compras Klave Lifetime, o mientras esté activo un Pase Plus que hayas desbloqueado viendo un anuncio con recompensa, no se muestran anuncios. Aun así, el SDK de publicidad puede iniciarse en tu dispositivo para comprobar la configuración de consentimiento y el estado sin anuncios. El análisis y los informes de fallos funcionan igual en todos los planes.</p>
+
+<h2>Dónde se guardan tus notas y qué se cifra</h2>
+<p>Cualquier afirmación sobre cifrado solo es cierta en condiciones concretas. Estos son todos los lugares donde Klave lee, guarda o envía tus notas:</p>
+<table>
+  <tr><th>Lugar</th><th>¿Cifrado?</th></tr>
+  <tr><td>Tus notas en la carpeta que elegiste</td><td><strong>Klave no las cifra.</strong> Siguen siendo archivos normales dondequiera que esté esa carpeta. Klave los lee y escribe en su sitio; cualquier otra app o persona con acceso a la carpeta también puede leerlos.</td></tr>
+  <tr><td>Tus notas en Dropbox</td><td><strong>Klave no las cifra.</strong> Klave lee y escribe tus archivos de Dropbox tal cual, mediante una conexión cifrada (HTTPS), y Dropbox los almacena en tu cuenta. Para abrirlos más rápido, Klave guarda en su caché de este dispositivo copias temporales de los archivos de Dropbox que has abierto.</td></tr>
+  <tr><td>Los datos propios de Klave en este dispositivo: ajustes, tu lista de bóvedas, archivos recientes y destacados, notas, resaltados y marcadores de PDF, el índice de búsqueda de texto completo (que contiene el texto de tus notas) y la versión original y las anteriores de los documentos que editas</td><td><strong>No.</strong> Se guardan en el almacenamiento privado de la app, que Android aísla de las demás apps. Al desinstalar Klave se eliminan.</td></tr>
+  <tr><td>Token de acceso de Dropbox</td><td><strong>Cuando el dispositivo lo admite.</strong> Se guarda en un almacenamiento cifrado protegido por el Android Keystore; en un dispositivo donde ese almacenamiento no puede configurarse, se guarda en el almacenamiento privado de la app sin ese cifrado adicional.</td></tr>
+  <tr><td>Compartir, descargar o abrir en otra app</td><td><strong>No.</strong> La nota o el archivo se envía tal cual a la app o al lugar que elijas, bajo la política de esa app.</td></tr>
+  <tr><td>Copia de seguridad del dispositivo de Android (copia automática / transferencia entre dispositivos)</td><td><strong>Klave no la cifra.</strong> Si la copia de seguridad de Android está activada, los ajustes de Klave, tu lista de bóvedas, los archivos recientes y destacados, y las notas, resaltados y marcadores de PDF se incluyen en la copia de tu cuenta de Google, que gestiona Google. Klave excluye el token de Dropbox y los datos de inicio de sesión, el índice de búsqueda, el historial de edición de documentos y los datos del estado de compra. Tus archivos de notas no forman parte de la copia de Klave; permanecen en tu carpeta o en tu Dropbox.</td></tr>
+</table>
+
+<h2>Dropbox</h2>
+<p>Conectar Dropbox es opcional y gratuito en todos los planes. La autorización se realiza con Dropbox, y Klave se comunica directamente con Dropbox; Velocity Craft no opera ningún servidor que reciba tus notas. Klave muestra la lista de tus carpetas de Dropbox para que elijas una y, después, lee y escribe los archivos de las carpetas que añades como bóvedas.</p>
+<p>Dropbox almacena tus archivos en tu cuenta y puede ver metadatos del servicio, como rutas de archivo, tamaños, revisiones, horas de las solicitudes y tu dirección de red. El tratamiento por parte de Dropbox se rige por la política de privacidad de Dropbox.</p>
+<p>Desconectar Dropbox en los ajustes de Klave elimina el token de este dispositivo. Ni desconectar ni desinstalar Klave elimina tus archivos de Dropbox. Para terminar por completo el acceso de Klave, revócalo también en los ajustes de tu cuenta de Dropbox, en Apps conectadas.</p>
+
+<h2>Funciones que contactan con otros servicios</h2>
 <ul>
-  <li><strong>Datos en el dispositivo</strong>: Todas las notas y configuraciones se eliminan cuando se desinstala la Aplicación.</li>
-  <li><strong>Tokens de Dropbox</strong>: Almacenados en el dispositivo hasta que desconecte Dropbox o desinstale la Aplicación.</li>
-  <li><strong>Datos de fallos</strong>: Sujetos a la política de retención de datos de Firebase de Google.</li>
-  <li><strong>Datos de publicidad</strong>: Sujetos a la política de retención de datos de Google. El usuario puede restablecer o eliminar el ID de publicidad en cualquier momento.</li>
+  <li><strong>El dictado por voz</strong> usa el servicio de reconocimiento de voz de tu dispositivo (en la mayoría de los teléfonos, el de Google). Mientras dictas, tu voz la procesa ese servicio, que puede hacerlo en sus propios servidores y bajo su propia política de privacidad. Klave no graba ni guarda audio; solo recibe el texto reconocido. La lectura en voz alta usa el motor de texto a voz de tu dispositivo.</li>
+  <li><strong>Imágenes web en las notas.</strong> Si una nota o un archivo HTML que abres en Vista previa hace referencia a una imagen u otro recurso en una dirección web, la vista previa lo carga desde ese servidor, que recibe la dirección y tu dirección de red, igual que si lo abrieras en un navegador. No se envía nada más de la nota. Al tocar un enlace web, se abre en tu navegador.</li>
+  <li><strong>Fuentes.</strong> Algunas fuentes de la interfaz de Klave, y las fuentes que exploras o eliges en Ajustes, se descargan de Google Fonts a través de los servicios de Google Play de tu dispositivo.</li>
+  <li><strong>El reconocimiento de texto</strong> de las páginas de PDF escaneadas se ejecuta en tu dispositivo con Google ML Kit. Según se describe en las condiciones de ML Kit de Google, la biblioteca puede enviar a Google métricas técnicas de uso y rendimiento; no envía tus PDF ni su texto.</li>
+  <li><strong>Las actualizaciones de la app</strong> se ofrecen mediante la actualización integrada de Google Play.</li>
 </ul>
 
-<h2>4. Compartir con terceros</h2>
-<p>Klave no vende ni comparte su información personal. Se utilizan los siguientes servicios de terceros limitados:</p>
+<h2>Terceros</h2>
 <ul>
-  <li><strong>Google (Firebase Crashlytics, Firebase Remote Config)</strong>: Para diagnóstico de fallos e indicadores de funciones. Sujeto a la política de privacidad de Google.</li>
-  <li><strong>Google (Google Mobile Ads / AdMob, Plataforma de Mensajería para el Usuario)</strong>: Para la entrega de anuncios y la gestión del consentimiento. Sujeto a la política de privacidad de Google.</li>
-  <li><strong>Dropbox</strong>: Solo cuando conecta explícitamente una bóveda de Dropbox. Sujeto a la política de privacidad de Dropbox.</li>
+  <li><strong>Google AdMob</strong> y Google User Messaging Platform: publicidad y consentimiento. Se rigen por la política de privacidad de Google.</li>
+  <li><strong>Google Firebase</strong>: eventos de uso de Analytics, informes de fallos de Crashlytics y Remote Config para la configuración de funciones. El contenido de las notas nunca se transmite a Firebase. Se rige por la política de privacidad de Google.</li>
+  <li><strong>Google Play</strong>: facturación de la compra Lifetime (nunca vemos tus datos de pago) y actualizaciones integradas en la app.</li>
+  <li><strong>Google ML Kit y Google Fonts</strong>: reconocimiento de texto en el dispositivo y fuentes descargables.</li>
+  <li><strong>Dropbox</strong>: solo si conectas una cuenta.</li>
+  <li><strong>Los servicios de reconocimiento de voz y de texto a voz de tu dispositivo</strong>: solo mientras los usas.</li>
+  <li><strong>Los servidores web que alojan imágenes a las que hacen referencia tus notas</strong>: solo cuando abres una de esas notas en Vista previa.</li>
 </ul>
 
-<h2>5. Permisos de la Aplicación</h2>
-<p>Klave utiliza los siguientes permisos:</p>
+<h2>Permisos</h2>
 <ul>
-  <li><strong>Internet (INTERNET)</strong>: Para comunicarse con los servicios de Dropbox y Firebase. [Requerido]</li>
-  <li><strong>Estado de red (ACCESS_NETWORK_STATE)</strong>: Para detectar conectividad para sincronización. [Requerido]</li>
-  <li><strong>ID de publicidad (com.google.android.gms.permission.AD_ID)</strong>: Incluido automáticamente por el SDK de Google Mobile Ads en Android 13+ para la entrega de anuncios y el límite de frecuencia. [Se puede excluir a través de Configuración de Android → Privacidad → Anuncios]</li>
+  <li><strong>Internet y estado de la red</strong>: para anuncios, análisis, Dropbox y reconocimiento de voz.</li>
+  <li><strong>Micrófono</strong>: solo mientras usas el dictado por voz, y solo después de que lo permitas. Klave no graba audio en un archivo.</li>
+  <li><strong>ID de publicidad</strong>: lo añade el SDK de Google Mobile Ads para la entrega de anuncios y la limitación de frecuencia. Puedes restablecerlo o eliminarlo en Ajustes de Android → Privacidad → Anuncios.</li>
+  <li><strong>Carpetas que eliges</strong>: Klave usa el selector de carpetas de Android y solo puede abrir las carpetas que elijas. No solicita acceso a todos los archivos ni a tu biblioteca multimedia.</li>
 </ul>
-<p>Klave no solicita acceso a su micrófono, cámara, ubicación o contactos.</p>
+<p>Klave no solicita acceso a tu cámara, tu ubicación ni tus contactos, y no envía notificaciones.</p>
 
-<h2>6. Medidas de seguridad</h2>
-<ul>
-  <li>Toda la comunicación de red utiliza conexiones cifradas (HTTPS).</li>
-  <li>Los tokens OAuth de Dropbox se almacenan utilizando las preferencias compartidas cifradas de Android.</li>
-</ul>
+<h2>Espacio Económico Europeo y Reino Unido</h2>
+<p>Cuando es obligatorio, Klave muestra un formulario de consentimiento certificado por Google antes de mostrar cualquier anuncio. Según tu elección, los anuncios se muestran de forma no personalizada o no se cargan en absoluto. Este formulario solo afecta a la publicidad. Firebase Analytics y Crashlytics no dependen de él y funcionan en todos los dispositivos; Analytics puede leer el ID de publicidad, que puedes restablecer o eliminar en los ajustes de Android.</p>
+<p>Mientras no se puedan solicitar anuncios, por ejemplo si no se pudo completar el formulario de consentimiento, Ajustes muestra una tarjeta del Pase Plus que vuelve a abrir el formulario. Actualmente Klave no tiene una opción aparte en Ajustes para cambiar una elección que ya hiciste. Hasta que la tenga, puedes restablecer la elección borrando el almacenamiento de Klave en los ajustes de Android; el formulario aparecerá la próxima vez que se inicie Klave. Borrar el almacenamiento también elimina todo lo que Klave guarda en este dispositivo (ajustes, la lista de bóvedas, la conexión con Dropbox y las notas, resaltados y marcadores de PDF), pero no tus archivos de notas.</p>
+<p>Tienes derecho a acceder a tus datos, rectificarlos y eliminarlos. Tus notas solo se guardan en almacenamiento que controlas tú, así que ejerces esos derechos directamente: edita o elimina los archivos, desinstala Klave para eliminar lo que guarda en este dispositivo y gestiona tu Dropbox y la copia de seguridad del dispositivo Android en sus propios ajustes. Los datos de análisis, fallos y publicidad los conserva Google y no están vinculados a tu nombre ni a tu correo (salvo nuestras propias cuentas de prueba designadas, descritas arriba); para esos datos, usa las herramientas de Google o contáctanos y te ayudaremos en lo posible. Consulta <a href="../delete-account/">cómo eliminar tus datos de Klave</a>.</p>
 
-<h2>7. Responsable de privacidad</h2>
-<ul>
-  <li>Contacto: Equipo de desarrollo de Klave</li>
-  <li>Correo electrónico: velocitycraft.app+support+klave@gmail.com</li>
-</ul>
-<p>Para consultas sobre información personal, contáctenos en el correo electrónico anterior.</p>
+<h2>Menores</h2>
+<p>Klave no está dirigida a menores de 13 años y no recopilamos a sabiendas datos de ellos.</p>
 
-<h2>8. Cambios en esta política</h2>
-<p>Esta política de privacidad puede actualizarse de acuerdo con los cambios en las leyes o servicios aplicables. Cualquier cambio se anunciará dentro de la Aplicación.</p>
+<h2>Cambios</h2>
+<p>Los cambios importantes en esta política se anunciarán en la app o en esta página antes de que entren en vigor.</p>
+
+<h2>Contacto</h2>
+<p>velocitycraft.app+support+klave@gmail.com</p>
+<p>Si nos escribes por correo electrónico, recibimos tu dirección de correo y tu mensaje y los usamos únicamente para responderte.</p>
 
 </body>
 </html>

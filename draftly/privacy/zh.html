@@ -21,6 +21,14 @@
     .lang-links a { color: #aaa; }
     .lang-links a.active { color: #fff; }
   }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
 </style>
 </head>
 <body>
@@ -37,68 +45,102 @@
 </p>
 
 <h1>Draftly 隐私政策</h1>
-<p class="date">生效日期：2025年2月18日</p>
+<p class="date">生效日期：2026年11月8日</p>
+<p>本政策适用于由 Velocity Craft（以下简称“我们”）发布的 Android 版 Draftly。</p>
 
-<p>Draftly（以下简称"本应用"）重视用户的个人信息，并依据相关数据保护法律制定并公开以下隐私政策。</p>
-
-<h2>1. 收集的个人信息</h2>
-<p>本应用可能收集以下信息以提供服务。</p>
+<h2>先说我们做不到的事</h2>
+<p>在介绍我们保护什么之前，先说明我们<em>不</em>声称的内容：</p>
 <ul>
-  <li><strong>语音数据</strong>：使用语音输入功能时通过麦克风录制的音频（RECORD_AUDIO权限）</li>
-  <li><strong>设备信息</strong>：广告标识符、设备型号、操作系统版本（用于广告服务）</li>
-</ul>
-<p>在本应用中创建的笔记、清单等内容仅存储在您的设备上，不会传输到任何外部服务器。</p>
-
-<h2>2. 收集和使用目的</h2>
-<ul>
-  <li><strong>语音输入功能</strong>：将用户语音转换为文字，辅助笔记创建。</li>
-  <li><strong>广告投放</strong>：通过Google AdMob展示个性化广告。</li>
-  <li><strong>应用改进</strong>：可能收集匿名使用数据，用于崩溃分析和提高服务稳定性。</li>
+  <li><strong>本设备上的笔记并未由我们另行加密存储，保险库也是如此。</strong>笔记和保险库保存在应用的私有存储空间中，由 Android 操作系统与其他应用隔离。在已 root 的设备上，或在他人能够解锁的设备上，这种隔离可能被突破。应用锁和保险库锁（生物识别或 PIN）是第二道屏障，但它们锁住的是应用，而不是对文件加密。</li>
+  <li><strong>我们无法为您恢复笔记。</strong>我们不持有任何副本。如果在没有备份的情况下丢失设备，笔记也会随之丢失。</li>
+  <li>我们不使用绝对化的安全表述。这类说法没有可供核实的内容，因此我们改为说明具体条件。</li>
 </ul>
 
-<h2>3. 个人信息保留期限</h2>
+<h2>您的笔记内容绝不会发送给我们</h2>
+<p>Draftly 无需账户，Velocity Craft 也不运营任何存储笔记的服务器。笔记正文、标题、文件夹、标签、图片、PDF、文档、提醒和保险库内容都会留在您的设备上，除非<em>您</em>选择将其转移（见下文“加密适用于哪些地方”），而且这些内容都不会传给下文所述的广告、分析或崩溃报告服务。</p>
+<p>搜索扫描版 PDF 页面中的文字时，使用的是在设备上运行的文字识别（Google ML Kit），不会为此上传您的 PDF。</p>
+<p>本应用不提供用户登录。应用中有一个隐藏的开发者面板，内含 Google 登录，仅用于内部测试。在那里登录不会向我们或 Google 分析发送任何内容。只有当我们指定的测试账户登录时，该账户电子邮件地址的单向哈希值才会附加到该设备的分析数据和崩溃报告中。</p>
+
+<h2>收集哪些信息，由谁收集</h2>
+<p>这与您的笔记是两回事，我们有意将两者分开说明。以下各项均不包含您的笔记内容。Draftly 通过 Google AdMob 展示广告，并使用 Google Firebase 进行使用情况分析（Firebase Analytics）、崩溃报告（Firebase Crashlytics）、通知（Firebase Cloud Messaging）和远程功能设置（Firebase Remote Config）。这些服务共同收集：</p>
+<table id="data-collected">
+  <tr><th>类别</th><th>收集方</th><th>内容与原因</th></tr>
+  <tr><td>IP address</td><td>Google AdMob、Google Firebase</td><td>这些服务发出的每个网络请求中都不可避免地包含</td></tr>
+  <tr><td>User product interactions</td><td>Google AdMob、Firebase Analytics</td><td>广告展示和点击；打开了应用的哪个界面（如“设置”“编辑器”等界面名称，绝不包含笔记内容）；一次性的“首次创建笔记”事件；列表样式的更改</td></tr>
+  <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>崩溃和非致命错误报告：设备型号、操作系统版本、应用版本、错误堆栈，以及您的方案（免费或 Lifetime）和设备性能等级等应用状态</td></tr>
+  <tr><td>Device and Account identifiers</td><td>Google AdMob、Google Firebase</td><td>广告 ID 和 app set ID；Firebase 安装 ID；推送通知令牌</td></tr>
+  <tr><td>Purchase history</td><td>Firebase Analytics</td><td>购买 Draftly Lifetime 时的商品 ID、币种和价格。付款由 Google Play 处理，我们看不到您的付款信息</td></tr>
+</table>
+<p>为便于对报告进行分组，分析事件还会附带应用版本、构建类型、您的方案（免费或 Lifetime）以及设备性能等级（低/中/高）。</p>
+<p>Google Analytics 还会自动记录部分信息：设备型号、Android 版本、语言设置，以及首次打开、使用时长等会话和互动数据，并附带一个随机的应用实例标识符。Firebase 将崩溃报告保留 90 天；分析事件数据的保留时间不超过 14 个月。</p>
+<p>以下信息<strong>不会</strong>被收集，也不会经由我们离开您的设备：消息或笔记正文、照片和视频、文件和文档（包括 PDF）、音频、联系人、日历、健康与健身数据、个人信息以及精确位置。Google 可能会根据 IP 地址估算城市级别的大致区域，用于广告投放和分析报告；在 Google Play 的“数据安全”部分，我们将其申报为“大致位置”。</p>
+<p>Draftly 不会请求位置权限。模板中可以放入可选的 {{LOCATION}} 占位符：只有当您自己在 Android 设置中允许 Draftly 访问位置时，Draftly 才会读取设备最近一次的位置，并使用 Android 的地理编码服务（在大多数手机上由 Google 提供）将其转换为省份和城市名称，写入笔记。没有该权限时，占位符保持为空。如果您添加的照片本身已包含位置信息，Draftly 会将这些坐标与图片笔记一起保存在本设备上；这些坐标只会出现在您自己的备份中（见下文），绝不会发送给我们或广告、分析服务。</p>
+<p>购买 Draftly Lifetime 后，或在通过观看激励广告获得的 Plus Pass 有效期间，不会展示广告。但为了检查同意设置和免广告状态，广告 SDK 仍可能在您的设备上启动。分析和崩溃报告在所有方案中的运作方式相同。</p>
+
+<h2>加密适用于哪些地方，不适用于哪些地方</h2>
+<p>任何关于加密的说法都只在特定条件下成立。以下列出您的笔记可能被保存或发送的所有位置：</p>
+<table>
+  <tr><th>途径</th><th>是否加密</th></tr>
+  <tr><td>本设备上的笔记数据库（包括保险库）</td><td><strong>否。</strong>受 Android 应用沙盒保护；如果您使用应用锁和保险库锁，还会多一层保护。</td></tr>
+  <tr><td>“设备备份”文件（备份与恢复）</td><td><strong>否。</strong>这些文件保存在本设备上 Draftly 自己的文件夹中，包含您的笔记正文，其中也包括保险库中的笔记。</td></tr>
+  <tr><td>Dropbox 备份和“完整备份导出”文件（ZIP）</td><td><strong>只有保险库部分会加密，并且仅在您设置了保险库备份密码时</strong>（备份与恢复 → 保险库备份加密）。此时，保险库笔记会在本设备上使用由您的密码派生的密钥，以 AES-256-GCM 加密。其余内容（笔记、图片、PDF 和文档）均为明文文件，任何能够访问该文件或该 Dropbox 账户的人都能读取。如果未设置密码，保险库也会以明文文件的形式包含在内。</td></tr>
+  <tr><td>分享到其他应用</td><td><strong>否。</strong>笔记文本或文件会原样发送到您选择的应用，并受该应用的政策约束。</td></tr>
+  <tr><td>导出为 Markdown、文本或 PDF，以及打印</td><td><strong>否。</strong>导出文件按设计为明文——它们本来就是为了在其他地方打开。</td></tr>
+  <tr><td>Android 系统的设备备份（自动备份 / 设备迁移）</td><td><strong>Draftly 不进行加密。</strong>如果开启了 Android 备份，您的笔记数据库（包括保险库）、图片、PDF、文档和“设备备份”文件都会包含在备份到您 Google 账户的数据中，由 Google 管理。Draftly 排除了登录令牌、应用锁设置、购买状态缓存、通知记录和文档编辑记录。</td></tr>
+</table>
+<p>如果您忘记了保险库备份密码，我们无法恢复受该密码保护的保险库笔记。请将密码保存在即使丢失手机也仍能找到的地方。</p>
+
+<h2>Dropbox 备份</h2>
+<p>Dropbox 备份是可选功能，属于 Plus 工具之一（可通过 Plus Pass 或 Draftly Lifetime 使用）。如果您连接 Dropbox，授权在 Dropbox 完成，连接令牌仅保存在本设备上受 Android Keystore 保护的加密存储中。Draftly 直接与 Dropbox 通信；Velocity Craft 不运营任何接收您笔记的服务器。</p>
+<p>每次备份由一个 ZIP 文件和一个未加密的小型摘要文件组成，摘要文件记录应用版本、数据库版本、备份时间、笔记数量、图片数量和文件大小。Draftly 会保留最近的两份备份，并删除更早的备份。Dropbox 将这些文件存储在您的账户中，并能看到文件路径、大小、上传时间和您的网络地址等服务元数据。Dropbox 对数据的处理受 Dropbox 隐私政策约束。</p>
+<p>卸载 Draftly 或断开 Dropbox 连接，不会删除已在 Dropbox 中的文件。如需删除，请在 Dropbox 中删除 Draftly 的文件夹，并可视需要在 Dropbox 账户设置中撤销该应用的授权。</p>
+
+<h2>会联系其他服务的功能</h2>
 <ul>
-  <li><strong>语音数据</strong>：文字转换后立即删除，不另行存储。</li>
-  <li><strong>设备内数据</strong>：卸载应用时所有数据将一并删除。</li>
-  <li><strong>广告相关信息</strong>：遵循Google的隐私政策。</li>
+  <li><strong>语音转文字</strong>（语音输入和语音备忘）使用设备的语音识别服务（在大多数手机上由 Google 提供）。您说话时，语音由该服务处理，可能在其自己的服务器上、依据其自身的隐私政策进行处理。Draftly 不会录制或保存音频，只接收识别出的文字。朗读功能使用设备的文字转语音引擎。</li>
+  <li><strong>链接预览。</strong>当您在笔记中粘贴或分享网页链接时，Draftly 会获取该网页以显示其标题。对于 X/Twitter 帖子链接，为显示帖子内容，Draftly 会先请求 X 的公开嵌入服务（publish.twitter.com），失败时再请求独立的预览服务 fxtwitter.com。与在浏览器中打开该链接一样，相关网站或服务会收到该链接和您的网络地址。笔记中的其他内容不会被发送。</li>
+  <li><strong>字体。</strong>当您在设置中浏览或选择字体时，Draftly 会请求设备上的 Google Play 服务从 Google Fonts 下载这些字体。</li>
+  <li><strong>文字识别</strong>由 Google ML Kit 在设备上运行。根据 Google 的 ML Kit 条款，该库可能会向 Google 发送技术性的使用和性能指标，但不会发送您的 PDF 或其中的文字。</li>
+  <li><strong>应用更新和语言包</strong>通过 Google Play（应用内更新和 Play Feature Delivery）提供。</li>
 </ul>
 
-<h2>4. 向第三方提供个人信息</h2>
-<p>本应用原则上不向第三方提供用户的个人信息。但以下情况除外：</p>
+<h2>第三方</h2>
 <ul>
-  <li>用户事先同意的情况</li>
-  <li>法律法规要求的情况</li>
-  <li>为提供广告服务，可能向Google AdMob共享有限信息。</li>
+  <li><strong>Google AdMob</strong> 和 Google User Messaging Platform——广告和同意管理。受 Google 隐私政策约束。</li>
+  <li><strong>Google Firebase</strong>——Analytics 使用事件、Crashlytics 崩溃报告、用于通知的 Cloud Messaging 以及用于功能设置的 Remote Config。笔记内容绝不会传给 Firebase。受 Google 隐私政策约束。</li>
+  <li><strong>Google Play</strong>——Lifetime 购买的结算（我们看不到您的付款信息）、应用内更新和语言包。</li>
+  <li><strong>Google ML Kit 和 Google Fonts</strong>——设备上的文字识别，以及您选择的字体。</li>
+  <li><strong>Dropbox</strong>——仅在您为备份连接账户时。</li>
+  <li><strong>设备的语音识别、文字转语音和地理编码服务</strong>——仅在您使用期间。</li>
+  <li><strong>您粘贴的链接所指向的网站、X 的嵌入服务和 fxtwitter.com</strong>——仅在您粘贴或分享链接时，用于获取标题或帖子内容。</li>
 </ul>
 
-<h2>5. 应用权限</h2>
-<p>本应用使用以下权限：</p>
+<h2>权限</h2>
 <ul>
-  <li><strong>麦克风（RECORD_AUDIO）</strong>：通过语音输入创建笔记 [可选]</li>
-  <li><strong>网络（INTERNET）</strong>：展示广告及语音识别API连接 [必需]</li>
-  <li><strong>通知（POST_NOTIFICATIONS）</strong>：发送提醒通知 [可选]</li>
-  <li><strong>在其他应用上层显示（SYSTEM_ALERT_WINDOW）</strong>：悬浮快速笔记按钮 [可选]</li>
-  <li><strong>前台服务（FOREGROUND_SERVICE）</strong>：保持悬浮按钮后台运行 [必需]</li>
-  <li><strong>开机启动（RECEIVE_BOOT_COMPLETED）</strong>：重新注册提醒通知 [必需]</li>
-</ul>
-<p>可选权限仅在使用相应功能时请求，不授权也可以使用应用的基本功能。</p>
-
-<h2>6. 个人信息安全措施</h2>
-<p>本应用采取以下措施确保个人信息安全：</p>
-<ul>
-  <li>所有用户数据均存储在设备内部存储中。</li>
-  <li>网络通信使用加密连接（HTTPS）。</li>
+  <li><strong>通知</strong>——您设定的提醒和关于本应用的公告。提醒通知会显示提醒文字和笔记中的一行内容，因此根据您的 Android 通知设置，可能会出现在锁屏上。促销通知（我们其他应用的消息和优惠信息）可随时在“设置 → 通知”中关闭。在欧洲经济区、英国和韩国，这类通知在您主动开启之前处于关闭状态；在其他地区则默认开启。</li>
+  <li><strong>闹钟和提醒，以及开机启动</strong>——用于按时发出提醒，并在手机重启后重新安排提醒。</li>
+  <li><strong>麦克风</strong>——仅在您进行语音输入或录制语音备忘时使用。</li>
+  <li><strong>位置（大致和精确）</strong>——应用中已声明，但从不请求。仅用于 {{LOCATION}} 模板占位符，且只有在您自己于 Android 设置中授予权限后才会生效（见上文）。</li>
+  <li><strong>互联网和网络状态</strong>——用于广告、分析、链接预览、Dropbox 备份和语音识别。</li>
+  <li><strong>后台工作（用于数据同步的前台服务和唤醒锁）</strong>——使备份和恢复在应用处于后台时也能完成。</li>
+  <li><strong>生物识别</strong>——用于应用锁和保险库。指纹或面部数据保留在 Android 系统中，Draftly 只知道验证是否成功。</li>
+  <li><strong>照片和相机</strong>——Draftly 使用 Android 选择器和您的相机应用，只能看到您选择的项目。它不会请求访问您的媒体库。</li>
+  <li><strong>应用图标角标（Samsung）</strong>——用于在 Samsung 手机上显示或清除应用图标上的角标。</li>
 </ul>
 
-<h2>7. 隐私保护负责人</h2>
-<ul>
-  <li>联系人：Draftly开发团队</li>
-  <li>邮箱：velocitycraft.app+support+draftly@gmail.com</li>
-</ul>
-<p>如有个人信息相关问题，请通过上述邮箱联系我们。</p>
+<h2>欧洲经济区和英国</h2>
+<p>在需要时，Draftly 会在展示任何广告之前显示经 Google 认证的同意表单。您可以随时在设置中更改选择。根据您的选择，广告会以非个性化形式展示，或完全不加载。该表单只管理广告。Firebase Analytics 和 Crashlytics 不受其控制，并在所有设备上运行；Analytics 可以读取广告 ID，您可以在 Android 设置中重置或删除广告 ID。</p>
+<p>您有权访问、更正和删除您的数据。您的笔记只保存在您的设备和您自己管理的存储中，因此您可以直接行使这些权利：在应用中删除笔记；卸载应用以删除本设备上的所有数据；如果使用过备份，请删除 Dropbox 中的 Draftly 文件夹；并在 Google 设置中管理 Android 设备备份。分析、崩溃和广告数据由 Google 持有，不与您的姓名或电子邮件关联（上文所述我们指定的测试账户除外）；对于这些数据，请使用 Google 的工具，或联系我们，我们会尽力协助。另请参阅<a href="../delete-account/">如何删除您的 Draftly 数据</a>。</p>
 
-<h2>8. 隐私政策的变更</h2>
-<p>本隐私政策可能因相关法律或服务变更而修改。变更时将通过应用内通知告知。</p>
+<h2>儿童</h2>
+<p>Draftly 并非面向 13 岁以下的儿童，我们也不会在知情的情况下收集儿童的数据。</p>
+
+<h2>变更</h2>
+<p>本政策的重大变更将在生效前通过应用或本页面公布。</p>
+
+<h2>联系我们</h2>
+<p>velocitycraft.app+draftly@gmail.com</p>
+<p>如果您给我们发送电子邮件，包括通过应用中的“帮助与反馈”（会预先填入应用版本、设备型号、Android 版本、屏幕尺寸和密度、内存及语言，您都可以修改），我们会收到您的电子邮件地址和留言，并仅用于回复您。</p>
 
 </body>
 </html>

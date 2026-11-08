@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeter Player Datenschutzrichtlinie</title>
+<title>Jeter Player Datenschutzerklärung</title>
 <style>
   body { font-family: -apple-system, sans-serif; padding: 16px; line-height: 1.7; color: #222; background: #fff; }
   h1 { font-size: 22px; margin-bottom: 8px; }
@@ -21,6 +21,14 @@
     .lang-links a { color: #aaa; }
     .lang-links a.active { color: #fff; }
   }
+
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f4; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #444; }
+    th { background: #262626; }
+  }
 </style>
 </head>
 <body>
@@ -36,72 +44,99 @@
   <a href="pt.html">Português</a>
 </p>
 
-<h1>Jeter Player Datenschutzrichtlinie</h1>
-<p class="date">Gültig ab: 20. März 2026</p>
+<h1>Jeter Player Datenschutzerklärung</h1>
+<p class="date">Gültig ab: 8. November 2026</p>
+<p>Diese Erklärung gilt für Jeter Player für Android, herausgegeben von Velocity Craft („wir“).</p>
 
-<p>Jeter Player (im Folgenden „die App") schätzt Ihre persönlichen Daten und hat die folgende Datenschutzrichtlinie in Übereinstimmung mit den geltenden Datenschutzgesetzen erstellt.</p>
-
-<h2>1. Erhobene personenbezogene Daten</h2>
-<p>Die App kann die folgenden Informationen zur Bereitstellung ihrer Dienste erheben.</p>
+<h2>Zuerst, was wir nicht können</h2>
+<p>Jeter Player ist ein Videoplayer mit einem privaten Tresor. Bevor wir beschreiben, was wir schützen, steht hier, was wir <em>nicht</em> behaupten:</p>
 <ul>
-  <li><strong>Geräteinformationen</strong>: Werbe-ID, Gerätemodell und Betriebssystemversion (für Werbedienste)</li>
-  <li><strong>Metadaten von Mediendateien</strong>: Video- und Foto-Metadaten, die vom Gerätespeicher für die Bibliotheksanzeige und Wiedergabe gelesen werden (Dateiname, Dauer, Auflösung, Pfad)</li>
-  <li><strong>Biometrische Daten</strong>: Fingerabdruck- oder Gesichtserkennungsdaten, die für die Ordnersperrfunktion verwendet werden (werden vollständig auf dem Gerät über Android Keystore verarbeitet und niemals extern übertragen)</li>
-</ul>
-<p>Mediendateien wie Videos und Fotos werden schreibgeschützt vom Gerätespeicher abgerufen. Die App lädt Ihre Mediendateien nicht auf externe Server hoch und überträgt sie nicht.</p>
-
-<h2>2. Zweck der Erhebung und Nutzung</h2>
-<ul>
-  <li><strong>Video- und Fotowiedergabe</strong>: Bietet Medienwiedergabefunktionen einschließlich Wiedergabelisten, Weiterschauen und Picture-in-Picture (PiP)-Modus.</li>
-  <li><strong>Medienorganisation</strong>: Verwaltet Ihre Videobibliothek, Fotogalerie, Fotoalben und Medienbereinigungsfunktionen.</li>
-  <li><strong>Ordnersperre</strong>: Verwendet biometrische Authentifizierung zum Schutz privater Medien in einem gesperrten Ordner.</li>
-  <li><strong>Werbung</strong>: Zeigt personalisierte Werbung über Google AdMob an.</li>
-  <li><strong>App-Verbesserung</strong>: Kann anonymisierte Nutzungsdaten zur Absturzanalyse und Verbesserung der Dienststabilität erheben.</li>
+  <li><strong>Videos auf diesem Gerät werden von uns nicht verschlüsselt – auch nicht im Tresor.</strong> Dateien, die Sie in den Tresor verschieben, werden unverändert in den privaten Speicher der App verschoben, den das Betriebssystem Android von anderen Apps abschottet. Auf einem gerooteten Gerät oder einem Gerät, das jemand anderes entsperren kann, lässt sich diese Abschottung umgehen. Zum Öffnen des Tresors sind Ihr Fingerabdruck, Ihr Gesicht oder eine PIN nötig, doch das ist eine Sperre der App, keine Verschlüsselung der Dateien.</li>
+  <li><strong>Wir können Ihre Videos nicht wiederherstellen.</strong> Wir besitzen keine Kopie. Wenn Sie das Gerät verlieren oder die App deinstallieren, ohne eine Sicherung zu haben, sind die Dateien im Tresor verloren.</li>
+  <li>Wir vermeiden absolute Sicherheitsaussagen. Solche Formulierungen beschreiben nichts, was Sie überprüfen könnten; deshalb nennen wir stattdessen Bedingungen.</li>
 </ul>
 
-<h2>3. Aufbewahrungszeitraum</h2>
+<h2>Ihre Videos werden niemals an uns gesendet</h2>
+<p>Jeter Player benötigt kein Konto, und Velocity Craft betreibt keinen Server, der Ihre Videos speichert. Videos aus der Mediathek werden direkt aus dem Gerätespeicher abgespielt. Die Videos selbst, ihre Datei- und Ordnernamen, was Sie wann ansehen, Fortsetzungspositionen, Lesezeichen und ihre Notizen, Playlists und der Inhalt des Tresors bleiben auf Ihrem Gerät, sofern <em>Sie</em> sie nicht verschieben (siehe „Wohin Ihre Videos gelangen können“ unten), und nichts davon wird an die im Folgenden beschriebenen Werbe- oder Analysedienste weitergegeben. Absturzberichte beschreiben einen Fehler in technischen Begriffen; Jeter Player fügt ihnen keine Video- oder Ordnernamen hinzu.</p>
+<p>Es gibt keine Anmeldung für Nutzer. Die App enthält ein verborgenes Entwicklerpanel mit Google-Anmeldung, das für interne Tests verwendet wird. Nur wenn sich dort eines unserer eigenen, festgelegten Testkonten anmeldet, wird ein Einweg-Hash seiner E-Mail-Adresse an die Analysedaten und Absturzberichte dieses Geräts angehängt; bei allen anderen Konten fügt die Anmeldung nichts hinzu. Wird ein Kauf gestartet, während dort eine Anmeldung besteht, wird diese Anmeldung auch genutzt, um die unter „Funktionen, die andere Dienste kontaktieren“ beschriebene Kaufkennung abzurufen.</p>
+
+<h2>Was erhoben wird und von wem</h2>
+<p>Das ist eine von Ihren Videos getrennte Angelegenheit, und wir halten beide Beschreibungen bewusst auseinander. Nichts davon enthält Ihre Videos oder deren Namen. Jeter Player zeigt Werbung über Google AdMob an und nutzt Google Firebase für Nutzungsanalysen (Firebase Analytics), Absturzberichte (Firebase Crashlytics) und entfernte Funktionseinstellungen (Firebase Remote Config). Wenn Sie einen Kauf starten, kontaktiert die App außerdem Amazon Web Services. Zusammen erheben sie:</p>
+<table id="data-collected">
+  <tr><th>Kategorie</th><th>Erhoben von</th><th>Was und warum</th></tr>
+  <tr><td>IP address</td><td>Google AdMob, Google Firebase, Amazon Web Services</td><td>Unvermeidlich in jeder Netzwerkanfrage enthalten, die diese Dienste erhalten</td></tr>
+  <tr><td>User product interactions</td><td>Google AdMob, Firebase Analytics</td><td>Anzeigenimpressionen und -klicks; welcher Bildschirm der App geöffnet wurde (feste Bildschirmnamen wie „Start“, „Ordner“ oder „Player“, niemals Videonamen); ein einmaliges Ereignis „erste Wiedergabe“ mit der Art der Quelle und der Länge der Warteschlange; und ein Bericht „nicht unterstütztes Format“, wenn Ton oder Bild eines Videos nicht dekodiert werden kann</td></tr>
+  <tr><td>Diagnostic information</td><td>Firebase Crashlytics</td><td>Absturzberichte und Berichte über nicht schwerwiegende Fehler: Gerätemodell, Betriebssystemversion, App-Version, der Stacktrace des Fehlers sowie der App-Zustand, etwa Ihre Stufe (kostenlos oder Lebenslange Nutzung), eine Leistungsklasse des Geräts, der fehlgeschlagene Kaufschritt sowie die Version des System-WebView und der Prozessortyp, die für Werbung verwendet werden</td></tr>
+  <tr><td>Device and Account identifiers</td><td>Google AdMob, Google Firebase, Amazon Web Services</td><td>Werbe-ID und App-Set-ID; die Firebase-Installations-ID; und eine zufällige Kaufkennung, die Amazon Web Services ausgibt, wenn Sie einen Kauf starten</td></tr>
+  <tr><td>Purchase history</td><td>Firebase Analytics</td><td>Wenn Sie die Lebenslange Nutzung von Jeter Player kaufen: Produkt-ID, Währung und Preis. Google Play wickelt die Zahlung ab; wir sehen Ihre Zahlungsdaten nie</td></tr>
+</table>
+<p>Analyseereignisse enthalten außerdem die App-Version, den Build-Typ, Ihre Stufe (kostenlos oder Lebenslange Nutzung) und eine Leistungsklasse des Geräts (niedrig/mittel/hoch), damit Berichte gruppiert werden können. Der Bericht „nicht unterstütztes Format“ enthält nur technische Angaben – Codec- und Containertyp, Auflösung, Bildrate, Bittiefe, Audiokanäle und Abtastrate sowie die Dekodierungseinstellung –, niemals Datei- oder Ordnernamen, Pfade oder Spurtitel.</p>
+<p>Google Analytics zeichnet außerdem einige Informationen automatisch auf: Gerätemodell, Android-Version, Spracheinstellung sowie Sitzungs- und Interaktionsdaten wie das erste Öffnen und die Nutzungsdauer, zusammen mit einer zufälligen App-Instanz-Kennung. Firebase bewahrt Absturzberichte 90 Tage lang auf; Analyse-Ereignisdaten werden höchstens 14 Monate lang aufbewahrt.</p>
+<p>Folgendes wird <strong>nicht</strong> erhoben und verlässt Ihr Gerät nie über uns: Ihre Videos und Fotos, deren Namen und Ordner, was Sie ansehen, Dateien und Dokumente, Audio, Kontakte, Kalender, Nachrichten, persönliche Daten und genauer Standort. Google kann aus der IP-Adresse eine ungefähre Region auf Stadtebene für die Anzeigenauslieferung und Analyseberichte schätzen; im Abschnitt „Datensicherheit“ von Google Play wird dies als „Ungefährer Standort“ angegeben. Jeter Player fordert keine Standortberechtigung an und liest niemals den Standort Ihres Geräts.</p>
+<p>Wenn Sie die Lebenslange Nutzung von Jeter Player kaufen oder solange ein Plus Pass aktiv ist, den Sie durch das Ansehen einer Prämienanzeige freigeschaltet haben, wird keine Werbung angezeigt. Das Werbe-SDK kann dennoch auf Ihrem Gerät starten, damit die Einwilligungseinstellung und der werbefreie Status geprüft werden können. Analyse und Absturzberichte funktionieren in jeder Stufe gleich.</p>
+
+<h2>Wohin Ihre Videos gelangen können und ob sie verschlüsselt sind</h2>
+<p>Jede Aussage über Verschlüsselung ist nur unter bestimmten Bedingungen wahr. Hier sind alle Orte, an denen Ihre Videos und Mediathekdaten aufbewahrt oder an die sie gesendet werden können:</p>
+<table>
+  <tr><th>Weg</th><th>Verschlüsselt?</th></tr>
+  <tr><td>Videos der Mediathek im Gerätespeicher</td><td><strong>Nicht durch Jeter Player.</strong> Sie bleiben, wo sie sind; die App liest sie nur, um sie abzuspielen.</td></tr>
+  <tr><td>Tresordateien und die Mediathek-Datenbank auf diesem Gerät</td><td><strong>Nein.</strong> Geschützt durch die App-Sandbox von Android und der Tresor zusätzlich durch seine Sperre per Fingerabdruck, Gesicht oder PIN.</td></tr>
+  <tr><td>Dropbox-Sicherung</td><td><strong>Nein.</strong> Tresordateien werden unverändert hochgeladen, zusammen mit der Mediathek-Datenbank und Ihren Einstellungen. Jeder mit Zugriff auf dieses Dropbox-Konto kann sie öffnen. Videos der Mediathek außerhalb des Tresors werden nicht hochgeladen.</td></tr>
+  <tr><td>Screenshots und Bildschirmaufnahmen</td><td><strong>Nein.</strong> Als gewöhnliche Dateien in den gemeinsamen Ordnern Pictures und Movies dieses Geräts gespeichert, wo andere Apps mit Medienzugriff sie sehen können. Sie werden nicht hochgeladen.</td></tr>
+  <tr><td>Dateien aus dem Tresor holen und an eine andere App teilen</td><td><strong>Nein.</strong> Die Datei gelangt unverändert zurück in den gemeinsamen Speicher oder an die von Ihnen gewählte App und unterliegt deren Richtlinie.</td></tr>
+  <tr><td>Lokales Netzwerk: DLNA, SMB und WLAN-Übertragung</td><td><strong>Meist nicht.</strong> Diese Funktionen kommunizieren direkt mit Geräten in Ihrem eigenen Netzwerk, überwiegend über unverschlüsselte Verbindungen. Die WLAN-Übertragung erfordert eine in der App angezeigte 4-stellige PIN, beendet sich nach 5 falschen PINs und stoppt nach 10 Minuten ohne Aktivität.</td></tr>
+  <tr><td>Android-Gerätesicherung (automatische Sicherung / Geräteübertragung)</td><td><strong>Nicht durch Jeter Player.</strong> Ist die Android-Sicherung aktiviert, können die Mediathek-Datenbank und Tresordateien im Rahmen der Größenbeschränkungen von Android in die Sicherung oder eine Übertragung von Gerät zu Gerät aufgenommen werden; Google verwaltet diese Sicherung. Jeter Player schließt die Zugangsdaten für Dropbox, die Google-Anmeldung und SMB, Zwischenspeicher des Kaufstatus und Testeinstellungen aus.</td></tr>
+</table>
+<p>Verbindungen zu Google, Amazon Web Services und Dropbox verwenden verschlüsseltes HTTPS. Ein Weblink, den Sie mit der App teilen, wird so abgerufen, wie der Link selbst es vorgibt (http oder https).</p>
+
+<h2>Dropbox-Sicherung</h2>
+<p>Die Dropbox-Sicherung ist optional und mit einem Plus Pass oder der Lebenslangen Nutzung von Jeter Player verfügbar. Wenn Sie Dropbox verbinden, erfolgt die Autorisierung bei Dropbox, und die Verbindungstoken werden auf diesem Gerät in einem mit dem Android Keystore verschlüsselten Speicher aufbewahrt (auf den seltenen Geräten mit beschädigtem Keystore stattdessen im privaten Speicher der App). Jeter Player kommuniziert direkt mit Dropbox; Velocity Craft betreibt keinen Server, der Ihre Videos empfängt.</p>
+<p>Jede Sicherung enthält Ihre Tresordateien (die eigentlichen Videos und Fotos, die nur einmal gespeichert und von mehreren Sicherungen gemeinsam genutzt werden); die Mediathek-Datenbank – die Namen und Ordnerpfade der Videos in Ihrer Mediathek, den Wiedergabeverlauf und die Fortsetzungspositionen, Lesezeichen und ihre Notizen, Playlists, Tresorordner, Auto-Tresor-Regeln und Ihr Pulse-Guthaben; Ihre Einstellungen; und eine kleine unverschlüsselte Übersichtsdatei mit dem App-Paket, dem Sicherungszeitpunkt, der Datenbankversion und der Anzahl der Tresordateien. Die App verschlüsselt nichts davon. Es werden bis zu 20 Sicherungen aufbewahrt; ältere werden gelöscht, während die gemeinsam genutzten Tresordateien erhalten bleiben. Dropbox speichert diese Dateien in Ihrem Konto und kann Dienst-Metadaten wie Dateinamen, Größen, Upload-Zeitpunkte und Ihre Netzwerkadresse sehen. Die Verarbeitung durch Dropbox unterliegt der Datenschutzerklärung von Dropbox.</p>
+<p>Das Deinstallieren von Jeter Player oder das Trennen von Dropbox löscht keine Dateien, die sich bereits in Dropbox befinden. Um sie zu entfernen, löschen Sie den Ordner von Jeter Player in Ihrer Dropbox und widerrufen Sie, falls gewünscht, die App in den Einstellungen Ihres Dropbox-Kontos.</p>
+
+<h2>Funktionen, die andere Dienste kontaktieren</h2>
 <ul>
-  <li><strong>Medien-Metadaten</strong>: Werden in einer lokalen Datenbank auf Ihrem Gerät gespeichert und bei Deinstallation der App gelöscht.</li>
-  <li><strong>Biometrische Daten</strong>: Werden vom Android Keystore-System verwaltet und verlassen niemals Ihr Gerät. Werden bei Deinstallation der App oder Deaktivierung der Ordnersperrfunktion entfernt.</li>
-  <li><strong>Werbedaten</strong>: Unterliegen der Datenschutzrichtlinie von Google.</li>
+  <li><strong>Ein Video über einen geteilten Link speichern.</strong> Wenn Sie einen Weblink mit Jeter Player teilen, ruft die App diese Adresse ab, um zu prüfen, ob es sich um ein Video handelt (auf einer Webseite sucht sie nach einem Videolink, den der Herausgeber öffentlich gemacht hat), und lädt das Video herunter, wenn Sie es speichern. Die Website erhält den Link und Ihre Netzwerkadresse, so als würden Sie den Link in einem Browser öffnen. Jeter Player lädt keine Videos aus sozialen Netzwerken wie YouTube, Instagram, Facebook, X oder TikTok herunter; solche Links werden abgelehnt.</li>
+  <li><strong>Käufe.</strong> Wenn Sie einen Kauf starten, ruft Jeter Player eine zufällige Kennung von Amazon Web Services ab (Amazon Cognito, Region Asien-Pazifik (Mumbai)) und hängt sie an den Google-Play-Kauf an, damit der Kauf später zugeordnet werden kann. Die Kennung enthält weder einen Namen noch eine E-Mail-Adresse.</li>
+  <li><strong>Schriftarten.</strong> Einige der in der App standardmäßig verwendeten Schriften sowie jede App-Schriftart, die Sie auswählen, laden die Google-Play-Dienste auf Ihrem Gerät von Google Fonts herunter.</li>
+  <li><strong>App-Updates und Sprachpakete</strong> werden über Google Play bereitgestellt (In-App-Update und Play Feature Delivery).</li>
+  <li><strong>Lokales Netzwerk.</strong> DLNA-Server, SMB-Freigaben und die WLAN-Übertragung verbinden sich nur mit Geräten in Ihrem eigenen Netzwerk, die Sie auswählen; an uns wird nichts gesendet. SMB-Passwörter werden auf diesem Gerät in einem mit dem Keystore verschlüsselten Speicher aufbewahrt und von der Android-Sicherung ausgeschlossen.</li>
 </ul>
 
-<h2>4. Weitergabe an Dritte</h2>
-<p>Die App gibt Ihre personenbezogenen Daten grundsätzlich nicht an Dritte weiter. Folgende Ausnahmen gelten jedoch:</p>
+<h2>Drittanbieter</h2>
 <ul>
-  <li>Wenn Sie Ihre vorherige Einwilligung erteilt haben</li>
-  <li>Wenn dies gesetzlich vorgeschrieben ist</li>
-  <li>Begrenzte Informationen können für Werbedienste an Google AdMob weitergegeben werden.</li>
+  <li><strong>Google AdMob</strong> und die Google User Messaging Platform – Werbung und Einwilligung. Es gilt die Datenschutzerklärung von Google.</li>
+  <li><strong>Google Firebase</strong> – Nutzungsereignisse über Analytics, Absturzberichte über Crashlytics und Remote Config für Funktionseinstellungen. Ihre Videos und deren Namen werden niemals an Firebase übermittelt. Es gilt die Datenschutzerklärung von Google.</li>
+  <li><strong>Google Play</strong> – Abrechnung des Kaufs der Lebenslangen Nutzung (wir sehen Ihre Zahlungsdaten nie), In-App-Updates und Sprachpakete; Google-Play-Dienste für Schriftarten und, nur im verborgenen Entwicklerpanel, die Google-Anmeldung.</li>
+  <li><strong>Amazon Web Services</strong> (Amazon Cognito) – die oben beschriebene zufällige Kaufkennung.</li>
+  <li><strong>Dropbox</strong> – nur, wenn Sie ein Konto für die Sicherung verbinden.</li>
+  <li><strong>Websites, deren Links Sie mit Jeter Player teilen</strong> – nur wenn Sie einen Link teilen, um das Video zu prüfen und herunterzuladen.</li>
 </ul>
 
-<h2>5. App-Berechtigungen</h2>
-<p>Die App verwendet die folgenden Berechtigungen:</p>
+<h2>Berechtigungen</h2>
 <ul>
-  <li><strong>Medienzugriff (READ_MEDIA_VIDEO, READ_MEDIA_IMAGES, READ_MEDIA_AUDIO)</strong>: Zum Durchsuchen und Abspielen von Videos, Fotos und Audiodateien auf Ihrem Gerät [Erforderlich]</li>
-  <li><strong>Internet (INTERNET)</strong>: Für die Anzeige von Werbung und Absturzberichte [Erforderlich]</li>
-  <li><strong>Benachrichtigungen (POST_NOTIFICATIONS)</strong>: Für Wiedergabestatus- und App-Update-Benachrichtigungen [Optional]</li>
-  <li><strong>Biometrie (USE_BIOMETRIC)</strong>: Für die Ordnersperr-Authentifizierung per Fingerabdruck oder Gesichtserkennung [Optional]</li>
-  <li><strong>Vordergrunddienst (FOREGROUND_SERVICE)</strong>: Zur Aufrechterhaltung der Medienwiedergabe und des PiP-Modus [Erforderlich]</li>
-</ul>
-<p>Optionale Berechtigungen werden nur bei Nutzung der entsprechenden Funktion angefordert. Sie können die Grundfunktionen der App ohne deren Erteilung nutzen.</p>
-
-<h2>6. Sicherheitsmaßnahmen</h2>
-<p>Die App setzt die folgenden Maßnahmen zur Gewährleistung der Sicherheit personenbezogener Daten um:</p>
-<ul>
-  <li>Alle lokalen Daten werden im privaten internen Speicher der App gespeichert, und der Tresor ist durch biometrische Authentifizierung oder PIN geschützt.</li>
-  <li>Für die Netzwerkkommunikation werden verschlüsselte Verbindungen (HTTPS) verwendet.</li>
-  <li>Biometrische Authentifizierungsdaten werden sicher über das Android Keystore-System verwaltet und verlassen niemals Ihr Gerät.</li>
+  <li><strong>Fotos und Videos</strong> – um die Videos auf Ihrem Gerät zu finden und abzuspielen und um von Ihnen eingerichtete Auto-Tresor-Regeln auszuführen. Ab Android 14 können Sie den Zugriff auf ausgewählte Elemente beschränken.</li>
+  <li><strong>Benachrichtigungen</strong> – Wiedergabesteuerung sowie der Fortschritt von Sicherungen und Wiederherstellungen, Komprimierung, Downloads über Links, SMB oder WLAN-Übertragung und Bildschirmaufnahmen. Jeter Player sendet keine Werbebenachrichtigungen.</li>
+  <li><strong>Mikrofon</strong> – nur für Bildschirmaufnahmen. Ab Android 10 nimmt es den Ton auf, den die App abspielt; unter Android 8 und 9, wo das nicht möglich ist, nimmt es über das Mikrofon auf. Aufnahmen werden nur auf diesem Gerät gespeichert.</li>
+  <li><strong>Bildschirmaufnahme</strong> – für die Bildschirmaufzeichnung, die erst beginnt, nachdem Sie die Bildschirmaufnahme-Abfrage von Android bestätigt haben.</li>
+  <li><strong>Internet, Netzwerk- und WLAN-Status sowie Multicast</strong> – für Werbung, Analyse, Absturzberichte, Dropbox-Sicherung, das Speichern von Videos über Links und das Finden von DLNA- und SMB-Geräten in Ihrem lokalen Netzwerk.</li>
+  <li><strong>Hintergrundarbeit (Vordergrunddienste für Medienwiedergabe, Datensynchronisierung und verbundene Geräte)</strong> – damit Wiedergabe, Bild-im-Bild, Sicherungen, Downloads und die WLAN-Übertragung weiterlaufen, während die App im Hintergrund ist.</li>
+  <li><strong>Biometrie</strong> – für den Tresor. Fingerabdruck- oder Gesichtsdaten bleiben bei Android; Jeter Player erfährt nur, ob die Prüfung erfolgreich war.</li>
 </ul>
 
-<h2>7. Datenschutzbeauftragter</h2>
-<ul>
-  <li>Kontakt: Jeter Player Entwicklungsteam</li>
-  <li>E-Mail: velocitycraft.app+support+jeter@gmail.com</li>
-</ul>
-<p>Bei Fragen zum Datenschutz kontaktieren Sie uns bitte unter der oben genannten E-Mail-Adresse.</p>
+<h2>Europäischer Wirtschaftsraum und Vereinigtes Königreich</h2>
+<p>Wo erforderlich, zeigt Jeter Player vor jeder Werbung ein von Google zertifiziertes Einwilligungsformular an. Sie können Ihre Wahl jederzeit in den Einstellungen ändern. Je nach Ihrer Wahl werden Anzeigen nicht personalisiert angezeigt oder gar nicht geladen. Dieses Formular gilt nur für Werbung. Firebase Analytics und Crashlytics werden davon nicht gesteuert und laufen auf jedem Gerät; Analytics kann die Werbe-ID lesen, die Sie in den Android-Einstellungen zurücksetzen oder löschen können.</p>
+<p>Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten. Ihre Videos und Mediathekdaten befinden sich nur auf Ihrem Gerät und in Speicher, den Sie selbst kontrollieren; daher üben Sie diese Rechte direkt aus: Löschen Sie Videos und Tresorelemente in der App; deinstallieren Sie die App, um den Tresor und alles andere zu entfernen, was die App in ihrem privaten Speicher aufbewahrt (Screenshots und Aufnahmen in gemeinsamen Ordnern bleiben erhalten, bis Sie sie löschen); löschen Sie den Ordner von Jeter Player in Dropbox, wenn Sie die Sicherung genutzt haben; und verwalten Sie die Android-Gerätesicherung in den Google-Einstellungen. Analyse-, Absturz- und Werbedaten werden von Google gespeichert, die Kaufkennung in unserem Auftrag von Amazon Web Services; nichts davon ist mit Ihrem Namen oder Ihrer E-Mail-Adresse verknüpft (außer bei unseren eigenen, oben beschriebenen Testkonten). Für diese Daten nutzen Sie bitte die Werkzeuge von Google oder kontaktieren Sie uns; wir helfen, soweit wir können. Siehe <a href="../delete-account/">wie Sie Ihre Jeter-Player-Daten löschen</a>.</p>
 
-<h2>8. Änderungen dieser Richtlinie</h2>
-<p>Diese Datenschutzrichtlinie kann entsprechend Änderungen der geltenden Gesetze oder Dienste aktualisiert werden. Änderungen werden innerhalb der App bekannt gegeben.</p>
+<h2>Kinder</h2>
+<p>Jeter Player richtet sich nicht an Kinder unter 13 Jahren, und wir erheben wissentlich keine Daten von ihnen.</p>
+
+<h2>Änderungen</h2>
+<p>Wesentliche Änderungen dieser Erklärung werden vor ihrem Inkrafttreten in der App oder auf dieser Seite angekündigt.</p>
+
+<h2>Kontakt</h2>
+<p>Jeter Player wird von Velocity Craft herausgegeben. velocitycraft.app+support+jeter@gmail.com</p>
+<p>Wenn Sie uns eine E-Mail senden, auch über „Hilfe &amp; Feedback“ in der App (die App-Version, Gerätemodell, Android-Version, Bildschirmgröße und -dichte, Arbeitsspeicher und Sprache vorausfüllt, die Sie alle bearbeiten können), erhalten wir Ihre E-Mail-Adresse und Nachricht und verwenden sie ausschließlich für unsere Antwort.</p>
 
 </body>
 </html>
