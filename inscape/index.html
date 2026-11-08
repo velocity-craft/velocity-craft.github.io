@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscape &mdash; Private Journal for Mac</title>
+<meta name="description" content="Inscape is a native, encrypted journal for Mac. Write offline, add photos and attachments, browse your timeline and calendar, and sync between Macs through your own Dropbox with end-to-end encryption. Free.">
+<meta property="og:title" content="Inscape &mdash; Private Journal for Mac">
+<meta property="og:description" content="Give your days a place to stay. A native, encrypted journal for Mac. Free.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://velocitycraft.app/inscape/">
+<meta property="og:image" content="https://velocitycraft.app/inscape/assets/01-photo-journal.jpg">
+<link rel="icon" href="/assets/icons/inscape.png">
+<!-- Content is drawn only from the Mac App Store listing (app 6827082985, en-US description/promotional text).
+     Do not add features that are not in the listing. Screenshots are the store screenshots.
+     Palette follows the app icon: ink #1d1e26 and paper #faf7f0. -->
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#faf7f0;--paper2:#f2ede2;--paper3:#e9e2d3;
+  --ink:#1d1e26;--ink2:#4c4a52;--ink3:#86828a;
+  --rule:#ddd5c4;--accent:#5b5bd6;--accent-ink:#ffffff;
+  --card:#fffdf8;--shadow:0 1px 2px rgba(29,30,38,.06),0 18px 40px -18px rgba(29,30,38,.28);
+  --serif:ui-serif,"New York","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --max-w:1040px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --paper:#15161c;--paper2:#1b1c23;--paper3:#24252e;
+    --ink:#f1ece2;--ink2:#b9b3a8;--ink3:#7d786f;
+    --rule:#2e2f39;--accent:#8c8cf0;--accent-ink:#15161c;
+    --card:#1d1e26;--shadow:0 1px 2px rgba(0,0,0,.3),0 18px 40px -18px rgba(0,0,0,.7);
+  }
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+a{color:inherit}
+
+/* ── Masthead ── */
+.masthead{border-bottom:1px solid var(--rule)}
+.masthead .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.wordmark{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:600}
+.wordmark img{width:32px;height:32px;border-radius:8px}
+.masthead nav a{font-size:14px;color:var(--ink2);text-decoration:none}
+.masthead nav a:hover{color:var(--ink)}
+
+/* ── Hero ── */
+.hero{padding:88px 0 0;overflow:hidden}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:24px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,8vw,92px);line-height:1.02;letter-spacing:-.02em;max-width:11ch}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-row{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:end;margin-top:32px}
+.hero-sub{font-size:clamp(17px,2.2vw,20px);color:var(--ink2);max-width:46ch}
+.cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;font-size:15px;padding:14px 24px;border-radius:999px;transition:transform .2s ease,background-color .2s ease}
+.btn svg{width:18px;height:18px}
+.btn:hover{transform:translateY(-1px);background:var(--accent);color:var(--accent-ink)}
+.btn:focus-visible,.masthead a:focus-visible,footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.btn:active{transform:translateY(0)}
+.fine{font-size:13px;color:var(--ink3)}
+.hero-shot{margin-top:64px;position:relative}
+.hero-shot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--rule);box-shadow:var(--shadow)}
+.hero-shot::before{content:"";position:absolute;inset:40px -24px -40px 40px;background:var(--paper2);border-radius:18px;z-index:-1}
+@media(max-width:760px){.hero-row{grid-template-columns:1fr;gap:28px}.hero{padding-top:56px}.hero-shot{margin-top:40px}}
+
+/* ── Chapters ── */
+.chapters{padding:120px 0 40px}
+.chapter{display:grid;grid-template-columns:80px 1fr 1.3fr;gap:32px;padding:44px 0;border-top:1px solid var(--rule)}
+.chapter:last-child{border-bottom:1px solid var(--rule)}
+.num{font-family:var(--serif);font-size:15px;color:var(--ink3);font-style:italic;padding-top:6px}
+.chapter h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.4vw,36px);line-height:1.15;letter-spacing:-.01em}
+.chapter ul{list-style:none;display:grid;gap:14px}
+.chapter li{font-size:16px;color:var(--ink2);padding-left:22px;position:relative}
+.chapter li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:1px;background:var(--ink3)}
+@media(max-width:760px){.chapter{grid-template-columns:1fr;gap:14px;padding:32px 0}}
+
+/* ── Protection ── */
+.protect{padding:96px 0;background:var(--paper2);margin-top:80px}
+.protect-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:center}
+.protect h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.4vw,48px);line-height:1.08;letter-spacing:-.015em;margin-bottom:20px}
+.protect p{color:var(--ink2);font-size:16px;margin-bottom:16px;max-width:48ch}
+.protect img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--rule);box-shadow:var(--shadow)}
+@media(max-width:760px){.protect-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ── Straight answers ── */
+.honest{padding:104px 0}
+.honest h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.8vw,40px);margin-bottom:40px;letter-spacing:-.01em}
+.honest-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media(max-width:640px){.honest-grid{grid-template-columns:1fr}}
+.note{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:26px;transition:transform .2s ease,box-shadow .2s ease}
+.note:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.note h3{font-size:15px;font-weight:700;margin-bottom:8px}
+.note p{font-size:14px;color:var(--ink2)}
+
+/* ── Closing ── */
+.closing{padding:24px 0 112px;text-align:center}
+.closing p.quote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3.6vw,38px);margin-bottom:28px}
+.closing .cta{align-items:center}
+
+footer{border-top:1px solid var(--rule);padding:32px 0;text-align:center;font-size:13px;color:var(--ink3)}
+footer nav{margin-bottom:10px}
+footer a{color:var(--ink2);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--accent)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container">
+    <a class="wordmark" href="/inscape/"><img src="/assets/icons/inscape.png" alt="" width="32" height="32">Inscape</a>
+    <nav aria-label="Inscape"><a href="/inscape/mac/support/en.html">Help &amp; support</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <p class="kicker">Private journal &middot; Mac &middot; Free</p>
+    <h1 id="hero-heading">Give your days a place to <em>stay.</em></h1>
+    <div class="hero-row">
+      <p class="hero-sub">Inscape is a native journal for Mac, with a clean writing space and your entries close at hand. Start with a few words, add a photo, and return to the moments you want to remember.</p>
+      <div class="cta">
+        <a class="btn" href="https://apps.apple.com/app/inscape-private-journal/id6827082985">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.39-3.67zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg>
+          Download on the Mac App Store
+        </a>
+        <span class="fine">Free &middot; Requires macOS 14 or later</span>
+      </div>
+    </div>
+    <figure class="hero-shot">
+      <img src="/inscape/assets/01-photo-journal.jpg" width="1600" height="1000" alt="Inscape on Mac: a sidebar with timeline, calendar and journals, a list of entries, and an entry with a photo of an autumn path." fetchpriority="high">
+    </figure>
+  </div>
+</section>
+
+<section class="chapters" aria-label="Features">
+  <div class="container">
+    <article class="chapter">
+      <span class="num">i.</span>
+      <h2>Write at your own pace</h2>
+      <ul>
+        <li>Write offline, with automatic saving and a clear save status.</li>
+        <li>Markdown formatting, keyboard shortcuts, and focus mode.</li>
+        <li>Add photos, audio files, videos, and PDFs to your entries.</li>
+        <li>Change an entry&rsquo;s date to write about an earlier day.</li>
+      </ul>
+    </article>
+    <article class="chapter">
+      <span class="num">ii.</span>
+      <h2>Find your way back</h2>
+      <ul>
+        <li>Browse your timeline, calendar, and photo library.</li>
+        <li>Search entry text and narrow results by journal or year.</li>
+        <li>Organize entries with journals, tags, favorites, and pins.</li>
+        <li>Choose light or dark appearance and customize your colors.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="protect" aria-labelledby="protect-heading">
+  <div class="container protect-grid">
+    <div>
+      <p class="kicker">iii. Keep it protected</p>
+      <h2 id="protect-heading">Encrypted on your Mac. Yours in the cloud.</h2>
+      <p>Your local journal database and attachments are encrypted. Unlock Inscape with Touch ID or your Mac login password.</p>
+      <p>Optionally sync between Macs through your own Dropbox account, with end-to-end encryption and a separate sync passphrase. Create encrypted backups and review their contents before restoring.</p>
+    </div>
+    <img src="/inscape/assets/03-privacy.jpg" width="1600" height="1000" loading="lazy" alt="Inscape privacy and encryption settings, showing that the journal library and attachments are encrypted and that backups use AES-256-GCM.">
+  </div>
+</section>
+
+<section class="honest" aria-labelledby="honest-heading">
+  <div class="container">
+    <h2 id="honest-heading">Straight answers</h2>
+    <div class="honest-grid">
+      <div class="note">
+        <h3>Free, including sync</h3>
+        <p>Inscape and Dropbox sync are free to use. Sync needs your own Dropbox account and available storage.</p>
+      </div>
+      <div class="note">
+        <h3>We can&rsquo;t recover passphrases</h3>
+        <p>Keep your backup and sync passphrases somewhere safe. If you forget them, Inscape cannot recover them.</p>
+      </div>
+      <div class="note">
+        <h3>Exports are plain on purpose</h3>
+        <p>Export entry text as Markdown, or save photos and attachments as decrypted copies. Files you deliberately export may be unencrypted.</p>
+      </div>
+      <div class="note">
+        <h3>Limits are written down</h3>
+        <p>Sync size limits and instructions for moving an existing library are in <a href="/inscape/mac/support/en.html">Help &amp; support</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" aria-label="Download">
+  <div class="container">
+    <p class="quote">A quiet place for your days.</p>
+    <div class="cta">
+      <a class="btn" href="https://apps.apple.com/app/inscape-private-journal/id6827082985">Get Inscape for Mac</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <nav aria-label="Legal">
+      <a href="/inscape/mac/privacy/en.html">Privacy Policy</a>
+      <a href="/inscape/mac/support/en.html">Support</a>
+      <a href="/inscape/mac/privacy/ko.html">개인정보처리방침</a>
+    </nav>
+    <p>Contact: <a href="mailto:velocitycraft.app+inscape@gmail.com">velocitycraft.app+inscape@gmail.com</a> &middot; <a href="/">Velocity Craft</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
