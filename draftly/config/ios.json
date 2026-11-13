@@ -1,4 +1,5 @@
 {
   "cloud_sync_enabled": true,
-  "rewarded_ads_enabled": true
+  "rewarded_ads_enabled": true,
+  "banner_ads_enabled": true
 }
