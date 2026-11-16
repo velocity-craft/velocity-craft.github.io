@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 52" role="img" aria-labelledby="title">
+  <title id="title">divib</title>
+  <g fill="none" stroke="#243e40" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 8v24c0 7-5 12-12 12S6 39 6 32s5-12 12-12 12 5 12 12"/>
+    <path d="M45 23v17"/>
+    <path d="M61 23l7 16q4 9 8 0l7-16"/>
+    <path d="M99 23v17"/>
+    <path d="M114 8v24c0 7 5 12 12 12s12-5 12-12-5-12-12-12-12 5-12 12"/>
+  </g>
+  <circle cx="45" cy="10" r="5.1" fill="#26746d"/>
+  <ellipse cx="99" cy="10" rx="5.1" ry="4.8" transform="rotate(-17 99 10)" fill="#dc914d"/>
+</svg>
