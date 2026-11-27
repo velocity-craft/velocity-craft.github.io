@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draftly | Offline Markdown notes and PDF annotation for Android</title>
+<title>Draftly | Markdown notes for Android, iPhone, and iPad</title>
 <link rel="canonical" href="https://velocitycraft.app/draftly/">
-<meta name="description" content="Write Markdown notes offline on Android. Keep meeting photos and PDFs with your notes, tag them by project, and bookmark or highlight passages in a PDF.">
+<meta name="description" content="Write Markdown notes and organize them into folders on Android, iPhone, and iPad. Import documents from Files on iOS or annotate meeting PDFs on Android.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Velocity Craft">
-<meta property="og:title" content="Draftly | Offline Markdown notes and PDF annotation for Android">
-<meta property="og:description" content="Write Markdown notes offline on Android. Keep meeting photos and PDFs with your notes, tag them by project, and bookmark or highlight passages in a PDF.">
+<meta property="og:title" content="Draftly | Markdown notes for Android, iPhone, and iPad">
+<meta property="og:description" content="Write Markdown notes and organize them into folders on Android, iPhone, and iPad. Import documents from Files on iOS or annotate meeting PDFs on Android.">
 <meta property="og:url" content="https://velocitycraft.app/draftly/">
 <meta property="og:image" content="https://velocitycraft.app/assets/icons/draftly.png">
 <script type="application/ld+json">
@@ -19,9 +19,9 @@
   "@id": "https://velocitycraft.app/draftly/#app",
   "name": "Draftly",
   "url": "https://velocitycraft.app/draftly/",
-  "description": "Write Markdown notes offline on Android. Keep meeting photos and PDFs with your notes, tag them by project, and bookmark or highlight passages in a PDF.",
+  "description": "Write Markdown notes and organize them into folders on Android, iPhone, and iPad. Import documents from Files on iOS or annotate meeting PDFs on Android.",
   "applicationCategory": "ProductivityApplication",
-  "operatingSystem": "Android",
+  "operatingSystem": ["Android", "iOS", "iPadOS"],
   "image": "https://velocitycraft.app/assets/icons/draftly.png",
   "publisher": {
     "@type": "Organization",
@@ -29,7 +29,8 @@
     "url": "https://velocitycraft.app/"
   },
   "downloadUrl": [
-    "https://play.google.com/store/apps/details?id=com.draftly.app"
+    "https://play.google.com/store/apps/details?id=com.draftly.app",
+    "https://apps.apple.com/app/id6816679085?platform=iphone"
   ]
 }
 </script>
@@ -204,14 +205,15 @@ footer a:hover{color:var(--accent)}
 <!-- Hero -->
 <section class="hero">
 <div class="container">
-  <div class="hero-badge">Android &middot; Offline notes</div>
-  <h1>Draftly<br><span>Take Markdown notes and annotate PDFs</span></h1>
-  <p class="hero-sub">Photograph a whiteboard, file the meeting PDF, and write up the next steps offline. Keep them together in a project folder and tag the notes you’ll need again.</p>
+  <div class="hero-badge">Android &middot; iPhone &middot; iPad</div>
+  <h1>Draftly<br><span>Write and organize Markdown notes</span></h1>
+  <p class="hero-sub">Keep meeting notes and longer drafts in folders, then search for them when you need them. On iPhone and iPad, import documents from Files as separate notes. On Android, keep photos and annotated PDFs with your notes.</p>
   <div class="hero-cta">
     <a href="https://play.google.com/store/apps/details?id=com.draftly.app" class="btn-primary">
       <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
       Google Play
     </a>
+    <a href="https://apps.apple.com/app/id6816679085?platform=iphone" class="btn-primary">App Store for iPhone and iPad</a>
   </div>
 </div>
 </section>
@@ -221,7 +223,7 @@ footer a:hover{color:var(--accent)}
 <div class="container">
   <div class="editor-showcase">
     <div>
-      <p class="section-label">Core</p>
+      <p class="section-label">Android editor</p>
       <h2 class="section-title">Real-Time Markdown Editor</h2>
       <p class="section-desc">See formatting come to life as you type. No switching between edit and preview &mdash; headings, bold, italic, colors, checklists, links, and reminders are all rendered instantly.</p>
       <ul class="syntax-list">
@@ -263,7 +265,7 @@ footer a:hover{color:var(--accent)}
 <section class="section">
 <div class="container">
   <div class="section-header center">
-    <p class="section-label">Features</p>
+    <p class="section-label">Android features</p>
     <h2 class="section-title">Organize notes, photos, and PDFs</h2>
     <p class="section-desc">Use folders for projects, bookmark pages in long PDFs, and save a template for notes you write often.</p>
   </div>
@@ -323,7 +325,7 @@ footer a:hover{color:var(--accent)}
   <div class="section-header center">
     <p class="section-label">Capture</p>
     <h2 class="section-title">Capture Ideas the Moment They Strike</h2>
-    <p class="section-desc">Six ways to get thoughts into Draftly without friction.</p>
+    <p class="section-desc">Start a note on Android using a shortcut, your voice, or a template.</p>
   </div>
   <div class="capture-grid">
     <div class="capture-item">
@@ -361,12 +363,12 @@ footer a:hover{color:var(--accent)}
 </section>
 
 <!-- Stats -->
-<section class="stats">
+<section class="stats" aria-label="Draftly for Android">
 <div class="container">
   <div class="stats-grid">
     <div>
       <div class="stat-num">76</div>
-      <div class="stat-label">Languages</div>
+      <div class="stat-label">Android languages</div>
     </div>
     <div>
       <div class="stat-num">12+</div>
@@ -394,6 +396,7 @@ footer a:hover{color:var(--accent)}
       <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 01-.61-.92V2.734c0-.384.22-.72.61-.92zm1.073-.074l11.31 6.518L12.7 11.55 4.683 1.74zM16 12l3.993 2.304-11.31 6.518L12.7 12.45 16 12zm-3.3.45l3.293 8.372-11.31-6.518L8.7 12.45z"/></svg>
       Get Draftly on Google Play
     </a>
+    <a href="https://apps.apple.com/app/id6816679085?platform=iphone" class="btn-primary">Get Draftly for iPhone or iPad</a>
   </div>
 </div>
 </section>
@@ -404,6 +407,7 @@ footer a:hover{color:var(--accent)}
   <div class="footer-links">
     <a href="/">All Velocity Craft apps</a>
     <a href="/draftly/privacy/en.html">Android Privacy</a>
+    <a href="/draftly/ios/support/en.html">iPhone &amp; iPad Support</a>
     <a href="/draftly/apple/privacy/en.html">iPhone, iPad &amp; Mac Privacy</a>
     <a href="/draftly/lifetime/">Android Lifetime access</a>
     <a href="/draftly/terms/en.html">Terms of Service</a>
