@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Velocity Craft apps for Android, iPhone, iPad, and Mac</title>
 <link rel="canonical" href="https://velocitycraft.app/">
-<meta name="description" content="Find Android apps for Markdown notes, video playback, shift alarms, and daily planning. Discover Inscape, a private journal for iPhone, iPad, and Mac.">
+<meta name="description" content="Explore Draftly for Markdown notes on Android, iPhone, and iPad, Inscape for private journaling on mobile and Mac, and Android apps for video, alarms, and planning.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Velocity Craft">
 <meta property="og:title" content="Velocity Craft apps for Android, iPhone, iPad, and Mac">
-<meta property="og:description" content="Find Android apps for Markdown notes, video playback, shift alarms, and daily planning. Discover Inscape, a private journal for iPhone, iPad, and Mac.">
+<meta property="og:description" content="Explore Draftly for Markdown notes on Android, iPhone, and iPad, Inscape for private journaling on mobile and Mac, and Android apps for video, alarms, and planning.">
 <meta property="og:url" content="https://velocitycraft.app/">
 <script type="application/ld+json">
 {
@@ -74,7 +74,7 @@ body{
   width:100%;margin-bottom:48px;
 }
 .app-card{
-  display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:20px;
+  position:relative;display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:20px;
   background:var(--card);border:1px solid var(--border);border-radius:16px;
   padding:24px 28px;text-decoration:none;color:var(--fg);
   box-shadow:var(--card-shadow);
@@ -95,7 +95,10 @@ body{
 .app-icon.klave{background:linear-gradient(135deg,#2d6a4f,#52b788)}
 .app-icon.andante{background:linear-gradient(135deg,#1f5f74,#7fb7b3)}
 .app-icon.inscape{background:#1d1e26}
-.app-icon.divib{background:#e8f1ea;object-fit:contain;padding:5px}
+.app-link{color:inherit;text-decoration:none}
+.app-link::after{content:"";position:absolute;inset:0;border-radius:16px}
+.platform a{position:relative;color:inherit;text-underline-offset:2px}
+.platform a:hover{color:var(--accent)}
 .app-info h2{font-size:18px;font-weight:700;margin-bottom:4px}
 .platform{display:block;font-size:13px;color:var(--fg2);margin-top:5px}
 .app-info p{font-size:14px;color:var(--fg2);line-height:1.4}
@@ -127,19 +130,22 @@ footer a:hover{color:var(--accent)}
   <div class="brand">
     <div class="logo">V</div>
     <h1>Velocity Craft apps</h1>
-    <p>Find a tool for your Android phone, or keep a private photo journal on iPhone, iPad, and Mac.</p>
+    <p>Write notes, keep a journal, or plan your day. Find an app for Android, iPhone, iPad, or Mac.</p>
   </div>
 
   <div class="apps">
-    <a href="/draftly/" class="app-card">
+    <article class="app-card">
       <img class="app-icon draftly" src="/assets/icons/draftly.png" alt="" width="56" height="56">
       <div class="app-info">
-        <h2>Draftly · Markdown notes</h2>
-        <p>Keep meeting notes, whiteboard photos, and annotated PDFs in one searchable library.</p>
-        <span class="platform">Android</span>
+        <h2><a class="app-link" href="/draftly/">Draftly · Markdown notes</a></h2>
+        <p>Write in Markdown, organize notes in project folders, and search for an idea you want to revisit.</p>
+        <span class="platform">
+          <a href="https://play.google.com/store/apps/details?id=com.draftly.app" aria-label="Draftly for Android on Google Play">Android</a> ·
+          <a href="https://apps.apple.com/app/id6816679085?platform=iphone" aria-label="Draftly for iPhone and iPad on the App Store">iPhone and iPad</a>
+        </span>
       </div>
       <span class="app-arrow" aria-hidden="true">&rarr;</span>
-    </a>
+    </article>
     <a href="/jeter-player/" class="app-card">
       <img class="app-icon jeter" src="/assets/icons/jeter.png" alt="" width="56" height="56">
       <div class="app-info">
@@ -176,23 +182,19 @@ footer a:hover{color:var(--accent)}
       </div>
       <span class="app-arrow" aria-hidden="true">&rarr;</span>
     </a>
-    <a href="https://divib.io/" class="app-card">
-      <img class="app-icon divib" src="/assets/icons/divib.svg" alt="" width="56" height="56">
-      <div class="app-info">
-        <h2>divib</h2>
-        <p>Explore Language Log’s English and Korean study notes, or read your Four Pillars with Byeoldam.</p>
-      </div>
-      <span class="app-arrow" aria-hidden="true">&rarr;</span>
-    </a>
-    <a href="/inscape/" class="app-card">
+    <article class="app-card">
       <img class="app-icon inscape" src="/assets/icons/inscape.png" alt="" width="56" height="56">
       <div class="app-info">
-        <h2>Inscape · Private photo journal</h2>
+        <h2><a class="app-link" href="/inscape/">Inscape · Private photo journal</a></h2>
         <p>Write offline, add a photo to the day’s entry, and find it later by date or by a word you remember.</p>
-        <span class="platform">iPhone, iPad, and Mac</span>
+        <span class="platform">
+          <a href="https://play.google.com/store/apps/details?id=app.velocitycraft.inscape" aria-label="Inscape for Android on Google Play">Android</a> ·
+          <a href="https://apps.apple.com/app/id6827082985?platform=iphone" aria-label="Inscape for iPhone and iPad on the App Store">iPhone and iPad</a> ·
+          <a href="https://apps.apple.com/app/id6827082985?platform=mac" aria-label="Inscape on the Mac App Store">Mac</a>
+        </span>
       </div>
       <span class="app-arrow" aria-hidden="true">&rarr;</span>
-    </a>
+    </article>
   </div>
 </main>
 
